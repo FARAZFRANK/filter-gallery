@@ -145,13 +145,13 @@ if (!defined('ABSPATH')) {
 					<span class="dashicons dashicons-update" style="font-size: 32px; width: 32px; height: 32px; transform: rotate(90deg);"></span>
 				</div>
 				<div>
-					<h1 class="font-black text-gray-900 tracking-tight" style="font-size: 42px; margin: 0; line-height: 1;">Import / Export <span style="font-size: 14px; background: #2563eb; color: white; padding: 4px 8px; border-radius: 6px; vertical-align: middle; margin-left: 10px;">v6.0.6</span></h1>
+					<h1 class="font-black text-gray-900 tracking-tight" style="font-size: 42px; margin: 0; line-height: 1;">Import / Export <span style="font-size: 14px; background: #2563eb; color: white; padding: 4px 8px; border-radius: 6px; vertical-align: middle; margin-left: 10px;">v1.1.0</span></h1>
 					<p class="text-gray-600 font-medium" style="margin-top: 8px; font-size: 16px;">Transfer your filterable galleries seamlessly between WordPress sites.</p>
 				</div>
 			</div>
 			
 			<div class="flex items-center gap-4 flex-wrap">
-				<a href="<?php echo admin_url('admin.php?page=filter-gallery-pro'); ?>" class="no-underline ufg-btn-primary" style="background: #1a202c; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+				<a href="<?php echo admin_url('admin.php?page=filter-gallery'); ?>" class="no-underline ufg-btn-primary" style="background: #1a202c; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
 					Back to Dashboard
 				</a>
 			</div>
