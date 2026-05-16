@@ -1,0 +1,317 @@
+/**
+ * Filter Gallery Pro - Frontend Stylesheet
+ * Custom prefixed CSS replacing Bootstrap dependency
+ * Version: 6.0.1
+ * All classes are prefixed with 'ufg-' to avoid theme conflicts
+ */
+
+/* ============================================
+   1. Reset & Box Model
+   ============================================ */
+.fg-content-wrapper,
+.fg-content-wrapper *,
+.fg-content-wrapper *::before,
+.fg-content-wrapper *::after {
+	box-sizing: border-box;
+}
+
+/* ============================================
+   2. Layout - Flexbox Row
+   ============================================ */
+.fg-content-wrapper .ufg-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+/* ============================================
+   3. Gallery Grid (Isotope-compatible)
+   ============================================ */
+.fg-content-wrapper .ufg-gallery {
+	display: block !important; /* Disable flexbox to let Isotope handle positioning */
+}
+
+.fg-content-wrapper .ufg-gallery::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* ============================================
+   4. Image Utilities
+   ============================================ */
+.fg-content-wrapper .ufg-img-responsive {
+	display: block;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+
+/* ============================================
+   5. Visibility Utilities
+   ============================================ */
+.fg-content-wrapper .ufg-hidden {
+	display: none !important;
+}
+
+.fg-content-wrapper .ufg-visible-block {
+	display: block !important;
+}
+
+/* ============================================
+   6. Text Utilities
+   ============================================ */
+.fg-content-wrapper .ufg-text-center {
+	text-align: center;
+}
+
+.fg-content-wrapper .ufg-no-underline {
+	text-decoration: none;
+}
+
+.fg-content-wrapper .ufg-no-underline:hover {
+	text-decoration: none;
+}
+
+/* ============================================
+   7. Filter Container Layout
+   ============================================ */
+.fg-content-wrapper .ufg-filter-container {
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.fg-content-wrapper .ufg-filter-container .filter-group {
+	margin: 15px 0;
+}
+
+.fg-content-wrapper .ufg-filter-container .filter-group button {
+	margin-right: 0.3rem;
+	margin-bottom: 0.3rem;
+}
+
+.fg-content-wrapper .ufg-filter-group-inner {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+/* Filter heading labels */
+.fg-content-wrapper .parent-filters-label {
+	margin-bottom: 0.75rem;
+}
+
+.fg-content-wrapper .level-one-filters-label,
+.fg-content-wrapper .level-two-filters-label,
+.fg-content-wrapper .level-three-filters-label,
+.fg-content-wrapper .level-four-filters-label,
+.fg-content-wrapper .level-five-filters-label {
+	margin-top: 0.75rem;
+}
+
+/* ============================================
+   8. Gallery Thumbnail Layout
+   ============================================ */
+.fg-content-wrapper .ufg-thumbnail {
+	float: left;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 30px;
+}
+
+.fg-content-wrapper .ufg-thumbnail-border {
+	border-radius: 0.25rem;
+	overflow: hidden;
+}
+
+.fg-content-wrapper .ufg-thumbnail-border a {
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+/* ============================================
+   9. Image Content (Title, Description, Button)
+   ============================================ */
+.fg-content-wrapper .ufg-image-content {
+	padding: 5px;
+}
+
+.fg-content-wrapper .ufg-image-title {
+	padding: 5px 8px;
+	word-wrap: break-word;
+}
+
+.fg-content-wrapper .ufg-image-description {
+	padding: 5px 8px;
+	word-wrap: break-word;
+}
+
+/* ============================================
+   10. Read More Button
+   ============================================ */
+.fg-content-wrapper .ufg-read-more-button {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.fg-content-wrapper .ufg-read-more-button:hover {
+	text-decoration: none;
+	opacity: 0.85;
+}
+
+.fg-content-wrapper .ufg-read-more-button i {
+	margin-right: 5px;
+}
+
+/* ============================================
+   11. Image Wrap & Fade-in
+   ============================================ */
+.fg-content-wrapper .ufg-img-wrap {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.05);
+	min-height: 100px;
+	transition: background-color 0.3s ease;
+}
+
+.fg-content-wrapper .ufg-img-wrap img {
+	opacity: 0;
+	transition: opacity 0.6s ease-in-out;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.fg-content-wrapper .ufg-img-wrap.loaded img {
+	opacity: 1;
+}
+
+.fg-content-wrapper .ufg-img-wrap.loaded {
+	background-color: transparent;
+}
+
+/* ============================================
+   12. Image Hover Effect - Border Overlay
+   ============================================ */
+.fg-content-wrapper .ufg-thumbnail img {
+	transition: transform 0.5s, filter 1.5s ease-in-out;
+	background: #000;
+}
+
+/* ============================================
+   13. Filter Button Base Styles
+   ============================================ */
+.fg-content-wrapper .ufg-btn.filters {
+	position: relative;
+	border: none;
+	font-size: inherit;
+	color: #333333;
+	background: none;
+	cursor: pointer;
+	padding: 12px 15px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	display: inline-block;
+	line-height: 1.5;
+	vertical-align: middle;
+}
+
+.fg-content-wrapper .ufg-btn > :first-child:not(.ufg-active-dot) {
+	margin-right: 7px;
+}
+
+.fg-content-wrapper .ufg-btn .ufg-active-dot {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 8px;
+	width: 8px;
+	height: 8px;
+	background-color: currentColor;
+	border-radius: 50%;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	opacity: 0;
+}
+
+/* Fallback for multiple variations of active class JS might use */
+.fg-content-wrapper .active-filter .ufg-active-dot,
+.fg-content-wrapper .active .ufg-active-dot,
+.fg-content-wrapper .current .ufg-active-dot {
+	opacity: 1;
+}
+
+.fg-content-wrapper .ufg-btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.fg-content-wrapper .ufg-btn-3:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+/* ============================================
+   14. Load More Button
+   ============================================ */
+.fg-content-wrapper .fg-load-more {
+	display: inline-block !important;
+	text-align: center;
+	padding: 25px 0;
+	width: 100%;
+}
+
+.fg-content-wrapper .fg-load-more button {
+	text-align: center;
+	position: relative;
+	padding: 12px 25px;
+}
+
+.fg-content-wrapper #fg-load-btn i {
+	opacity: 0;
+	position: absolute;
+	right: 15px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.fg-content-wrapper #fg-load-btn.load i {
+	opacity: 1;
+	margin-right: 0;
+}
+
+.fg-content-wrapper #fg-load-btn.load {
+	padding: 12px 40px 12px 15px;
+}
+
+/* ============================================
+   15. Gallery Container Clearfix
+   ============================================ */
+.fg-content-wrapper .ufg-gallery-container::after {
+	content: '';
+	display: block;
+	clear: both;
+}

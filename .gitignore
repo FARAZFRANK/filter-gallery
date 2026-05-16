@@ -1,0 +1,6 @@
+.planning/
+task.txt
+*.docx
+node_modules/
+.DS_Store
+.git/

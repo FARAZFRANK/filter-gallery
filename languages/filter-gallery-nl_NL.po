@@ -1,0 +1,721 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Filter Gallery Pro\n"
+"POT-Creation-Date: 2024-02-08 12:29+0530\n"
+"PO-Revision-Date: 2024-02-08 12:30+0530\n"
+"Last-Translator: \n"
+"Language-Team: wpfrank.com\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: admin/galleries.php:26
+msgid "Filter Gallery Free"
+msgstr "フィルターギャラリー無料"
+
+#: admin/galleries.php:38
+msgid "Create New Gallery"
+msgstr "Maak een nieuwe galerij"
+
+#: admin/galleries.php:46 admin/galleries.php:96 admin/manage-gallery.php:458
+msgid "Title"
+msgstr "Titel"
+
+#: admin/galleries.php:47 admin/galleries.php:97 admin/manage-gallery.php:485
+msgid "Shortcode"
+msgstr "Korte code"
+
+#: admin/galleries.php:48 admin/galleries.php:98
+msgid "Actions"
+msgstr "Acties"
+
+#: admin/galleries.php:75
+msgid "Click To Copy Gallery Shortcode"
+msgstr "Klik om de galerij-shortcode te kopiëren"
+
+#: admin/galleries.php:75
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: admin/galleries.php:76
+msgid "Copied"
+msgstr "Gekopieerd"
+
+#: admin/galleries.php:79
+msgid "Clone Gallery"
+msgstr "Kloongalerij"
+
+#: admin/galleries.php:81
+msgid "Delete Gallery"
+msgstr "Galerij verwijderen"
+
+#: admin/galleries.php:84
+msgid "Select Gallery"
+msgstr "Selecteer Galerij"
+
+#: admin/galleries.php:99
+msgid "Delete Selected Gallery"
+msgstr "Geselecteerde galerij verwijderen"
+
+#: admin/manage-gallery.php:57
+msgid "Create and Manage Filters For Gallery"
+msgstr "Filters voor galerij maken en beheren"
+
+#: admin/manage-gallery.php:61
+msgid "Gallery Name / Title"
+msgstr "Galerijnaam / Titel"
+
+#: admin/manage-gallery.php:68 admin/manage-gallery.php:159
+#: admin/manage-gallery.php:185
+msgid "Filters"
+msgstr "Filters"
+
+#: admin/manage-gallery.php:75
+msgid "Video Tutorial (watch in fullscreen)"
+msgstr "ビデオチュートリアル (全画面で見る)"
+
+#: admin/manage-gallery.php:82
+msgid "Filter Name"
+msgstr "Filternaam"
+
+#: admin/manage-gallery.php:87
+msgid "Type Filter Name"
+msgstr "Type filternaam"
+
+#: admin/manage-gallery.php:99
+msgid "Update"
+msgstr "Bijwerken"
+
+#: admin/manage-gallery.php:100
+msgid "Add"
+msgstr "Toevoegen"
+
+#: admin/manage-gallery.php:103
+msgid "Important Note"
+msgstr "Belangrijke opmerking"
+
+#: admin/manage-gallery.php:104
+msgid ""
+"Only the FIRST FIVE FILTERS will be usable and displayed in the output "
+"gallery."
+msgstr ""
+"最初の 5 つのフィルターのみが使用可能になり、出力ギャラリーに表示されます。"
+
+#: admin/manage-gallery.php:105
+msgid "Create only parent-level filters. Child filters are a Pro feature."
+msgstr ""
+"親レベルのフィルターのみを作成します。 子フィルターは Pro の機能です。"
+
+#: admin/manage-gallery.php:106
+msgid "You can create five filters only. Upgrade to Pro for unlimited."
+msgstr ""
+"作成できるフィルターは 5 つだけです。 Pro にアップグレードすると無制限になり"
+"ます。"
+
+#: admin/manage-gallery.php:107
+msgid ""
+"Deleting and re-positioning the filter after assigning it to images will "
+"lead to reassign."
+msgstr ""
+"画像にフィルターを割り当てた後にフィルターを削除して再配置すると、再割り当て"
+"が行われます。"
+
+#: admin/manage-gallery.php:108
+msgid "Do not use any symbol in filter name like"
+msgstr "Gebruik geen enkel symbool in de filternaam zoals"
+
+#: admin/manage-gallery.php:120 admin/manage-gallery.php:162
+#: admin/manage-gallery.php:482
+msgid "Save"
+msgstr "Opslaan"
+
+#: admin/manage-gallery.php:123 admin/manage-gallery.php:479
+msgid "Gallery"
+msgstr "Galerij"
+
+#: admin/manage-gallery.php:133
+msgid "Upload Images to Gallery And Apply Filters"
+msgstr "Afbeeldingen uploaden naar galerij en filters toepassen"
+
+#: admin/manage-gallery.php:139
+msgid "Remove All"
+msgstr "Alles verwijderen"
+
+#: admin/manage-gallery.php:149
+msgid "Upload Images"
+msgstr "Afbeeldingen uploaden"
+
+#: admin/manage-gallery.php:165 admin/manage-gallery.php:509
+msgid "Settings"
+msgstr "Instellingen"
+
+#: admin/manage-gallery.php:174
+msgid "Configure Settings"
+msgstr "Instellingen configureren"
+
+#: admin/manage-gallery.php:178
+msgid "Filter Settings"
+msgstr "フィルター設定"
+
+#: admin/manage-gallery.php:189 admin/manage-gallery.php:203
+#: admin/manage-gallery.php:353 admin/manage-gallery.php:386
+#: admin/manage-gallery.php:462
+msgid "Show"
+msgstr "Toon"
+
+#: admin/manage-gallery.php:192 admin/manage-gallery.php:206
+#: admin/manage-gallery.php:356 admin/manage-gallery.php:389
+#: admin/manage-gallery.php:465
+msgid "Hide"
+msgstr "Verbergen"
+
+#: admin/manage-gallery.php:195
+msgid "hide and show filter above gallery"
+msgstr "verberg en toon filter boven galerij"
+
+#: admin/manage-gallery.php:199
+msgid "All Button"
+msgstr "Alles-knop"
+
+#: admin/manage-gallery.php:209
+msgid "hide and show all filter button"
+msgstr "verberg en toon alle filterknop"
+
+#: admin/manage-gallery.php:213
+msgid "All Button Title"
+msgstr "Alle knoppentitel"
+
+#: admin/manage-gallery.php:214 setting.php:43
+msgid "All"
+msgstr "Alles"
+
+#: admin/manage-gallery.php:216
+msgid "type name"
+msgstr "typenaam"
+
+#: admin/manage-gallery.php:218
+msgid "set all filter button title"
+msgstr "stel alle filterknoptitels in"
+
+#: admin/manage-gallery.php:222
+msgid "All Button Color"
+msgstr "Alle knopkleuren"
+
+#: admin/manage-gallery.php:227 admin/manage-gallery.php:236
+msgid "set background color of all filter button"
+msgstr "achtergrondkleur van alle filterknoppen instellen"
+
+#: admin/manage-gallery.php:231
+msgid "All Button Background Color"
+msgstr "Achtergrondkleur van alle knoppen"
+
+#: admin/manage-gallery.php:239
+msgid "Parent Filter Button Color"
+msgstr "Kleur bovenliggende filterknop"
+
+#: admin/manage-gallery.php:244
+msgid "set background color of parent filter button"
+msgstr "achtergrondkleur van bovenliggende filterknop instellen"
+
+#: admin/manage-gallery.php:247
+msgid "Parent Filters Button Background Color"
+msgstr "Achtergrondkleur van knop Ouderfilters"
+
+#: admin/manage-gallery.php:252
+msgid "set background color of parent filter background button."
+msgstr "achtergrondkleur van bovenliggende filterachtergrondknop instellen."
+
+#: admin/manage-gallery.php:259
+msgid "Gallery Settings"
+msgstr "Galerij-instellingen"
+
+#: admin/manage-gallery.php:263
+msgid "Columns On Desktop"
+msgstr "Kolommen op bureaublad"
+
+#: admin/manage-gallery.php:267 admin/manage-gallery.php:290
+#: admin/manage-gallery.php:307
+msgid "3"
+msgstr "3"
+
+#: admin/manage-gallery.php:270
+msgid "4"
+msgstr "4"
+
+#: admin/manage-gallery.php:273
+msgid "6"
+msgstr "6"
+
+#: admin/manage-gallery.php:276
+msgid "columns to display on desktop or pc device"
+msgstr "kolommen die op desktop of pc moeten worden weergegeven"
+
+#: admin/manage-gallery.php:280
+msgid "Columns On Tablet"
+msgstr "Kolommen op tablet"
+
+#: admin/manage-gallery.php:284 admin/manage-gallery.php:301
+#: admin/manage-gallery.php:318
+msgid "1"
+msgstr "1"
+
+#: admin/manage-gallery.php:287 admin/manage-gallery.php:304
+#: admin/manage-gallery.php:321
+msgid "2"
+msgstr "2"
+
+#: admin/manage-gallery.php:293
+msgid "columns to display on tablet device"
+msgstr "kolommen die op tablet moeten worden weergegeven"
+
+#: admin/manage-gallery.php:297
+msgid "Columns On Mobile - Landscape Mode"
+msgstr "Kolommen op mobiel - Liggende modus"
+
+#: admin/manage-gallery.php:310
+msgid "columns to display on mobile device with landscape mode"
+msgstr "モバイルデバイスに横向きモードで表示する列"
+
+#: admin/manage-gallery.php:314
+msgid "Columns On Mobile - Portrait Mode"
+msgstr "Kolommen op mobiel - Portretmodus"
+
+#: admin/manage-gallery.php:324
+msgid "columns to display on mobile device with portrait mode"
+msgstr "kolommen voor weergave op mobiel apparaat met portretmodus"
+
+#: admin/manage-gallery.php:328
+msgid "Thumbnail Image Size"
+msgstr "Grootte van miniatuurafbeelding"
+
+#: admin/manage-gallery.php:332
+msgid "Small"
+msgstr "Klein"
+
+#: admin/manage-gallery.php:333
+msgid "Medium"
+msgstr "Gemiddeld"
+
+#: admin/manage-gallery.php:334
+msgid "Large"
+msgstr "Groot"
+
+#: admin/manage-gallery.php:335
+msgid "Original"
+msgstr "Origineel"
+
+#: admin/manage-gallery.php:336 admin/manage-gallery.php:337
+#: admin/manage-gallery.php:338
+msgid "Same Size"
+msgstr "Zelfde maat"
+
+#: admin/manage-gallery.php:341
+msgid "set thumbnail image size"
+msgstr "miniatuurafbeeldingsgrootte instellen"
+
+#: admin/manage-gallery.php:343
+msgid "Note"
+msgstr "Opmerking"
+
+#: admin/manage-gallery.php:344
+msgid ""
+"The same size setting will only work with new images uploaded after the "
+"plugin installation."
+msgstr ""
+"同じサイズ設定は、プラグインのインストール後にアップロードされた新しい画像で"
+"のみ機能します。"
+
+#: admin/manage-gallery.php:345
+msgid "It will not work with previously uploaded images."
+msgstr "Het werkt niet met eerder geüploade afbeeldingen."
+
+#: admin/manage-gallery.php:349
+msgid "Thumbnail Border"
+msgstr "Miniatuurrand"
+
+#: admin/manage-gallery.php:359
+msgid "show or hide thumbnail border"
+msgstr "miniatuurrand tonen of verbergen"
+
+#: admin/manage-gallery.php:363
+msgid "Thumbnail Border Thickness"
+msgstr "Dikte van de miniatuurrand"
+
+#: admin/manage-gallery.php:369
+msgid "set thumbnail border thickness"
+msgstr "de dikte van de miniatuurrand instellen"
+
+#: admin/manage-gallery.php:373
+msgid "Thumbnail Border Color"
+msgstr "Kleur van miniatuurrand"
+
+#: admin/manage-gallery.php:378
+msgid "set thumbnail border color"
+msgstr "randkleur van miniatuur instellen"
+
+#: admin/manage-gallery.php:382 filter-gallery.php:218 filter-gallery.php:380
+msgid "Image Title"
+msgstr "Titel afbeelding"
+
+#: admin/manage-gallery.php:392
+msgid "hide or show image title"
+msgstr "verberg of toon afbeeldingstitel"
+
+#: admin/manage-gallery.php:396
+msgid "Image Title Font Size"
+msgstr "Lettergrootte afbeeldingstitel"
+
+#: admin/manage-gallery.php:402
+msgid "set image title font size"
+msgstr "stel de lettergrootte van de afbeeldingstitel in"
+
+#: admin/manage-gallery.php:406
+msgid "Image Title Color"
+msgstr "Kleur afbeeldingstitel"
+
+#: admin/manage-gallery.php:411
+msgid "set image title text color"
+msgstr "stel de tekstkleur van de afbeeldingstitel in"
+
+#: admin/manage-gallery.php:415
+msgid "Image Title Background Color"
+msgstr "Achtergrondkleur afbeeldingstitel"
+
+#: admin/manage-gallery.php:420
+msgid "set image title background color"
+msgstr "achtergrondkleur van afbeeldingstitel instellen"
+
+#: admin/manage-gallery.php:424
+msgid "Image Sorting"
+msgstr "Beeld sorteren"
+
+#: admin/manage-gallery.php:428
+msgid "Image ID - Ascending"
+msgstr "Afbeeldings-ID - Oplopend"
+
+#: admin/manage-gallery.php:429
+msgid "Image ID - Descending"
+msgstr "Afbeeldings-ID - Aflopend"
+
+#: admin/manage-gallery.php:430
+msgid "None"
+msgstr "Geen"
+
+#: admin/manage-gallery.php:433
+msgid "set gallery image sorting"
+msgstr "sortering van galerijafbeeldingen instellen"
+
+#: admin/manage-gallery.php:440
+msgid "Lightbox Settings"
+msgstr "Lightbox-instellingen"
+
+#: admin/manage-gallery.php:444
+msgid "Lightbox"
+msgstr "Lichtbak"
+
+#: admin/manage-gallery.php:448
+msgid "Enable"
+msgstr "有効にする"
+
+#: admin/manage-gallery.php:451
+msgid "Disable"
+msgstr "無効にする"
+
+#: admin/manage-gallery.php:454
+msgid "set lightbox functionality on gallery thumbnail for larger preview"
+msgstr ""
+"stel de lightbox-functionaliteit in op de galerijminiatuur voor een groter "
+"voorbeeld"
+
+#: admin/manage-gallery.php:468
+msgid "show image title under the lightbox"
+msgstr "toon afbeeldingstitel onder de lightbox"
+
+#: admin/manage-gallery.php:493
+msgid "Gallery Shortcode"
+msgstr "Galerijkortcode"
+
+#: admin/manage-gallery.php:502
+msgid "Copy Shortcode"
+msgstr "Shortcode kopiëren"
+
+#: admin/manage-gallery.php:503
+msgid "Shortcode Copied"
+msgstr "Shortcode gekopieerd"
+
+#: admin/manage-gallery.php:559 admin/manage-gallery.php:585
+#: filter-gallery.php:206 filter-gallery.php:415
+msgid "Select Filters"
+msgstr "Selecteer Filters"
+
+#: filter-gallery.php:80
+msgid "Filter Gallery"
+msgstr "フィルターギャラリー"
+
+#: filter-gallery.php:221 filter-gallery.php:383
+msgid "Image Alternative Text"
+msgstr "Alternatieve afbeeldingstekst"
+
+#: filter-gallery.php:234 filter-gallery.php:402
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: shortcode.php:126
+msgid "Error! invalid shortcode."
+msgstr "エラー！ 無効なショートコード。"
+
+#~ msgid "Select All Galleries"
+#~ msgstr "Selecteer alle galerijen"
+
+#~ msgid "Modify Gallery"
+#~ msgstr "Galerij wijzigen"
+
+#~ msgid "Sort ASC"
+#~ msgstr "Sorteer ASC"
+
+#~ msgid "Sort DESC"
+#~ msgstr "Sorteer OMSCH"
+
+#~ msgid "Filters Icon"
+#~ msgstr "Filterpictogram"
+
+#~ msgid "hide and show an icon on filters button"
+#~ msgstr "verberg en toon een pictogram op de filterknop"
+
+#~ msgid "Filters Image Count"
+#~ msgstr "Filters aantal afbeeldingen"
+
+#~ msgid "All Button Icon"
+#~ msgstr "Alles-knoppictogram"
+
+#~ msgid "set all filter button icon"
+#~ msgstr "stel alle filterknoppictogram in"
+
+#~ msgid "Parent Filters Heading"
+#~ msgstr "Kop bovenliggende filters"
+
+#~ msgid "set parent filter button heading"
+#~ msgstr "stel de kop van de bovenliggende filterknop in"
+
+#~ msgid "Level One Filters Heading"
+#~ msgstr "Filterkop van niveau één"
+
+#~ msgid "set level one filter button heading"
+#~ msgstr "stel de kop van de filterknop op niveau één in"
+
+#~ msgid "Level One Filters Button Color"
+#~ msgstr "Knopkleur filterniveau één"
+
+#~ msgid "set color of level One filters button"
+#~ msgstr "kleur van niveau instellen Eén filterknop"
+
+#~ msgid "Level One Filters Button Background Color"
+#~ msgstr "Achtergrondkleur van filterniveau één"
+
+#~ msgid "set background color of level one filters button"
+#~ msgstr "stel de achtergrondkleur van de filterknop van niveau één in"
+
+#~ msgid "Child Filters Effect"
+#~ msgstr "Effect van kinderfilters"
+
+#~ msgid "Fade"
+#~ msgstr "Vervagen"
+
+#~ msgid "Show / Hide"
+#~ msgstr "Toon / Verberg"
+
+#~ msgid "Active Filter Button Color"
+#~ msgstr "Kleur actieve filterknop"
+
+#~ msgid "set color of active filter button"
+#~ msgstr "kleur van actieve filterknop instellen"
+
+#~ msgid "Active Filter Button Background Color"
+#~ msgstr "Achtergrondkleur actieve filterknop"
+
+#~ msgid "set background color of active filter button"
+#~ msgstr "achtergrondkleur van actieve filterknop instellen"
+
+#~ msgid "12"
+#~ msgstr "12"
+
+#~ msgid "Thumbnail Image"
+#~ msgstr "Miniatuurafbeelding"
+
+#~ msgid "show or hide image thumbnail into gallery"
+#~ msgstr "toon of verberg afbeeldingsminiatuur in galerij"
+
+#~ msgid "Thumbnail Background Color"
+#~ msgstr "Achtergrondkleur miniatuur"
+
+#~ msgid "set thumbnail background color"
+#~ msgstr "achtergrondkleur miniatuur instellen"
+
+#~ msgid "Image Description"
+#~ msgstr "Beeldbeschrijving"
+
+#~ msgid "hide or show image description"
+#~ msgstr "verberg of toon afbeeldingsbeschrijving"
+
+#~ msgid "Image Description Font Size"
+#~ msgstr "Afbeelding Beschrijving Lettergrootte"
+
+#~ msgid "set image description font size"
+#~ msgstr "stel de lettergrootte van de afbeeldingsbeschrijving in"
+
+#~ msgid "Image Description Color"
+#~ msgstr "Afbeelding Beschrijving Kleur"
+
+#~ msgid "set image description text color"
+#~ msgstr "stel de tekstkleur van de afbeeldingbeschrijving in"
+
+#~ msgid "Image Description Background Color"
+#~ msgstr "Afbeelding Beschrijving Achtergrondkleur"
+
+#~ msgid "set image description background color"
+#~ msgstr "achtergrondkleur afbeeldingbeschrijving instellen"
+
+#~ msgid "Image Description Text Limit"
+#~ msgstr "Tekstlimiet afbeeldingsbeschrijving"
+
+#~ msgid "characters"
+#~ msgstr "tekens"
+
+#~ msgid "set image description text limit"
+#~ msgstr "stel de tekstlimiet voor de afbeeldingsbeschrijving in"
+
+#~ msgid "Image Hover Effect"
+#~ msgstr "Zweefeffect van afbeelding"
+
+#~ msgid "Border Overlay"
+#~ msgstr "Randoverlay"
+
+#~ msgid "hide or show read more button"
+#~ msgstr "verberg of toon lees meer knop"
+
+#~ msgid "Read More Link On"
+#~ msgstr "Lees meer-link ingeschakeld"
+
+#~ msgid "Button"
+#~ msgstr "Knop"
+
+#~ msgid "Image"
+#~ msgstr "Afbeelding"
+
+#~ msgid "show link on image or button"
+#~ msgstr "link op afbeelding of knop tonen"
+
+#~ msgid ""
+#~ "If Read More Link set on Image then lightbox functionality will not work."
+#~ msgstr ""
+#~ "Als Lees Meer Link is ingesteld op Afbeelding, werkt de lightbox-"
+#~ "functionaliteit niet."
+
+#~ msgid "Read More Button"
+#~ msgstr "Knop Meer lezen"
+
+#~ msgid "Read More Button Text"
+#~ msgstr "Lees meer-knoptekst"
+
+#~ msgid "Read More"
+#~ msgstr "Lees meer"
+
+#~ msgid "set read more button title text"
+#~ msgstr "set lees meer knoptiteltekst"
+
+#~ msgid "Read More Button Icon"
+#~ msgstr "Lees meer-knoppictogram"
+
+#~ msgid "set read more button icon"
+#~ msgstr "set lees meer knoppictogram"
+
+#~ msgid "Read More Button Color"
+#~ msgstr "Lees meer Knopkleur"
+
+#~ msgid "set read more button text color"
+#~ msgstr "stel de tekstkleur van de knop Lees meer in"
+
+#~ msgid "Read More Button Background Color"
+#~ msgstr "Lees meer Achtergrondkleur van knop"
+
+#~ msgid "set read more button background color"
+#~ msgstr "stel de achtergrondkleur van de knop Lees meer in"
+
+#~ msgid "Read More Link Open"
+#~ msgstr "Lees meer-link geopend"
+
+#~ msgid "In New Page"
+#~ msgstr "Op nieuwe pagina"
+
+#~ msgid "In Same Page"
+#~ msgstr "Op dezelfde pagina"
+
+#~ msgid "set link opening option"
+#~ msgstr "optie voor het openen van een link instellen"
+
+#~ msgid "Image Title - Ascending"
+#~ msgstr "Titel afbeelding - Oplopend"
+
+#~ msgid "Image Title - Descending"
+#~ msgstr "Titel afbeelding - Aflopend"
+
+#~ msgid "Shuffle / Random"
+#~ msgstr "Shuffle / Willekeurig"
+
+#~ msgid "Description"
+#~ msgstr "Beschrijving"
+
+#~ msgid "show image description under the lightbox"
+#~ msgstr "toon afbeeldingsbeschrijving onder de lightbox"
+
+#~ msgid "Numbering"
+#~ msgstr "Nummering"
+
+#~ msgid "show image number under the lightbox"
+#~ msgstr "toon afbeeldingsnummer onder de lightbox"
+
+#~ msgid "Load More Settings"
+#~ msgstr "Laad meer instellingen"
+
+#~ msgid "Load More"
+#~ msgstr "Laad meer"
+
+#~ msgid "On"
+#~ msgstr "Aan"
+
+#~ msgid "Off"
+#~ msgstr "Uit"
+
+#~ msgid "Load Limit"
+#~ msgstr "Belastingslimiet"
+
+#~ msgid "Set loading element limit"
+#~ msgstr "Limiet laadelement instellen"
+
+#~ msgid "Load More Button Color"
+#~ msgstr "Laad meer knopkleur"
+
+#~ msgid "Load More Button Text Color"
+#~ msgstr "Laad meer knoptekstkleur"
+
+#~ msgid "Load More Button Text"
+#~ msgstr "Laad meer knoptekst"
+
+#~ msgid "Change load button text"
+#~ msgstr "Tekst van laadknop wijzigen"
+
+#~ msgid "Custom CSS"
+#~ msgstr "Aangepaste CSS"
+
+#~ msgid "apply a custom design to gallery"
+#~ msgstr "pas een aangepast ontwerp toe op de galerij"
+
+#~ msgid "Link URL"
+#~ msgstr "Link-URL"

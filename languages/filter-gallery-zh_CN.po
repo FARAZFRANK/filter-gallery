@@ -1,0 +1,709 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 滤镜库专业版\n"
+"POT-Creation-Date: 2024-02-08 12:37+0530\n"
+"PO-Revision-Date: 2024-02-08 12:40+0530\n"
+"Last-Translator: \n"
+"Language-Team: wpfrank.com\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: admin/galleries.php:26
+msgid "Filter Gallery Free"
+msgstr "滤镜库免费"
+
+#: admin/galleries.php:38
+msgid "Create New Gallery"
+msgstr "创建新画廊"
+
+#: admin/galleries.php:46 admin/galleries.php:96 admin/manage-gallery.php:458
+msgid "Title"
+msgstr "标题"
+
+#: admin/galleries.php:47 admin/galleries.php:97 admin/manage-gallery.php:485
+msgid "Shortcode"
+msgstr "简码"
+
+#: admin/galleries.php:48 admin/galleries.php:98
+msgid "Actions"
+msgstr "行动"
+
+#: admin/galleries.php:75
+msgid "Click To Copy Gallery Shortcode"
+msgstr "点击复制图库简码"
+
+#: admin/galleries.php:75
+msgid "Copy"
+msgstr "复制"
+
+#: admin/galleries.php:76
+msgid "Copied"
+msgstr "已复制"
+
+#: admin/galleries.php:79
+msgid "Clone Gallery"
+msgstr "克隆画廊"
+
+#: admin/galleries.php:81
+msgid "Delete Gallery"
+msgstr "删除图库"
+
+#: admin/galleries.php:84
+msgid "Select Gallery"
+msgstr "选择画廊"
+
+#: admin/galleries.php:99
+msgid "Delete Selected Gallery"
+msgstr "删除选定的图库"
+
+#: admin/manage-gallery.php:57
+msgid "Create and Manage Filters For Gallery"
+msgstr "创建和管理图库过滤器"
+
+#: admin/manage-gallery.php:61
+msgid "Gallery Name / Title"
+msgstr "画廊名称/标题"
+
+#: admin/manage-gallery.php:68 admin/manage-gallery.php:159
+#: admin/manage-gallery.php:185
+msgid "Filters"
+msgstr "过滤器"
+
+#: admin/manage-gallery.php:75
+msgid "Video Tutorial (watch in fullscreen)"
+msgstr "视频教程（全屏观看）"
+
+#: admin/manage-gallery.php:82
+msgid "Filter Name"
+msgstr "过滤器名称"
+
+#: admin/manage-gallery.php:87
+msgid "Type Filter Name"
+msgstr "输入过滤器名称"
+
+#: admin/manage-gallery.php:99
+msgid "Update"
+msgstr "更新"
+
+#: admin/manage-gallery.php:100
+msgid "Add"
+msgstr "添加"
+
+#: admin/manage-gallery.php:103
+msgid "Important Note"
+msgstr "重要提示"
+
+#: admin/manage-gallery.php:104
+msgid ""
+"Only the FIRST FIVE FILTERS will be usable and displayed in the output "
+"gallery."
+msgstr "只有前五个过滤器可用并显示在输出库中。"
+
+#: admin/manage-gallery.php:105
+msgid "Create only parent-level filters. Child filters are a Pro feature."
+msgstr "仅创建父级过滤器。 子过滤器是专业版功能。"
+
+#: admin/manage-gallery.php:106
+msgid "You can create five filters only. Upgrade to Pro for unlimited."
+msgstr "您只能创建五个过滤器。 升级到专业版无限制。"
+
+#: admin/manage-gallery.php:107
+msgid ""
+"Deleting and re-positioning the filter after assigning it to images will "
+"lead to reassign."
+msgstr "将过滤器分配给图像后删除并重新定位过滤器将导致重新分配。"
+
+#: admin/manage-gallery.php:108
+msgid "Do not use any symbol in filter name like"
+msgstr "不要在过滤器名称中使用任何符号，例如"
+
+#: admin/manage-gallery.php:120 admin/manage-gallery.php:162
+#: admin/manage-gallery.php:482
+msgid "Save"
+msgstr "保存"
+
+#: admin/manage-gallery.php:123 admin/manage-gallery.php:479
+msgid "Gallery"
+msgstr "画廊"
+
+#: admin/manage-gallery.php:133
+msgid "Upload Images to Gallery And Apply Filters"
+msgstr "将图像上传到图库并应用过滤器"
+
+#: admin/manage-gallery.php:139
+msgid "Remove All"
+msgstr "删除全部"
+
+#: admin/manage-gallery.php:149
+msgid "Upload Images"
+msgstr "上传图片"
+
+#: admin/manage-gallery.php:165 admin/manage-gallery.php:509
+msgid "Settings"
+msgstr "设置"
+
+#: admin/manage-gallery.php:174
+msgid "Configure Settings"
+msgstr "配置设置"
+
+#: admin/manage-gallery.php:178
+msgid "Filter Settings"
+msgstr "过滤器设置"
+
+#: admin/manage-gallery.php:189 admin/manage-gallery.php:203
+#: admin/manage-gallery.php:353 admin/manage-gallery.php:386
+#: admin/manage-gallery.php:462
+msgid "Show"
+msgstr "显示"
+
+#: admin/manage-gallery.php:192 admin/manage-gallery.php:206
+#: admin/manage-gallery.php:356 admin/manage-gallery.php:389
+#: admin/manage-gallery.php:465
+msgid "Hide"
+msgstr "隐藏"
+
+#: admin/manage-gallery.php:195
+msgid "hide and show filter above gallery"
+msgstr "隐藏和显示画廊上方的过滤器"
+
+#: admin/manage-gallery.php:199
+msgid "All Button"
+msgstr "所有按钮"
+
+#: admin/manage-gallery.php:209
+msgid "hide and show all filter button"
+msgstr "隐藏和显示所有过滤器按钮"
+
+#: admin/manage-gallery.php:213
+msgid "All Button Title"
+msgstr "所有按钮标题"
+
+#: admin/manage-gallery.php:214 setting.php:43
+msgid "All"
+msgstr "全部"
+
+#: admin/manage-gallery.php:216
+msgid "type name"
+msgstr "类型名称"
+
+#: admin/manage-gallery.php:218
+msgid "set all filter button title"
+msgstr "设置所有过滤按钮标题"
+
+#: admin/manage-gallery.php:222
+msgid "All Button Color"
+msgstr "所有按钮颜色"
+
+#: admin/manage-gallery.php:227 admin/manage-gallery.php:236
+msgid "set background color of all filter button"
+msgstr "设置所有滤镜按钮的背景颜色"
+
+#: admin/manage-gallery.php:231
+msgid "All Button Background Color"
+msgstr "所有按钮背景颜色"
+
+#: admin/manage-gallery.php:239
+msgid "Parent Filter Button Color"
+msgstr "父级过滤器按钮颜色"
+
+#: admin/manage-gallery.php:244
+msgid "set background color of parent filter button"
+msgstr "设置父滤镜按钮的背景颜色"
+
+#: admin/manage-gallery.php:247
+msgid "Parent Filters Button Background Color"
+msgstr "父过滤器按钮背景颜色"
+
+#: admin/manage-gallery.php:252
+msgid "set background color of parent filter background button."
+msgstr "设置父级滤镜背景按钮的背景颜色。"
+
+#: admin/manage-gallery.php:259
+msgid "Gallery Settings"
+msgstr "图库设置"
+
+#: admin/manage-gallery.php:263
+msgid "Columns On Desktop"
+msgstr "桌面上的列"
+
+#: admin/manage-gallery.php:267 admin/manage-gallery.php:290
+#: admin/manage-gallery.php:307
+msgid "3"
+msgstr "三"
+
+#: admin/manage-gallery.php:270
+msgid "4"
+msgstr "四"
+
+#: admin/manage-gallery.php:273
+msgid "6"
+msgstr "六"
+
+#: admin/manage-gallery.php:276
+msgid "columns to display on desktop or pc device"
+msgstr "在桌面或 PC 设备上显示的列"
+
+#: admin/manage-gallery.php:280
+msgid "Columns On Tablet"
+msgstr "平板电脑上的列"
+
+#: admin/manage-gallery.php:284 admin/manage-gallery.php:301
+#: admin/manage-gallery.php:318
+msgid "1"
+msgstr "一"
+
+#: admin/manage-gallery.php:287 admin/manage-gallery.php:304
+#: admin/manage-gallery.php:321
+msgid "2"
+msgstr "二"
+
+#: admin/manage-gallery.php:293
+msgid "columns to display on tablet device"
+msgstr "在平板设备上显示的列"
+
+#: admin/manage-gallery.php:297
+msgid "Columns On Mobile - Landscape Mode"
+msgstr "移动设备上的列 - 横向模式"
+
+#: admin/manage-gallery.php:310
+msgid "columns to display on mobile device with landscape mode"
+msgstr "以横向模式在移动设备上显示的列"
+
+#: admin/manage-gallery.php:314
+msgid "Columns On Mobile - Portrait Mode"
+msgstr "移动设备上的列 - 纵向模式"
+
+#: admin/manage-gallery.php:324
+msgid "columns to display on mobile device with portrait mode"
+msgstr "在纵向模式的移动设备上显示的列"
+
+#: admin/manage-gallery.php:328
+msgid "Thumbnail Image Size"
+msgstr "缩略图尺寸"
+
+#: admin/manage-gallery.php:332
+msgid "Small"
+msgstr "小"
+
+#: admin/manage-gallery.php:333
+msgid "Medium"
+msgstr "中号"
+
+#: admin/manage-gallery.php:334
+msgid "Large"
+msgstr "大"
+
+#: admin/manage-gallery.php:335
+msgid "Original"
+msgstr "原来"
+
+#: admin/manage-gallery.php:336 admin/manage-gallery.php:337
+#: admin/manage-gallery.php:338
+msgid "Same Size"
+msgstr "相同尺寸"
+
+#: admin/manage-gallery.php:341
+msgid "set thumbnail image size"
+msgstr "设置缩略图大小"
+
+#: admin/manage-gallery.php:343
+msgid "Note"
+msgstr "注意"
+
+#: admin/manage-gallery.php:344
+msgid ""
+"The same size setting will only work with new images uploaded after the "
+"plugin installation."
+msgstr "相同的尺寸设置仅适用于插件安装后上传的新图像。"
+
+#: admin/manage-gallery.php:345
+msgid "It will not work with previously uploaded images."
+msgstr "它不适用于以前上传的图像。"
+
+#: admin/manage-gallery.php:349
+msgid "Thumbnail Border"
+msgstr "缩略图边框"
+
+#: admin/manage-gallery.php:359
+msgid "show or hide thumbnail border"
+msgstr "显示或隐藏缩略图边框"
+
+#: admin/manage-gallery.php:363
+msgid "Thumbnail Border Thickness"
+msgstr "缩略图边框厚度"
+
+#: admin/manage-gallery.php:369
+msgid "set thumbnail border thickness"
+msgstr "设置缩略图边框粗细"
+
+#: admin/manage-gallery.php:373
+msgid "Thumbnail Border Color"
+msgstr "缩略图边框颜色"
+
+#: admin/manage-gallery.php:378
+msgid "set thumbnail border color"
+msgstr "设置缩略图边框颜色"
+
+#: admin/manage-gallery.php:382 filter-gallery.php:218 filter-gallery.php:380
+msgid "Image Title"
+msgstr "图像标题"
+
+#: admin/manage-gallery.php:392
+msgid "hide or show image title"
+msgstr "隐藏或显示图像标题"
+
+#: admin/manage-gallery.php:396
+msgid "Image Title Font Size"
+msgstr "图像标题字体大小"
+
+#: admin/manage-gallery.php:402
+msgid "set image title font size"
+msgstr "设置图片标题字体大小"
+
+#: admin/manage-gallery.php:406
+msgid "Image Title Color"
+msgstr "图像标题颜色"
+
+#: admin/manage-gallery.php:411
+msgid "set image title text color"
+msgstr "设置图片标题文字颜色"
+
+#: admin/manage-gallery.php:415
+msgid "Image Title Background Color"
+msgstr "图像标题背景颜色"
+
+#: admin/manage-gallery.php:420
+msgid "set image title background color"
+msgstr "设置图片标题背景颜色"
+
+#: admin/manage-gallery.php:424
+msgid "Image Sorting"
+msgstr "图像排序"
+
+#: admin/manage-gallery.php:428
+msgid "Image ID - Ascending"
+msgstr "图像 ID - 升序"
+
+#: admin/manage-gallery.php:429
+msgid "Image ID - Descending"
+msgstr "图像 ID - 降序"
+
+#: admin/manage-gallery.php:430
+msgid "None"
+msgstr "无"
+
+#: admin/manage-gallery.php:433
+msgid "set gallery image sorting"
+msgstr "设置图库图像排序"
+
+#: admin/manage-gallery.php:440
+msgid "Lightbox Settings"
+msgstr "灯箱设置"
+
+#: admin/manage-gallery.php:444
+msgid "Lightbox"
+msgstr "灯箱"
+
+#: admin/manage-gallery.php:448
+msgid "Enable"
+msgstr "使能够"
+
+#: admin/manage-gallery.php:451
+msgid "Disable"
+msgstr "禁用"
+
+#: admin/manage-gallery.php:454
+msgid "set lightbox functionality on gallery thumbnail for larger preview"
+msgstr "在图库缩略图上设置灯箱功能以获得更大的预览"
+
+#: admin/manage-gallery.php:468
+msgid "show image title under the lightbox"
+msgstr "在灯箱下显示图像标题"
+
+#: admin/manage-gallery.php:493
+msgid "Gallery Shortcode"
+msgstr "画廊简码"
+
+#: admin/manage-gallery.php:502
+msgid "Copy Shortcode"
+msgstr "复制简码"
+
+#: admin/manage-gallery.php:503
+msgid "Shortcode Copied"
+msgstr "已复制短代码"
+
+#: admin/manage-gallery.php:559 admin/manage-gallery.php:585
+#: filter-gallery.php:206 filter-gallery.php:415
+msgid "Select Filters"
+msgstr "选择过滤器"
+
+#: filter-gallery.php:80
+msgid "Filter Gallery"
+msgstr "滤镜库"
+
+#: filter-gallery.php:221 filter-gallery.php:383
+msgid "Image Alternative Text"
+msgstr "图像替代文本"
+
+#: filter-gallery.php:234 filter-gallery.php:402
+msgid "Remove"
+msgstr "删除"
+
+#: shortcode.php:126
+msgid "Error! invalid shortcode."
+msgstr "错误！ 无效的短代码。"
+
+#~ msgid "Select All Galleries"
+#~ msgstr "选择所有画廊"
+
+#~ msgid "Modify Gallery"
+#~ msgstr "修改图库"
+
+#~ msgid "Sort ASC"
+#~ msgstr "按 ASC 排序"
+
+#~ msgid "Sort DESC"
+#~ msgstr "排序 DESC"
+
+#~ msgid "Filters Icon"
+#~ msgstr "过滤器图标"
+
+#~ msgid "hide and show an icon on filters button"
+#~ msgstr "隐藏和显示过滤器按钮上的图标"
+
+#~ msgid "Filters Image Count"
+#~ msgstr "过滤图像计数"
+
+#~ msgid "All Button Icon"
+#~ msgstr "所有按钮图标"
+
+#~ msgid "set all filter button icon"
+#~ msgstr "设置所有过滤按钮图标"
+
+#~ msgid "Parent Filters Heading"
+#~ msgstr "父过滤器标题"
+
+#~ msgid "set parent filter button heading"
+#~ msgstr "设置父过滤器按钮标题"
+
+#~ msgid "Level One Filters Heading"
+#~ msgstr "一级过滤器标题"
+
+#~ msgid "set level one filter button heading"
+#~ msgstr "设置一级过滤按钮标题"
+
+#~ msgid "Level One Filters Button Color"
+#~ msgstr "一级过滤器按钮颜色"
+
+#~ msgid "set color of level One filters button"
+#~ msgstr "设置一级过滤器按钮的颜色"
+
+#~ msgid "Level One Filters Button Background Color"
+#~ msgstr "一级过滤器按钮背景颜色"
+
+#~ msgid "set background color of level one filters button"
+#~ msgstr "设置一级过滤器按钮的背景颜色"
+
+#~ msgid "Child Filters Effect"
+#~ msgstr "子滤镜效果"
+
+#~ msgid "Fade"
+#~ msgstr "淡出"
+
+#~ msgid "Show / Hide"
+#~ msgstr "显示/隐藏"
+
+#~ msgid "Active Filter Button Color"
+#~ msgstr "有源滤镜按钮颜色"
+
+#~ msgid "set color of active filter button"
+#~ msgstr "设置活动滤镜按钮的颜色"
+
+#~ msgid "Active Filter Button Background Color"
+#~ msgstr "活动滤镜按钮背景颜色"
+
+#~ msgid "set background color of active filter button"
+#~ msgstr "设置活动滤镜按钮的背景颜色"
+
+#~ msgid "12"
+#~ msgstr "十二"
+
+#~ msgid "Thumbnail Image"
+#~ msgstr "缩略图"
+
+#~ msgid "show or hide image thumbnail into gallery"
+#~ msgstr "在图库中显示或隐藏图像缩略图"
+
+#~ msgid "Thumbnail Background Color"
+#~ msgstr "缩略图背景颜色"
+
+#~ msgid "set thumbnail background color"
+#~ msgstr "设置缩略图背景颜色"
+
+#~ msgid "Image Description"
+#~ msgstr "图像描述"
+
+#~ msgid "hide or show image description"
+#~ msgstr "隐藏或显示图像描述"
+
+#~ msgid "Image Description Font Size"
+#~ msgstr "图像描述字体大小"
+
+#~ msgid "set image description font size"
+#~ msgstr "设置图像描述字体大小"
+
+#~ msgid "Image Description Color"
+#~ msgstr "图像描述颜色"
+
+#~ msgid "set image description text color"
+#~ msgstr "设置图像描述文字颜色"
+
+#~ msgid "Image Description Background Color"
+#~ msgstr "图像描述背景颜色"
+
+#~ msgid "set image description background color"
+#~ msgstr "设置图像描述背景颜色"
+
+#~ msgid "Image Description Text Limit"
+#~ msgstr "图像描述文字限制"
+
+#~ msgid "characters"
+#~ msgstr "人物"
+
+#~ msgid "set image description text limit"
+#~ msgstr "设置图片描述文字限制"
+
+#~ msgid "Image Hover Effect"
+#~ msgstr "图像悬停效果"
+
+#~ msgid "Border Overlay"
+#~ msgstr "边框覆盖"
+
+#~ msgid "hide or show read more button"
+#~ msgstr "隐藏或显示“阅读更多”按钮"
+
+#~ msgid "Read More Link On"
+#~ msgstr "阅读更多链接"
+
+#~ msgid "Button"
+#~ msgstr "按钮"
+
+#~ msgid "Image"
+#~ msgstr "图像"
+
+#~ msgid "show link on image or button"
+#~ msgstr "在图像或按钮上显示链接"
+
+#~ msgid ""
+#~ "If Read More Link set on Image then lightbox functionality will not work."
+#~ msgstr "如果在图像上设置“阅读更多链接”，则灯箱功能将不起作用。"
+
+#~ msgid "Read More Button"
+#~ msgstr "阅读更多按钮"
+
+#~ msgid "Read More Button Text"
+#~ msgstr "阅读更多按钮文本"
+
+#~ msgid "Read More"
+#~ msgstr "阅读更多"
+
+#~ msgid "set read more button title text"
+#~ msgstr "设置阅读更多按钮标题文本"
+
+#~ msgid "Read More Button Icon"
+#~ msgstr "阅读更多按钮图标"
+
+#~ msgid "set read more button icon"
+#~ msgstr "设置阅读更多按钮图标"
+
+#~ msgid "Read More Button Color"
+#~ msgstr "了解更多按钮颜色"
+
+#~ msgid "set read more button text color"
+#~ msgstr "设置阅读更多按钮文本颜色"
+
+#~ msgid "Read More Button Background Color"
+#~ msgstr "阅读更多按钮背景颜色"
+
+#~ msgid "set read more button background color"
+#~ msgstr "设置阅读更多按钮背景颜色"
+
+#~ msgid "Read More Link Open"
+#~ msgstr "阅读更多链接打开"
+
+#~ msgid "In New Page"
+#~ msgstr "在新页中"
+
+#~ msgid "In Same Page"
+#~ msgstr "在同一页"
+
+#~ msgid "set link opening option"
+#~ msgstr "设置链接打开选项"
+
+#~ msgid "Image Title - Ascending"
+#~ msgstr "图像标题 - 升序"
+
+#~ msgid "Image Title - Descending"
+#~ msgstr "图像标题 - 降序"
+
+#~ msgid "Shuffle / Random"
+#~ msgstr "随机播放/随机"
+
+#~ msgid "Description"
+#~ msgstr "描述"
+
+#~ msgid "show image description under the lightbox"
+#~ msgstr "在灯箱下显示图像描述"
+
+#~ msgid "Numbering"
+#~ msgstr "编号"
+
+#~ msgid "show image number under the lightbox"
+#~ msgstr "在灯箱下显示图像编号"
+
+#~ msgid "Load More Settings"
+#~ msgstr "加载更多设置"
+
+#~ msgid "Load More"
+#~ msgstr "加载更多"
+
+#~ msgid "On"
+#~ msgstr "开"
+
+#~ msgid "Off"
+#~ msgstr "关"
+
+#~ msgid "Load Limit"
+#~ msgstr "负载限制"
+
+#~ msgid "Set loading element limit"
+#~ msgstr "设置加载元素限制"
+
+#~ msgid "Load More Button Color"
+#~ msgstr "加载更多按钮颜色"
+
+#~ msgid "Load More Button Text Color"
+#~ msgstr "加载更多按钮文本颜色"
+
+#~ msgid "Load More Button Text"
+#~ msgstr "加载更多按钮文本"
+
+#~ msgid "Change load button text"
+#~ msgstr "更改加载按钮文本"
+
+#~ msgid "Custom CSS"
+#~ msgstr "自定义CSS"
+
+#~ msgid "apply a custom design to gallery"
+#~ msgstr "将自定义设计应用于画廊"
+
+#~ msgid "Link URL"
+#~ msgstr "链接地址"
