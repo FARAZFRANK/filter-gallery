@@ -195,24 +195,30 @@ if (!defined('ABSPATH')) {
                 <!-- 2. Filter System -->
                 <section id="managing-filters" class="bg-white border rounded-3xl p-8 shadow-sm">
                     <h2 class="font-black text-gray-900" style="font-size: 28px; margin: 0 0 20px 0;">2. Managing the Filter System</h2>
-                    <p class="text-gray-600 mb-6">Filters are the core of your gallery. You can organize them in two levels:</p>
+                    <p class="text-gray-600 mb-6">Filters are the core of your gallery. They appear as clickable buttons on the frontend that let visitors narrow down images.</p>
                     
                     <div style="background: #f8fafc; border: 1px dashed #cbd5e0; padding: 20px; border-radius: 12px;" class="space-y-4">
                         <div class="flex items-start">
                             <span class="dashicons dashicons-arrow-right-alt" style="color: #2563eb; margin-top: 4px; margin-right: 12px;"></span>
                             <div>
-                                <strong class="text-gray-900">Parent Filters:</strong> These appear as the main filter buttons on your website.
+                                <strong class="text-gray-900">Parent Filters:</strong> You can create up to <strong>5 parent filters</strong> in the Free version. These appear as the main filter buttons on your website.
                             </div>
                         </div>
                         <div class="flex items-start">
                             <span class="dashicons dashicons-arrow-right-alt" style="color: #2563eb; margin-top: 4px; margin-right: 12px;"></span>
                             <div>
-                                <strong class="text-gray-900">Child Filters (Sub-categories):</strong> You can assign a parent to any filter to create a dropdown or organized hierarchy.
+                                <strong class="text-gray-900">"All" Button:</strong> An automatic "All" button shows all images. You can customize its text and colors from Settings.
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="dashicons dashicons-arrow-right-alt" style="color: #2563eb; margin-top: 4px; margin-right: 12px;"></span>
+                            <div>
+                                <strong class="text-gray-900">Filter Counts:</strong> Optionally display how many images belong to each filter.
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 mt-4 font-bold" style="color: #c53030; font-size: 13px;">
-                        Note: Images assigned to a Child filter will automatically be counted towards the Parent filter total.
+                    <p class="text-gray-600 mt-4" style="font-size: 13px;">
+                        <span class="ufg-badge" style="background: #dbeafe; color: #2563eb;">PRO TIP</span> Upgrade to Pro for unlimited filters with multi-level child filters and advanced filtering effects.
                     </p>
                 </section>
 
@@ -264,11 +270,16 @@ if (!defined('ABSPATH')) {
                 <!-- 5. Shortcodes -->
                 <section id="shortcode-usage" class="bg-white border rounded-3xl p-8 shadow-sm">
                     <h2 class="font-black text-gray-900" style="font-size: 28px; margin: 0 0 16px 0;">5. Published Shortcodes</h2>
-                    <div style="background: #1a202c; color: #4ade80; padding: 24px; border-radius: 16px; font-family: 'JetBrains Mono', monospace; font-size: 18px; margin-bottom: 20px; position: relative; overflow: hidden; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
-                        <span style="position: absolute; top:0; right: 0; background: #2d3748; padding: 6px 14px; font-size: 11px; color: #94a3b8; border-bottom-left-radius: 10px; font-family: sans-serif; font-weight: 800;">PHP TAG</span>
-                        [ufg-gallery id="1"]
+                    <div style="background: #1a202c; color: #4ade80; padding: 24px; border-radius: 16px; font-family: 'JetBrains Mono', monospace; font-size: 18px; margin-bottom: 16px; position: relative; overflow: hidden; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
+                        <span style="position: absolute; top:0; right: 0; background: #2d3748; padding: 6px 14px; font-size: 11px; color: #94a3b8; border-bottom-left-radius: 10px; font-family: sans-serif; font-weight: 800;">SHORTCODE</span>
+                        [filter-gallery id="1"]
                     </div>
-                    <p class="text-gray-600">Paste this ID anywhere in your WordPress editor (Gutenberg, Elementor, Divi) to render the gallery. To change the gallery, just update the ID number.</p>
+                    <p class="text-gray-600" style="margin-bottom: 12px;">Paste this shortcode anywhere in your WordPress editor (Gutenberg, Elementor, Divi) to render the gallery. Replace the ID number with your gallery's ID.</p>
+                    
+                    <div style="background: #fffbeb; border: 1px solid #fcd34d; padding: 16px; border-radius: 12px;">
+                        <strong style="color: #92400e;">Legacy Support:</strong>
+                        <span style="color: #78350f;"> If you upgraded from v0.2.3, your existing <code style="background: #fef3c7; padding: 2px 6px; border-radius: 4px;">[ufg id="1"]</code> shortcodes will continue to work — no changes needed.</span>
+                    </div>
                 </section>
 
                 <!-- 6. Troubleshooting -->
@@ -278,15 +289,22 @@ if (!defined('ABSPATH')) {
                         <div class="flex gap-4">
                             <span class="dashicons dashicons-info" style="color: #c53030; font-size: 20px;"></span>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">Double Counting?</h4>
-                                <p class="text-sm text-gray-600 m-0">In version 6.0.1+ we have fixed recursive counting. Ensure your child images are properly assigned to parent groups for accurate counts.</p>
+                                <h4 class="font-bold text-gray-900 mb-1">Gallery Not Displaying?</h4>
+                                <p class="text-sm text-gray-600 m-0">Make sure you are using the correct gallery ID in your shortcode. Check the dashboard for the exact ID of each gallery.</p>
                             </div>
                         </div>
                         <div class="flex gap-4">
                             <span class="dashicons dashicons-info" style="color: #c53030; font-size: 20px;"></span>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">Style not updating?</h4>
-                                <p class="text-sm text-gray-600 m-0">Click the "Save Gallery" button twice to ensure the dynamic CSS cache refreshes, or clear your site's plugin cache.</p>
+                                <h4 class="font-bold text-gray-900 mb-1">Style Not Updating?</h4>
+                                <p class="text-sm text-gray-600 m-0">Click the "Save Gallery" button again to ensure the dynamic CSS cache refreshes, or clear your site's caching plugin cache.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="dashicons dashicons-info" style="color: #c53030; font-size: 20px;"></span>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Upgraded from v0.2.3?</h4>
+                                <p class="text-sm text-gray-600 m-0">Your existing galleries and shortcodes are fully compatible. The old <code>[ufg]</code> shortcode continues to work alongside the new <code>[filter-gallery]</code> tag.</p>
                             </div>
                         </div>
                     </div>

@@ -117,11 +117,11 @@ function ufg_shortcode_callback($atts){
 		    'LoadBtnText' => $load_btn_txt,
 		    'LoadMore' => $load_more,
 		    'LoadLimit' => $load_limit,
-		    'ChildFilterEffect' => $ufg_child_filter_effect,
-		    'Lightbox' => ($ufg_lightbox === 'on' || $ufg_lightbox == 1 || $ufg_lightbox === '1' || $ufg_lightbox === true),
-		    'LightboxNumbering' => ($ufg_lightbox_numbering === "on" || $ufg_lightbox_numbering === "true" || $ufg_lightbox_numbering == 1 || $ufg_lightbox_numbering === '1' || $ufg_lightbox_numbering === true),
-		    'LightboxTitle' => ($ufg_lightbox_title === "on" || $ufg_lightbox_title === "1" || $ufg_lightbox_title == 1 || $ufg_lightbox_title === true),
-		    'LightboxDescription' => ($ufg_lightbox_description === "on" || $ufg_lightbox_description === "1" || $ufg_lightbox_description == 1 || $ufg_lightbox_description === true),
+		
+		    'Lightbox' => ($ufg_lightbox === 'on'),
+		    'LightboxNumbering' => ($ufg_lightbox_numbering === 'on'),
+		    'LightboxTitle' => ($ufg_lightbox_title === 'on'),
+		    'LightboxDescription' => ($ufg_lightbox_description === 'on'),
 		    'SelectedFltrBtnId' => $ufg_selected_filter_btn_id,
 		)), 'before' );
 		?>
@@ -135,12 +135,6 @@ function ufg_shortcode_callback($atts){
 			</div>
 			<?php } ?>
 			<!-- printing filters end-->
-			<input id="ufg_current_clicked_filter_id" name="ufg_current_clicked_filter_id" value="" class="ufg-hidden" placeholder="Current Filter">
-			<input id="ufg_current_clicked_filter_level" name="ufg_current_clicked_filter_level" value="" class="ufg-hidden" placeholder="Current Level">
-			<input id="ufg_last_clicked_filter_id" name="ufg_last_clicked_filter_id" value="" class="ufg-hidden" placeholder="Last Filter">
-			<input id="ufg_last_clicked_filter_level" name="ufg_last_clicked_filter_level" value="" class="ufg-hidden" placeholder="Last Level">
-			<input id="ufg_current_clicked_parent_filter_id" name="ufg_current_clicked_parent_filter_id" value="" class="ufg-hidden" placeholder="Current Parent Filter">
-			<input id="ufg_last_clicked_filter_parent_id" name="ufg_last_clicked_filter_parent_id" value="" class="ufg-hidden" placeholder="Last Parent Filter">
 			
 			<!-- printing gallery start-->
 			<div class="ufg-row ufg-gallery-container ufg-gallery-<?php echo esc_attr($ufg_gallery_id); ?>">
@@ -203,26 +197,6 @@ function ufg_shortcode_callback($atts){
 				border-color: <?php echo esc_html($ufg_active_button_bg_color); ?> !important;
 			}
 			
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-level-two-button {
-				color: <?php echo esc_html($ufg_l2_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_l2_button_bg_color); ?> !important;
-				border-color: <?php echo esc_html($ufg_l2_button_bg_color); ?> !important;
-			}
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-level-three-button {
-				color: <?php echo esc_html($ufg_l3_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_l3_button_bg_color); ?> !important;
-				border-color: <?php echo esc_html($ufg_l3_button_bg_color); ?> !important;
-			}
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-level-four-button {
-				color: <?php echo esc_html($ufg_l4_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_l4_button_bg_color); ?> !important;
-				border-color: <?php echo esc_html($ufg_l4_button_bg_color); ?> !important;
-			}
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-level-five-button {
-				color: <?php echo esc_html($ufg_l5_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_l5_button_bg_color); ?> !important;
-				border-color: <?php echo esc_html($ufg_l5_button_bg_color); ?> !important;
-			}
 			
 			.ufg-grid-sizer, .ufg-thumbnail {
 				width: calc( (100% / (12/<?php echo intval($ufg_columns_mobile_portrait); ?>)) - 1px ) !important;

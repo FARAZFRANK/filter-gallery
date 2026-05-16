@@ -226,67 +226,27 @@ function ufg_enqueue_react_app()
 		'nextId' => ufg_get_next_id(),
 		'defaultSettings' => array(
 			'show_filters' => 1,
-			'show_filters_icon' => 1,
-			'show_filters_count' => 1,
 			'show_all_button' => 1,
 			'all_button_text' => 'All',
-			'all_button_icon' => 'fas fa-image',
-			'all_button_color' => '#ffffff',
-			'all_button_bg_color' => '#0A85ED',
-			'parent_button_color' => '#ffffff',
-			'parent_button_bg_color' => '#09A6F3',
-			'parent_filters_heading' => '',
-			'l1_filters_heading' => '',
-			'l1_button_color' => '#ffffff',
-			'l1_button_bg_color' => '#07C8F9',
-			'child_filter_effect' => 'show_hide',
-			'active_button_color' => '#FFFFFF',
-			'active_button_bg_color' => '#0C63E7',
-			'l2_button_color' => '#ffffff',
-			'l2_button_bg_color' => '#07C8F9',
-			'l3_button_color' => '#ffffff',
-			'l3_button_bg_color' => '#07C8F9',
-			'l4_button_color' => '#ffffff',
-			'l4_button_bg_color' => '#07C8F9',
-			'l5_button_color' => '#ffffff',
-			'l5_button_bg_color' => '#07C8F9',
+			'all_button_color' => '#FFFFFF',
+			'all_button_bg_color' => '#C82333',
+			'parent_button_color' => '#FFFFFF',
+			'parent_button_bg_color' => '#007BFF',
 			'columns_desktop' => 4,
 			'columns_tab' => 3,
 			'columns_mobile_landscape' => 3,
 			'columns_mobile_portrait' => 2,
-			'thumbnail_image' => 1,
-			'thumbnail_image_size' => 'full',
+			'thumbnail_image_size' => 'large',
 			'thumbnail_border' => 1,
-			'thumbnail_border_thickness' => 1,
-			'thumbnail_border_color' => '#ffffff',
-			'thumbnail_bg_color' => '#222a33',
+			'thumbnail_border_thickness' => 0,
+			'thumbnail_border_color' => '#0069D9',
 			'image_title' => 1,
-			'image_title_font_size' => 18,
+			'image_title_font_size' => 24,
 			'image_title_color' => '#FFFFFF',
-			'image_description' => 1,
-			'image_description_font_size' => 14,
-			'image_description_color' => '#FFFFFF',
-			'image_description_text_limit' => 60,
-			'image_hover_effect' => 'border_overlay',
-			'read_more_link_sh' => 0,
-			'read_more_link' => 1,
-			'read_more_button_text' => 'Read More Link',
-			'read_more_button_icon' => 'fas fa-link',
-			'read_more_button_color' => '#ffffff',
-			'read_more_button_bg_color' => '#0080ff',
-			'read_more_button_target' => '_self',
-			'image_sorting' => 3,
-			'image_search' => 1,
+			'image_title_bg_color' => '#000000',
+			'image_sorting' => 5,
 			'lightbox' => 1,
-			'lightbox_title' => 1,
-			'lightbox_description' => 1,
-			'lightbox_numbering' => 1,
-			'custom_css' => '',
-			'load_more' => 'off',
-			'load_limit' => 10,
-			'load_color' => '#0080ff',
-			'load_txt_color' => '#FFFFFF',
-			'load_btn_txt' => 'Load More'
+			'lightbox_title' => 1
 		),
 		'nonces' => array(
 			'clone' => wp_create_nonce('ufg-clone-gallery'),
@@ -296,7 +256,7 @@ function ufg_enqueue_react_app()
 			'saveSetting' => wp_create_nonce('save-setting'),
 			'addImage' => wp_create_nonce('add-image')
 		),
-		'version' => '1.0.0'
+		'version' => '1.1.0'
 	));
 	wp_enqueue_script('ufg-react-app');
 }
@@ -361,12 +321,9 @@ function ufg_gallery_filters_callback()
 					if (!isset($item->filterkey)) {
 						$item->filterkey = strtolower(str_replace(' ', '-', $item->title)) . '-' . UFGgenerateRandomString();
 					}
-					if (isset($item->children) && is_array($item->children)) {
-						foreach ($item->children as &$child) {
-							if (!isset($child->filterkey)) {
-								$child->filterkey = strtolower(str_replace(' ', '-', $child->title)) . '-' . UFGgenerateRandomString();
-							}
-						}
+					// Children restricted in free version
+					if (isset($item->children)) {
+						unset($item->children);
 					}
 				}
 			}
@@ -378,12 +335,14 @@ function ufg_gallery_filters_callback()
 		}
 
 		if (is_array($filters)) {
+			// Restrict to 5 parent filters only
+			$filters = array_slice($filters, 0, 5);
+			
 			foreach ($filters as &$item) {
 				$item->text = sanitize_text_field($item->text);
-				if (isset($item->children) && is_array($item->children)) {
-					foreach ($item->children as &$child) {
-						$child->text = sanitize_text_field($child->text);
-					}
+				// Strictly remove children for free version
+				if (isset($item->children)) {
+					unset($item->children);
 				}
 			}
 			UFGaddMissingFilterKeys($filters);
@@ -467,23 +426,15 @@ function ufg_save_setting_callback()
 		
 		$settings = array();
 		$allowed_keys = array(
-			'ufg_gallery_id', 'show_filters', 'show_filters_icon', 'show_filters_count', 'show_all_button',
-			'all_button_text', 'all_button_icon', 'all_button_color', 'all_button_bg_color',
-			'parent_filters_heading', 'parent_button_color', 'parent_button_bg_color',
-			'l1_filters_heading', 'l1_button_color', 'l1_button_bg_color', 'child_filter_effect',
-			'active_button_color', 'active_button_bg_color', 'l2_button_color', 'l2_button_bg_color',
-			'l3_button_color', 'l3_button_bg_color', 'l4_button_color', 'l4_button_bg_color',
-			'l5_button_color', 'l5_button_bg_color', 'columns_desktop', 'columns_tab',
-			'columns_mobile_landscape', 'columns_mobile_portrait', 'thumbnail_image',
+			'ufg_gallery_id', 'show_filters', 'show_all_button',
+			'all_button_text', 'all_button_color', 'all_button_bg_color',
+			'parent_button_color', 'parent_button_bg_color',
+			'columns_desktop', 'columns_tab',
+			'columns_mobile_landscape', 'columns_mobile_portrait',
 			'thumbnail_image_size', 'thumbnail_border', 'thumbnail_border_thickness',
-			'thumbnail_border_color', 'thumbnail_bg_color', 'image_title', 'image_title_font_size',
-			'image_title_color', 'image_description', 'image_description_font_size',
-			'image_description_color', 'image_description_text_limit', 'image_hover_effect',
-			'read_more_link_sh', 'read_more_link', 'read_more_button_text', 'read_more_button_icon',
-			'read_more_button_color', 'read_more_button_bg_color', 'read_more_button_target',
-			'image_sorting', 'image_search', 'lightbox', 'lightbox_title', 'lightbox_description',
-			'lightbox_numbering', 'custom_css', 'load_more', 'load_limit', 'load_color',
-			'load_txt_color', 'load_btn_txt'
+			'thumbnail_border_color', 'image_title', 'image_title_font_size',
+			'image_title_color', 'image_title_bg_color',
+			'image_sorting', 'lightbox', 'lightbox_title'
 		);
 
 		foreach ($allowed_keys as $key) {

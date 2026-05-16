@@ -118,38 +118,98 @@ if (!defined('ABSPATH')) {
             </thead>
             <tbody>
                 <tr>
-                    <td class="feature-name">Filterable Gallery</td>
+                    <td class="feature-name">Unlimited Galleries</td>
                     <td class="text-center"><span class="check-icon">✓</span></td>
                     <td class="text-center"><span class="check-icon">✓</span></td>
                 </tr>
                 <tr>
-                    <td class="feature-name">Grid Layout</td>
+                    <td class="feature-name">Filterable Gallery (Isotope)</td>
                     <td class="text-center"><span class="check-icon">✓</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Parent Filters</td>
+                    <td class="text-center">Up to 5</td>
+                    <td class="text-center">Unlimited</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Child / Multi-level Filters</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span> 5 Levels</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Filter Icons</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Filter Count Display</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Responsive Columns (4 Breakpoints)</td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Thumbnail Border & Size Control</td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Image Title Customization</td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Image Description</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Image Sorting</td>
+                    <td class="text-center"><span class="check-icon">✓</span> Basic</td>
+                    <td class="text-center"><span class="check-icon">✓</span> Advanced</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Lightbox</td>
+                    <td class="text-center"><span class="check-icon">✓</span> Title Only</td>
+                    <td class="text-center"><span class="check-icon">✓</span> Full</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Image Hover Effects</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span> 15+ Effects</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Load More / Pagination</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Image Search</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Read More Link</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Custom CSS</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
+                    <td class="text-center"><span class="check-icon">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Import / Export Galleries</td>
+                    <td class="text-center"><span class="cross-icon">✕</span></td>
                     <td class="text-center"><span class="check-icon">✓</span></td>
                 </tr>
                 <tr>
                     <td class="feature-name">Masonry & Justified Layouts</td>
                     <td class="text-center"><span class="cross-icon">✕</span></td>
-                    <td class="text-center"><span class="check-icon">✓</span></td>
-                </tr>
-                <tr>
-                    <td class="feature-name">Ajax Image Search</td>
-                    <td class="text-center"><span class="cross-icon">✕</span></td>
-                    <td class="text-center"><span class="check-icon">✓</span></td>
-                </tr>
-                <tr>
-                    <td class="feature-name">Image Sorting (A-Z, Date)</td>
-                    <td class="text-center"><span class="cross-icon">✕</span></td>
-                    <td class="text-center"><span class="check-icon">✓</span></td>
-                </tr>
-                <tr>
-                    <td class="feature-name">Custom Image Sizes</td>
-                    <td class="text-center"><span class="check-icon">✓</span></td>
-                    <td class="text-center"><span class="check-icon">✓</span></td>
-                </tr>
-                <tr>
-                    <td class="feature-name">Color Customization</td>
-                    <td class="text-center"><span class="check-icon">✓</span></td>
                     <td class="text-center"><span class="check-icon">✓</span></td>
                 </tr>
                 <tr>

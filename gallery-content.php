@@ -49,7 +49,7 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 	<div class="ufg-thumbnail-border">
 		<!-- Lightbox = Show -->
 		<?php
-		$is_lightbox_enabled = ($ufg_lightbox === 'on' || $ufg_lightbox == 1 || $ufg_lightbox === '1' || $ufg_lightbox === true);
+		$is_lightbox_enabled = ($ufg_lightbox === 'on');
 		if ($is_lightbox_enabled) { ?>
 
 			<!-- Read more link on: Image(2) = Link On Image -->
@@ -66,8 +66,8 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 				<a href="<?php echo esc_url($full[0]); ?>" class="ufg-lightbox <?php echo esc_attr(implode(" ", $filters)); ?>"
 					data-title="<?php
 					$caption_parts = array();
-					$show_lb_title = ($ufg_lightbox_title === 'on' || $ufg_lightbox_title == 1 || $ufg_lightbox_title === '1' || $ufg_lightbox_title === true);
-					$show_lb_description = ($ufg_lightbox_description === 'on' || $ufg_lightbox_description == 1 || $ufg_lightbox_description === '1' || $ufg_lightbox_description === true);
+					$show_lb_title = ($ufg_lightbox_title === 'on');
+					$show_lb_description = ($ufg_lightbox_description === 'on');
 
 					if ($show_lb_title && !empty($ufg_title)) {
 						$caption_parts[] = $ufg_title;
@@ -107,9 +107,9 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 
 		<?php } ?>
 		<?php
-		$show_grid_title = ($ufg_image_title === 'on' || $ufg_image_title == 1 || $ufg_image_title === '1' || $ufg_image_title === true);
-		$show_grid_description = ($ufg_image_description === 'on' || $ufg_image_description == 1 || $ufg_image_description === '1' || $ufg_image_description === true);
-		$show_read_more = ($ufg_read_more_link_sh == 1);
+		$show_grid_title = ($ufg_image_title === 'on');
+		$show_grid_description = ($ufg_image_description === 'on');
+		$show_read_more = ($ufg_read_more_link_sh === 'on');
 		if ($show_grid_title || $show_grid_description || $show_read_more) { ?>
 		<div class="ufg-image-content">
 			<?php if ($show_grid_title) { ?>
