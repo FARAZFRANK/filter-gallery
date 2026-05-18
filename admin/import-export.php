@@ -355,8 +355,8 @@ jQuery(document).ready(function($) {
 				return;
 			}
 
-			if (!data.plugin || data.plugin !== 'filter-gallery-pro' || !data.galleries) {
-				addLog('This file is not a valid Filter Gallery Pro export.', 'error');
+			if (!data.plugin || (data.plugin !== 'filter-gallery' && data.plugin !== 'filter-gallery-pro') || !data.galleries) {
+				addLog('This file is not a valid Filter Gallery export.', 'error');
 				$btn.prop('disabled', false).html('<span class="dashicons dashicons-upload" style="margin-right:8px; line-height: 1.3;"></span> Import Galleries');
 				return;
 			}
