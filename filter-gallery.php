@@ -7,7 +7,7 @@ if (!defined('ABSPATH'))
  * Plugin URI:        https://wpfrank.com/
  * Description:       Filter Gallery is a lightweight and powerful WordPress plugin to create beautiful filterable galleries.
  * Version:           1.1.0
- * Requires at least: 5.0
+ * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            FARAZFRANK
  * Author URI:        https://profiles.wordpress.org/farazfrank/
