@@ -4,7 +4,7 @@ Donate link: https://wpfrank.com/
 Tags: responsive, filter gallery, portfolio, image gallery, masonry
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,7 @@ Build a responsive filter gallery for your portfolio. Organize images with filte
 
 == Description ==
 
-The **Responsive Filter Gallery** plugin makes it simple to create beautiful, organized image displays on your WordPress site. Whether you need a professional portfolio showcase, a product catalog, or a creative photography album, this tool lets you sort content dynamically without page reloads.
+The **Filter Gallery** plugin makes it simple to create beautiful, organized image displays on your WordPress site. Whether you need a professional portfolio showcase, a product catalog, or a creative photography album, this tool lets you sort content dynamically without page reloads.
 
 **Check Free Version Demo:** [Filter Gallery](https://wpfrank.com/demo/filter-gallery-free-wordpress-pluign/)
 **Check Pro Version Demo:** [Filter Gallery Pro](https://wpfrank.com/demo/filter-gallery-pro/)
@@ -91,6 +91,14 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 5.  How to create a filter gallery?**
 
 == Changelog ==
+
+= 1.1.1 =
+* Restricted column layout selections to standard limits in Free version.
+* Limited sorting options to ID-based ascending/descending and None/Manual.
+* Moved Lightbox Description, Image Numbering, and Custom CSS to PRO version features.
+* Moved Load More (Lazy Loading) pagination and all Read More link options to PRO version.
+* Restricted filter nesting / hierarchy parent relationships to PRO version.
+* Fixed React rendering crash in the admin panel.
 
 = 1.1.0 =
 * Major structural overhaul to align with Pro version architecture.

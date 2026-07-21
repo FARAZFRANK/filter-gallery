@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Filter Gallery Pro\n"
-"POT-Creation-Date: 2024-02-07 16:53+0530\n"
-"PO-Revision-Date: 2024-02-07 16:55+0530\n"
+"POT-Creation-Date: 2024-01-26 16:14+0530\n"
+"PO-Revision-Date: 2024-01-26 16:18+0530\n"
 "Last-Translator: \n"
 "Language-Team: wpfrank.com\n"
 "Language: de\n"
@@ -12,712 +12,732 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-KeywordsList: _e;__;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: .\n"
 
-#: admin/galleries.php:26
-msgid "Filter Gallery Free"
-msgstr "Galerie kostenlos filtern"
+#: admin/galleries.php:25 filter-gallery-pro.php:65
+msgid "Filter Gallery Pro"
+msgstr "Galerie Pro filtern"
 
-#: admin/galleries.php:38
+#: admin/galleries.php:29
 msgid "Create New Gallery"
 msgstr "Neue Galerie erstellen"
 
-#: admin/galleries.php:46 admin/galleries.php:96 admin/manage-gallery.php:458
+#: admin/galleries.php:37 admin/galleries.php:89 admin/manage-gallery.php:813
 msgid "Title"
 msgstr "Titel"
 
-#: admin/galleries.php:47 admin/galleries.php:97 admin/manage-gallery.php:485
+#: admin/galleries.php:38 admin/galleries.php:90 admin/manage-gallery.php:945
 msgid "Shortcode"
 msgstr "Kurzcode"
 
-#: admin/galleries.php:48 admin/galleries.php:98
+#: admin/galleries.php:39 admin/galleries.php:91
 msgid "Actions"
 msgstr "Aktionen"
 
-#: admin/galleries.php:75
+#: admin/galleries.php:40
+msgid "Select All Galleries"
+msgstr "Alle Galerien auswählen"
+
+#: admin/galleries.php:68
 msgid "Click To Copy Gallery Shortcode"
 msgstr "Klicken Sie, um den Galerie-Shortcode zu kopieren"
 
-#: admin/galleries.php:75
+#: admin/galleries.php:68
 msgid "Copy"
 msgstr "Kopieren"
 
-#: admin/galleries.php:76
+#: admin/galleries.php:69
 msgid "Copied"
 msgstr "Kopiert"
 
-#: admin/galleries.php:79
+#: admin/galleries.php:72
 msgid "Clone Gallery"
 msgstr "Klongalerie"
 
-#: admin/galleries.php:81
+#: admin/galleries.php:73
+msgid "Modify Gallery"
+msgstr "Galerie ändern"
+
+#: admin/galleries.php:74
 msgid "Delete Gallery"
 msgstr "Galerie löschen"
 
-#: admin/galleries.php:84
+#: admin/galleries.php:77
 msgid "Select Gallery"
 msgstr "Galerie auswählen"
 
-#: admin/galleries.php:99
+#: admin/galleries.php:92
 msgid "Delete Selected Gallery"
 msgstr "Ausgewählte Galerie löschen"
 
-#: admin/manage-gallery.php:57
+#: admin/manage-gallery.php:59
 msgid "Create and Manage Filters For Gallery"
 msgstr "Filter für die Galerie erstellen und verwalten"
 
-#: admin/manage-gallery.php:61
+#: admin/manage-gallery.php:68
 msgid "Gallery Name / Title"
 msgstr "Galeriename/Titel"
 
-#: admin/manage-gallery.php:68 admin/manage-gallery.php:159
-#: admin/manage-gallery.php:185
+#: admin/manage-gallery.php:75 admin/manage-gallery.php:215 admin/manage-gallery.php:242 admin/manage-gallery.php:245
 msgid "Filters"
 msgstr "Filter"
 
-#: admin/manage-gallery.php:75
-msgid "Video Tutorial (watch in fullscreen)"
-msgstr "Video-Tutorial (im Vollbildmodus ansehen)"
-
 #: admin/manage-gallery.php:82
-msgid "Filter Name"
-msgstr "Filtername"
-
-#: admin/manage-gallery.php:87
-msgid "Type Filter Name"
-msgstr "Geben Sie den Filternamen ein"
-
-#: admin/manage-gallery.php:99
-msgid "Update"
-msgstr "Aktualisieren"
-
-#: admin/manage-gallery.php:100
-msgid "Add"
-msgstr "Hinzufügen"
-
-#: admin/manage-gallery.php:103
 msgid "Important Note"
 msgstr "Wichtiger Hinweis"
 
-#: admin/manage-gallery.php:104
-msgid ""
-"Only the FIRST FIVE FILTERS will be usable and displayed in the output "
-"gallery."
-msgstr ""
-"Nur die ERSTEN FÜNF FILTER können verwendet werden und werden in der "
-"Ausgabegalerie angezeigt."
+#: admin/manage-gallery.php:83
+msgid "Create only parent and child level filters."
+msgstr "Erstellen Sie nur Filter auf übergeordneter und untergeordneter Ebene."
 
-#: admin/manage-gallery.php:105
-msgid "Create only parent-level filters. Child filters are a Pro feature."
-msgstr ""
-"Erstellen Sie nur Filter auf übergeordneter Ebene. Kinderfilter sind eine "
-"Pro-Funktion."
-
-#: admin/manage-gallery.php:106
-msgid "You can create five filters only. Upgrade to Pro for unlimited."
-msgstr "Sie können nur fünf Filter erstellen. Upgraden Sie unbegrenzt auf Pro."
-
-#: admin/manage-gallery.php:107
-msgid ""
-"Deleting and re-positioning the filter after assigning it to images will "
-"lead to reassign."
-msgstr ""
-"Das Löschen und Neupositionieren des Filters nach der Zuweisung zu Bildern "
-"führt zu einer Neuzuweisung."
-
-#: admin/manage-gallery.php:108
+#: admin/manage-gallery.php:84
 msgid "Do not use any symbol in filter name like"
 msgstr "Verwenden Sie im Filternamen kein Symbol wie z"
 
-#: admin/manage-gallery.php:120 admin/manage-gallery.php:162
-#: admin/manage-gallery.php:482
+#: admin/manage-gallery.php:90
+msgid "Filter Name"
+msgstr "Filtername"
+
+#: admin/manage-gallery.php:95
+msgid "Type Filter Name"
+msgstr "Geben Sie den Filternamen ein"
+
+#: admin/manage-gallery.php:107
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: admin/manage-gallery.php:108
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: admin/manage-gallery.php:117 admin/manage-gallery.php:219 admin/manage-gallery.php:942
 msgid "Save"
 msgstr "Speichern"
 
-#: admin/manage-gallery.php:123 admin/manage-gallery.php:479
+#: admin/manage-gallery.php:120 admin/manage-gallery.php:939
 msgid "Gallery"
 msgstr "Galerie"
 
-#: admin/manage-gallery.php:133
+#: admin/manage-gallery.php:130
 msgid "Upload Images to Gallery And Apply Filters"
 msgstr "Bilder in die Galerie hochladen und Filter anwenden"
 
-#: admin/manage-gallery.php:139
+#: admin/manage-gallery.php:137
+msgid "Sort ASC"
+msgstr "ASC sortieren"
+
+#: admin/manage-gallery.php:140
+msgid "Sort DESC"
+msgstr "Sortieren DESC"
+
+#: admin/manage-gallery.php:144
 msgid "Remove All"
 msgstr "Alle entfernen"
 
-#: admin/manage-gallery.php:149
+#: admin/manage-gallery.php:203
 msgid "Upload Images"
 msgstr "Bilder hochladen"
 
-#: admin/manage-gallery.php:165 admin/manage-gallery.php:509
+#: admin/manage-gallery.php:223 admin/manage-gallery.php:969
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: admin/manage-gallery.php:174
+#: admin/manage-gallery.php:234
 msgid "Configure Settings"
 msgstr "Einstellungen konfigurieren"
 
-#: admin/manage-gallery.php:178
-msgid "Filter Settings"
-msgstr "Filtereinstellungen"
-
-#: admin/manage-gallery.php:189 admin/manage-gallery.php:203
-#: admin/manage-gallery.php:353 admin/manage-gallery.php:386
-#: admin/manage-gallery.php:462
+#: admin/manage-gallery.php:249 admin/manage-gallery.php:262 admin/manage-gallery.php:276 admin/manage-gallery.php:291
+#: admin/manage-gallery.php:516 admin/manage-gallery.php:551 admin/manage-gallery.php:592 admin/manage-gallery.php:634
+#: admin/manage-gallery.php:714 admin/manage-gallery.php:803 admin/manage-gallery.php:817 admin/manage-gallery.php:831
+#: admin/manage-gallery.php:845
 msgid "Show"
 msgstr "Anzeigen"
 
-#: admin/manage-gallery.php:192 admin/manage-gallery.php:206
-#: admin/manage-gallery.php:356 admin/manage-gallery.php:389
-#: admin/manage-gallery.php:465
+#: admin/manage-gallery.php:252 admin/manage-gallery.php:265 admin/manage-gallery.php:279 admin/manage-gallery.php:294
+#: admin/manage-gallery.php:519 admin/manage-gallery.php:554 admin/manage-gallery.php:595 admin/manage-gallery.php:637
+#: admin/manage-gallery.php:717 admin/manage-gallery.php:806 admin/manage-gallery.php:820 admin/manage-gallery.php:834
+#: admin/manage-gallery.php:848
 msgid "Hide"
 msgstr "Verstecken"
 
-#: admin/manage-gallery.php:195
+#: admin/manage-gallery.php:255
 msgid "hide and show filter above gallery"
 msgstr "Filter über der Galerie ein- und ausblenden"
 
-#: admin/manage-gallery.php:199
+#: admin/manage-gallery.php:258
+msgid "Filters Icon"
+msgstr "Filtersymbol"
+
+#: admin/manage-gallery.php:268
+msgid "hide and show an icon on filters button"
+msgstr "Ein Symbol auf der Schaltfläche „Filter“ ein- und ausblenden"
+
+#: admin/manage-gallery.php:272
+msgid "Filters Image Count"
+msgstr "Bildanzahl filtern"
+
+#: admin/manage-gallery.php:287
 msgid "All Button"
 msgstr "Alle-Taste"
 
-#: admin/manage-gallery.php:209
+#: admin/manage-gallery.php:297
 msgid "hide and show all filter button"
 msgstr "Schaltfläche „Alle Filter ein- und ausblenden“."
 
-#: admin/manage-gallery.php:213
+#: admin/manage-gallery.php:301
 msgid "All Button Title"
 msgstr "Alle Schaltflächentitel"
 
-#: admin/manage-gallery.php:214 setting.php:43
+#: admin/manage-gallery.php:302 setting.php:49
 msgid "All"
 msgstr "Alle"
 
-#: admin/manage-gallery.php:216
+#: admin/manage-gallery.php:304
 msgid "type name"
 msgstr "Typname"
 
-#: admin/manage-gallery.php:218
+#: admin/manage-gallery.php:306
 msgid "set all filter button title"
 msgstr "Schaltflächentitel für alle Filter festlegen"
 
-#: admin/manage-gallery.php:222
+#: admin/manage-gallery.php:309
+msgid "All Button Icon"
+msgstr "Alle-Tasten-Symbol"
+
+#: admin/manage-gallery.php:314
+msgid "set all filter button icon"
+msgstr "Symbol für die Schaltfläche „Alle Filter festlegen“."
+
+#: admin/manage-gallery.php:318
 msgid "All Button Color"
 msgstr "Alle Tastenfarben"
 
-#: admin/manage-gallery.php:227 admin/manage-gallery.php:236
+#: admin/manage-gallery.php:323 admin/manage-gallery.php:332
 msgid "set background color of all filter button"
 msgstr "Hintergrundfarbe aller Filterschaltflächen festlegen"
 
-#: admin/manage-gallery.php:231
+#: admin/manage-gallery.php:327
 msgid "All Button Background Color"
 msgstr "Hintergrundfarbe aller Schaltflächen"
 
-#: admin/manage-gallery.php:239
+#: admin/manage-gallery.php:335
+msgid "Parent Filters Heading"
+msgstr "Überschrift „Übergeordnete Filter“."
+
+#: admin/manage-gallery.php:340
+msgid "set parent filter button heading"
+msgstr "Überschrift der übergeordneten Filterschaltfläche festlegen"
+
+#: admin/manage-gallery.php:343
 msgid "Parent Filter Button Color"
 msgstr "Farbe der übergeordneten Filterschaltfläche"
 
-#: admin/manage-gallery.php:244
+#: admin/manage-gallery.php:348
 msgid "set background color of parent filter button"
 msgstr "Hintergrundfarbe der übergeordneten Filterschaltfläche festlegen"
 
-#: admin/manage-gallery.php:247
+#: admin/manage-gallery.php:352
 msgid "Parent Filters Button Background Color"
 msgstr "Hintergrundfarbe der übergeordneten Filterschaltfläche"
 
-#: admin/manage-gallery.php:252
+#: admin/manage-gallery.php:357
 msgid "set background color of parent filter background button."
-msgstr ""
-"Hintergrundfarbe der Hintergrundschaltfläche des übergeordneten Filters "
-"festlegen."
+msgstr "Hintergrundfarbe der Hintergrundschaltfläche des übergeordneten Filters festlegen."
 
-#: admin/manage-gallery.php:259
+#: admin/manage-gallery.php:360
+msgid "Level One Filters Heading"
+msgstr "Überschrift der Filter der Ebene 1"
+
+#: admin/manage-gallery.php:365
+msgid "set level one filter button heading"
+msgstr "Überschrift der Filterschaltfläche der Ebene 1 festlegen"
+
+#: admin/manage-gallery.php:368
+msgid "Level One Filters Button Color"
+msgstr "Farbe der Filterschaltfläche der Ebene 1"
+
+#: admin/manage-gallery.php:373
+msgid "set color of level One filters button"
+msgstr "Farbe der Filterschaltfläche der ersten Ebene festlegen"
+
+#: admin/manage-gallery.php:376
+msgid "Level One Filters Button Background Color"
+msgstr "Hintergrundfarbe der Filterschaltfläche der Stufe 1"
+
+#: admin/manage-gallery.php:381 admin/manage-gallery.php:392
+msgid "set background color of level one filters button"
+msgstr "Hintergrundfarbe der Filterschaltfläche der ersten Ebene festlegen"
+
+#: admin/manage-gallery.php:384
+msgid "Child Filters Effect"
+msgstr "Untergeordneter Filtereffekt"
+
+#: admin/manage-gallery.php:388
+msgid "Fade"
+msgstr "Verblassen"
+
+#: admin/manage-gallery.php:389
+msgid "Show / Hide"
+msgstr "Einblenden/Ausblenden"
+
+#: admin/manage-gallery.php:395
+msgid "Active Filter Button Color"
+msgstr "Farbe der aktiven Filterschaltfläche"
+
+#: admin/manage-gallery.php:400
+msgid "set color of active filter button"
+msgstr "Farbe der aktiven Filterschaltfläche festlegen"
+
+#: admin/manage-gallery.php:403
+msgid "Active Filter Button Background Color"
+msgstr "Hintergrundfarbe der aktiven Filterschaltfläche"
+
+#: admin/manage-gallery.php:408
+msgid "set background color of active filter button"
+msgstr "Hintergrundfarbe der aktiven Filterschaltfläche festlegen"
+
+#: admin/manage-gallery.php:419
 msgid "Gallery Settings"
 msgstr "Galerieeinstellungen"
 
-#: admin/manage-gallery.php:263
+#: admin/manage-gallery.php:423
 msgid "Columns On Desktop"
 msgstr "Spalten auf dem Desktop"
 
-#: admin/manage-gallery.php:267 admin/manage-gallery.php:290
-#: admin/manage-gallery.php:307
-msgid "3"
-msgstr "Drei"
-
-#: admin/manage-gallery.php:270
-msgid "4"
-msgstr "Vier"
-
-#: admin/manage-gallery.php:273
-msgid "6"
-msgstr "Sechs"
-
-#: admin/manage-gallery.php:276
-msgid "columns to display on desktop or pc device"
-msgstr "Spalten zur Anzeige auf einem Desktop- oder PC-Gerät"
-
-#: admin/manage-gallery.php:280
-msgid "Columns On Tablet"
-msgstr "Spalten auf dem Tablet"
-
-#: admin/manage-gallery.php:284 admin/manage-gallery.php:301
-#: admin/manage-gallery.php:318
+#: admin/manage-gallery.php:427 admin/manage-gallery.php:453 admin/manage-gallery.php:476 admin/manage-gallery.php:496
 msgid "1"
 msgstr "Eins"
 
-#: admin/manage-gallery.php:287 admin/manage-gallery.php:304
-#: admin/manage-gallery.php:321
+#: admin/manage-gallery.php:430 admin/manage-gallery.php:456 admin/manage-gallery.php:479 admin/manage-gallery.php:499
 msgid "2"
 msgstr "Zwei"
 
-#: admin/manage-gallery.php:293
+#: admin/manage-gallery.php:433 admin/manage-gallery.php:459 admin/manage-gallery.php:482 admin/manage-gallery.php:502
+msgid "3"
+msgstr "Drei"
+
+#: admin/manage-gallery.php:436 admin/manage-gallery.php:462 admin/manage-gallery.php:485 admin/manage-gallery.php:505
+msgid "4"
+msgstr "Vier"
+
+#: admin/manage-gallery.php:439 admin/manage-gallery.php:465
+msgid "6"
+msgstr "Sechs"
+
+#: admin/manage-gallery.php:442
+msgid "12"
+msgstr "Zwölf"
+
+#: admin/manage-gallery.php:445
+msgid "columns to display on desktop or pc device"
+msgstr "Spalten zur Anzeige auf einem Desktop- oder PC-Gerät"
+
+#: admin/manage-gallery.php:449
+msgid "Columns On Tablet"
+msgstr "Spalten auf dem Tablet"
+
+#: admin/manage-gallery.php:468
 msgid "columns to display on tablet device"
 msgstr "Spalten zur Anzeige auf dem Tablet-Gerät"
 
-#: admin/manage-gallery.php:297
+#: admin/manage-gallery.php:472
 msgid "Columns On Mobile - Landscape Mode"
 msgstr "Spalten auf Mobilgeräten – Querformat"
 
-#: admin/manage-gallery.php:310
-msgid "columns to display on mobile device with landscape mode"
-msgstr "Spalten zur Anzeige auf Mobilgeräten im Querformat"
+#: admin/manage-gallery.php:488
+msgid "columns to display on the mobile device with landscape mode"
+msgstr "Spalten zur Anzeige auf dem Mobilgerät im Querformat"
 
-#: admin/manage-gallery.php:314
+#: admin/manage-gallery.php:492
 msgid "Columns On Mobile - Portrait Mode"
 msgstr "Spalten auf Mobilgeräten – Hochformat"
 
-#: admin/manage-gallery.php:324
+#: admin/manage-gallery.php:508
 msgid "columns to display on mobile device with portrait mode"
 msgstr "Spalten zur Anzeige auf Mobilgeräten im Hochformat"
 
-#: admin/manage-gallery.php:328
+#: admin/manage-gallery.php:512
+msgid "Thumbnail Image"
+msgstr "Miniaturbild"
+
+#: admin/manage-gallery.php:522
+msgid "show or hide image thumbnail into gallery"
+msgstr "Miniaturansicht des Bildes in der Galerie anzeigen oder ausblenden"
+
+#: admin/manage-gallery.php:526
 msgid "Thumbnail Image Size"
 msgstr "Miniaturbildgröße"
 
-#: admin/manage-gallery.php:332
+#: admin/manage-gallery.php:530
 msgid "Small"
 msgstr "Klein"
 
-#: admin/manage-gallery.php:333
+#: admin/manage-gallery.php:531
 msgid "Medium"
 msgstr "Mittel"
 
-#: admin/manage-gallery.php:334
+#: admin/manage-gallery.php:532
 msgid "Large"
 msgstr "Groß"
 
-#: admin/manage-gallery.php:335
+#: admin/manage-gallery.php:533
 msgid "Original"
 msgstr "Original"
 
-#: admin/manage-gallery.php:336 admin/manage-gallery.php:337
-#: admin/manage-gallery.php:338
+#: admin/manage-gallery.php:534 admin/manage-gallery.php:535 admin/manage-gallery.php:536
 msgid "Same Size"
 msgstr "Gleiche Größe"
 
-#: admin/manage-gallery.php:341
+#: admin/manage-gallery.php:539
 msgid "set thumbnail image size"
 msgstr "Miniaturbildgröße festlegen"
 
-#: admin/manage-gallery.php:343
+#: admin/manage-gallery.php:541 admin/manage-gallery.php:705
 msgid "Note"
 msgstr "Hinweis"
 
-#: admin/manage-gallery.php:344
-msgid ""
-"The same size setting will only work with new images uploaded after the "
-"plugin installation."
-msgstr ""
-"Die gleiche Größeneinstellung funktioniert nur mit neuen Bildern, die nach "
-"der Plugin-Installation hochgeladen werden."
+#: admin/manage-gallery.php:542
+msgid "Same size setting will only work with new images uploaded after the plugin installation."
+msgstr "Die Einstellung „Gleiche Größe“ funktioniert nur mit neuen Bildern, die nach der Plugin-Installation hochgeladen werden."
 
-#: admin/manage-gallery.php:345
+#: admin/manage-gallery.php:543
 msgid "It will not work with previously uploaded images."
 msgstr "Es funktioniert nicht mit zuvor hochgeladenen Bildern."
 
-#: admin/manage-gallery.php:349
+#: admin/manage-gallery.php:547
 msgid "Thumbnail Border"
 msgstr "Miniaturbildrand"
 
-#: admin/manage-gallery.php:359
+#: admin/manage-gallery.php:557
 msgid "show or hide thumbnail border"
 msgstr "Miniaturbildrand anzeigen oder ausblenden"
 
-#: admin/manage-gallery.php:363
+#: admin/manage-gallery.php:561
 msgid "Thumbnail Border Thickness"
 msgstr "Thumbnail-Randstärke"
 
-#: admin/manage-gallery.php:369
+#: admin/manage-gallery.php:567
 msgid "set thumbnail border thickness"
 msgstr "Dicke des Miniaturbildrandes festlegen"
 
-#: admin/manage-gallery.php:373
+#: admin/manage-gallery.php:571
 msgid "Thumbnail Border Color"
 msgstr "Rahmenfarbe der Miniaturansicht"
 
-#: admin/manage-gallery.php:378
+#: admin/manage-gallery.php:576
 msgid "set thumbnail border color"
 msgstr "Rahmenfarbe der Miniaturansicht festlegen"
 
-#: admin/manage-gallery.php:382 filter-gallery.php:218 filter-gallery.php:380
+#: admin/manage-gallery.php:579
+msgid "Thumbnail Background Color"
+msgstr "Hintergrundfarbe der Miniaturansicht"
+
+#: admin/manage-gallery.php:584
+msgid "set thumbnail background color"
+msgstr "Hintergrundfarbe der Miniaturansicht festlegen"
+
+#: admin/manage-gallery.php:588 filter-gallery-pro.php:273 filter-gallery-pro.php:518
 msgid "Image Title"
 msgstr "Bildtitel"
 
-#: admin/manage-gallery.php:392
+#: admin/manage-gallery.php:598
 msgid "hide or show image title"
 msgstr "Bildtitel ausblenden oder anzeigen"
 
-#: admin/manage-gallery.php:396
+#: admin/manage-gallery.php:602
 msgid "Image Title Font Size"
 msgstr "Schriftgröße des Bildtitels"
 
-#: admin/manage-gallery.php:402
+#: admin/manage-gallery.php:608
 msgid "set image title font size"
 msgstr "Schriftgröße für Bildtitel festlegen"
 
-#: admin/manage-gallery.php:406
+#: admin/manage-gallery.php:612
 msgid "Image Title Color"
 msgstr "Bildtitelfarbe"
 
-#: admin/manage-gallery.php:411
+#: admin/manage-gallery.php:617
 msgid "set image title text color"
 msgstr "Textfarbe für den Bildtitel festlegen"
 
-#: admin/manage-gallery.php:415
+#: admin/manage-gallery.php:621
 msgid "Image Title Background Color"
 msgstr "Hintergrundfarbe des Bildtitels"
 
-#: admin/manage-gallery.php:420
+#: admin/manage-gallery.php:626
 msgid "set image title background color"
 msgstr "Hintergrundfarbe für Bildtitel festlegen"
 
-#: admin/manage-gallery.php:424
-msgid "Image Sorting"
-msgstr "Bildsortierung"
+#: admin/manage-gallery.php:630 filter-gallery-pro.php:279 filter-gallery-pro.php:524
+msgid "Image Description"
+msgstr "Bildbeschreibung"
 
-#: admin/manage-gallery.php:428
-msgid "Image ID - Ascending"
-msgstr "Bild-ID – Aufsteigend"
+#: admin/manage-gallery.php:640
+msgid "hide or show image description"
+msgstr "Bildbeschreibung ausblenden oder anzeigen"
 
-#: admin/manage-gallery.php:429
-msgid "Image ID - Descending"
-msgstr "Bild-ID – Absteigend"
+#: admin/manage-gallery.php:644
+msgid "Image Description Font Size"
+msgstr "Bildbeschreibung Schriftgröße"
 
-#: admin/manage-gallery.php:430
+#: admin/manage-gallery.php:650
+msgid "set image description font size"
+msgstr "Schriftgröße für die Bildbeschreibung festlegen"
+
+#: admin/manage-gallery.php:654
+msgid "Image Description Color"
+msgstr "Bildbeschreibungsfarbe"
+
+#: admin/manage-gallery.php:659
+msgid "set image description text color"
+msgstr "Textfarbe für die Bildbeschreibung festlegen"
+
+#: admin/manage-gallery.php:663
+msgid "Image Description Background Color"
+msgstr "Bildbeschreibung Hintergrundfarbe"
+
+#: admin/manage-gallery.php:668
+msgid "set image description background color"
+msgstr "Hintergrundfarbe für die Bildbeschreibung festlegen"
+
+#: admin/manage-gallery.php:672
+msgid "Image Description Text Limit"
+msgstr "Textbegrenzung für Bildbeschreibung"
+
+#: admin/manage-gallery.php:677
+msgid "characters"
+msgstr "Zeichen"
+
+#: admin/manage-gallery.php:678
+msgid "set image description text limit"
+msgstr "Textlimit für Bildbeschreibung festlegen"
+
+#: admin/manage-gallery.php:682
+msgid "Image Hover Effect"
+msgstr "Bild-Hover-Effekt"
+
+#: admin/manage-gallery.php:686 admin/manage-gallery.php:783
 msgid "None"
 msgstr "Keine"
 
-#: admin/manage-gallery.php:433
+#: admin/manage-gallery.php:687
+msgid "Border Overlay"
+msgstr "Randüberlagerung"
+
+#: admin/manage-gallery.php:690 admin/manage-gallery.php:720
+msgid "hide or show read more button"
+msgstr "Schaltfläche „Mehr lesen“ ein- oder ausblenden"
+
+#: admin/manage-gallery.php:693
+msgid "Read More Link On"
+msgstr "Weitere Informationen finden Sie unter Link"
+
+#: admin/manage-gallery.php:697
+msgid "Button"
+msgstr "Knopf"
+
+#: admin/manage-gallery.php:700
+msgid "Image"
+msgstr "Bild"
+
+#: admin/manage-gallery.php:703
+msgid "show link on image or button"
+msgstr "Link auf Bild oder Schaltfläche anzeigen"
+
+#: admin/manage-gallery.php:706
+msgid "If Read More Link set on Image then lightbox functionality will not work."
+msgstr "Wenn der Link „Weitere Informationen“ für das Bild festgelegt ist, funktioniert die Lightbox-Funktion nicht."
+
+#: admin/manage-gallery.php:710
+msgid "Read More Button"
+msgstr "Schaltfläche „Mehr lesen“."
+
+#: admin/manage-gallery.php:724
+msgid "Read More Button Text"
+msgstr "Schaltflächentext „Mehr lesen“."
+
+#: admin/manage-gallery.php:725 setting.php:458
+msgid "Read More"
+msgstr "Weiterlesen"
+
+#: admin/manage-gallery.php:729
+msgid "set read more button title text"
+msgstr "Legen Sie den Titeltext der Schaltfläche „Mehr lesen“ fest"
+
+#: admin/manage-gallery.php:732
+msgid "Read More Button Icon"
+msgstr "Symbol für die Schaltfläche „Mehr lesen“."
+
+#: admin/manage-gallery.php:737
+msgid "set read more button icon"
+msgstr "Symbol für die Schaltfläche „Weiterlesen“ festlegen"
+
+#: admin/manage-gallery.php:741
+msgid "Read More Button Color"
+msgstr "Weitere Schaltflächenfarbe"
+
+#: admin/manage-gallery.php:748
+msgid "set read more button text color"
+msgstr "Textfarbe für die Schaltfläche „Weiterlesen“ festlegen"
+
+#: admin/manage-gallery.php:751
+msgid "Read More Button Background Color"
+msgstr "Hintergrundfarbe der Schaltfläche „Weitere Informationen“."
+
+#: admin/manage-gallery.php:758 admin/manage-gallery.php:893 admin/manage-gallery.php:903
+msgid "set read more button background color"
+msgstr "Hintergrundfarbe für die Schaltfläche „Weiterlesen“ festlegen"
+
+#: admin/manage-gallery.php:761
+msgid "Read More Link Open"
+msgstr "Weiterlesen Link geöffnet"
+
+#: admin/manage-gallery.php:765
+msgid "In New Page"
+msgstr "In neuer Seite"
+
+#: admin/manage-gallery.php:768
+msgid "In Same Page"
+msgstr "Auf derselben Seite"
+
+#: admin/manage-gallery.php:771
+msgid "set link opening option"
+msgstr "Option zum Öffnen des Links festlegen"
+
+#: admin/manage-gallery.php:774
+msgid "Image Sorting"
+msgstr "Bildsortierung"
+
+#: admin/manage-gallery.php:778
+msgid "Image ID - Ascending"
+msgstr "Bild-ID – Aufsteigend"
+
+#: admin/manage-gallery.php:779
+msgid "Image ID - Descending"
+msgstr "Bild-ID – Absteigend"
+
+#: admin/manage-gallery.php:780
+msgid "Image Title - Ascending"
+msgstr "Bildtitel – Aufsteigend"
+
+#: admin/manage-gallery.php:781
+msgid "Image Title - Descending"
+msgstr "Bildtitel – Absteigend"
+
+#: admin/manage-gallery.php:782
+msgid "Shuffle / Random"
+msgstr "Mischen / Zufällig"
+
+#: admin/manage-gallery.php:786
 msgid "set gallery image sorting"
 msgstr "Sortierung der Galeriebilder festlegen"
 
-#: admin/manage-gallery.php:440
+#: admin/manage-gallery.php:795
 msgid "Lightbox Settings"
 msgstr "Lightbox-Einstellungen"
 
-#: admin/manage-gallery.php:444
+#: admin/manage-gallery.php:799
 msgid "Lightbox"
 msgstr "Leuchtkasten"
 
-#: admin/manage-gallery.php:448
-msgid "Enable"
-msgstr "Aktivieren"
-
-#: admin/manage-gallery.php:451
-msgid "Disable"
-msgstr "Deaktivieren"
-
-#: admin/manage-gallery.php:454
+#: admin/manage-gallery.php:809 admin/manage-gallery.php:874
 msgid "set lightbox functionality on gallery thumbnail for larger preview"
-msgstr ""
-"Lightbox-Funktionalität auf Galerie-Miniaturansicht festlegen, um eine "
-"größere Vorschau zu erhalten"
+msgstr "Lightbox-Funktionalität auf Galerie-Miniaturansicht festlegen, um eine größere Vorschau zu erhalten"
 
-#: admin/manage-gallery.php:468
+#: admin/manage-gallery.php:823
 msgid "show image title under the lightbox"
 msgstr "Bildtitel unter der Lightbox anzeigen"
 
-#: admin/manage-gallery.php:493
+#: admin/manage-gallery.php:827
+msgid "Description"
+msgstr "Beschreibung"
+
+#: admin/manage-gallery.php:837
+msgid "show image description under the lightbox"
+msgstr "Bildbeschreibung unter der Lightbox anzeigen"
+
+#: admin/manage-gallery.php:841
+msgid "Numbering"
+msgstr "Nummerierung"
+
+#: admin/manage-gallery.php:851
+msgid "show image number under the lightbox"
+msgstr "Bildnummer unter dem Leuchtkasten anzeigen"
+
+#: admin/manage-gallery.php:861
+msgid "Load More Settings"
+msgstr "Weitere Einstellungen laden"
+
+#: admin/manage-gallery.php:864 setting.php:538
+msgid "Load More"
+msgstr "Mehr laden"
+
+#: admin/manage-gallery.php:868
+msgid "On"
+msgstr "Ein"
+
+#: admin/manage-gallery.php:871
+msgid "Off"
+msgstr "Aus"
+
+#: admin/manage-gallery.php:877
+msgid "Load Limit"
+msgstr "Belastungsgrenze"
+
+#: admin/manage-gallery.php:882
+msgid "Set loading element limit"
+msgstr "Ladeelementlimit festlegen"
+
+#: admin/manage-gallery.php:886
+msgid "Load More Button Color"
+msgstr "Weitere Schaltflächenfarbe laden"
+
+#: admin/manage-gallery.php:896
+msgid "Load More Button Text Color"
+msgstr "Weitere Schaltflächentextfarbe laden"
+
+#: admin/manage-gallery.php:906
+msgid "Load More Button Text"
+msgstr "Weiteren Schaltflächentext laden"
+
+#: admin/manage-gallery.php:911
+msgid "Change load button text"
+msgstr "Text der Ladeschaltfläche ändern"
+
+#: admin/manage-gallery.php:920
+msgid "Custom CSS"
+msgstr "Benutzerdefiniertes CSS"
+
+#: admin/manage-gallery.php:927
+msgid "apply a custom design to gallery"
+msgstr "Wenden Sie ein benutzerdefiniertes Design auf die Galerie an"
+
+#: admin/manage-gallery.php:955
 msgid "Gallery Shortcode"
 msgstr "Galerie-Shortcode"
 
-#: admin/manage-gallery.php:502
+#: admin/manage-gallery.php:963
 msgid "Copy Shortcode"
 msgstr "Shortcode kopieren"
 
-#: admin/manage-gallery.php:503
+#: admin/manage-gallery.php:964
 msgid "Shortcode Copied"
 msgstr "Shortcode kopiert"
 
-#: admin/manage-gallery.php:559 admin/manage-gallery.php:585
-#: filter-gallery.php:206 filter-gallery.php:415
+#: admin/manage-gallery.php:1018 admin/manage-gallery.php:1054 filter-gallery-pro.php:262 filter-gallery-pro.php:549
 msgid "Select Filters"
 msgstr "Filter auswählen"
 
-#: filter-gallery.php:80
-msgid "Filter Gallery"
-msgstr "Galerie filtern"
-
-#: filter-gallery.php:221 filter-gallery.php:383
+#: filter-gallery-pro.php:276 filter-gallery-pro.php:521
 msgid "Image Alternative Text"
 msgstr "Alternativer Bildtext"
 
-#: filter-gallery.php:234 filter-gallery.php:402
+#: filter-gallery-pro.php:282 filter-gallery-pro.php:527
+msgid "Link URL"
+msgstr "Link-URL"
+
+#: filter-gallery-pro.php:292 filter-gallery-pro.php:537
 msgid "Remove"
 msgstr "Entfernen"
-
-#: shortcode.php:126
-msgid "Error! invalid shortcode."
-msgstr "Fehler! Ungültiger Shortcode."
-
-#~ msgid "Select All Galleries"
-#~ msgstr "Alle Galerien auswählen"
-
-#~ msgid "Modify Gallery"
-#~ msgstr "Galerie ändern"
-
-#~ msgid "Sort ASC"
-#~ msgstr "ASC sortieren"
-
-#~ msgid "Sort DESC"
-#~ msgstr "Sortieren DESC"
-
-#~ msgid "Filters Icon"
-#~ msgstr "Filtersymbol"
-
-#~ msgid "hide and show an icon on filters button"
-#~ msgstr "Ein Symbol auf der Schaltfläche „Filter“ ein- und ausblenden"
-
-#~ msgid "Filters Image Count"
-#~ msgstr "Bildanzahl filtern"
-
-#~ msgid "All Button Icon"
-#~ msgstr "Alle-Tasten-Symbol"
-
-#~ msgid "set all filter button icon"
-#~ msgstr "Symbol für die Schaltfläche „Alle Filter festlegen“."
-
-#~ msgid "Parent Filters Heading"
-#~ msgstr "Überschrift „Übergeordnete Filter“."
-
-#~ msgid "set parent filter button heading"
-#~ msgstr "Überschrift der übergeordneten Filterschaltfläche festlegen"
-
-#~ msgid "Level One Filters Heading"
-#~ msgstr "Überschrift der Filter der Ebene 1"
-
-#~ msgid "set level one filter button heading"
-#~ msgstr "Überschrift der Filterschaltfläche der Ebene 1 festlegen"
-
-#~ msgid "Level One Filters Button Color"
-#~ msgstr "Farbe der Filterschaltfläche der Ebene 1"
-
-#~ msgid "set color of level One filters button"
-#~ msgstr "Farbe der Filterschaltfläche der ersten Ebene festlegen"
-
-#~ msgid "Level One Filters Button Background Color"
-#~ msgstr "Hintergrundfarbe der Filterschaltfläche der Stufe 1"
-
-#~ msgid "set background color of level one filters button"
-#~ msgstr "Hintergrundfarbe der Filterschaltfläche der ersten Ebene festlegen"
-
-#~ msgid "Child Filters Effect"
-#~ msgstr "Untergeordneter Filtereffekt"
-
-#~ msgid "Fade"
-#~ msgstr "Verblassen"
-
-#~ msgid "Show / Hide"
-#~ msgstr "Einblenden/Ausblenden"
-
-#~ msgid "Active Filter Button Color"
-#~ msgstr "Farbe der aktiven Filterschaltfläche"
-
-#~ msgid "set color of active filter button"
-#~ msgstr "Farbe der aktiven Filterschaltfläche festlegen"
-
-#~ msgid "Active Filter Button Background Color"
-#~ msgstr "Hintergrundfarbe der aktiven Filterschaltfläche"
-
-#~ msgid "set background color of active filter button"
-#~ msgstr "Hintergrundfarbe der aktiven Filterschaltfläche festlegen"
-
-#~ msgid "12"
-#~ msgstr "Zwölf"
-
-#~ msgid "Thumbnail Image"
-#~ msgstr "Miniaturbild"
-
-#~ msgid "show or hide image thumbnail into gallery"
-#~ msgstr "Miniaturansicht des Bildes in der Galerie anzeigen oder ausblenden"
-
-#~ msgid "Thumbnail Background Color"
-#~ msgstr "Hintergrundfarbe der Miniaturansicht"
-
-#~ msgid "set thumbnail background color"
-#~ msgstr "Hintergrundfarbe der Miniaturansicht festlegen"
-
-#~ msgid "Image Description"
-#~ msgstr "Bildbeschreibung"
-
-#~ msgid "hide or show image description"
-#~ msgstr "Bildbeschreibung ausblenden oder anzeigen"
-
-#~ msgid "Image Description Font Size"
-#~ msgstr "Bildbeschreibung Schriftgröße"
-
-#~ msgid "set image description font size"
-#~ msgstr "Schriftgröße für die Bildbeschreibung festlegen"
-
-#~ msgid "Image Description Color"
-#~ msgstr "Bildbeschreibungsfarbe"
-
-#~ msgid "set image description text color"
-#~ msgstr "Textfarbe für die Bildbeschreibung festlegen"
-
-#~ msgid "Image Description Background Color"
-#~ msgstr "Bildbeschreibung Hintergrundfarbe"
-
-#~ msgid "set image description background color"
-#~ msgstr "Hintergrundfarbe für die Bildbeschreibung festlegen"
-
-#~ msgid "Image Description Text Limit"
-#~ msgstr "Textbegrenzung für Bildbeschreibung"
-
-#~ msgid "characters"
-#~ msgstr "Zeichen"
-
-#~ msgid "set image description text limit"
-#~ msgstr "Textlimit für Bildbeschreibung festlegen"
-
-#~ msgid "Image Hover Effect"
-#~ msgstr "Bild-Hover-Effekt"
-
-#~ msgid "Border Overlay"
-#~ msgstr "Randüberlagerung"
-
-#~ msgid "hide or show read more button"
-#~ msgstr "Schaltfläche „Mehr lesen“ ein- oder ausblenden"
-
-#~ msgid "Read More Link On"
-#~ msgstr "Weitere Informationen finden Sie unter Link"
-
-#~ msgid "Button"
-#~ msgstr "Knopf"
-
-#~ msgid "Image"
-#~ msgstr "Bild"
-
-#~ msgid "show link on image or button"
-#~ msgstr "Link auf Bild oder Schaltfläche anzeigen"
-
-#~ msgid ""
-#~ "If Read More Link set on Image then lightbox functionality will not work."
-#~ msgstr ""
-#~ "Wenn der Link „Weitere Informationen“ für das Bild festgelegt ist, "
-#~ "funktioniert die Lightbox-Funktion nicht."
-
-#~ msgid "Read More Button"
-#~ msgstr "Schaltfläche „Mehr lesen“."
-
-#~ msgid "Read More Button Text"
-#~ msgstr "Schaltflächentext „Mehr lesen“."
-
-#~ msgid "Read More"
-#~ msgstr "Weiterlesen"
-
-#~ msgid "set read more button title text"
-#~ msgstr "Legen Sie den Titeltext der Schaltfläche „Mehr lesen“ fest"
-
-#~ msgid "Read More Button Icon"
-#~ msgstr "Symbol für die Schaltfläche „Mehr lesen“."
-
-#~ msgid "set read more button icon"
-#~ msgstr "Symbol für die Schaltfläche „Weiterlesen“ festlegen"
-
-#~ msgid "Read More Button Color"
-#~ msgstr "Weitere Schaltflächenfarbe"
-
-#~ msgid "set read more button text color"
-#~ msgstr "Textfarbe für die Schaltfläche „Weiterlesen“ festlegen"
-
-#~ msgid "Read More Button Background Color"
-#~ msgstr "Hintergrundfarbe der Schaltfläche „Weitere Informationen“."
-
-#~ msgid "set read more button background color"
-#~ msgstr "Hintergrundfarbe für die Schaltfläche „Weiterlesen“ festlegen"
-
-#~ msgid "Read More Link Open"
-#~ msgstr "Weiterlesen Link geöffnet"
-
-#~ msgid "In New Page"
-#~ msgstr "In neuer Seite"
-
-#~ msgid "In Same Page"
-#~ msgstr "Auf derselben Seite"
-
-#~ msgid "set link opening option"
-#~ msgstr "Option zum Öffnen des Links festlegen"
-
-#~ msgid "Image Title - Ascending"
-#~ msgstr "Bildtitel – Aufsteigend"
-
-#~ msgid "Image Title - Descending"
-#~ msgstr "Bildtitel – Absteigend"
-
-#~ msgid "Shuffle / Random"
-#~ msgstr "Mischen / Zufällig"
-
-#~ msgid "Description"
-#~ msgstr "Beschreibung"
-
-#~ msgid "show image description under the lightbox"
-#~ msgstr "Bildbeschreibung unter der Lightbox anzeigen"
-
-#~ msgid "Numbering"
-#~ msgstr "Nummerierung"
-
-#~ msgid "show image number under the lightbox"
-#~ msgstr "Bildnummer unter dem Leuchtkasten anzeigen"
-
-#~ msgid "Load More Settings"
-#~ msgstr "Weitere Einstellungen laden"
-
-#~ msgid "Load More"
-#~ msgstr "Mehr laden"
-
-#~ msgid "On"
-#~ msgstr "Ein"
-
-#~ msgid "Off"
-#~ msgstr "Aus"
-
-#~ msgid "Load Limit"
-#~ msgstr "Belastungsgrenze"
-
-#~ msgid "Set loading element limit"
-#~ msgstr "Ladeelementlimit festlegen"
-
-#~ msgid "Load More Button Color"
-#~ msgstr "Weitere Schaltflächenfarbe laden"
-
-#~ msgid "Load More Button Text Color"
-#~ msgstr "Weitere Schaltflächentextfarbe laden"
-
-#~ msgid "Load More Button Text"
-#~ msgstr "Weiteren Schaltflächentext laden"
-
-#~ msgid "Change load button text"
-#~ msgstr "Text der Ladeschaltfläche ändern"
-
-#~ msgid "Custom CSS"
-#~ msgstr "Benutzerdefiniertes CSS"
-
-#~ msgid "apply a custom design to gallery"
-#~ msgstr "Wenden Sie ein benutzerdefiniertes Design auf die Galerie an"
-
-#~ msgid "Link URL"
-#~ msgstr "Link-URL"

@@ -17,17 +17,47 @@ jQuery(document).ready(function () {
           transitionDuration: '0.8s',
      });
 
+     function hideGalleryLoader() {
+          var $loader = jQuery('.ufg-gallery-' + UFGJS.GalleryId).find('.ufg-gallery-loader');
+          if ($loader.length && !$loader.hasClass('ufg-loader-hidden')) {
+               $loader.addClass('ufg-loader-hidden').fadeOut(400);
+          }
+     }
+
      // layout Isotope after each image loads
      $grid.imagesLoaded().progress(function (instance, image) {
           jQuery(image.img).closest('.ufg-img-wrap').addClass('loaded');
           $grid.isotope('layout');
      }).always(function () {
-          $grid.isotope('layout');
+          setTimeout(function() {
+               hideGalleryLoader();
+               $grid.isotope('layout');
+          }, 300);
      });
+
+     // Safety fallback timer to hide loader if imagesLoaded takes longer
+     setTimeout(function() {
+          hideGalleryLoader();
+          $grid.isotope('layout');
+     }, 1200);
 
      // Ensure layout is refreshed after window is fully loaded (fixes Firefox timing issues)
      jQuery(window).on('load', function () {
+          hideGalleryLoader();
           $grid.isotope('layout');
+     });
+
+     // Ensure lazy-loaded images below the fold fade in when they load on scroll
+     window.addEventListener('load', function(event) {
+          if (event.target.tagName === 'IMG' && jQuery(event.target).hasClass('ufg-thumbnail-img')) {
+               jQuery(event.target).closest('.ufg-img-wrap').addClass('loaded');
+          }
+     }, true);
+
+     jQuery('.ufg-thumbnail-img').each(function() {
+          if (this.complete) {
+               jQuery(this).closest('.ufg-img-wrap').addClass('loaded');
+          }
      });
 
      jQuery("button.filters").on('click', function () {
@@ -39,8 +69,34 @@ jQuery(document).ready(function () {
           } else {
                selected_filter = "." + this.value;
           }
+          
+          // Update URL hash for deep linking
+          if (UFGJS.EnableDeepLinking) {
+               if (this.value === '*') {
+                    if (window.location.hash.indexOf('ufg-filter=') > -1) {
+                         if (history.replaceState) {
+                              history.replaceState(null, null, window.location.pathname + window.location.search);
+                         } else {
+                              window.location.hash = '';
+                         }
+                    }
+               } else {
+                    if (history.replaceState) {
+                         history.replaceState(null, null, '#' + 'ufg-filter=' + encodeURIComponent(this.value));
+                    } else {
+                         window.location.hash = 'ufg-filter=' + encodeURIComponent(this.value);
+                    }
+               }
+          }
+          
+          var searchQuery = jQuery('.ufg-search-input').length > 0 ? jQuery('.ufg-search-input').val().toLowerCase() : '';
           $grid.isotope({
-               filter: selected_filter
+               filter: function() {
+                   var $this = jQuery(this);
+                   var searchResult = searchQuery ? $this.text().toLowerCase().indexOf(searchQuery) > -1 : true;
+                   var categoryResult = selected_filter && selected_filter !== '*' ? $this.is(selected_filter) : true;
+                   return searchResult && categoryResult;
+               }
           });
 
           if (UFGJS.LoadMore == 'on') { //166
@@ -230,143 +286,264 @@ jQuery(document).ready(function () {
           });
      }
      //Load more logic for loading images if clicked filter has no image on first load END
+
+     // Dropdown Filter Change Logic
+     if (jQuery('.ufg-filter-dropdown').length > 0) {
+          jQuery('.ufg-filter-dropdown').on('change', function(e) {
+               var value = jQuery(this).val();
+               var selected_filter = value === '*' ? '*' : "." + value;
+               
+               // Update URL hash for deep linking
+               if (UFGJS.EnableDeepLinking) {
+                    if (value === '*') {
+                         if (window.location.hash.indexOf('ufg-filter=') > -1) {
+                              if (history.replaceState) {
+                                   history.replaceState(null, null, window.location.pathname + window.location.search);
+                              } else {
+                                   window.location.hash = '';
+                              }
+                         }
+                    } else {
+                         if (history.replaceState) {
+                              history.replaceState(null, null, '#' + 'ufg-filter=' + encodeURIComponent(value));
+                         } else {
+                              window.location.hash = 'ufg-filter=' + encodeURIComponent(value);
+                         }
+                    }
+               }
+               
+               // Update hidden inputs for tracking
+               jQuery('#ufg_current_clicked_filter_id').val(value);
+               
+               var searchQuery = jQuery('.ufg-search-input').length > 0 ? jQuery('.ufg-search-input').val().toLowerCase() : '';
+               $grid.isotope({
+                    filter: function() {
+                        var $this = jQuery(this);
+                        var searchResult = searchQuery ? $this.text().toLowerCase().indexOf(searchQuery) > -1 : true;
+                        var categoryResult = selected_filter && selected_filter !== '*' ? $this.is(selected_filter) : true;
+                        return searchResult && categoryResult;
+                    }
+               });
+
+               // Handle Lightbox grouping update
+               if (value == "*") {
+                    if (UFGJS.Lightbox === true || UFGJS.Lightbox === "true" || UFGJS.Lightbox === 1) {
+                         jQuery('.ufg-lightbox').removeData();
+                         jQuery('.ufg-lightbox').attr('data-lightbox', 'ufg-lightbox');
+                    }
+               } else {
+                    if (UFGJS.Lightbox === true || UFGJS.Lightbox === "true" || UFGJS.Lightbox === 1) {
+                         jQuery('a.ufg-lightbox').removeAttr('data-lightbox');
+                         var lightbox_class_name = "ufg-lightbox-" + value;
+                         jQuery('.' + value).attr('data-lightbox', lightbox_class_name);
+                    }
+               }
+
+               // Load more count update and AJAX fetch if no images exist on page for this filter
+               if (value !== "none" && value !== "*") {
+                    var FilterValueCount = jQuery("a." + value).length;
+                    if (FilterValueCount === 0 && UFGJS.LoadMore == 'on') {
+                         var dropdownEl = jQuery(this);
+                         dropdownEl.addClass('load');
+                         
+                         var CalTotalItemInFilter = 0;
+                         var CalTotalLoadedItem = 0;
+                         var targetFilter = [value];
+                         
+                         if (filter_image && filter_image[value]) {
+                              CalTotalItemInFilter = filter_image[value].length;
+                         }
+                         var ufg_limit_start = 0;
+                         var ufg_limit_end = parseInt(UFGJS.LoadLimit);
+                         var get_all_items = jQuery('.count_attached').map(function () { return jQuery(this).val(); }).get();
+                         
+                         if (CalTotalItemInFilter > 0) {
+                              jQuery.ajax({
+                                   dataType: 'html',
+                                   type: 'POST',
+                                   url: location.href,
+                                   cache: false,
+                                   data: '&ufg_security=' + UFGJS.LoadMoreNonce + '&ufg_limit_start=' + ufg_limit_start + '&ufg_limit_end=' + ufg_limit_end + '&targetFilter=' + targetFilter + '&CalTotalLoadedItem=' + CalTotalLoadedItem + '&get_all_items=' + get_all_items,
+                                   success: function (response) {
+                                        var $node = jQuery(response).find('.ufg_result');
+                                        if ($node.length > 0) {
+                                             $grid.append($node).isotope('insert', $node);
+                                             $node.imagesLoaded().progress(function (instance, image) {
+                                                  jQuery(image.img).closest('.ufg-img-wrap').addClass('loaded');
+                                                  $grid.isotope('layout');
+                                             }).always(function () {
+                                                  $grid.isotope('layout');
+                                             });
+                                        }
+                                        dropdownEl.removeClass('load');
+                                        jQuery('.ufg-thumbnail').removeClass("ufg_result");
+                                   },
+                                   error: function () {
+                                        dropdownEl.removeClass('load');
+                                        console.error('UFG: Filter dropdown load failed.');
+                                   }
+                              });
+                         } else {
+                              dropdownEl.removeClass('load');
+                         }
+                    }
+               }
+
+               if (UFGJS.LoadMore == 'on') {
+                    var CalTotalItemInFilter = 0;
+                    var CalTotalLoadedItem = 0;
+                    if (value == '*') {
+                         CalTotalItemInFilter = parseInt(UFGJS.TotalImages);
+                         CalTotalLoadedItem = jQuery('.ufg-thumbnail').length;
+                    } else {
+                         if (filter_image && filter_image[value]) {
+                              CalTotalItemInFilter = filter_image[value].length;
+                              CalTotalLoadedItem = jQuery('.ufg-gallery-container > div.' + value).length;
+                         }
+                    }
+                    if (CalTotalItemInFilter == CalTotalLoadedItem) {
+                         jQuery('#fg-load-btn').html('No More Result').css({ 'opacity': '00.2', 'pointer-events': 'none' });
+                    } else {
+                         jQuery('#fg-load-btn').html(UFGJS.LoadBtnText + ' <i class="fas fa-circle-notch fa-spin"></i>').css({ 'opacity': '1', 'pointer-events': 'auto' });
+                    }
+               }
+          });
+     }
+
+     // Search Box Logic
+     if (jQuery('.ufg-search-input').length > 0) {
+          jQuery('.ufg-search-input').on('keyup', function() {
+               var searchQuery = jQuery(this).val().toLowerCase();
+               var activeBtn = jQuery('.ufg-filter-container button.active');
+               var selected_filter = '*';
+               
+               if (activeBtn.length > 0 && activeBtn.val() !== '*') {
+                    selected_filter = "." + activeBtn.val();
+               }
+
+               $grid.isotope({
+                    filter: function() {
+                        var $this = jQuery(this);
+                        var searchResult = searchQuery ? $this.text().toLowerCase().indexOf(searchQuery) > -1 : true;
+                        var categoryResult = selected_filter && selected_filter !== '*' ? $this.is(selected_filter) : true;
+                        return searchResult && categoryResult;
+                    }
+               });
+          });
+     }
 });
 
 // Filter level Controls
-if (UFGJS.ChildFilterEffect == 'fade') { //53 settings.php
-     jQuery('button.ufg-level-one-button').fadeTo(200, 0.1).css('pointer-events', 'none');  //hide all level 1 buttons
-} else {
-     jQuery('button.ufg-level-one-button').css('display', 'none');  //hide all level 1 buttons
+jQuery(document).ready(function() {
+     var allSublevelButtons = 'button.ufg-level-one-button, button.ufg-level-two-button, button.ufg-level-three-button, button.ufg-level-four-button';
+     if (UFGJS.ChildFilterEffect == 'fade') { //53 settings.php
+          jQuery(allSublevelButtons).fadeTo(200, 0.1).css('pointer-events', 'none');
+     } else {
+          jQuery(allSublevelButtons).css('display', 'none');
+     }
+     updateFilterGroupVisibility();
+
+     // Smoothly reveal filter/search elements once sublevels are hidden
+     jQuery('.fg-content-wrapper .ufg-filter-container, .fg-content-wrapper .ufg-search-container, .fg-content-wrapper .ufg-combined-row, .fg-content-wrapper .ufg-uncombined-search').css({
+          'opacity': '1',
+          'pointer-events': 'auto'
+     });
+});
+
+function updateFilterGroupVisibility() {
+     jQuery('.filter-group').each(function() {
+          var group = jQuery(this);
+          if (group.hasClass('ufg-parent-filters')) {
+               group.removeClass('ufg-hide-group');
+               return;
+          }
+          var hasVisibleButtons = false;
+          group.find('button.filters').each(function() {
+               if (jQuery(this).css('display') !== 'none' && jQuery(this).css('opacity') !== '0.1') {
+                    hasVisibleButtons = true;
+               }
+          });
+          if (hasVisibleButtons) {
+               group.removeClass('ufg-hide-group');
+          } else {
+               group.addClass('ufg-hide-group');
+          }
+     });
 }
 
 jQuery('#1evel1-all').addClass('active-filter active');
 function filter(id, value) {
-     jQuery('#1evel1-all').removeClass('active-filter');
-     //console.log(id);
-     //console.log(value);
-     var ufg_btn_text = "";
-     var ufg_btn_text2 = "";
-     var ufg_current_clicked_filter_id = "";
-     var ufg_current_clicked_filter_level = "";
-     var ufg_last_clicked_filter_id = "";
-     var ufg_last_clicked_filter_level = "";
-     var ufg_last_clicked_filter_parent_id = "";
+     jQuery('button.filters').removeClass('active-filter active');
 
-     ufg_current_clicked_filter_id = jQuery("#ufg_current_clicked_filter_id").val(); // get last clicked filter id
-     ufg_current_clicked_filter_level = jQuery("#ufg_current_clicked_filter_level").val(); // set current clicked filter level
-     ufg_last_clicked_filter_id = jQuery("#ufg_last_clicked_filter_id").val(); // get last clicked filter id
-     ufg_last_clicked_filter_level = jQuery("#ufg_last_clicked_filter_level").val(); // get last clicked filter level
-
-     ufg_current_clicked_parent_filter_id = jQuery("#ufg_current_clicked_parent_filter_id").val(); // get current clicked parent filter id
-     ufg_last_clicked_filter_parent_id = jQuery("#ufg_last_clicked_filter_parent_id").val(); // get last clicked parent filter id
-
-     // set current - initials case
-     if (ufg_current_clicked_filter_id == "") {
-          //get current clicked filter level
-          //console.log(id.match("1evel1"));
-          if (id.match("1evel1")) { ufg_current_clicked_filter_level = "1evel1"; }
-          //console.log(ufg_current_clicked_filter_level);
-          if (id.match("level2")) { ufg_current_clicked_filter_level = "level2"; }
-          //console.log(ufg_current_clicked_filter_level);
-          if (id.match("level3")) { ufg_current_clicked_filter_level = "level3"; }
-          //console.log(ufg_current_clicked_filter_level);
-
-          // set filter id and get
-          jQuery("#ufg_current_clicked_filter_id").val(id);
-          jQuery("#ufg_current_clicked_filter_level").val(ufg_current_clicked_filter_level);
-
-          jQuery("#ufg_last_clicked_filter_id").val(id);
-          jQuery("#ufg_last_clicked_filter_level").val(ufg_current_clicked_filter_level);
-
-          //console.log(ufg_last_clicked_filter_parent_id);
-          if (ufg_current_clicked_filter_level == "1evel1") {
-               jQuery("#ufg_last_clicked_filter_parent_id").val(id);
+     if (value === '*') {
+          var allSublevels = 'button.ufg-level-one-button, button.ufg-level-two-button, button.ufg-level-three-button, button.ufg-level-four-button';
+          if (UFGJS.ChildFilterEffect == 'fade') {
+               jQuery(allSublevels).fadeTo(200, 0.1).css('pointer-events', 'none');
+          } else {
+               jQuery(allSublevels).css('display', 'none');
           }
-
-          // set current last clicked parent filter id
-          jQuery("#ufg_current_clicked_parent_filter_id").val(id);
-          jQuery("#ufg_last_clicked_filter_parent_id").val(id);
-
+          jQuery('#1evel1-all').addClass('active-filter active');
      } else {
+          var clickedBtn = jQuery('#' + id);
+          clickedBtn.addClass('active-filter active');
 
-          // transfer current filter to last filter (transfer before getting filter level)
-          jQuery("#ufg_last_clicked_filter_id").val(ufg_current_clicked_filter_id);
-          jQuery("#ufg_last_clicked_filter_level").val(ufg_current_clicked_filter_level);
+          var classes = clickedBtn.attr('class').split(/\s+/);
+          classes.forEach(function(cls) {
+               if (cls && cls !== 'ufg-btn' && cls !== 'ufg-btn-3' && cls !== 'filters' && cls !== 'ufg-filter-button' && cls !== 'active-filter' && cls !== 'active') {
+                    jQuery('button.filters[value="' + cls + '"]').addClass('active-filter');
+               }
+          });
 
-          //get current clicked filter level
-          //console.log(id.match("1evel1"));
-          if (id.match("1evel1")) { ufg_current_clicked_filter_level = "1evel1"; }
-          //console.log(ufg_current_clicked_filter_level);
-          if (id.match("level2")) { ufg_current_clicked_filter_level = "level2"; }
-          //console.log(ufg_current_clicked_filter_level);
-          if (id.match("level3")) { ufg_current_clicked_filter_level = "level3"; }
-          //console.log(ufg_current_clicked_filter_level);
+          var currentLevel = 1;
+          if (id.indexOf('level2-') === 0) currentLevel = 2;
+          else if (id.indexOf('level3-') === 0) currentLevel = 3;
+          else if (id.indexOf('level4-') === 0) currentLevel = 4;
+          else if (id.indexOf('level5-') === 0) currentLevel = 5;
 
-          // set current filters
-          jQuery("#ufg_current_clicked_filter_id").val(id);
-          jQuery("#ufg_current_clicked_filter_level").val(ufg_current_clicked_filter_level);
+          var nextLevelClass = '';
+          if (currentLevel === 1) nextLevelClass = 'ufg-level-one-button';
+          else if (currentLevel === 2) nextLevelClass = 'ufg-level-two-button';
+          else if (currentLevel === 3) nextLevelClass = 'ufg-level-three-button';
+          else if (currentLevel === 4) nextLevelClass = 'ufg-level-four-button';
 
-          ufg_last_clicked_filter_id = jQuery("#ufg_last_clicked_filter_id").val(); // get last clicked filter id
-          ufg_last_clicked_filter_level = jQuery("#ufg_last_clicked_filter_level").val(); // get last clicked filter level
+          var hideClasses = [];
+          if (currentLevel < 2) hideClasses.push('ufg-level-one-button');
+          if (currentLevel < 3) hideClasses.push('ufg-level-two-button');
+          if (currentLevel < 4) hideClasses.push('ufg-level-three-button');
+          if (currentLevel < 5) hideClasses.push('ufg-level-four-button');
 
-          // remove check icon on last clicked filter - if same level2 filter button clicked
-          if (ufg_current_clicked_filter_level == "level2" && ufg_last_clicked_filter_level == "level2") {
-               // remove check icon from last clicked filter button
-               jQuery("#" + ufg_last_clicked_filter_id).removeClass('active-filter'); // get html value
+          if (hideClasses.length > 0) {
+               var hideSelector = 'button.' + hideClasses.join(', button.');
+               if (UFGJS.ChildFilterEffect == 'fade') {
+                    jQuery(hideSelector).fadeTo(200, 0.1).css('pointer-events', 'none');
+               } else {
+                    jQuery(hideSelector).css('display', 'none');
+               }
           }
 
-          // when transferring filter from level2 to level1
-          if (ufg_current_clicked_filter_level === "1evel1") {
-               // transfer last clicked parent filter id to current 
-               jQuery("#ufg_current_clicked_parent_filter_id").val(id);
-               jQuery("#ufg_last_clicked_parent_filter_id").val(ufg_current_clicked_parent_filter_id);
-
-               // remove check icon from last clicked filter button
-               jQuery("#" + ufg_current_clicked_parent_filter_id).removeClass('active-filter'); // get html value
-               jQuery("#" + ufg_last_clicked_filter_id).removeClass('active-filter'); // get html value
-          }
-     }
-
-     jQuery("#" + id).addClass('active-filter');
-
-     // hide all level 2 button
-     if (ufg_current_clicked_filter_level != "level2") { // display only level one filter accordingly parent filters clicked
-          if (UFGJS.ChildFilterEffect == 'fade') { //53 settings.php
-               jQuery('button.ufg-level-one-button').fadeTo(200, 0.1).css('pointer-events', 'none'); //hide all level 1 buttons
-          } else {
-               jQuery('button.ufg-level-one-button').css('display', 'none');  //hide all level 1 buttons
+          if (nextLevelClass !== '') {
+               var showSelector = 'button.' + nextLevelClass + '.' + value;
+               if (UFGJS.ChildFilterEffect == 'fade') {
+                    jQuery(showSelector).fadeTo(200, 1).css('pointer-events', 'auto');
+               } else {
+                    jQuery(showSelector).css('display', 'inline-block');
+               }
           }
      }
 
-     //filtering
      if (value == "*") {
-          // show all filters
-          if (UFGJS.ChildFilterEffect == 'fade') { //53 settings.php
-               jQuery('button.ufg-parent-filters').fadeTo(200, 1).css('pointer-events', 'auto');; //display all filters
-          } else {
-               jQuery('button.ufg-parent-filters').css('display', 'inline-block');  //display all filters
-          }
-
-          // lightbox - remove data attribute and dynamic add lightbox data-lightbox to anchor tag
           if (UFGJS.Lightbox === true || UFGJS.Lightbox === "true" || UFGJS.Lightbox === 1) {
                jQuery('.ufg-lightbox').removeData();
-               jQuery('.ufg-lightbox').attr('data-lightbox', 'ufg-lightbox'); // add data-lightbox for all images cycle in lightbox
+               jQuery('.ufg-lightbox').attr('data-lightbox', 'ufg-lightbox');
           }
      } else {
-          // remove data-lightbox attribute from all ufg-thumbnail
           if (UFGJS.Lightbox === true || UFGJS.Lightbox === "true" || UFGJS.Lightbox === 1) {
                jQuery('a.ufg-lightbox').removeAttr('data-lightbox');
-          }
-
-          // show hide images
-          jQuery('button.' + value).fadeTo(200, 1).css('pointer-events', 'auto'); //display only clicked filters button and images
-
-          // dynamically add lightbox data-filter classes accordingly parent and sub filter clicked
-          if (UFGJS.Lightbox === true || UFGJS.Lightbox === "true" || UFGJS.Lightbox === 1) {
-               var lighbox_class_name = "ufg-lightbox-" + value;
-               jQuery('.' + value).attr('data-lightbox', lighbox_class_name); // add data filter for parent filters
+               var lightbox_class_name = "ufg-lightbox-" + value;
+               jQuery('.' + value).attr('data-lightbox', lightbox_class_name);
           }
      }
+     updateFilterGroupVisibility();
 }
 
 if (UFGJS.Lightbox === true || UFGJS.Lightbox === "true" || UFGJS.Lightbox === 1) {
@@ -386,16 +563,63 @@ if (UFGJS.Lightbox === true || UFGJS.Lightbox === "true" || UFGJS.Lightbox === 1
      });
 }
 
-// selected filter on gallery first load start
-if (UFGJS.SelectedFltrBtnId != "") { //15
-     jQuery(document).ready(function () {
-          jQuery(function () {
-               // it will wait for 1 sec. and then will fire
-               setTimeout(function () {
-                    // click on filter button
-                    jQuery('#' + UFGJS.SelectedFltrBtnId).trigger('click'); //15
-               }, 50);
-          });
+// selected filter on gallery first load (supports deep linking / URL filtering)
+jQuery(document).ready(function () {
+     jQuery(function () {
+          setTimeout(function () {
+               var urlFilter = '';
+               if (UFGJS.EnableDeepLinking) {
+                    // Parse Hash
+                    var hash = window.location.hash;
+                    if (hash && hash.indexOf('ufg-filter=') > -1) {
+                         var parts = hash.split('ufg-filter=');
+                         if (parts.length > 1) {
+                              urlFilter = decodeURIComponent(parts[1].split('&')[0]);
+                         }
+                    }
+                    // Parse Query Param if no Hash filter
+                    if (!urlFilter) {
+                         var urlParams = new URLSearchParams(window.location.search);
+                         if (urlParams.has('ufg_filter')) {
+                              urlFilter = urlParams.get('ufg_filter');
+                         }
+                    }
+               }
+
+               if (urlFilter) {
+                    // Try to find the button with this filter value
+                    var targetButton = jQuery('button.filters[value="' + urlFilter + '"]');
+                    if (targetButton.length > 0) {
+                         var dataFilter = targetButton.attr('data-filter');
+                         if (dataFilter && dataFilter !== '*') {
+                              var selectors = dataFilter.trim().split(/\s+/);
+                              selectors.forEach(function(sel) {
+                                   var val = sel.replace('.', '');
+                                   jQuery('button.filters[value="' + val + '"]').trigger('click');
+                              });
+                         } else {
+                              targetButton.trigger('click');
+                         }
+                         return;
+                    }
+                    
+                    // If it is a dropdown filter:
+                    var targetDropdown = jQuery('select.ufg-filter-dropdown');
+                    if (targetDropdown.length > 0 && targetDropdown.find('option[value="' + urlFilter + '"]').length > 0) {
+                         targetDropdown.val(urlFilter).trigger('change');
+                         return;
+                    }
+               }
+
+               // Fallback to default selected filter if no URL filter
+               if (UFGJS.SelectedFltrBtnId != "") {
+                    if (UFGJS.SelectedFltrBtnId === 'none') {
+                         jQuery('.ufg-gallery-' + UFGJS.GalleryId).isotope({ filter: '.ufg-no-match-filter' });
+                         jQuery('button.filters').removeClass('active-filter active');
+                    } else {
+                         jQuery('#' + UFGJS.SelectedFltrBtnId).trigger('click');
+                    }
+               }
+          }, 100);
      });
-}
-// selected filter on gallery first load end
+});

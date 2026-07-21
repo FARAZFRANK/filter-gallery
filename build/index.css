@@ -473,24 +473,24 @@ Make sure disabled buttons don't get the pointer cursor.
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
 
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block; /* 1 */
-  vertical-align: middle; /* 2 */
+#ufg-admin-root img,
+#ufg-admin-root svg,
+#ufg-admin-root video,
+#ufg-admin-root canvas,
+#ufg-admin-root audio,
+#ufg-admin-root iframe,
+#ufg-admin-root embed,
+#ufg-admin-root object {
+  display: block;
+  vertical-align: middle;
 }
 
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
 
-img,
-video {
+#ufg-admin-root img,
+#ufg-admin-root video {
   max-width: 100%;
   height: auto;
 }

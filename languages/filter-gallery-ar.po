@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: تصفية معرض برو\n"
-"POT-Creation-Date: 2024-02-07 16:50+0530\n"
-"PO-Revision-Date: 2024-02-07 16:52+0530\n"
+"POT-Creation-Date: 2024-01-26 15:39+0530\n"
+"PO-Revision-Date: 2024-01-26 15:39+0530\n"
 "Last-Translator: \n"
 "Language-Team: wpfrank.com\n"
 "Language: ar\n"
@@ -13,704 +13,755 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: .\n"
 
-#: admin/galleries.php:26
-msgid "Filter Gallery Free"
-msgstr "تصفية معرض مجاني"
+#: admin/galleries.php:25 filter-gallery-pro.php:65
+msgid "Filter Gallery Pro"
+msgstr "تصفية معرض برو"
 
-#: admin/galleries.php:38
+#: admin/galleries.php:29
 msgid "Create New Gallery"
 msgstr "إنشاء معرض جديد"
 
-#: admin/galleries.php:46 admin/galleries.php:96 admin/manage-gallery.php:458
+#: admin/galleries.php:37 admin/galleries.php:89 admin/manage-gallery.php:813
 msgid "Title"
 msgstr "العنوان"
 
-#: admin/galleries.php:47 admin/galleries.php:97 admin/manage-gallery.php:485
+#: admin/galleries.php:38 admin/galleries.php:90 admin/manage-gallery.php:945
 msgid "Shortcode"
 msgstr "الرمز القصير"
 
-#: admin/galleries.php:48 admin/galleries.php:98
+#: admin/galleries.php:39 admin/galleries.php:91
 msgid "Actions"
 msgstr "الإجراءات"
 
-#: admin/galleries.php:75
+#: admin/galleries.php:40
+msgid "Select All Galleries"
+msgstr "حدد جميع المعارض"
+
+#: admin/galleries.php:68
 msgid "Click To Copy Gallery Shortcode"
 msgstr "انقر لنسخ الرمز القصير للمعرض"
 
-#: admin/galleries.php:75
+#: admin/galleries.php:68
 msgid "Copy"
 msgstr "نسخ"
 
-#: admin/galleries.php:76
+#: admin/galleries.php:69
 msgid "Copied"
 msgstr "منسوخ"
 
-#: admin/galleries.php:79
+#: admin/galleries.php:72
 msgid "Clone Gallery"
 msgstr "معرض الاستنساخ"
 
-#: admin/galleries.php:81
+#: admin/galleries.php:73
+msgid "Modify Gallery"
+msgstr "تعديل المعرض"
+
+#: admin/galleries.php:74
 msgid "Delete Gallery"
 msgstr "حذف المعرض"
 
-#: admin/galleries.php:84
+#: admin/galleries.php:77
 msgid "Select Gallery"
 msgstr "اختر المعرض"
 
-#: admin/galleries.php:99
+#: admin/galleries.php:92
 msgid "Delete Selected Gallery"
 msgstr "حذف المعرض المحدد"
 
-#: admin/manage-gallery.php:57
+#: admin/manage-gallery.php:59
 msgid "Create and Manage Filters For Gallery"
 msgstr "إنشاء وإدارة المرشحات للمعرض"
 
-#: admin/manage-gallery.php:61
+#: admin/manage-gallery.php:68
 msgid "Gallery Name / Title"
 msgstr "اسم المعرض/العنوان"
 
-#: admin/manage-gallery.php:68 admin/manage-gallery.php:159
-#: admin/manage-gallery.php:185
+#: admin/manage-gallery.php:75 admin/manage-gallery.php:215
+#: admin/manage-gallery.php:242 admin/manage-gallery.php:245
 msgid "Filters"
 msgstr "المرشحات"
 
-#: admin/manage-gallery.php:75
-msgid "Video Tutorial (watch in fullscreen)"
-msgstr "فيديو تعليمي (مشاهدة في وضع ملء الشاشة)"
-
 #: admin/manage-gallery.php:82
-msgid "Filter Name"
-msgstr "اسم الفلتر"
-
-#: admin/manage-gallery.php:87
-msgid "Type Filter Name"
-msgstr "اكتب اسم عامل التصفية"
-
-#: admin/manage-gallery.php:99
-msgid "Update"
-msgstr "تحديث"
-
-#: admin/manage-gallery.php:100
-msgid "Add"
-msgstr "إضافة"
-
-#: admin/manage-gallery.php:103
 msgid "Important Note"
 msgstr "ملاحظة هامة"
 
-#: admin/manage-gallery.php:104
-msgid ""
-"Only the FIRST FIVE FILTERS will be usable and displayed in the output "
-"gallery."
-msgstr ""
-"ستكون المرشحات الخمسة الأولى فقط قابلة للاستخدام وسيتم عرضها في معرض "
-"المخرجات."
+#: admin/manage-gallery.php:83
+msgid "Create only parent and child level filters."
+msgstr "قم بإنشاء مرشحات على مستوى الوالدين والطفل فقط."
 
-#: admin/manage-gallery.php:105
-msgid "Create only parent-level filters. Child filters are a Pro feature."
-msgstr ""
-"قم بإنشاء مرشحات على مستوى الوالدين فقط. المرشحات الفرعية هي ميزة احترافية."
-
-#: admin/manage-gallery.php:106
-msgid "You can create five filters only. Upgrade to Pro for unlimited."
-msgstr "يمكنك إنشاء خمسة مرشحات فقط. الترقية إلى Pro لعدد غير محدود."
-
-#: admin/manage-gallery.php:107
-msgid ""
-"Deleting and re-positioning the filter after assigning it to images will "
-"lead to reassign."
-msgstr "سيؤدي حذف الفلتر وإعادة وضعه بعد تعيينه للصور إلى إعادة تعيينه."
-
-#: admin/manage-gallery.php:108
+#: admin/manage-gallery.php:84
 msgid "Do not use any symbol in filter name like"
 msgstr "لا تستخدم أي رمز في اسم الفلتر مثل"
 
-#: admin/manage-gallery.php:120 admin/manage-gallery.php:162
-#: admin/manage-gallery.php:482
+#: admin/manage-gallery.php:90
+msgid "Filter Name"
+msgstr "اسم الفلتر"
+
+#: admin/manage-gallery.php:95
+msgid "Type Filter Name"
+msgstr "اكتب اسم عامل التصفية"
+
+#: admin/manage-gallery.php:107
+msgid "Update"
+msgstr "تحديث"
+
+#: admin/manage-gallery.php:108
+msgid "Add"
+msgstr "إضافة"
+
+#: admin/manage-gallery.php:117 admin/manage-gallery.php:219
+#: admin/manage-gallery.php:942
 msgid "Save"
 msgstr "حفظ"
 
-#: admin/manage-gallery.php:123 admin/manage-gallery.php:479
+#: admin/manage-gallery.php:120 admin/manage-gallery.php:939
 msgid "Gallery"
 msgstr "معرض"
 
-#: admin/manage-gallery.php:133
+#: admin/manage-gallery.php:130
 msgid "Upload Images to Gallery And Apply Filters"
 msgstr "تحميل الصور إلى المعرض وتطبيق المرشحات"
 
-#: admin/manage-gallery.php:139
+#: admin/manage-gallery.php:137
+msgid "Sort ASC"
+msgstr "فرز تصاعديا"
+
+#: admin/manage-gallery.php:140
+msgid "Sort DESC"
+msgstr "فرز DESC"
+
+#: admin/manage-gallery.php:144
 msgid "Remove All"
 msgstr "إزالة الكل"
 
-#: admin/manage-gallery.php:149
+#: admin/manage-gallery.php:203
 msgid "Upload Images"
 msgstr "تحميل الصور"
 
-#: admin/manage-gallery.php:165 admin/manage-gallery.php:509
+#: admin/manage-gallery.php:223 admin/manage-gallery.php:969
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: admin/manage-gallery.php:174
+#: admin/manage-gallery.php:234
 msgid "Configure Settings"
 msgstr "تكوين الإعدادات"
 
-#: admin/manage-gallery.php:178
-msgid "Filter Settings"
-msgstr "إعدادات التصفية"
-
-#: admin/manage-gallery.php:189 admin/manage-gallery.php:203
-#: admin/manage-gallery.php:353 admin/manage-gallery.php:386
-#: admin/manage-gallery.php:462
+#: admin/manage-gallery.php:249 admin/manage-gallery.php:262
+#: admin/manage-gallery.php:276 admin/manage-gallery.php:291
+#: admin/manage-gallery.php:516 admin/manage-gallery.php:551
+#: admin/manage-gallery.php:592 admin/manage-gallery.php:634
+#: admin/manage-gallery.php:714 admin/manage-gallery.php:803
+#: admin/manage-gallery.php:817 admin/manage-gallery.php:831
+#: admin/manage-gallery.php:845
 msgid "Show"
 msgstr "عرض"
 
-#: admin/manage-gallery.php:192 admin/manage-gallery.php:206
-#: admin/manage-gallery.php:356 admin/manage-gallery.php:389
-#: admin/manage-gallery.php:465
+#: admin/manage-gallery.php:252 admin/manage-gallery.php:265
+#: admin/manage-gallery.php:279 admin/manage-gallery.php:294
+#: admin/manage-gallery.php:519 admin/manage-gallery.php:554
+#: admin/manage-gallery.php:595 admin/manage-gallery.php:637
+#: admin/manage-gallery.php:717 admin/manage-gallery.php:806
+#: admin/manage-gallery.php:820 admin/manage-gallery.php:834
+#: admin/manage-gallery.php:848
 msgid "Hide"
 msgstr "إخفاء"
 
-#: admin/manage-gallery.php:195
+#: admin/manage-gallery.php:255
 msgid "hide and show filter above gallery"
 msgstr "إخفاء وإظهار الفلتر أعلى المعرض"
 
-#: admin/manage-gallery.php:199
+#: admin/manage-gallery.php:258
+msgid "Filters Icon"
+msgstr "أيقونة المرشحات"
+
+#: admin/manage-gallery.php:268
+msgid "hide and show an icon on filters button"
+msgstr "إخفاء وإظهار أيقونة على زر الفلاتر"
+
+#: admin/manage-gallery.php:272
+msgid "Filters Image Count"
+msgstr "عدد صور المرشحات"
+
+#: admin/manage-gallery.php:287
 msgid "All Button"
 msgstr "كل زر"
 
-#: admin/manage-gallery.php:209
+#: admin/manage-gallery.php:297
 msgid "hide and show all filter button"
 msgstr "إخفاء وإظهار زر التصفية بالكامل"
 
-#: admin/manage-gallery.php:213
+#: admin/manage-gallery.php:301
 msgid "All Button Title"
 msgstr "كل عنوان الزر"
 
-#: admin/manage-gallery.php:214 setting.php:43
+#: admin/manage-gallery.php:302 setting.php:49
 msgid "All"
 msgstr "الكل"
 
-#: admin/manage-gallery.php:216
+#: admin/manage-gallery.php:304
 msgid "type name"
 msgstr "اكتب الاسم"
 
-#: admin/manage-gallery.php:218
+#: admin/manage-gallery.php:306
 msgid "set all filter button title"
 msgstr "تعيين كل عنوان زر التصفية"
 
-#: admin/manage-gallery.php:222
+#: admin/manage-gallery.php:309
+msgid "All Button Icon"
+msgstr "كل أيقونة الزر"
+
+#: admin/manage-gallery.php:314
+msgid "set all filter button icon"
+msgstr "تعيين أيقونة زر التصفية بالكامل"
+
+#: admin/manage-gallery.php:318
 msgid "All Button Color"
 msgstr "جميع ألوان الأزرار"
 
-#: admin/manage-gallery.php:227 admin/manage-gallery.php:236
+#: admin/manage-gallery.php:323 admin/manage-gallery.php:332
 msgid "set background color of all filter button"
 msgstr "تعيين لون الخلفية لجميع أزرار التصفية"
 
-#: admin/manage-gallery.php:231
+#: admin/manage-gallery.php:327
 msgid "All Button Background Color"
 msgstr "كل لون خلفية الأزرار"
 
-#: admin/manage-gallery.php:239
+#: admin/manage-gallery.php:335
+msgid "Parent Filters Heading"
+msgstr "عنوان عوامل التصفية الأصلية"
+
+#: admin/manage-gallery.php:340
+msgid "set parent filter button heading"
+msgstr "تعيين عنوان زر مرشح الأصل"
+
+#: admin/manage-gallery.php:343
 msgid "Parent Filter Button Color"
 msgstr "لون زر تصفية الأصل"
 
-#: admin/manage-gallery.php:244
+#: admin/manage-gallery.php:348
 msgid "set background color of parent filter button"
 msgstr "تعيين لون الخلفية لزر التصفية الأصل"
 
-#: admin/manage-gallery.php:247
+#: admin/manage-gallery.php:352
 msgid "Parent Filters Button Background Color"
 msgstr "لون خلفية زر مرشحات الأصل"
 
-#: admin/manage-gallery.php:252
+#: admin/manage-gallery.php:357
 msgid "set background color of parent filter background button."
 msgstr "تعيين لون الخلفية لزر خلفية مرشح الأصل."
 
-#: admin/manage-gallery.php:259
+#: admin/manage-gallery.php:360
+msgid "Level One Filters Heading"
+msgstr "عنوان مرشحات المستوى الأول"
+
+#: admin/manage-gallery.php:365
+msgid "set level one filter button heading"
+msgstr "تعيين عنوان زر مرشح المستوى الأول"
+
+#: admin/manage-gallery.php:368
+msgid "Level One Filters Button Color"
+msgstr "لون زر مرشحات المستوى الأول"
+
+#: admin/manage-gallery.php:373
+msgid "set color of level One filters button"
+msgstr "تعيين لون زر مرشحات المستوى الأول"
+
+#: admin/manage-gallery.php:376
+msgid "Level One Filters Button Background Color"
+msgstr "لون خلفية زر مرشحات المستوى الأول"
+
+#: admin/manage-gallery.php:381 admin/manage-gallery.php:392
+msgid "set background color of level one filters button"
+msgstr "تعيين لون الخلفية لزر مرشحات المستوى الأول"
+
+#: admin/manage-gallery.php:384
+msgid "Child Filters Effect"
+msgstr "تأثير مرشحات الطفل"
+
+#: admin/manage-gallery.php:388
+msgid "Fade"
+msgstr "تتلاشى"
+
+#: admin/manage-gallery.php:389
+msgid "Show / Hide"
+msgstr "إظهار/إخفاء"
+
+#: admin/manage-gallery.php:395
+msgid "Active Filter Button Color"
+msgstr "لون زر التصفية النشط"
+
+#: admin/manage-gallery.php:400
+msgid "set color of active filter button"
+msgstr "ضبط لون زر الفلتر النشط"
+
+#: admin/manage-gallery.php:403
+msgid "Active Filter Button Background Color"
+msgstr "لون خلفية زر التصفية النشط"
+
+#: admin/manage-gallery.php:408
+msgid "set background color of active filter button"
+msgstr "تعيين لون الخلفية لزر التصفية النشط"
+
+#: admin/manage-gallery.php:419
 msgid "Gallery Settings"
 msgstr "إعدادات المعرض"
 
-#: admin/manage-gallery.php:263
+#: admin/manage-gallery.php:423
 msgid "Columns On Desktop"
 msgstr "الأعمدة على سطح المكتب"
 
-#: admin/manage-gallery.php:267 admin/manage-gallery.php:290
-#: admin/manage-gallery.php:307
-msgid "3"
-msgstr "ثلاثة"
-
-#: admin/manage-gallery.php:270
-msgid "4"
-msgstr "أربعة"
-
-#: admin/manage-gallery.php:273
-msgid "6"
-msgstr "ستة"
-
-#: admin/manage-gallery.php:276
-msgid "columns to display on desktop or pc device"
-msgstr "أعمدة للعرض على سطح المكتب أو جهاز الكمبيوتر"
-
-#: admin/manage-gallery.php:280
-msgid "Columns On Tablet"
-msgstr "أعمدة على الكمبيوتر اللوحي"
-
-#: admin/manage-gallery.php:284 admin/manage-gallery.php:301
-#: admin/manage-gallery.php:318
+#: admin/manage-gallery.php:427 admin/manage-gallery.php:453
+#: admin/manage-gallery.php:476 admin/manage-gallery.php:496
 msgid "1"
 msgstr "واحد"
 
-#: admin/manage-gallery.php:287 admin/manage-gallery.php:304
-#: admin/manage-gallery.php:321
+#: admin/manage-gallery.php:430 admin/manage-gallery.php:456
+#: admin/manage-gallery.php:479 admin/manage-gallery.php:499
 msgid "2"
 msgstr "اثنين"
 
-#: admin/manage-gallery.php:293
+#: admin/manage-gallery.php:433 admin/manage-gallery.php:459
+#: admin/manage-gallery.php:482 admin/manage-gallery.php:502
+msgid "3"
+msgstr "ثلاثة"
+
+#: admin/manage-gallery.php:436 admin/manage-gallery.php:462
+#: admin/manage-gallery.php:485 admin/manage-gallery.php:505
+msgid "4"
+msgstr "أربعة"
+
+#: admin/manage-gallery.php:439 admin/manage-gallery.php:465
+msgid "6"
+msgstr "ستة"
+
+#: admin/manage-gallery.php:442
+msgid "12"
+msgstr "اثني عشر"
+
+#: admin/manage-gallery.php:445
+msgid "columns to display on desktop or pc device"
+msgstr "أعمدة للعرض على سطح المكتب أو جهاز الكمبيوتر"
+
+#: admin/manage-gallery.php:449
+msgid "Columns On Tablet"
+msgstr "أعمدة على الكمبيوتر اللوحي"
+
+#: admin/manage-gallery.php:468
 msgid "columns to display on tablet device"
 msgstr "أعمدة للعرض على الجهاز اللوحي"
 
-#: admin/manage-gallery.php:297
+#: admin/manage-gallery.php:472
 msgid "Columns On Mobile - Landscape Mode"
 msgstr "الأعمدة على الهاتف المحمول - الوضع الأفقي"
 
-#: admin/manage-gallery.php:310
-msgid "columns to display on mobile device with landscape mode"
-msgstr "أعمدة لعرضها على الجهاز المحمول في الوضع الأفقي"
+#: admin/manage-gallery.php:488
+msgid "columns to display on the mobile device with landscape mode"
+msgstr "أعمدة للعرض على الجهاز المحمول في الوضع الأفقي"
 
-#: admin/manage-gallery.php:314
+#: admin/manage-gallery.php:492
 msgid "Columns On Mobile - Portrait Mode"
 msgstr "الأعمدة على الهاتف المحمول - الوضع الرأسي"
 
-#: admin/manage-gallery.php:324
+#: admin/manage-gallery.php:508
 msgid "columns to display on mobile device with portrait mode"
 msgstr "أعمدة للعرض على الجهاز المحمول في الوضع الرأسي"
 
-#: admin/manage-gallery.php:328
+#: admin/manage-gallery.php:512
+msgid "Thumbnail Image"
+msgstr "صورة مصغرة"
+
+#: admin/manage-gallery.php:522
+msgid "show or hide image thumbnail into gallery"
+msgstr "إظهار أو إخفاء الصورة المصغرة في المعرض"
+
+#: admin/manage-gallery.php:526
 msgid "Thumbnail Image Size"
 msgstr "حجم الصورة المصغرة"
 
-#: admin/manage-gallery.php:332
+#: admin/manage-gallery.php:530
 msgid "Small"
 msgstr "صغير"
 
-#: admin/manage-gallery.php:333
+#: admin/manage-gallery.php:531
 msgid "Medium"
 msgstr "متوسط"
 
-#: admin/manage-gallery.php:334
+#: admin/manage-gallery.php:532
 msgid "Large"
 msgstr "كبير"
 
-#: admin/manage-gallery.php:335
+#: admin/manage-gallery.php:533
 msgid "Original"
 msgstr "الأصل"
 
-#: admin/manage-gallery.php:336 admin/manage-gallery.php:337
-#: admin/manage-gallery.php:338
+#: admin/manage-gallery.php:534 admin/manage-gallery.php:535
+#: admin/manage-gallery.php:536
 msgid "Same Size"
 msgstr "نفس الحجم"
 
-#: admin/manage-gallery.php:341
+#: admin/manage-gallery.php:539
 msgid "set thumbnail image size"
 msgstr "ضبط حجم الصورة المصغرة"
 
-#: admin/manage-gallery.php:343
+#: admin/manage-gallery.php:541 admin/manage-gallery.php:705
 msgid "Note"
 msgstr "ملاحظة"
 
-#: admin/manage-gallery.php:344
+#: admin/manage-gallery.php:542
 msgid ""
-"The same size setting will only work with new images uploaded after the "
-"plugin installation."
+"Same size setting will only work with new images uploaded after the plugin "
+"installation."
 msgstr ""
 "لن يعمل إعداد الحجم نفسه إلا مع الصور الجديدة التي تم تحميلها بعد تثبيت "
-"البرنامج الإضافي."
+"البرنامج المساعد."
 
-#: admin/manage-gallery.php:345
+#: admin/manage-gallery.php:543
 msgid "It will not work with previously uploaded images."
 msgstr "لن يعمل مع الصور التي تم تحميلها مسبقًا."
 
-#: admin/manage-gallery.php:349
+#: admin/manage-gallery.php:547
 msgid "Thumbnail Border"
 msgstr "حدود الصورة المصغرة"
 
-#: admin/manage-gallery.php:359
+#: admin/manage-gallery.php:557
 msgid "show or hide thumbnail border"
 msgstr "إظهار أو إخفاء حدود الصورة المصغرة"
 
-#: admin/manage-gallery.php:363
+#: admin/manage-gallery.php:561
 msgid "Thumbnail Border Thickness"
 msgstr "سمك حدود الصورة المصغرة"
 
-#: admin/manage-gallery.php:369
+#: admin/manage-gallery.php:567
 msgid "set thumbnail border thickness"
 msgstr "ضبط سمك حدود الصورة المصغرة"
 
-#: admin/manage-gallery.php:373
+#: admin/manage-gallery.php:571
 msgid "Thumbnail Border Color"
 msgstr "لون حدود الصورة المصغرة"
 
-#: admin/manage-gallery.php:378
+#: admin/manage-gallery.php:576
 msgid "set thumbnail border color"
 msgstr "تعيين لون حدود الصورة المصغرة"
 
-#: admin/manage-gallery.php:382 filter-gallery.php:218 filter-gallery.php:380
+#: admin/manage-gallery.php:579
+msgid "Thumbnail Background Color"
+msgstr "لون خلفية الصورة المصغرة"
+
+#: admin/manage-gallery.php:584
+msgid "set thumbnail background color"
+msgstr "ضبط لون خلفية الصورة المصغرة"
+
+#: admin/manage-gallery.php:588 filter-gallery-pro.php:273
+#: filter-gallery-pro.php:518
 msgid "Image Title"
 msgstr "عنوان الصورة"
 
-#: admin/manage-gallery.php:392
+#: admin/manage-gallery.php:598
 msgid "hide or show image title"
 msgstr "إخفاء أو إظهار عنوان الصورة"
 
-#: admin/manage-gallery.php:396
+#: admin/manage-gallery.php:602
 msgid "Image Title Font Size"
 msgstr "حجم خط عنوان الصورة"
 
-#: admin/manage-gallery.php:402
+#: admin/manage-gallery.php:608
 msgid "set image title font size"
 msgstr "ضبط حجم خط عنوان الصورة"
 
-#: admin/manage-gallery.php:406
+#: admin/manage-gallery.php:612
 msgid "Image Title Color"
 msgstr "لون عنوان الصورة"
 
-#: admin/manage-gallery.php:411
+#: admin/manage-gallery.php:617
 msgid "set image title text color"
 msgstr "تعيين لون نص عنوان الصورة"
 
-#: admin/manage-gallery.php:415
+#: admin/manage-gallery.php:621
 msgid "Image Title Background Color"
 msgstr "لون خلفية عنوان الصورة"
 
-#: admin/manage-gallery.php:420
+#: admin/manage-gallery.php:626
 msgid "set image title background color"
 msgstr "تعيين لون خلفية عنوان الصورة"
 
-#: admin/manage-gallery.php:424
-msgid "Image Sorting"
-msgstr "فرز الصور"
+#: admin/manage-gallery.php:630 filter-gallery-pro.php:279
+#: filter-gallery-pro.php:524
+msgid "Image Description"
+msgstr "وصف الصورة"
 
-#: admin/manage-gallery.php:428
-msgid "Image ID - Ascending"
-msgstr "معرف الصورة - تصاعدي"
+#: admin/manage-gallery.php:640
+msgid "hide or show image description"
+msgstr "إخفاء أو إظهار وصف الصورة"
 
-#: admin/manage-gallery.php:429
-msgid "Image ID - Descending"
-msgstr "معرف الصورة - تنازلي"
+#: admin/manage-gallery.php:644
+msgid "Image Description Font Size"
+msgstr "حجم خط وصف الصورة"
 
-#: admin/manage-gallery.php:430
+#: admin/manage-gallery.php:650
+msgid "set image description font size"
+msgstr "ضبط حجم خط وصف الصورة"
+
+#: admin/manage-gallery.php:654
+msgid "Image Description Color"
+msgstr "لون وصف الصورة"
+
+#: admin/manage-gallery.php:659
+msgid "set image description text color"
+msgstr "ضبط لون نص وصف الصورة"
+
+#: admin/manage-gallery.php:663
+msgid "Image Description Background Color"
+msgstr "لون خلفية وصف الصورة"
+
+#: admin/manage-gallery.php:668
+msgid "set image description background color"
+msgstr "تعيين لون خلفية وصف الصورة"
+
+#: admin/manage-gallery.php:672
+msgid "Image Description Text Limit"
+msgstr "حد نص وصف الصورة"
+
+#: admin/manage-gallery.php:677
+msgid "characters"
+msgstr "الحروف"
+
+#: admin/manage-gallery.php:678
+msgid "set image description text limit"
+msgstr "تعيين حد نص وصف الصورة"
+
+#: admin/manage-gallery.php:682
+msgid "Image Hover Effect"
+msgstr "تأثير تحويم الصورة"
+
+#: admin/manage-gallery.php:686 admin/manage-gallery.php:783
 msgid "None"
 msgstr "لا شيء"
 
-#: admin/manage-gallery.php:433
+#: admin/manage-gallery.php:687
+msgid "Border Overlay"
+msgstr "تراكب الحدود"
+
+#: admin/manage-gallery.php:690 admin/manage-gallery.php:720
+msgid "hide or show read more button"
+msgstr "زر إخفاء أو إظهار قراءة المزيد"
+
+#: admin/manage-gallery.php:693
+msgid "Read More Link On"
+msgstr "إقرأ المزيد الرابط على"
+
+#: admin/manage-gallery.php:697
+msgid "Button"
+msgstr "زر"
+
+#: admin/manage-gallery.php:700
+msgid "Image"
+msgstr "صورة"
+
+#: admin/manage-gallery.php:703
+msgid "show link on image or button"
+msgstr "إظهار الرابط على الصورة أو الزر"
+
+#: admin/manage-gallery.php:706
+msgid ""
+"If Read More Link set on Image then lightbox functionality will not work."
+msgstr ""
+"إذا تم تعيين رابط قراءة المزيد على الصورة، فلن تعمل وظيفة العرض المبسط."
+
+#: admin/manage-gallery.php:710
+msgid "Read More Button"
+msgstr "زر قراءة المزيد"
+
+#: admin/manage-gallery.php:724
+msgid "Read More Button Text"
+msgstr "قراءة المزيد نص الزر"
+
+#: admin/manage-gallery.php:725 setting.php:458
+msgid "Read More"
+msgstr "إقرأ المزيد"
+
+#: admin/manage-gallery.php:729
+msgid "set read more button title text"
+msgstr "تعيين نص عنوان زر قراءة المزيد"
+
+#: admin/manage-gallery.php:732
+msgid "Read More Button Icon"
+msgstr "أيقونة زر قراءة المزيد"
+
+#: admin/manage-gallery.php:737
+msgid "set read more button icon"
+msgstr "تعيين أيقونة زر قراءة المزيد"
+
+#: admin/manage-gallery.php:741
+msgid "Read More Button Color"
+msgstr "إقرأ المزيد لون الزر"
+
+#: admin/manage-gallery.php:748
+msgid "set read more button text color"
+msgstr "تعيين لون نص زر قراءة المزيد"
+
+#: admin/manage-gallery.php:751
+msgid "Read More Button Background Color"
+msgstr "قراءة المزيد لون خلفية الزر"
+
+#: admin/manage-gallery.php:758 admin/manage-gallery.php:893
+#: admin/manage-gallery.php:903
+msgid "set read more button background color"
+msgstr "تعيين لون خلفية زر قراءة المزيد"
+
+#: admin/manage-gallery.php:761
+msgid "Read More Link Open"
+msgstr "إقرأ المزيد الرابط مفتوح"
+
+#: admin/manage-gallery.php:765
+msgid "In New Page"
+msgstr "في صفحة جديدة"
+
+#: admin/manage-gallery.php:768
+msgid "In Same Page"
+msgstr "في نفس الصفحة"
+
+#: admin/manage-gallery.php:771
+msgid "set link opening option"
+msgstr "ضبط خيار فتح الرابط"
+
+#: admin/manage-gallery.php:774
+msgid "Image Sorting"
+msgstr "فرز الصور"
+
+#: admin/manage-gallery.php:778
+msgid "Image ID - Ascending"
+msgstr "معرف الصورة - تصاعدي"
+
+#: admin/manage-gallery.php:779
+msgid "Image ID - Descending"
+msgstr "معرف الصورة - تنازلي"
+
+#: admin/manage-gallery.php:780
+msgid "Image Title - Ascending"
+msgstr "عنوان الصورة - تصاعدي"
+
+#: admin/manage-gallery.php:781
+msgid "Image Title - Descending"
+msgstr "عنوان الصورة - تنازلي"
+
+#: admin/manage-gallery.php:782
+msgid "Shuffle / Random"
+msgstr "خلط ورق اللعب / عشوائي"
+
+#: admin/manage-gallery.php:786
 msgid "set gallery image sorting"
 msgstr "ضبط فرز الصور في المعرض"
 
-#: admin/manage-gallery.php:440
+#: admin/manage-gallery.php:795
 msgid "Lightbox Settings"
 msgstr "إعدادات العرض المبسط"
 
-#: admin/manage-gallery.php:444
+#: admin/manage-gallery.php:799
 msgid "Lightbox"
 msgstr "صندوق مبسط"
 
-#: admin/manage-gallery.php:448
-msgid "Enable"
-msgstr "يُمكَِن"
-
-#: admin/manage-gallery.php:451
-msgid "Disable"
-msgstr "إبطال"
-
-#: admin/manage-gallery.php:454
+#: admin/manage-gallery.php:809 admin/manage-gallery.php:874
 msgid "set lightbox functionality on gallery thumbnail for larger preview"
 msgstr "ضبط وظيفة العرض المبسط على الصورة المصغرة للمعرض لمعاينة أكبر"
 
-#: admin/manage-gallery.php:468
+#: admin/manage-gallery.php:823
 msgid "show image title under the lightbox"
 msgstr "إظهار عنوان الصورة تحت العرض المبسط"
 
-#: admin/manage-gallery.php:493
+#: admin/manage-gallery.php:827
+msgid "Description"
+msgstr "الوصف"
+
+#: admin/manage-gallery.php:837
+msgid "show image description under the lightbox"
+msgstr "إظهار وصف الصورة تحت العرض المبسط"
+
+#: admin/manage-gallery.php:841
+msgid "Numbering"
+msgstr "الترقيم"
+
+#: admin/manage-gallery.php:851
+msgid "show image number under the lightbox"
+msgstr "إظهار رقم الصورة تحت العلبة المبسطة"
+
+#: admin/manage-gallery.php:861
+msgid "Load More Settings"
+msgstr "تحميل المزيد من الإعدادات"
+
+#: admin/manage-gallery.php:864 setting.php:538
+msgid "Load More"
+msgstr "تحميل المزيد"
+
+#: admin/manage-gallery.php:868
+msgid "On"
+msgstr "على"
+
+#: admin/manage-gallery.php:871
+msgid "Off"
+msgstr "إيقاف"
+
+#: admin/manage-gallery.php:877
+msgid "Load Limit"
+msgstr "حد التحميل"
+
+#: admin/manage-gallery.php:882
+msgid "Set loading element limit"
+msgstr "تعيين حد عنصر التحميل"
+
+#: admin/manage-gallery.php:886
+msgid "Load More Button Color"
+msgstr "تحميل المزيد من لون الزر"
+
+#: admin/manage-gallery.php:896
+msgid "Load More Button Text Color"
+msgstr "تحميل المزيد من لون نص الزر"
+
+#: admin/manage-gallery.php:906
+msgid "Load More Button Text"
+msgstr "تحميل المزيد من نص الزر"
+
+#: admin/manage-gallery.php:911
+msgid "Change load button text"
+msgstr "تغيير نص زر التحميل"
+
+#: admin/manage-gallery.php:920
+msgid "Custom CSS"
+msgstr "CSS مخصص"
+
+#: admin/manage-gallery.php:927
+msgid "apply a custom design to gallery"
+msgstr "تطبيق تصميم مخصص على المعرض"
+
+#: admin/manage-gallery.php:955
 msgid "Gallery Shortcode"
 msgstr "الرمز القصير للمعرض"
 
-#: admin/manage-gallery.php:502
+#: admin/manage-gallery.php:963
 msgid "Copy Shortcode"
 msgstr "نسخ الرمز القصير"
 
-#: admin/manage-gallery.php:503
+#: admin/manage-gallery.php:964
 msgid "Shortcode Copied"
 msgstr "تم نسخ الرمز القصير"
 
-#: admin/manage-gallery.php:559 admin/manage-gallery.php:585
-#: filter-gallery.php:206 filter-gallery.php:415
+#: admin/manage-gallery.php:1018 admin/manage-gallery.php:1054
+#: filter-gallery-pro.php:262 filter-gallery-pro.php:549
 msgid "Select Filters"
 msgstr "اختر المرشحات"
 
-#: filter-gallery.php:80
-msgid "Filter Gallery"
-msgstr "معرض التصفية"
-
-#: filter-gallery.php:221 filter-gallery.php:383
+#: filter-gallery-pro.php:276 filter-gallery-pro.php:521
 msgid "Image Alternative Text"
 msgstr "نص بديل للصورة"
 
-#: filter-gallery.php:234 filter-gallery.php:402
+#: filter-gallery-pro.php:282 filter-gallery-pro.php:527
+msgid "Link URL"
+msgstr "رابط الرابط"
+
+#: filter-gallery-pro.php:292 filter-gallery-pro.php:537
 msgid "Remove"
 msgstr "إزالة"
-
-#: shortcode.php:126
-msgid "Error! invalid shortcode."
-msgstr "خطأ! الرمز القصير صالح."
-
-#~ msgid "Select All Galleries"
-#~ msgstr "حدد جميع المعارض"
-
-#~ msgid "Modify Gallery"
-#~ msgstr "تعديل المعرض"
-
-#~ msgid "Sort ASC"
-#~ msgstr "فرز تصاعديا"
-
-#~ msgid "Sort DESC"
-#~ msgstr "فرز DESC"
-
-#~ msgid "Filters Icon"
-#~ msgstr "أيقونة المرشحات"
-
-#~ msgid "hide and show an icon on filters button"
-#~ msgstr "إخفاء وإظهار أيقونة على زر الفلاتر"
-
-#~ msgid "Filters Image Count"
-#~ msgstr "عدد صور المرشحات"
-
-#~ msgid "All Button Icon"
-#~ msgstr "كل أيقونة الزر"
-
-#~ msgid "set all filter button icon"
-#~ msgstr "تعيين أيقونة زر التصفية بالكامل"
-
-#~ msgid "Parent Filters Heading"
-#~ msgstr "عنوان عوامل التصفية الأصلية"
-
-#~ msgid "set parent filter button heading"
-#~ msgstr "تعيين عنوان زر مرشح الأصل"
-
-#~ msgid "Level One Filters Heading"
-#~ msgstr "عنوان مرشحات المستوى الأول"
-
-#~ msgid "set level one filter button heading"
-#~ msgstr "تعيين عنوان زر مرشح المستوى الأول"
-
-#~ msgid "Level One Filters Button Color"
-#~ msgstr "لون زر مرشحات المستوى الأول"
-
-#~ msgid "set color of level One filters button"
-#~ msgstr "تعيين لون زر مرشحات المستوى الأول"
-
-#~ msgid "Level One Filters Button Background Color"
-#~ msgstr "لون خلفية زر مرشحات المستوى الأول"
-
-#~ msgid "set background color of level one filters button"
-#~ msgstr "تعيين لون الخلفية لزر مرشحات المستوى الأول"
-
-#~ msgid "Child Filters Effect"
-#~ msgstr "تأثير مرشحات الطفل"
-
-#~ msgid "Fade"
-#~ msgstr "تتلاشى"
-
-#~ msgid "Show / Hide"
-#~ msgstr "إظهار/إخفاء"
-
-#~ msgid "Active Filter Button Color"
-#~ msgstr "لون زر التصفية النشط"
-
-#~ msgid "set color of active filter button"
-#~ msgstr "ضبط لون زر الفلتر النشط"
-
-#~ msgid "Active Filter Button Background Color"
-#~ msgstr "لون خلفية زر التصفية النشط"
-
-#~ msgid "set background color of active filter button"
-#~ msgstr "تعيين لون الخلفية لزر التصفية النشط"
-
-#~ msgid "12"
-#~ msgstr "اثني عشر"
-
-#~ msgid "Thumbnail Image"
-#~ msgstr "صورة مصغرة"
-
-#~ msgid "show or hide image thumbnail into gallery"
-#~ msgstr "إظهار أو إخفاء الصورة المصغرة في المعرض"
-
-#~ msgid "Thumbnail Background Color"
-#~ msgstr "لون خلفية الصورة المصغرة"
-
-#~ msgid "set thumbnail background color"
-#~ msgstr "ضبط لون خلفية الصورة المصغرة"
-
-#~ msgid "Image Description"
-#~ msgstr "وصف الصورة"
-
-#~ msgid "hide or show image description"
-#~ msgstr "إخفاء أو إظهار وصف الصورة"
-
-#~ msgid "Image Description Font Size"
-#~ msgstr "حجم خط وصف الصورة"
-
-#~ msgid "set image description font size"
-#~ msgstr "ضبط حجم خط وصف الصورة"
-
-#~ msgid "Image Description Color"
-#~ msgstr "لون وصف الصورة"
-
-#~ msgid "set image description text color"
-#~ msgstr "ضبط لون نص وصف الصورة"
-
-#~ msgid "Image Description Background Color"
-#~ msgstr "لون خلفية وصف الصورة"
-
-#~ msgid "set image description background color"
-#~ msgstr "تعيين لون خلفية وصف الصورة"
-
-#~ msgid "Image Description Text Limit"
-#~ msgstr "حد نص وصف الصورة"
-
-#~ msgid "characters"
-#~ msgstr "الحروف"
-
-#~ msgid "set image description text limit"
-#~ msgstr "تعيين حد نص وصف الصورة"
-
-#~ msgid "Image Hover Effect"
-#~ msgstr "تأثير تحويم الصورة"
-
-#~ msgid "Border Overlay"
-#~ msgstr "تراكب الحدود"
-
-#~ msgid "hide or show read more button"
-#~ msgstr "زر إخفاء أو إظهار قراءة المزيد"
-
-#~ msgid "Read More Link On"
-#~ msgstr "إقرأ المزيد الرابط على"
-
-#~ msgid "Button"
-#~ msgstr "زر"
-
-#~ msgid "Image"
-#~ msgstr "صورة"
-
-#~ msgid "show link on image or button"
-#~ msgstr "إظهار الرابط على الصورة أو الزر"
-
-#~ msgid ""
-#~ "If Read More Link set on Image then lightbox functionality will not work."
-#~ msgstr ""
-#~ "إذا تم تعيين رابط قراءة المزيد على الصورة، فلن تعمل وظيفة العرض المبسط."
-
-#~ msgid "Read More Button"
-#~ msgstr "زر قراءة المزيد"
-
-#~ msgid "Read More Button Text"
-#~ msgstr "قراءة المزيد نص الزر"
-
-#~ msgid "Read More"
-#~ msgstr "إقرأ المزيد"
-
-#~ msgid "set read more button title text"
-#~ msgstr "تعيين نص عنوان زر قراءة المزيد"
-
-#~ msgid "Read More Button Icon"
-#~ msgstr "أيقونة زر قراءة المزيد"
-
-#~ msgid "set read more button icon"
-#~ msgstr "تعيين أيقونة زر قراءة المزيد"
-
-#~ msgid "Read More Button Color"
-#~ msgstr "إقرأ المزيد لون الزر"
-
-#~ msgid "set read more button text color"
-#~ msgstr "تعيين لون نص زر قراءة المزيد"
-
-#~ msgid "Read More Button Background Color"
-#~ msgstr "قراءة المزيد لون خلفية الزر"
-
-#~ msgid "set read more button background color"
-#~ msgstr "تعيين لون خلفية زر قراءة المزيد"
-
-#~ msgid "Read More Link Open"
-#~ msgstr "إقرأ المزيد الرابط مفتوح"
-
-#~ msgid "In New Page"
-#~ msgstr "في صفحة جديدة"
-
-#~ msgid "In Same Page"
-#~ msgstr "في نفس الصفحة"
-
-#~ msgid "set link opening option"
-#~ msgstr "ضبط خيار فتح الرابط"
-
-#~ msgid "Image Title - Ascending"
-#~ msgstr "عنوان الصورة - تصاعدي"
-
-#~ msgid "Image Title - Descending"
-#~ msgstr "عنوان الصورة - تنازلي"
-
-#~ msgid "Shuffle / Random"
-#~ msgstr "خلط ورق اللعب / عشوائي"
-
-#~ msgid "Description"
-#~ msgstr "الوصف"
-
-#~ msgid "show image description under the lightbox"
-#~ msgstr "إظهار وصف الصورة تحت العرض المبسط"
-
-#~ msgid "Numbering"
-#~ msgstr "الترقيم"
-
-#~ msgid "show image number under the lightbox"
-#~ msgstr "إظهار رقم الصورة تحت العلبة المبسطة"
-
-#~ msgid "Load More Settings"
-#~ msgstr "تحميل المزيد من الإعدادات"
-
-#~ msgid "Load More"
-#~ msgstr "تحميل المزيد"
-
-#~ msgid "On"
-#~ msgstr "على"
-
-#~ msgid "Off"
-#~ msgstr "إيقاف"
-
-#~ msgid "Load Limit"
-#~ msgstr "حد التحميل"
-
-#~ msgid "Set loading element limit"
-#~ msgstr "تعيين حد عنصر التحميل"
-
-#~ msgid "Load More Button Color"
-#~ msgstr "تحميل المزيد من لون الزر"
-
-#~ msgid "Load More Button Text Color"
-#~ msgstr "تحميل المزيد من لون نص الزر"
-
-#~ msgid "Load More Button Text"
-#~ msgstr "تحميل المزيد من نص الزر"
-
-#~ msgid "Change load button text"
-#~ msgstr "تغيير نص زر التحميل"
-
-#~ msgid "Custom CSS"
-#~ msgstr "CSS مخصص"
-
-#~ msgid "apply a custom design to gallery"
-#~ msgstr "تطبيق تصميم مخصص على المعرض"
-
-#~ msgid "Link URL"
-#~ msgstr "رابط الرابط"

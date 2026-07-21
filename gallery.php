@@ -6,7 +6,10 @@ if (!defined('ABSPATH'))
 if (!function_exists('ufg_gallery')) {
 	function ufg_gallery($ufg_gallery_id, $ufg_gallery, $ufg_images_per_page, $atts = array())
 	{
-		if (is_array($ufg_gallery)) {
+			if (!is_array($ufg_gallery)) $ufg_gallery = array();
+			if (!isset($ufg_gallery['ufg-attachment-id']) || !is_array($ufg_gallery['ufg-attachment-id'])) $ufg_gallery['ufg-attachment-id'] = array();
+			if (!isset($ufg_gallery['ufg-title']) || !is_array($ufg_gallery['ufg-title'])) $ufg_gallery['ufg-title'] = array();
+
 			$load_class = '';
 			$new_array = array();
 			$new_array_final = array();
@@ -19,7 +22,7 @@ if (!function_exists('ufg_gallery')) {
 			$j = 0;
 			$new_array = array();
 			$new_array_final = array();
-			if (array_key_exists('ufg-image-filters', $ufg_gallery)) {
+			if (is_array($ufg_gallery) && array_key_exists('ufg-image-filters', $ufg_gallery)) {
 				foreach ($ufg_gallery['ufg-image-filters'] as $key => $array) {
 					foreach ($array as $key2 => $val) {
 						if (strpos($val, ',') !== false) {
@@ -42,47 +45,62 @@ if (!function_exists('ufg_gallery')) {
 					$new_array_final[$new_key] = $new_re_in;
 				}
 				$filter_image = $new_array_final;
+				
+				if (!function_exists('ufg_expand_filter_images_hierarchy')) {
+					function ufg_expand_filter_images_hierarchy($filters, &$filter_images) {
+						$all_images = array();
+						if (is_array($filters)) {
+							foreach ($filters as $f) {
+								if (!isset($f->filterkey)) continue;
+								$key = str_replace(" ", "-", strtolower(trim($f->filterkey)));
+								
+								$my_images = isset($filter_images[$key]) ? $filter_images[$key] : array();
+								
+								if (isset($f->children) && is_array($f->children)) {
+									ufg_expand_filter_images_hierarchy($f->children, $filter_images);
+								}
+								
+								$my_images = array_values(array_unique($my_images));
+								if (!empty($my_images)) {
+									$filter_images[$key] = $my_images;
+								}
+								$all_images = array_merge($all_images, $my_images);
+							}
+						}
+						return array_unique($all_images);
+					}
+				}
+				if (!isset($ufg_filters) || empty($ufg_filters)) {
+					$ufg_filters = get_option("ufg_filters_" . $ufg_gallery_id);
+				}
+				if (!empty($ufg_filters)) {
+					ufg_expand_filter_images_hierarchy($ufg_filters, $filter_image);
+				}
 			}
 
 			//image sorting
-			if (array_key_exists('ufg-title', $ufg_gallery)) {
+			if (is_array($ufg_gallery) && array_key_exists('ufg-title', $ufg_gallery)) {
 				if ($ufg_image_sorting == 1)
 					ksort($ufg_gallery['ufg-title']); //ascending image id
 				if ($ufg_image_sorting == 2)
 					krsort($ufg_gallery['ufg-title']); //descending image id
-				if ($ufg_image_sorting == 3)
-					asort($ufg_gallery['ufg-title']); //ascending image title
-				if ($ufg_image_sorting == 4)
-					arsort($ufg_gallery['ufg-title']); //descending image title
-				//if($ufg_image_sorting == 5) array_reverse($ufg_gallery['ufg-title']); //none
 			}
 
-			if (!function_exists('ufg_shuffle_assoc')) {
-				function ufg_shuffle_assoc(&$array)
-				{
-					$keys = array_keys($array);
-					shuffle($keys);
-					foreach ($keys as $key) {
-						$new[$key] = $array[$key];
-					}
-					$array = $new;
-					return true;
-				}
-			}
-
-			if ($ufg_image_sorting == 6)
-				ufg_shuffle_assoc($ufg_gallery['ufg-title']); //random
-			$ufg_total_images = count($ufg_gallery['ufg-attachment-id']);
+			$ufg_total_images = is_array($ufg_gallery['ufg-attachment-id']) ? count($ufg_gallery['ufg-attachment-id']) : 0;
 
 			// load more array
 			$load_id_array = array();
 			if ($ufg_image_sorting == 5) { //if sorting is OFF
-				foreach ($ufg_gallery['ufg-attachment-id'] as $value) {
-					$load_id_array[] = $value;
+				if (is_array($ufg_gallery['ufg-attachment-id'])) {
+					foreach ($ufg_gallery['ufg-attachment-id'] as $value) {
+						$load_id_array[] = $value;
+					}
 				}
 			} else { //if sorting is ON
-				foreach ($ufg_gallery['ufg-title'] as $key => $value) {
-					$load_id_array[] = $key;
+				if (is_array($ufg_gallery['ufg-title'])) {
+					foreach ($ufg_gallery['ufg-title'] as $key => $value) {
+						$load_id_array[] = $key;
+					}
 				}
 			}
 
@@ -93,16 +111,14 @@ if (!function_exists('ufg_gallery')) {
 			$ufg_title = $ufg_alt = $ufg_description = $ufg_url = "";
 
 			// Load more var
-			//$ufg_limit = 2;
-			//$ufg_load_more = 'on';
-			//$ufg_total_images = 12;
+			$load_more = 'off';
 			$count = 0;
 			$no = 1;
 			//******************** Load Image With Limit [Shortcode] *******************//
 			if ($load_more != 'on') {
 
 				if ($ufg_image_sorting == 5) { //if sorting is OFF
-					$reversed_attachment_ids = $ufg_gallery['ufg-attachment-id'];
+					$reversed_attachment_ids = is_array($ufg_gallery['ufg-attachment-id']) ? $ufg_gallery['ufg-attachment-id'] : array();
 					//$reversed_attachment_ids = array_reverse($ufg_gallery['ufg-attachment-id'], true);
 					foreach ($reversed_attachment_ids as $value) {
 						$attachment_id = $value;
@@ -110,7 +126,7 @@ if (!function_exists('ufg_gallery')) {
 						include('gallery-content.php');
 					}
 				} else { //if sorting is ON
-					$reversed_attachment_ids = $ufg_gallery['ufg-title'];
+					$reversed_attachment_ids = is_array($ufg_gallery['ufg-title']) ? $ufg_gallery['ufg-title'] : array();
 					foreach ($reversed_attachment_ids as $key => $value) {
 						$attachment_id = $key;
 						// Load Gallery Content
@@ -217,7 +233,6 @@ if (!function_exists('ufg_gallery')) {
 				}
 			}
 			echo "</div>";
-		}
 	}
 }
 ?>

@@ -21,8 +21,33 @@ $medium = wp_get_attachment_image_src($attachment_id_int, $medium_size);
 $full = wp_get_attachment_image_src($attachment_id_int, 'full');
 
 $ufg_url = '';
-if (isset($ufg_gallery['ufg-url'][$attachment_id]))
-	$ufg_url = $ufg_gallery['ufg-url'][$attachment_id];
+
+if (!function_exists('ufg_get_filter_ancestors')) {
+	function ufg_get_filter_ancestors($filters, $target_key, $current_path = array()) {
+		if (is_array($filters)) {
+			foreach ($filters as $f) {
+				if (!isset($f->filterkey)) continue;
+				$clean_key = strtolower(trim($f->filterkey));
+				$f_class = str_replace(" ", "-", $clean_key);
+				
+				$new_path = $current_path;
+				$new_path[] = $f_class;
+				
+				if ($clean_key === strtolower(trim($target_key))) {
+					return $new_path;
+				}
+				
+				if (isset($f->children) && is_array($f->children)) {
+					$res = ufg_get_filter_ancestors($f->children, $target_key, $new_path);
+					if (!empty($res)) {
+						return $res;
+					}
+				}
+			}
+		}
+		return array();
+	}
+}
 
 if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_gallery['ufg-image-filters'][$attachment_id]) && count($ufg_gallery['ufg-image-filters'][$attachment_id])) {
 	$filters_raw = $ufg_gallery['ufg-image-filters'][$attachment_id];
@@ -40,6 +65,12 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 			$filters[] = trim($fr);
 		}
 	}
+	
+	$expanded_filters = array();
+	foreach ($filters as $f) {
+		$expanded_filters[] = str_replace(" ", "-", strtolower($f));
+	}
+	$filters = array_values(array_unique($expanded_filters));
 } else {
 	$filters = array();
 }
@@ -49,7 +80,7 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 	<div class="ufg-thumbnail-border">
 		<!-- Lightbox = Show -->
 		<?php
-		$is_lightbox_enabled = ($ufg_lightbox === 'on');
+		$is_lightbox_enabled = ($ufg_lightbox === 'on' || $ufg_lightbox == 1 || $ufg_lightbox === '1' || $ufg_lightbox === true);
 		if ($is_lightbox_enabled) { ?>
 
 			<!-- Read more link on: Image(2) = Link On Image -->
@@ -66,8 +97,8 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 				<a href="<?php echo esc_url($full[0]); ?>" class="ufg-lightbox <?php echo esc_attr(implode(" ", $filters)); ?>"
 					data-title="<?php
 					$caption_parts = array();
-					$show_lb_title = ($ufg_lightbox_title === 'on');
-					$show_lb_description = ($ufg_lightbox_description === 'on');
+					$show_lb_title = ($ufg_lightbox_title === 'on' || $ufg_lightbox_title == 1 || $ufg_lightbox_title === '1' || $ufg_lightbox_title === true);
+					$show_lb_description = false;
 
 					if ($show_lb_title && !empty($ufg_title)) {
 						$caption_parts[] = $ufg_title;
@@ -107,9 +138,9 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 
 		<?php } ?>
 		<?php
-		$show_grid_title = ($ufg_image_title === 'on');
-		$show_grid_description = ($ufg_image_description === 'on');
-		$show_read_more = ($ufg_read_more_link_sh === 'on');
+		$show_grid_title = ($ufg_image_title === 'on' || $ufg_image_title == 1 || $ufg_image_title === '1' || $ufg_image_title === true);
+		$show_grid_description = ($ufg_image_description === 'on' || $ufg_image_description == 1 || $ufg_image_description === '1' || $ufg_image_description === true);
+		$show_read_more = ($ufg_read_more_link_sh == 1);
 		if ($show_grid_title || $show_grid_description || $show_read_more) { ?>
 		<div class="ufg-image-content">
 			<?php if ($show_grid_title) { ?>
@@ -130,7 +161,11 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 				<?php if (($ufg_read_more_link == 1 || empty($ufg_read_more_link)) && !empty($ufg_url)) { ?>
 					<a href="<?php echo esc_url($ufg_url); ?>" target="<?php echo esc_attr($ufg_read_more_button_target); ?>"
 						class="ufg-read-more-button ufg-no-underline">
-						<?php echo esc_html($ufg_read_more_button_text); ?></a>
+						<?php if (!empty($ufg_read_more_button_icon)) { ?>
+							<i class="<?php echo esc_attr($ufg_read_more_button_icon); ?>"></i>
+						<?php } ?>
+						<?php echo esc_html($ufg_read_more_button_text); ?>
+						<?php if ($ufg_read_more_button_icon != "") { ?> 		<?php } ?></a>
 				<?php } ?>
 			<?php } ?>
 		</div>
