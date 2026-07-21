@@ -3,8 +3,8 @@ Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkh
 Donate link: https://wpfrank.com/
 Tags: responsive, filter gallery, portfolio, image gallery, masonry
 Requires at least: 6.0
-Tested up to: 6.8
-Stable tag: 1.1.1
+Tested up to: 7.0.2
+Stable tag: 1.1.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -91,6 +91,11 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 5.  How to create a filter gallery?**
 
 == Changelog ==
+
+= 1.1.2 =
+* Fixed output escaping for UFG_VERSION, admin_url(), $indent, $prefix, and $get_count_html for security compliance.
+* Added input sanitization for $_POST['ufg_gallery_id'] on direct assignment.
+* Resolved various PHPCS and security guidelines warnings across all files.
 
 = 1.1.1 =
 * Restricted column layout selections to standard limits in Free version.

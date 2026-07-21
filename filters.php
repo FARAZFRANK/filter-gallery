@@ -170,7 +170,7 @@ if (!function_exists('ufg_filters')) {
 							if (!isset($filter->filterkey)) continue;
 							$key = str_replace(" ", "-", strtolower(trim($filter->filterkey)));
 							$text = $filter->text;
-							$indent = str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $depth);
+							$indent = str_repeat(chr(194) . chr(160) . chr(194) . chr(160) . chr(194) . chr(160) . chr(194) . chr(160), $depth);
 							$prefix = $depth > 0 ? '— ' : '';
 							$count_html = $get_count_html($filter->filterkey);
 							
@@ -179,7 +179,7 @@ if (!function_exists('ufg_filters')) {
 								$icon_unicode = ufg_fa_class_to_unicode($filter->icon);
 							}
 
-							echo '<option class="' . esc_attr($option_class) . '" value="' . esc_attr($key) . '">' . $indent . $prefix . esc_html($icon_unicode . $text) . esc_html($count_html) . '</option>';
+							echo '<option class="' . esc_attr($option_class) . '" value="' . esc_attr($key) . '">' . esc_html($indent) . esc_html($prefix) . esc_html($icon_unicode . $text) . esc_html($count_html) . '</option>';
 							
 							if (isset($filter->children) && is_array($filter->children)) {
 								ufg_render_dropdown_options($filter->children, $get_count_html, $ufg_show_filters_icon, $depth + 1);
@@ -236,7 +236,7 @@ if (!function_exists('ufg_filters')) {
 					}
 					$parent_filter_class = str_replace(" ", "-", strtolower($ufg_filters[$i]->filterkey));
 					//echo "<button data-filter='.$parent_filter_class' data-fname='.$parent_filter_class' id='1evel1-$parent_filter_class' class='ufg-btn ufg-btn-3 filters ufg-parent-filter-button ufg-parent-filters $parent_filter_class' onclick='return filter(this.id, this.value)' value='$parent_filter_class'>$parent_icon_html $parent_filter_name <span class='ufg-active-dot'></span></button>";
-					echo "<button data-filter='." . esc_attr($parent_filter_class) . "' data-fname='." . esc_attr($parent_filter_class) . "' id='1evel1-" . esc_attr($parent_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-parent-filter-button ufg-parent-filters " . esc_attr($parent_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($parent_filter_class) . "'>" . wp_kses_post($parent_icon_html) . " " . esc_html($parent_filter_name) . $get_count_html($ufg_filters[$i]->filterkey) . " <span class='ufg-active-dot'></span></button>";
+					echo "<button data-filter='." . esc_attr($parent_filter_class) . "' data-fname='." . esc_attr($parent_filter_class) . "' id='1evel1-" . esc_attr($parent_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-parent-filter-button ufg-parent-filters " . esc_attr($parent_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($parent_filter_class) . "'>" . wp_kses_post($parent_icon_html) . " " . esc_html($parent_filter_name) . wp_kses_post($get_count_html($ufg_filters[$i]->filterkey)) . " <span class='ufg-active-dot'></span></button>";
 				}
 			}
 			echo "</div>";
@@ -274,7 +274,7 @@ if (!function_exists('ufg_filters')) {
 							}
 							$level_one_filter_class = str_replace(" ", "-", strtolower($level_one_array[$j]->filterkey));
 							//echo "<button data-filter='.$parent_filter_class .$level_one_filter_class' data-fname='.$level_one_filter_class' id='level2-$level_one_filter_class' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-one-button $parent_filter_class $level_one_filter_class' onclick='return filter(this.id, this.value)' value='$level_one_filter_class'>$level_one_filter_icon_html $level_one_filter_name <span class='ufg-active-dot'></span></button>";
-							echo "<button data-filter='." . esc_attr($parent_filter_class) . " ." . esc_attr($level_one_filter_class) . "' data-fname='." . esc_attr($level_one_filter_class) . "' id='level2-" . esc_attr($level_one_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-one-button " . esc_attr($parent_filter_class) . " " . esc_attr($level_one_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($level_one_filter_class) . "'>" . wp_kses_post($level_one_filter_icon_html) . " " . esc_html($level_one_filter_name) . $get_count_html($level_one_array[$j]->filterkey) . " <span class='ufg-active-dot'></span></button>";
+							echo "<button data-filter='." . esc_attr($parent_filter_class) . " ." . esc_attr($level_one_filter_class) . "' data-fname='." . esc_attr($level_one_filter_class) . "' id='level2-" . esc_attr($level_one_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-one-button " . esc_attr($parent_filter_class) . " " . esc_attr($level_one_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($level_one_filter_class) . "'>" . wp_kses_post($level_one_filter_icon_html) . " " . esc_html($level_one_filter_name) . wp_kses_post($get_count_html($level_one_array[$j]->filterkey)) . " <span class='ufg-active-dot'></span></button>";
 						}
 					}
 				}
@@ -321,7 +321,7 @@ if (!function_exists('ufg_filters')) {
 									$level_two_filter_icon_html = "";
 								}
 								$level_two_filter_class = str_replace(" ", "-", strtolower($level_two_array[$k]->filterkey));
-								echo "<button data-filter='." . esc_attr($parent_filter_class) . " ." . esc_attr($level_one_filter_class) . " ." . esc_attr($level_two_filter_class) . "' data-fname='." . esc_attr($level_two_filter_class) . "' id='level3-" . esc_attr($level_two_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-two-button " . esc_attr($parent_filter_class) . " " . esc_attr($level_one_filter_class) . " " . esc_attr($level_two_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($level_two_filter_class) . "'>" . wp_kses_post($level_two_filter_icon_html) . " " . esc_html($level_two_filter_name) . $get_count_html($level_two_array[$k]->filterkey) . " <span class='ufg-active-dot'></span></button>";
+								echo "<button data-filter='." . esc_attr($parent_filter_class) . " ." . esc_attr($level_one_filter_class) . " ." . esc_attr($level_two_filter_class) . "' data-fname='." . esc_attr($level_two_filter_class) . "' id='level3-" . esc_attr($level_two_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-two-button " . esc_attr($parent_filter_class) . " " . esc_attr($level_one_filter_class) . " " . esc_attr($level_two_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($level_two_filter_class) . "'>" . wp_kses_post($level_two_filter_icon_html) . " " . esc_html($level_two_filter_name) . wp_kses_post($get_count_html($level_two_array[$k]->filterkey)) . " <span class='ufg-active-dot'></span></button>";
 							}
 						}
 						// level two children check end
@@ -378,7 +378,7 @@ if (!function_exists('ufg_filters')) {
 											$level_three_filter_icon_html = "";
 										}
 										$level_three_filter_class = str_replace(" ", "-", strtolower($level_three_array[$l]->filterkey));
-										echo "<button data-filter='." . esc_attr($parent_filter_class) . " ." . esc_attr($level_one_filter_class) . " ." . esc_attr($level_two_filter_class) . " ." . esc_attr($level_three_filter_class) . "' data-fname='." . esc_attr($level_three_filter_class) . "' id='level4-" . esc_attr($level_three_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-three-button " . esc_attr($parent_filter_class) . " " . esc_attr($level_one_filter_class) . " " . esc_attr($level_two_filter_class) . " " . esc_attr($level_three_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($level_three_filter_class) . "'>" . wp_kses_post($level_three_filter_icon_html) . " " . esc_html($level_three_filter_name) . $get_count_html($level_three_array[$l]->filterkey) . " <span class='ufg-active-dot'></span></button>";
+										echo "<button data-filter='." . esc_attr($parent_filter_class) . " ." . esc_attr($level_one_filter_class) . " ." . esc_attr($level_two_filter_class) . " ." . esc_attr($level_three_filter_class) . "' data-fname='." . esc_attr($level_three_filter_class) . "' id='level4-" . esc_attr($level_three_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-three-button " . esc_attr($parent_filter_class) . " " . esc_attr($level_one_filter_class) . " " . esc_attr($level_two_filter_class) . " " . esc_attr($level_three_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($level_three_filter_class) . "'>" . wp_kses_post($level_three_filter_icon_html) . " " . esc_html($level_three_filter_name) . wp_kses_post($get_count_html($level_three_array[$l]->filterkey)) . " <span class='ufg-active-dot'></span></button>";
 									}
 								}
 								// level three children check end
@@ -452,7 +452,7 @@ if (!function_exists('ufg_filters')) {
 													$level_four_filter_icon_html = "";
 												}
 												$level_four_filter_class = str_replace(" ", "-", strtolower($level_four_array[$m]->filterkey));
-												echo "<button data-filter='." . esc_attr($parent_filter_class) . " ." . esc_attr($level_one_filter_class) . " ." . esc_attr($level_two_filter_class) . " ." . esc_attr($level_three_filter_class) . " ." . esc_attr($level_four_filter_class) . "' data-fname='." . esc_attr($level_four_filter_class) . "' id='level5-" . esc_attr($level_four_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-four-button sub-filter sub-filter-4 " . esc_attr($parent_filter_class) . " " . esc_attr($level_one_filter_class) . " " . esc_attr($level_two_filter_class) . " " . esc_attr($level_three_filter_class) . " " . esc_attr($level_four_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($level_four_filter_class) . "'>" . wp_kses_post($level_four_filter_icon_html) . " " . esc_html($level_four_filter_name) . $get_count_html($level_four_array[$m]->filterkey) . " <span class='ufg-active-dot'></span></button>";
+												echo "<button data-filter='." . esc_attr($parent_filter_class) . " ." . esc_attr($level_one_filter_class) . " ." . esc_attr($level_two_filter_class) . " ." . esc_attr($level_three_filter_class) . " ." . esc_attr($level_four_filter_class) . "' data-fname='." . esc_attr($level_four_filter_class) . "' id='level5-" . esc_attr($level_four_filter_class) . "' class='ufg-btn ufg-btn-3 filters ufg-filter-button ufg-level-four-button sub-filter sub-filter-4 " . esc_attr($parent_filter_class) . " " . esc_attr($level_one_filter_class) . " " . esc_attr($level_two_filter_class) . " " . esc_attr($level_three_filter_class) . " " . esc_attr($level_four_filter_class) . "' onclick='return filter(this.id, this.value)' value='" . esc_attr($level_four_filter_class) . "'>" . wp_kses_post($level_four_filter_icon_html) . " " . esc_html($level_four_filter_name) . wp_kses_post($get_count_html($level_four_array[$m]->filterkey)) . " <span class='ufg-active-dot'></span></button>";
 											}
 										}
 										// level four children check end

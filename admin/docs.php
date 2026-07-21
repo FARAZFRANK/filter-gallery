@@ -223,7 +223,7 @@ if (!defined('ABSPATH')) {
                 <div>
                     <h1 class="font-black text-gray-900 tracking-tight"
                         style="font-size: 42px; margin: 0; line-height: 1;">Docs <span
-                            style="font-size: 14px; background: #2563eb; color: white; padding: 4px 8px; border-radius: 6px; vertical-align: middle; margin-left: 10px;">v<?php echo UFG_VERSION; ?></span>
+                            style="font-size: 14px; background: #2563eb; color: white; padding: 4px 8px; border-radius: 6px; vertical-align: middle; margin-left: 10px;">v<?php echo esc_html(UFG_VERSION); ?></span>
                     </h1>
                     <p class="text-gray-600 font-medium" style="margin-top: 8px; font-size: 16px;">Everything you need
                         to build stunning filterable galleries.</p>
@@ -238,7 +238,7 @@ if (!defined('ABSPATH')) {
                         style="margin-right: 10px; font-size: 20px; width: 20px; height: 20px;"></span>
                     Video Tutorial
                 </a>
-                <a href="<?php echo admin_url('admin.php?page=filter-gallery-pro'); ?>" class="no-underline"
+                <a href="<?php echo esc_url(admin_url('admin.php?page=filter-gallery-pro')); ?>" class="no-underline"
                     style="background: #1a202c; color: white; padding: 12px 24px; border-radius: 12px; font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
                     Dashboard
                 </a>

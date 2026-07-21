@@ -6,7 +6,7 @@ if (!defined('ABSPATH'))
  * Plugin Name:       Filter Gallery
  * Plugin URI:        https://wpfrank.com/
  * Description:       Filter Gallery is a lightweight and powerful WordPress plugin to create beautiful filterable galleries.
- * Version:           1.1.1
+ * Version:           1.1.2
  * Requires at least: 5.0
  * Requires PHP:      7.4
  * Author:            FARAZFRANK
@@ -18,7 +18,7 @@ if (!defined('ABSPATH'))
  */
 
 if (!defined('UFG_VERSION')) {
-	define('UFG_VERSION', '1.1.1');
+	define('UFG_VERSION', '1.1.2');
 }
 
 // custom image size
@@ -658,10 +658,15 @@ function ufg_save_gallery_callback()
 
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- data is sanitized after parse_str below
 		$image_id_raw = isset($_POST['image_id']) ? wp_unslash($_POST['image_id']) : '';
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- data is sanitized after parse_str below
 		$image_title_raw = isset($_POST['image_title']) ? wp_unslash($_POST['image_title']) : '';
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- data is sanitized after parse_str below
 		$image_alt_raw = isset($_POST['image_alt']) ? wp_unslash($_POST['image_alt']) : '';
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- data is sanitized after parse_str below
 		$image_description_raw = isset($_POST['image_description']) ? wp_unslash($_POST['image_description']) : '';
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- data is sanitized after parse_str below
 		$image_url_raw = isset($_POST['image_url']) ? wp_unslash($_POST['image_url']) : '';
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- data is sanitized after parse_str below
 		$image_filters_raw = isset($_POST['image_filters']) ? wp_unslash($_POST['image_filters']) : '';
 
 		$ufg_image_id = $ufg_image_title = $ufg_image_alt = $ufg_image_description = $ufg_image_url = $ufg_image_filters = array();
@@ -907,8 +912,8 @@ function ufg_remove_gallery_callback()
 		// verified action
 		if (isset($_POST['ufg_gallery_id']) && isset($_POST['do_action'])) {
 
-			$raw_id = wp_unslash($_POST['ufg_gallery_id']);
-			$ufg_gallery_id = is_array($raw_id) ? array_map('sanitize_text_field', $raw_id) : sanitize_text_field($raw_id);
+			$raw_id = is_array($_POST['ufg_gallery_id']) ? array_map('sanitize_text_field', wp_unslash($_POST['ufg_gallery_id'])) : sanitize_text_field(wp_unslash($_POST['ufg_gallery_id']));
+			$ufg_gallery_id = $raw_id;
 			$ufg_do_action = sanitize_text_field(wp_unslash($_POST['do_action']));
 
 			//single gallery delete

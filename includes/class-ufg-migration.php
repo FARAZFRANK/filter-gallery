@@ -42,6 +42,7 @@ class UFG_Migration {
 	 */
 	public static function migrate( $old_version, $new_version ) {
 		// Log migration start
+		// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- logging migration status is intentional for debugging upgrade issues
 		error_log( "UFG Migration: Starting migration from $old_version to $new_version" );
 
 		// Migration from v0.2.3 or older
@@ -52,6 +53,7 @@ class UFG_Migration {
 		// Ensure global cache is cleared
 		wp_cache_delete( 'ufg_all_galleries', 'ufg_galleries' );
 		
+		// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- logging migration status is intentional for debugging upgrade issues
 		error_log( "UFG Migration: Migration completed." );
 	}
 
@@ -67,6 +69,7 @@ class UFG_Migration {
 		
 		// We might need to ensure all legacy galleries have 'gallery_name' in ufg_details_{id}
 		$ufg_gallery_key = "ufg_filters_";
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- direct query is required here to scan for option patterns during database migration
 		$results = $wpdb->get_results(
 			$wpdb->prepare("SELECT option_name FROM `{$wpdb->prefix}options` WHERE `option_name` LIKE %s", '%' . $wpdb->esc_like($ufg_gallery_key) . '%')
 		);

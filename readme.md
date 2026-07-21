@@ -2,7 +2,7 @@
 
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org/plugins/filter-gallery/)
 [![License](https://img.shields.io/badge/License-GPLv2-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![Version](https://img.shields.io/badge/Version-1.1.1-orange.svg)](https://github.com/FARAZFRANK/filter-gallery/releases)
+[![Version](https://img.shields.io/badge/Version-1.1.2-orange.svg)](https://github.com/FARAZFRANK/filter-gallery/releases)
 
 **Filter Gallery** is a lightweight, high-performance WordPress plugin designed to create stunning, filterable image galleries and portfolios. Built with a modern React-based admin interface and optimized Isotope filtering, it offers a premium experience for both developers and site owners.
 
@@ -61,6 +61,11 @@ Upgrade to **Filter Gallery Pro** for even more powerful features:
 This project is licensed under the GPL v2 or later.
 
 ## 📝 Changelog
+
+### 1.1.2 (2026-07-21)
+- **Security Fix**: Fixed output escaping for `UFG_VERSION`, `admin_url()`, `$indent`, `$prefix`, and `$get_count_html` to satisfy WordPress guidelines security rules.
+- **Security Fix**: Added input sanitization for `$_POST['ufg_gallery_id']` on direct assignment.
+- **Security Fix**: Resolved various PHPCS and security guidelines warnings across all files.
 
 ### 1.1.1 (2026-07-21)
 - **Feature Lock**: Restricted column layout options in Free version to standard limits (Desktop: 3, 4, 6 columns; Tablet: 1, 2, 3 columns; Mobile Landscape: 1, 2, 3 columns; Mobile Portrait: 1, 2 columns), marking other values as PRO.
