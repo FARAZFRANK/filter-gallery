@@ -290,7 +290,7 @@ function ufg_shortcode_callback($atts){
 		wp_enqueue_style( 'ufg-frontend-css', plugins_url( '/admin/assets/css/ufg-frontend.css' , __FILE__ ), array(), UFG_VERSION );
 		wp_enqueue_style( 'ufg-lightbox-css', plugins_url( '/admin/assets/lightbox/lokesh/css/lightbox.css' , __FILE__ ), array(), '1.0' );
 		
-		wp_enqueue_style( 'ufg-fontawesome-css', plugins_url( '/admin/assets/fontawesome-free-5.3.1-web/css/all.min.css' , __FILE__ ), array(), '1.0' );
+		wp_enqueue_style( 'ufg-fontawesome-css', plugins_url( '/admin/assets/fontawesome-free-6.5.2-web/css/all.min.css' , __FILE__ ), array(), '6.5.2' );
 		wp_enqueue_script( 'ufg-custom-js', plugins_url( '/admin/assets/js/ufg-custom.js' , __FILE__ ), array( 'jquery', 'imagesloaded', 'ufg-isotope-js' ), UFG_VERSION, true );
 		wp_enqueue_script( 'ufg-lightbox-js', plugins_url( '/admin/assets/lightbox/lokesh/js/lightbox.js' , __FILE__ ), array( 'jquery' ), '1.0', true );
 		wp_add_inline_script( 'ufg-custom-js', 'const UFGJS = ' . wp_json_encode( array(
