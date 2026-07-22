@@ -53,6 +53,102 @@ function ufg_shortcode_callback($atts){
 		if (!is_array($ufg_filters)) $ufg_filters = array();
 		if (!is_array($ufg_gallery)) $ufg_gallery = array();
 		if (!is_array($ufg_setting)) $ufg_setting = array();
+
+		// Normalize filters
+		if (function_exists('ufg_normalize_filters_recursive')) {
+			ufg_normalize_filters_recursive($ufg_filters);
+		}
+
+		// Merge settings with default settings to prevent undefined key notices
+		$default_settings = array(
+			'show_filters' => 1,
+			'show_filters_icon' => 1,
+			'enable_deep_linking' => 0,
+			'show_filters_count' => 1,
+			'show_search_box' => 0,
+			'search_box_placeholder' => 'Type here to search images',
+			'show_all_button' => 1,
+			'all_button_text' => 'All',
+			'all_button_icon' => 'fas fa-filter',
+			'all_button_color' => '#ffffff',
+			'all_button_bg_color' => '#0A85ED',
+			'parent_button_color' => '#4F46E5',
+			'parent_button_bg_color' => '#EEF2FF',
+			'parent_button_hover_color' => '#4338CA',
+			'parent_active_button_color' => '#FFFFFF',
+			'parent_active_button_bg_color' => '#4F46E5',
+			'parent_filters_heading' => '',
+			'l1_filters_heading' => '',
+			'l1_button_color' => '#4F46E5',
+			'l1_button_bg_color' => '#EEF2FF',
+			'child_filter_effect' => 'show_hide',
+			'active_button_color' => '#FFFFFF',
+			'active_button_bg_color' => '#4F46E5',
+			'l2_button_color' => '#4F46E5',
+			'l2_button_bg_color' => '#EEF2FF',
+			'l3_button_color' => '#4F46E5',
+			'l3_button_bg_color' => '#EEF2FF',
+			'l4_button_color' => '#4F46E5',
+			'l4_button_bg_color' => '#EEF2FF',
+			'columns_desktop' => 4,
+			'columns_tab' => 3,
+			'columns_mobile_landscape' => 3,
+			'columns_mobile_portrait' => 2,
+			'thumbnail_image' => 1,
+			'thumbnail_image_size' => 'full',
+			'thumbnail_border' => 1,
+			'thumbnail_border_thickness' => 1,
+			'thumbnail_border_color' => '#ffffff',
+			'thumbnail_bg_color' => '#222a33',
+			'image_title' => 1,
+			'image_title_font_size' => 18,
+			'image_title_color' => '#FFFFFF',
+			'image_description' => 1,
+			'image_description_font_size' => 14,
+			'image_description_color' => '#FFFFFF',
+			'image_description_text_limit' => 60,
+			'image_hover_effect' => 'border_overlay',
+			'read_more_link_sh' => 0,
+			'read_more_link' => 1,
+			'read_more_button_text' => 'Read More Link',
+			'read_more_button_icon' => 'fas fa-link',
+			'read_more_button_color' => '#ffffff',
+			'read_more_button_bg_color' => '#0080ff',
+			'read_more_button_target' => '_self',
+			'image_sorting' => 5,
+			'image_search' => 1,
+			'lightbox' => 1,
+			'lightbox_title' => 1,
+			'lightbox_description' => 0,
+			'lightbox_numbering' => 0,
+			'custom_css' => '',
+			'load_more' => 'off',
+			'load_limit' => 10,
+			'load_color' => '#0080ff',
+			'load_txt_color' => '#FFFFFF',
+			'load_btn_txt' => 'Load More',
+			'filter_style' => 'buttons',
+			'combine_filter_search' => '0',
+			'filter_padding' => '10px 15px',
+			'filter_margin' => '5px',
+			'filter_padding_type' => 'medium',
+			'filter_padding_v' => '12',
+			'filter_padding_h' => '24',
+			'filter_margin_val' => '5',
+			'l1_button_hover_color' => '#059669',
+			'l1_active_button_color' => '#FFFFFF',
+			'l1_active_button_bg_color' => '#059669',
+			'l2_button_hover_color' => '#4F46E5',
+			'l2_active_button_color' => '#FFFFFF',
+			'l2_active_button_bg_color' => '#4F46E5',
+			'l3_button_hover_color' => '#D97706',
+			'l3_active_button_color' => '#FFFFFF',
+			'l3_active_button_bg_color' => '#D97706',
+			'l4_button_hover_color' => '#E11D48',
+			'l4_active_button_color' => '#FFFFFF',
+			'l4_active_button_bg_color' => '#E11D48'
+		);
+		$ufg_setting = array_merge($default_settings, $ufg_setting);
 		if(empty($ufg_selected_filter_btn_id)) {
 			if(isset($ufg_setting['default_filter']) && $ufg_setting['default_filter'] != '') {
 				if($ufg_setting['default_filter'] == 'none') {
@@ -141,9 +237,11 @@ function ufg_shortcode_callback($atts){
 		$new_array_final = array();
 		if (is_array($ufg_gallery) && array_key_exists('ufg-image-filters', $ufg_gallery)) {
 			foreach($ufg_gallery['ufg-image-filters'] as $key => $array) {
-				foreach($array as $key2  => $val) {
-					//array_push($new_array[], $val);
-					$new_array[$val][$j] = $key;
+				if (is_array($array)) {
+					foreach($array as $key2  => $val) {
+						//array_push($new_array[], $val);
+						$new_array[$val][$j] = $key;
+					}
 				}
 				$j++;
 			}

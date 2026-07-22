@@ -162,3 +162,189 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
 }
+
+/* Make tab buttons ("FILTERS", "CONTENT", "SETTINGS") larger */
+#ufg-admin-root button.space-x-2.px-3.py-1\.5 {
+    font-size: 12px !important;
+    padding: 8px 16px !important;
+}
+
+#ufg-admin-root button.space-x-2.px-3.py-1\.5 svg {
+    width: 0.95rem !important;
+    height: 0.95rem !important;
+}
+
+/* Make shortcode copy badge larger and easier to click */
+#ufg-admin-root div.group\/copy {
+    padding: 6px 12px !important;
+}
+
+#ufg-admin-root div.group\/copy span.text-\[10px\] {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+}
+
+#ufg-admin-root div.group\/copy svg.w-3 {
+    width: 0.95rem !important;
+    height: 0.95rem !important;
+}
+
+/* Disable transform/filter on parent to fix position: fixed containing block */
+#ufg-admin-root div.max-w-7xl {
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+}
+
+/* Sticky tab navigation buttons styling */
+@media (min-width: 1024px) {
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.mb-5 > div.flex.items-center:not(.flex-1) {
+        position: fixed !important;
+        right: 4% !important;
+        top: calc(var(--wp-admin--admin-bar--height, 32px) + 16px) !important;
+        z-index: 100 !important;
+        background: #ffffff !important;
+        padding: 6px 12px !important;
+        border-radius: 9999px !important;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+}
+
+/* Floating top navigation bar on mobile screens */
+@media (max-width: 1023px) {
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.mb-5 {
+        display: contents !important;
+    }
+
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.mb-5 > div.flex-1 {
+        border-bottom: 1px solid #f1f5f9 !important;
+        padding-bottom: 16px !important;
+        margin-bottom: 12px !important;
+        width: 100% !important;
+    }
+
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.mb-5 > div.flex.items-center:not(.flex-1) {
+        position: sticky !important;
+        top: calc(var(--wp-admin--admin-bar--height, 46px) + 8px) !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 100 !important;
+        background: #ffffff !important;
+        padding: 5px 10px !important;
+        border-radius: 9999px !important;
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1), 0 2px 8px -1px rgba(0, 0, 0, 0.05) !important;
+        border: 1px solid #e2e8f0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        margin: 12px auto !important;
+        width: max-content !important;
+        max-width: 95% !important;
+    }
+
+    #ufg-admin-root button.space-x-2.px-3.py-1\.5 {
+        font-size: 11px !important;
+        padding: 6px 12px !important;
+    }
+
+    #ufg-admin-root button.space-x-2.px-3.py-1\.5 svg {
+        width: 0.85rem !important;
+        height: 0.85rem !important;
+    }
+}
+
+/* Compact circular icons on small mobile screens (< 640px) */
+@media (max-width: 639px) {
+    /* Hide separator lines */
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.mb-5 > div.flex.items-center:not(.flex-1) div.w-4.h-\[1px\] {
+        display: none !important;
+    }
+
+    /* Hide text labels */
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.mb-5 > div.flex.items-center:not(.flex-1) button span {
+        display: none !important;
+    }
+
+    /* Make buttons square/circular and touch-friendly */
+    #ufg-admin-root button.space-x-2.px-3.py-1\.5 {
+        padding: 10px !important;
+        border-radius: 9999px !important;
+    }
+}
+
+/* Fix squished filters table on mobile screens */
+@media (max-width: 767px) {
+    #ufg-admin-root div.flex.flex-col.lg\:flex-row.gap-6 > div.flex-1.bg-white {
+        overflow-x: auto !important;
+    }
+    
+    #ufg-admin-root div.flex.flex-col.lg\:flex-row.gap-6 > div.flex-1.bg-white > div {
+        min-width: 750px !important;
+    }
+
+    /* Wrap padding preset buttons on mobile to avoid overflow */
+    #ufg-custom-spacing-setting div.flex.gap-2.mb-3 {
+        flex-wrap: wrap !important;
+    }
+}
+
+/* Dashboard spacing and UI adjustments on mobile */
+@media (max-width: 639px) {
+    /* Tighten dashboard header margin, padding and gap */
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.flex.flex-col.lg\:flex-row.mb-10 {
+        margin-bottom: 20px !important;
+        padding-bottom: 20px !important;
+        gap: 16px !important;
+    }
+
+    /* Stretch search box and New Project button full width side-by-side */
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.flex.flex-col.lg\:flex-row.mb-10 > div.flex.items-center.gap-4 {
+        width: 100% !important;
+        justify-content: space-between !important;
+        gap: 12px !important;
+    }
+
+    /* Allow search input wrapper to grow to fill space */
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.flex.flex-col.lg\:flex-row.mb-10 > div.flex.items-center.gap-4 > div.relative {
+        flex-grow: 1 !important;
+        width: auto !important;
+    }
+
+    /* Expand search input to full width of its wrapper */
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.flex.flex-col.lg\:flex-row.mb-10 > div.flex.items-center.gap-4 input {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Make New Project button compact and prevent shrinking */
+    #ufg-admin-root div.max-w-7xl.mx-auto > div.flex.flex-col.lg\:flex-row.mb-10 > div.flex.items-center.gap-4 button {
+        flex-shrink: 0 !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+
+/* Keep counter badge text in a single line without wrapping */
+#ufg-admin-root div.max-w-7xl.mx-auto > div.flex.flex-col.lg\:flex-row.mb-10 > div.flex.items-center.space-x-5 span.bg-gray-100 {
+    white-space: nowrap !important;
+}
+
+/* Optimize the Confirm & Deploy Changes button on mobile screens */
+@media (max-width: 639px) {
+    #ufg-admin-root button.bg-blue-600.px-12.py-5 {
+        padding: 12px 24px !important;
+        border-radius: 9999px !important; /* Sleek pill shape */
+    }
+
+    #ufg-admin-root button.bg-blue-600.px-12.py-5 span.text-lg {
+        font-size: 13px !important;
+        white-space: nowrap !important;
+    }
+
+    #ufg-admin-root button.bg-blue-600.px-12.py-5 svg.w-6.h-6 {
+        width: 1.1rem !important;
+        height: 1.1rem !important;
+        margin-right: 8px !important;
+    }
+}

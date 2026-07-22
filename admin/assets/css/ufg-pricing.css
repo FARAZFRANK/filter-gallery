@@ -1,0 +1,293 @@
+.ufg-pricing-page * { 
+    box-sizing: border-box; 
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.ufg-pricing-page .max-w-7xl { 
+    max-width: 80rem; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+.ufg-pricing-page .flex { display: flex; }
+.ufg-pricing-page .items-center { align-items: center; }
+.ufg-pricing-page .justify-center { justify-content: center; }
+.ufg-pricing-page .text-center { text-align: center; }
+.ufg-pricing-page .grid { display: grid; gap: 2.5rem; }
+.ufg-pricing-page .mb-16 { margin-bottom: 64px !important; }
+
+@media (max-width: 639px) {
+    .ufg-pricing-page .mb-16 { margin-bottom: 32px !important; }
+}
+
+@media (min-width: 1024px) {
+    .ufg-pricing-page .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.ufg-pricing-page .bg-white { background-color: #ffffff; }
+.ufg-pricing-page .rounded-3xl { border-radius: 1.5rem; }
+
+/* Premium Card Design with smooth transitions */
+.pricing-card { 
+    position: relative; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    border: 1px solid #e2e8f0; 
+    background: #ffffff;
+    padding: 48px !important; /* Comfortable internal spacing */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+.pricing-card.free-card {
+    border-top: 4px solid #94a3b8;
+}
+.pricing-card.pro-card { 
+    border: 2px solid #3b82f6; 
+    background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%); 
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04);
+}
+.pricing-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.pricing-card.pro-card:hover {
+    box-shadow: 0 25px 30px -5px rgba(59, 130, 246, 0.15), 0 15px 15px -5px rgba(59, 130, 246, 0.08);
+}
+@media (max-width: 639px) {
+    .pricing-card {
+        padding: 24px !important; /* Compact padding on mobile viewports */
+    }
+}
+
+/* High contrast check/cross icons */
+.check-icon { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #d1fae5;
+    color: #065f46; 
+    border-radius: 50%;
+    margin-right: 12px; 
+    font-size: 11px;
+    font-weight: 800; 
+    flex-shrink: 0;
+}
+.cross-icon { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #fee2e2;
+    color: #991b1b; 
+    border-radius: 50%;
+    margin-right: 12px; 
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* CTA Buttons */
+.cta-button {
+    display: inline-flex;
+    width: 100%;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    box-sizing: border-box;
+}
+.cta-button.free { 
+    background: #f1f5f9; 
+    color: #475569; 
+    cursor: default;
+}
+.cta-button.pro { 
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); 
+    color: white; 
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.35); 
+}
+.cta-button.pro:hover { 
+    transform: scale(1.02); 
+    box-shadow: 0 12px 20px -3px rgba(37, 99, 235, 0.5); 
+}
+
+/* Responsive Title and Subtitle */
+.ufg-pricing-page h1.main-title {
+    font-size: 44px !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 12px !important;
+    color: #0f172a !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+}
+.ufg-pricing-page p.main-subtitle {
+    font-size: 18px !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+    line-height: 1.6 !important;
+    color: #64748b !important;
+}
+@media (max-width: 639px) {
+    .ufg-pricing-page h1.main-title {
+        font-size: 30px !important;
+        margin-bottom: 10px !important;
+    }
+    .ufg-pricing-page p.main-subtitle {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* Table Design */
+.table-responsive-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 50px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background: white;
+}
+table.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 750px; /* Enforce min width for clean columns display */
+}
+table.comparison-table th { 
+    background: #f8fafc; 
+    padding: 24px; 
+    text-align: left; 
+    font-weight: 800; 
+    font-size: 15px;
+    color: #0f172a; 
+    border-bottom: 2px solid #e2e8f0; 
+}
+table.comparison-table td { 
+    padding: 18px 24px; 
+    border-bottom: 1px solid #f1f5f9; 
+    color: #475569; 
+    font-weight: 500; 
+    font-size: 14px;
+}
+table.comparison-table tr:hover td {
+    background-color: #f8fafc;
+}
+table.comparison-table tr:last-child td { 
+    border-bottom: none; 
+}
+
+/* Category row inside table */
+table.comparison-table tr.table-category-row td {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 24px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.feature-name { 
+    font-weight: 600; 
+    color: #0f172a; 
+}
+.feature-desc {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 400;
+    margin-top: 4px;
+}
+.text-bold-slate {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* Bottom Callout Section styling */
+.ufg-pricing-page .bottom-callout {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 24px;
+    padding: 48px 40px;
+    margin-top: 60px;
+    border: 1px solid #334155;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    text-align: center;
+}
+.ufg-pricing-page .bottom-callout h3 {
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    margin: 0 0 12px 0 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.5px;
+}
+.ufg-pricing-page .bottom-callout p {
+    font-size: 15px !important;
+    color: #94a3b8 !important;
+    max-width: 650px;
+    margin: 0 auto 32px auto !important;
+    line-height: 1.6 !important;
+}
+.ufg-pricing-page .callout-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.ufg-pricing-page .callout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.ufg-pricing-page .callout-btn.demo {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.ufg-pricing-page .callout-btn.demo:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+.ufg-pricing-page .callout-btn.contact {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+.ufg-pricing-page .callout-btn.contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -3px rgba(37, 99, 235, 0.55);
+}
+@media (max-width: 639px) {
+    .ufg-pricing-page .bottom-callout {
+        padding: 32px 24px;
+        margin-top: 40px;
+    }
+    .ufg-pricing-page .bottom-callout h3 {
+        font-size: 20px !important;
+    }
+    .ufg-pricing-page .bottom-callout p {
+        font-size: 14px !important;
+        margin-bottom: 24px !important;
+    }
+    .ufg-pricing-page .callout-btn {
+        width: 100%;
+    }
+}

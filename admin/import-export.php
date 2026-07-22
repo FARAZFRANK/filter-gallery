@@ -2,6 +2,9 @@
 if (!defined('ABSPATH')) {
 	exit;
 }
+$ufg_loader_title = __('Loading Import / Export Dashboard...', 'filter-gallery');
+$ufg_loader_subtitle = __('Please wait while settings configurations load', 'filter-gallery');
+require_once 'loader.php';
 ?>
 <div class="wrap ufg-docs-page" style="margin: 32px 20px 0 10px;">
 	<style>

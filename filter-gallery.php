@@ -21,6 +21,57 @@ if (!defined('UFG_VERSION')) {
 	define('UFG_VERSION', '1.1.2');
 }
 
+require_once plugin_dir_path(__FILE__) . 'includes/class-ufg-migration.php';
+UFG_Migration::init();
+
+if (!function_exists('ufg_normalize_filters_recursive')) {
+	function ufg_normalize_filters_recursive(&$filters) {
+		if (!is_array($filters)) return;
+		foreach ($filters as &$item) {
+			$is_obj = is_object($item);
+			$item_arr = $is_obj ? (array)$item : $item;
+			if (is_array($item_arr)) {
+				$legacy_title = isset($item_arr['title']) ? $item_arr['title'] : '';
+				$legacy_text = isset($item_arr['text']) ? $item_arr['text'] : '';
+				$has_filterkey = isset($item_arr['filterkey']);
+
+				if (!$has_filterkey) {
+					if (!empty($legacy_title)) {
+						$item_arr['filterkey'] = strtolower(str_replace(' ', '-', $legacy_title));
+					} else if (!empty($legacy_text)) {
+						$characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+						$rand_str = '';
+						for ($i = 0; $i < 5; $i++) {
+							$rand_str .= $characters[wp_rand(0, 35)];
+						}
+						$item_arr['filterkey'] = strtolower(str_replace(' ', '-', $legacy_text)) . '-' . $rand_str;
+					} else {
+						$characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+						$rand_str = '';
+						for ($i = 0; $i < 5; $i++) {
+							$rand_str .= $characters[wp_rand(0, 35)];
+						}
+						$item_arr['filterkey'] = 'filter-' . $rand_str;
+					}
+					$display_text = !empty($legacy_text) ? $legacy_text : (!empty($legacy_title) ? $legacy_title : 'Filter');
+					$item_arr['title'] = $display_text;
+					$item_arr['text'] = $display_text;
+				}
+				if (!isset($item_arr['children'])) {
+					$item_arr['children'] = array();
+				} else if (is_array($item_arr['children'])) {
+					ufg_normalize_filters_recursive($item_arr['children']);
+				}
+				if (!isset($item_arr['color'])) {
+					$item_arr['color'] = '#38B2F6';
+				}
+
+				$item = $is_obj ? (object)$item_arr : $item_arr;
+			}
+		}
+	}
+}
+
 // custom image size
 add_image_size('ufg_200_200', 200, 200, true);
 add_image_size('ufg_300_300', 300, 300, true);
@@ -29,7 +80,8 @@ add_image_size('ufg_400_400', 400, 400, true);
 // FG activation
 function ufg_activation()
 {
-	// update current plugin version
+	// update current plugin version via migration class rather than activation hook to ensure migrations run
+	/*
 	if (is_admin()) {
 		if (!function_exists('get_plugin_data')) {
 			require_once(ABSPATH . 'wp-admin/includes/plugin.php');
@@ -40,6 +92,7 @@ function ufg_activation()
 			update_option('ufg_current_version', $ufg_plugin_version);
 		}
 	}
+	*/
 }
 register_activation_hook(__FILE__, 'ufg_activation');
 
@@ -110,6 +163,18 @@ function ufg_docs_page()
 // Free vs Pro page body
 function ufg_free_vs_pro_page()
 {
+	wp_enqueue_style(
+		'ufg-fontawesome-admin',
+		plugins_url('admin/assets/fontawesome-free-6.5.2-web/css/all.min.css', __FILE__),
+		array(),
+		'6.5.2'
+	);
+	wp_enqueue_style(
+		'ufg-pricing-css',
+		plugins_url('admin/assets/css/ufg-pricing.css', __FILE__),
+		array(),
+		UFG_VERSION
+	);
 	require 'admin/free-vs-pro.php';
 }
 
@@ -140,9 +205,9 @@ function ufg_enqueue_react_app()
 	// Enqueue FontAwesome for the Icon Picker to render correctly in the admin React UI
 	wp_enqueue_style(
 		'ufg-fontawesome-admin',
-		plugins_url('admin/assets/fontawesome-free-5.3.1-web/css/all.min.css', __FILE__),
+		plugins_url('admin/assets/fontawesome-free-6.5.2-web/css/all.min.css', __FILE__),
 		array(),
-		'5.3.1'
+		'6.5.2'
 	);
 
 	// Enqueue custom admin fixes for the React UI
@@ -176,11 +241,13 @@ function ufg_enqueue_react_app()
 			$ufg_underscore_pos = strrpos($ufg_gallery_key_name, '_');
 			$ufg_gallery_id = substr($ufg_gallery_key_name, ($ufg_underscore_pos + 1));
 			$details = get_option("ufg_details_" . $ufg_gallery_id);
+			$g_filters = get_option("ufg_filters_" . $ufg_gallery_id);
+			ufg_normalize_filters_recursive($g_filters);
 			$galleries[] = array(
 				'id' => $ufg_gallery_id,
 				'name' => isset($details['gallery_name']) ? $details['gallery_name'] : '',
 				'gallery' => get_option("ufg_gallery_" . $ufg_gallery_id),
-				'filters' => get_option("ufg_filters_" . $ufg_gallery_id),
+				'filters' => $g_filters,
 			);
 		}
 	}
@@ -192,6 +259,7 @@ function ufg_enqueue_react_app()
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$id = sanitize_text_field(wp_unslash($_GET['id']));
 		$filters = get_option("ufg_filters_" . $id);
+		ufg_normalize_filters_recursive($filters);
 		$gallery = get_option("ufg_gallery_" . $id);
 		$settings = get_option("ufg_settings_" . $id);
 		$details = get_option("ufg_details_" . $id);
@@ -201,7 +269,7 @@ function ufg_enqueue_react_app()
 			foreach ($gallery['ufg-attachment-id'] as $k => $v) {
 				$att_id = $v;
 				$parsedImages[] = array(
-					'id' => $att_id,
+					'id' => (int) $att_id,
 					'url' => wp_get_attachment_image_url($att_id, 'medium'),
 					'link_url' => isset($gallery['ufg-url'][$att_id]) ? $gallery['ufg-url'][$att_id] : (isset($gallery['ufg-url'][$k]) ? $gallery['ufg-url'][$k] : ''),
 					'title' => isset($gallery['ufg-title'][$att_id]) ? $gallery['ufg-title'][$att_id] : '',
@@ -228,7 +296,94 @@ function ufg_enqueue_react_app()
 			'name' => isset($details['gallery_name']) ? $details['gallery_name'] : '',
 			'filters' => $filters,
 			'images' => $parsedImages,
-			'settings' => is_array($settings) ? $settings : array(),
+			'settings' => is_array($settings) ? array_merge(array(
+				'show_filters' => 1,
+				'show_filters_icon' => 1,
+				'enable_deep_linking' => 0,
+				'show_filters_count' => 1,
+				'show_search_box' => 0,
+				'search_box_placeholder' => 'Type here to search images',
+				'show_all_button' => 1,
+				'all_button_text' => 'All',
+				'all_button_icon' => 'fas fa-filter',
+				'all_button_color' => '#ffffff',
+				'all_button_bg_color' => '#0A85ED',
+				'parent_button_color' => '#4F46E5',
+				'parent_button_bg_color' => '#EEF2FF',
+				'parent_button_hover_color' => '#4338CA',
+				'parent_active_button_color' => '#FFFFFF',
+				'parent_active_button_bg_color' => '#4F46E5',
+				'parent_filters_heading' => '',
+				'l1_filters_heading' => '',
+				'l1_button_color' => '#4F46E5',
+				'l1_button_bg_color' => '#EEF2FF',
+				'child_filter_effect' => 'show_hide',
+				'active_button_color' => '#FFFFFF',
+				'active_button_bg_color' => '#4F46E5',
+				'l2_button_color' => '#4F46E5',
+				'l2_button_bg_color' => '#EEF2FF',
+				'l3_button_color' => '#4F46E5',
+				'l3_button_bg_color' => '#EEF2FF',
+				'l4_button_color' => '#4F46E5',
+				'l4_button_bg_color' => '#EEF2FF',
+				'columns_desktop' => 4,
+				'columns_tab' => 3,
+				'columns_mobile_landscape' => 3,
+				'columns_mobile_portrait' => 2,
+				'thumbnail_image' => 1,
+				'thumbnail_image_size' => 'full',
+				'thumbnail_border' => 1,
+				'thumbnail_border_thickness' => 1,
+				'thumbnail_border_color' => '#ffffff',
+				'thumbnail_bg_color' => '#222a33',
+				'image_title' => 1,
+				'image_title_font_size' => 18,
+				'image_title_color' => '#FFFFFF',
+				'image_description' => 1,
+				'image_description_font_size' => 14,
+				'image_description_color' => '#FFFFFF',
+				'image_description_text_limit' => 60,
+				'image_hover_effect' => 'border_overlay',
+				'read_more_link_sh' => 0,
+				'read_more_link' => 1,
+				'read_more_button_text' => 'Read More Link',
+				'read_more_button_icon' => 'fas fa-link',
+				'read_more_button_color' => '#ffffff',
+				'read_more_button_bg_color' => '#0080ff',
+				'read_more_button_target' => '_self',
+				'image_sorting' => 5,
+				'image_search' => 1,
+				'lightbox' => 1,
+				'lightbox_title' => 1,
+				'lightbox_description' => 0,
+				'lightbox_numbering' => 0,
+				'custom_css' => '',
+				'load_more' => 'off',
+				'load_limit' => 10,
+				'load_color' => '#0080ff',
+				'load_txt_color' => '#FFFFFF',
+				'load_btn_txt' => 'Load More',
+				'filter_style' => 'buttons',
+				'combine_filter_search' => '0',
+				'filter_padding' => '10px 15px',
+				'filter_margin' => '5px',
+				'filter_padding_type' => 'medium',
+				'filter_padding_v' => '12',
+				'filter_padding_h' => '24',
+				'filter_margin_val' => '5',
+				'l1_button_hover_color' => '#059669',
+				'l1_active_button_color' => '#FFFFFF',
+				'l1_active_button_bg_color' => '#059669',
+				'l2_button_hover_color' => '#4F46E5',
+				'l2_active_button_color' => '#FFFFFF',
+				'l2_active_button_bg_color' => '#4F46E5',
+				'l3_button_hover_color' => '#D97706',
+				'l3_active_button_color' => '#FFFFFF',
+				'l3_active_button_bg_color' => '#D97706',
+				'l4_button_hover_color' => '#E11D48',
+				'l4_active_button_color' => '#FFFFFF',
+				'l4_active_button_bg_color' => '#E11D48'
+			), $settings) : array(),
 		);
 	}
 
@@ -315,9 +470,9 @@ function ufg_enqueue_react_app()
 			'filter_padding_v' => '12',
 			'filter_padding_h' => '24',
 			'filter_margin_val' => '5',
-			'parent_button_hover_color' => '#0284C7',
+			'parent_button_hover_color' => '#4338CA',
 			'parent_active_button_color' => '#FFFFFF',
-			'parent_active_button_bg_color' => '#0284C7',
+			'parent_active_button_bg_color' => '#4F46E5',
 			'l1_button_hover_color' => '#059669',
 			'l1_active_button_color' => '#FFFFFF',
 			'l1_active_button_bg_color' => '#059669',
@@ -1197,7 +1352,7 @@ function ufg_register_scripts()
 	// Register and enqueue styles with versions
 	wp_register_style('ufg-frontend-css', plugin_dir_url(__FILE__) . 'admin/assets/css/ufg-frontend.css', array(), UFG_VERSION);
 
-	wp_register_style('ufg-fontawesome-css', plugin_dir_url(__FILE__) . 'admin/assets/fontawesome-free-5.3.1-web/css/ufg-all-min.css', array(), '5.3.1');
+	wp_register_style('ufg-fontawesome-css', plugin_dir_url(__FILE__) . 'admin/assets/fontawesome-free-6.5.2-web/css/all.min.css', array(), '6.5.2');
 
 	wp_register_style('ufg-lightbox-css', plugin_dir_url(__FILE__) . 'admin/assets/lightbox/lokesh/css/ufg-lightbox-min.css', array(), '4.5.2');
 

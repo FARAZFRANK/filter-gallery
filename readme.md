@@ -62,7 +62,14 @@ This project is licensed under the GPL v2 or later.
 
 ## 📝 Changelog
 
-### 1.1.2 (2026-07-21)
+### 1.1.2 (2026-07-22)
+- **Feature**: Implemented automatic data migration and settings normalization for legacy v0.2.3 galleries.
+- **Feature**: Added responsive, large tab navigation controls and shortcode copy badge scaling.
+- **Fix**: Resolved tab buttons and main header layout container overlapping on mobile screens by implementing a custom sticky floating-pill design.
+- **Fix**: Prevented layout cuts on mobile screen widths (< 640px) by hiding tab navigation text and separators.
+- **Fix**: Improved filters manager layout on mobile screens by allowing horizontal scrolling and wrapping.
+- **Fix**: Optimized the "Confirm & Deploy Changes" save button to fit as a sleek single-line pill on mobile.
+- **Fix**: Solved jQuery selector crash on frontend digit-starting DOM IDs and added defensive array checks.
 - **Security Fix**: Fixed output escaping for `UFG_VERSION`, `admin_url()`, `$indent`, `$prefix`, and `$get_count_html` to satisfy WordPress guidelines security rules.
 - **Security Fix**: Added input sanitization for `$_POST['ufg_gallery_id']` on direct assignment.
 - **Security Fix**: Resolved various PHPCS and security guidelines warnings across all files.

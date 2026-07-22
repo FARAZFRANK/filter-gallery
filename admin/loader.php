@@ -3,18 +3,25 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 ?>
-<div class="ufg-loader-wrapper">
+<div class="ufg-loader-wrapper" id="ufg-page-preloader">
     <style>
         .ufg-loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999999;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 120px);
-            width: 100%;
-            padding: 40px 20px;
+            width: 100vw;
+            height: 100vh;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
             background: #f8fafc;
+            opacity: 1;
+            transition: opacity 0.25s ease-out;
         }
         .ufg-loader-card {
             background: #ffffff;
@@ -24,7 +31,7 @@ if (!defined('ABSPATH')) {
             padding: 48px 40px;
             text-align: center;
             max-width: 440px;
-            width: 100%;
+            width: 90%;
             box-sizing: border-box;
         }
         .ufg-loader-spinner-box {
@@ -84,7 +91,18 @@ if (!defined('ABSPATH')) {
                 </svg>
             </div>
         </div>
-        <h2 class="ufg-loader-title"><?php esc_html_e('Loading Filter Gallery...', 'filter-gallery'); ?></h2>
-        <p class="ufg-loader-subtitle"><?php esc_html_e('Please wait while the dashboard is initializing', 'filter-gallery'); ?></p>
+        <h2 class="ufg-loader-title"><?php echo esc_html(isset($ufg_loader_title) ? $ufg_loader_title : __('Loading Filter Gallery...', 'filter-gallery')); ?></h2>
+        <p class="ufg-loader-subtitle"><?php echo esc_html(isset($ufg_loader_subtitle) ? $ufg_loader_subtitle : __('Please wait while the page is initializing', 'filter-gallery')); ?></p>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var preloader = document.getElementById("ufg-page-preloader");
+        if (preloader) {
+            preloader.style.opacity = "0";
+            setTimeout(function() {
+                preloader.remove();
+            }, 250);
+        }
+    });
+</script>

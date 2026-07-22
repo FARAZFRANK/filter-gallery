@@ -471,7 +471,7 @@ function updateFilterGroupVisibility() {
      });
 }
 
-jQuery('#1evel1-all').addClass('active-filter active');
+jQuery(document.getElementById('1evel1-all')).addClass('active-filter active');
 function filter(id, value) {
      jQuery('button.filters').removeClass('active-filter active');
 
@@ -482,9 +482,9 @@ function filter(id, value) {
           } else {
                jQuery(allSublevels).css('display', 'none');
           }
-          jQuery('#1evel1-all').addClass('active-filter active');
+          jQuery(document.getElementById('1evel1-all')).addClass('active-filter active');
      } else {
-          var clickedBtn = jQuery('#' + id);
+          var clickedBtn = jQuery(document.getElementById(id));
           clickedBtn.addClass('active-filter active');
 
           var classes = clickedBtn.attr('class').split(/\s+/);
@@ -611,15 +611,15 @@ jQuery(document).ready(function () {
                     }
                }
 
-               // Fallback to default selected filter if no URL filter
-               if (UFGJS.SelectedFltrBtnId != "") {
-                    if (UFGJS.SelectedFltrBtnId === 'none') {
-                         jQuery('.ufg-gallery-' + UFGJS.GalleryId).isotope({ filter: '.ufg-no-match-filter' });
-                         jQuery('button.filters').removeClass('active-filter active');
-                    } else {
-                         jQuery('#' + UFGJS.SelectedFltrBtnId).trigger('click');
-                    }
-               }
+                // Fallback to default selected filter if no URL filter
+                if (UFGJS.SelectedFltrBtnId != "") {
+                     if (UFGJS.SelectedFltrBtnId === 'none') {
+                          jQuery('.ufg-gallery-' + UFGJS.GalleryId).isotope({ filter: '.ufg-no-match-filter' });
+                          jQuery('button.filters').removeClass('active-filter active');
+                     } else {
+                          jQuery(document.getElementById(UFGJS.SelectedFltrBtnId)).trigger('click');
+                     }
+                }
           }, 100);
      });
 });

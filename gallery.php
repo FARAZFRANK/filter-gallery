@@ -24,18 +24,20 @@ if (!function_exists('ufg_gallery')) {
 			$new_array_final = array();
 			if (is_array($ufg_gallery) && array_key_exists('ufg-image-filters', $ufg_gallery)) {
 				foreach ($ufg_gallery['ufg-image-filters'] as $key => $array) {
-					foreach ($array as $key2 => $val) {
-						if (strpos($val, ',') !== false) {
-							$parts = explode(',', $val);
-							foreach ($parts as $p) {
-								$p = trim($p);
-								if (!empty($p)) {
-									$new_array[$p][$j] = $key;
+					if (is_array($array)) {
+						foreach ($array as $key2 => $val) {
+							if (strpos($val, ',') !== false) {
+								$parts = explode(',', $val);
+								foreach ($parts as $p) {
+									$p = trim($p);
+									if (!empty($p)) {
+										$new_array[$p][$j] = $key;
+									}
 								}
+							} else {
+								//array_push($new_array[], $val);
+								$new_array[$val][$j] = $key;
 							}
-						} else {
-							//array_push($new_array[], $val);
-							$new_array[$val][$j] = $key;
 						}
 					}
 					$j++;
@@ -74,6 +76,9 @@ if (!function_exists('ufg_gallery')) {
 					$ufg_filters = get_option("ufg_filters_" . $ufg_gallery_id);
 				}
 				if (!empty($ufg_filters)) {
+					if (function_exists('ufg_normalize_filters_recursive')) {
+						ufg_normalize_filters_recursive($ufg_filters);
+					}
 					ufg_expand_filter_images_hierarchy($ufg_filters, $filter_image);
 				}
 			}

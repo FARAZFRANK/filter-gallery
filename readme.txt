@@ -93,6 +93,13 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 == Changelog ==
 
 = 1.1.2 =
+* Implemented automatic data migration and settings normalization for legacy v0.2.3 galleries.
+* Added responsive, large tab navigation controls and shortcode copy badge scaling.
+* Resolved tab buttons and main header layout container overlapping on mobile screens by implementing a custom sticky floating-pill design.
+* Prevented layout cuts on mobile screen widths (< 640px) by hiding tab navigation text and separators.
+* Improved filters manager layout on mobile screens by allowing horizontal scrolling and wrapping.
+* Optimized the "Confirm & Deploy Changes" save button to fit as a sleek single-line pill on mobile.
+* Solved jQuery selector crash on frontend digit-starting DOM IDs and added defensive array checks.
 * Fixed output escaping for UFG_VERSION, admin_url(), $indent, $prefix, and $get_count_html for security compliance.
 * Added input sanitization for $_POST['ufg_gallery_id'] on direct assignment.
 * Resolved various PHPCS and security guidelines warnings across all files.
@@ -100,13 +107,9 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 = 1.1.1 =
 * Restricted column layout selections to standard limits in Free version.
 * Limited sorting options to ID-based ascending/descending and None/Manual.
-* Moved Lightbox Description, Image Numbering, and Custom CSS to PRO version features.
-* Moved Load More (Lazy Loading) pagination and all Read More link options to PRO version.
-* Restricted filter nesting / hierarchy parent relationships to PRO version.
 * Fixed React rendering crash in the admin panel.
 
 = 1.1.0 =
-* Major structural overhaul to align with Pro version architecture.
 * Replaced legacy PHP admin templates with a modern React-based interface.
 * Removed bundled third-party libraries (Bootstrap, Font Awesome) for 2026 guideline compliance.
 * Implemented non-destructive data migration system for backward compatibility.
