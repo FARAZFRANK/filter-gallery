@@ -10,14 +10,14 @@
 
 ## 🚀 Key Features
 
-- **Modern Admin UI**: Completely redesigned React-based dashboard for faster gallery management.
-- **Isotope Filtering**: Smooth, dynamic filtering of images based on categories.
-- **Fully Responsive**: Adapts seamlessly to mobile, tablet, and desktop screens.
-- **Unlimited Galleries**: Create as many galleries as you need with unique IDs.
-- **Built-in Lightbox**: High-performance lightbox for an immersive viewing experience.
-- **Zero Dependencies**: Removed legacy libraries (Bootstrap, FontAwesome) for maximum speed and compatibility.
-- **Shortcode Powered**: Use `[filter-gallery id="xxx"]` anywhere on your site.
-- **Backward Compatible**: Legacy `[ufg id="xxx"]` shortcodes and data continue to work perfectly.
+- **Unlimited Galleries & Shortcodes**: Create as many galleries as needed, using `[filter-gallery]` or `[ufg]` shortcodes.
+- **Responsive Columns & Masonry Layouts**: Adapts grid and display columns automatically to device viewports with Masonry support.
+- **Easy Drag-and-Drop Management**: Simple interface for ordering images (ID and manual sorting).
+- **Standard Lightbox Overlay**: Includes a built-in lightbox with title overlays.
+- **Category Filtering & Controls**: Set default loaded category, configure "All" button visibility, customize label, or assign custom icons.
+- **Media Styling & Customizer**: Adjust grid padding, border spacing, customize image titles and descriptions (with length limits) inside settings.
+- **Speed Optimized**: No frontend bloat, enqueued scripts without Bootstrap or FontAwesome.
+- **Import/Export Dashboard**: Migrate gallery layout configurations to other setups effortlessly.
 
 ## 🛠 Installation
 
@@ -43,12 +43,16 @@ The new dashboard allows you to:
 ## 💎 Pro Version
 
 Upgrade to **Filter Gallery Pro** for even more powerful features:
-- **15+ Premium Layouts** (Masonry, Justified, Grid).
-- **Advanced Ajax Search** & Multi-level filtering.
-- **Video Support** (YouTube, Vimeo, Self-hosted).
-- **Infinite Load More** & Pagination.
-- **Hover Animations** & Custom Color Schemes.
-- **Priority Support**.
+- **Deep Hierarchical Nested Filters**: Create multi-level filter nesting categories (up to 5 levels).
+- **Custom Redirect Links**: Link gallery images directly to external or internal URLs with "Read More" button customizer.
+- **Searchable Icons Picker**: Assign FontAwesome icons easily to filter tags using a searchable selection picker.
+- **Dynamic AJAX Loading**: Speed up large portfolios with AJAX Asynchronous Pagination, AJAX Load More, and CSS preloaders.
+- **Advanced Columns & Layouts**: Fully customize grid columns (1 to 6) and enable Justified Grid layout options.
+- **Category Styling & Colors**: Dedicated level-by-level color pickers for category text, background, hovers, and active states.
+- **Advanced Image Sorting**: Sort images by Random shuffle, Title, ID, or manual drag-and-drop.
+- **Customizable Lightbox**: Show full media descriptions and slide index numbering in the modal.
+- **15+ Hover Animations**: Select from a premium list of hover transitions and zoom overlays.
+- **Premium Utility Tools**: Duplicate filters, bulk delete media, and priority customer support desk assistance.
 
 👉 [Get Filter Gallery Pro](https://wpfrank.com/plugins/filter-gallery-pro)
 

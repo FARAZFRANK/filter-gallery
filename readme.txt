@@ -28,25 +28,29 @@ We designed this plugin to be intuitive and lightweight. You can upload images, 
 
 = Key Features =
 
-*   **Responsive Design:** Automatically adapts to any screen size.
-*   **Filterable Categories:** meaningful tags to organize your projects or products.
-*   **Modern React UI:** Fast and intuitive admin interface.
-*   **Easy Management:** Simple drag-and-drop interface for ordering images.
-*   **Unlimited Galleries:** Create as many distinctive galleries as you need.
-*   **Lightbox Support:** Includes a built-in lightbox for viewing full-size images.
-*   **Shortcode System:** precise placement of galleries anywhere on your site.
+*   **Unlimited Galleries & Shortcodes:** Create as many galleries as needed, using `[filter-gallery]` or `[ufg]` shortcodes.
+*   **Responsive Columns & Masonry Layouts:** Adapts grid and display columns automatically to device viewports with Masonry support.
+*   **Easy Drag-and-Drop Management:** Simple interface for ordering images (ID and manual sorting).
+*   **Standard Lightbox Overlay:** Includes a built-in lightbox with title overlays.
+*   **Category Filtering & Controls:** Set default loaded category, configure "All" button visibility, customize label, or assign custom icons.
+*   **Media Styling & Customizer:** Adjust grid padding, border spacing, customize image titles and descriptions (with length limits) inside settings.
+*   **Speed Optimized:** No frontend bloat, enqueued scripts without Bootstrap or FontAwesome.
+*   **Import/Export Dashboard:** Migrate gallery layout configurations to other setups effortlessly.
 
 = Pro Version Features =
 
 Unlock the full potential of your portfolios with the Pro Version:
 
-*   **Unlimited Filters:** Create deep folder structures with parent and child filters.
-*   **Advanced Layouts:** Choose from Masonry, multi-column (2, 3, 4), and more.
-*   **Custom Styling:** Full control over colors for buttons, titles, and active states.
-*   **SEO Optimization:** Add "Alt" text to images for better search engine visibility.
-*   **External Linking:** Link gallery images to custom URLs.
-*   **Hover Effects:** Choose from multiple distinct hover animations.
-*   **Premium Support:** Get priority assistance for any questions.
+*   **Deep Hierarchical Nested Filters:** Create multi-level filter nesting categories (up to 5 levels).
+*   **Custom Redirect Links:** Link gallery images directly to external or internal URLs with "Read More" button customizer.
+*   **Searchable Icons Picker:** Assign FontAwesome icons easily to filter tags using a searchable selection picker.
+*   **Dynamic AJAX Loading:** Speed up large portfolios with AJAX Asynchronous Pagination, AJAX Load More, and CSS preloaders.
+*   **Advanced Columns & Layouts:** Fully customize grid columns (1 to 6) and enable Justified Grid layout options.
+*   **Category Styling & Colors:** Dedicated level-by-level color pickers for category text, background, hovers, and active states.
+*   **Advanced Image Sorting:** Sort images by Random shuffle, Title, ID, or manual drag-and-drop.
+*   **Customizable Lightbox:** Show full media descriptions and slide index numbering in the modal.
+*   **15+ Hover Animations:** Select from a premium list of hover transitions and zoom overlays.
+*   **Premium Utility Tools:** Duplicate filters, bulk delete media, and priority customer support desk assistance.
 
 == Installation ==
 
