@@ -115,7 +115,7 @@ class UFG_Migration {
 					'all_button_bg_color' => '#0A85ED',
 					'parent_button_color' => '#4F46E5',
 					'parent_button_bg_color' => '#EEF2FF',
-					'parent_button_hover_color' => '#4338CA',
+					'parent_button_hover_color' => '#000000',
 					'parent_active_button_color' => '#FFFFFF',
 					'parent_active_button_bg_color' => '#4F46E5',
 					'parent_filters_heading' => '',
@@ -170,11 +170,11 @@ class UFG_Migration {
 					'load_btn_txt' => 'Load More',
 					'filter_style' => 'buttons',
 					'combine_filter_search' => '0',
-					'filter_padding' => '10px 15px',
+					'filter_padding' => '8px 16px',
 					'filter_margin' => '5px',
-					'filter_padding_type' => 'medium',
-					'filter_padding_v' => '12',
-					'filter_padding_h' => '24',
+					'filter_padding_type' => 'small',
+					'filter_padding_v' => '8',
+					'filter_padding_h' => '16',
 					'filter_margin_val' => '5',
 					'l1_button_hover_color' => '#059669',
 					'l1_active_button_color' => '#FFFFFF',
@@ -192,10 +192,24 @@ class UFG_Migration {
 
 				$migrated_settings = array_merge($default_settings, $settings);
 
+				// Restrict columns to maximum free limits to prevent PRO locks on migrated galleries
+				if (!in_array((string)$migrated_settings['columns_desktop'], array('3', '4', '6'), true)) {
+					$migrated_settings['columns_desktop'] = 4;
+				}
+				if (intval($migrated_settings['columns_tab']) > 3) {
+					$migrated_settings['columns_tab'] = 3;
+				}
+				if (intval($migrated_settings['columns_mobile_landscape']) > 3) {
+					$migrated_settings['columns_mobile_landscape'] = 3;
+				}
+				if (intval($migrated_settings['columns_mobile_portrait']) > 2) {
+					$migrated_settings['columns_mobile_portrait'] = 2;
+				}
+
 				// Force the requested purple palette for migrated galleries
 				$migrated_settings['parent_button_color'] = '#4F46E5';
 				$migrated_settings['parent_button_bg_color'] = '#EEF2FF';
-				$migrated_settings['parent_button_hover_color'] = '#4338CA';
+				$migrated_settings['parent_button_hover_color'] = '#000000';
 				$migrated_settings['parent_active_button_color'] = '#FFFFFF';
 				$migrated_settings['parent_active_button_bg_color'] = '#4F46E5';
 

@@ -74,7 +74,7 @@ function ufg_shortcode_callback($atts){
 			'all_button_bg_color' => '#0A85ED',
 			'parent_button_color' => '#4F46E5',
 			'parent_button_bg_color' => '#EEF2FF',
-			'parent_button_hover_color' => '#4338CA',
+			'parent_button_hover_color' => '#000000',
 			'parent_active_button_color' => '#FFFFFF',
 			'parent_active_button_bg_color' => '#4F46E5',
 			'parent_filters_heading' => '',

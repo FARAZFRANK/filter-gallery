@@ -119,7 +119,7 @@ if (isset($atts['parent_button_hover_color'])) {
 	if (isset($ufg_setting['parent_button_hover_color']) && $ufg_setting['parent_button_hover_color'] !== '') {
 		$parent_button_hover_color = $ufg_setting['parent_button_hover_color'];
 	} else {
-		$parent_button_hover_color = "#4338CA"; // default
+		$parent_button_hover_color = "#000000"; // default
 	}
 }
 

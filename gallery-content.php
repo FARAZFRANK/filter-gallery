@@ -4,8 +4,8 @@ if (!defined('ABSPATH'))
 
 // Load Gallery Content
 // Prioritize plugin specific meta, fallback to WordPress defaults
-$ufg_title = isset($ufg_gallery['ufg-title'][$attachment_id]) ? $ufg_gallery['ufg-title'][$attachment_id] : get_the_title($attachment_id);
-$ufg_alt = isset($ufg_gallery['ufg-alt'][$attachment_id]) ? $ufg_gallery['ufg-alt'][$attachment_id] : get_post_meta($attachment_id, '_wp_attachment_image_alt', TRUE);
+$ufg_title = !empty($ufg_gallery['ufg-title'][$attachment_id]) ? $ufg_gallery['ufg-title'][$attachment_id] : get_the_title($attachment_id);
+$ufg_alt = !empty($ufg_gallery['ufg-alt'][$attachment_id]) ? $ufg_gallery['ufg-alt'][$attachment_id] : get_post_meta($attachment_id, '_wp_attachment_image_alt', TRUE);
 $ufg_description = isset($ufg_gallery['ufg-description'][$attachment_id]) ? $ufg_gallery['ufg-description'][$attachment_id] : '';
 
 // If plugin description is empty, fallback to WP attachment content
@@ -141,7 +141,12 @@ if (isset($ufg_gallery['ufg-image-filters'][$attachment_id]) && is_array($ufg_ga
 		$show_grid_title = ($ufg_image_title === 'on' || $ufg_image_title == 1 || $ufg_image_title === '1' || $ufg_image_title === true);
 		$show_grid_description = ($ufg_image_description === 'on' || $ufg_image_description == 1 || $ufg_image_description === '1' || $ufg_image_description === true);
 		$show_read_more = ($ufg_read_more_link_sh == 1);
-		if ($show_grid_title || $show_grid_description || $show_read_more) { ?>
+
+		$has_title_text = ($show_grid_title && strlen($ufg_title) > 0);
+		$has_desc_text = ($show_grid_description && strlen($ufg_description) > 0);
+		$has_read_more_btn = ($show_read_more && ($ufg_read_more_link == 1 || empty($ufg_read_more_link)) && !empty($ufg_url));
+
+		if ($has_title_text || $has_desc_text || $has_read_more_btn) { ?>
 		<div class="ufg-image-content">
 			<?php if ($show_grid_title) { ?>
 				<?php if (strlen($ufg_title) > 0) { ?>
