@@ -253,7 +253,7 @@ jQuery(document).ready(function ($) {
         ];
 
         var defaultColors = {
-            parent: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
+            parent: { text: '#4F46E5', bg: '#EEF2FF', hover: '#000000', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l1: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l2: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l3: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
@@ -364,7 +364,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         var level = $(this).data('level');
         var defaultColors = {
-            parent: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
+            parent: { text: '#4F46E5', bg: '#EEF2FF', hover: '#000000', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l1: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l2: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l3: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },

@@ -606,7 +606,7 @@ $ufg_filter_margin = isset($atts['filter_margin']) ? $atts['filter_margin'] : (i
 // Level 1-6 colors mapping with pastel defaults
 $levels_mapping = array(
 	'parent' => array(
-		'hover' => '#4338CA',
+		'hover' => '#000000',
 		'active_txt' => '#FFFFFF',
 		'active_bg' => '#4F46E5'
 	),
