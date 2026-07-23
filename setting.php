@@ -119,7 +119,7 @@ if (isset($atts['parent_button_hover_color'])) {
 	if (isset($ufg_setting['parent_button_hover_color']) && $ufg_setting['parent_button_hover_color'] !== '') {
 		$parent_button_hover_color = $ufg_setting['parent_button_hover_color'];
 	} else {
-		$parent_button_hover_color = "#000000"; // default
+		$parent_button_hover_color = "#4F46E5"; // default
 	}
 }
 
@@ -600,7 +600,7 @@ if ($ufg_filter_style !== 'dropdown') {
 	$ufg_filter_style = 'buttons';
 }
 $ufg_combine_filter_search = '0';
-$ufg_filter_padding = isset($atts['filter_padding']) ? $atts['filter_padding'] : (isset($ufg_setting['filter_padding']) ? $ufg_setting['filter_padding'] : '10px 15px');
+$ufg_filter_padding = isset($atts['filter_padding']) ? $atts['filter_padding'] : (isset($ufg_setting['filter_padding']) ? $ufg_setting['filter_padding'] : '8px 16px');
 $ufg_filter_margin = isset($atts['filter_margin']) ? $atts['filter_margin'] : (isset($ufg_setting['filter_margin']) ? $ufg_setting['filter_margin'] : '5px');
 
 // Level 1-6 colors mapping with pastel defaults

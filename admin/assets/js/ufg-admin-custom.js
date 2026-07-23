@@ -80,7 +80,7 @@ jQuery(document).ready(function ($) {
         // Define default fallbacks (Free plugin supports Buttons and Dropdown Select)
         var filterStyle = (settings.filter_style === 'dropdown') ? 'dropdown' : 'buttons';
         var combineFilterSearch = settings.combine_filter_search || '0';
-        var filterPadding = settings.filter_padding || '10px 15px';
+        var filterPadding = settings.filter_padding || '8px 16px';
         var filterMargin = settings.filter_margin || '5px';
 
         var filterPaddingType = settings.filter_padding_type;
@@ -253,7 +253,7 @@ jQuery(document).ready(function ($) {
         ];
 
         var defaultColors = {
-            parent: { text: '#4F46E5', bg: '#EEF2FF', hover: '#000000', activeText: '#FFFFFF', activeBg: '#4F46E5' },
+            parent: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4F46E5', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l1: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l2: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l3: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
@@ -364,7 +364,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         var level = $(this).data('level');
         var defaultColors = {
-            parent: { text: '#4F46E5', bg: '#EEF2FF', hover: '#000000', activeText: '#FFFFFF', activeBg: '#4F46E5' },
+            parent: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4F46E5', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l1: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l2: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
             l3: { text: '#4F46E5', bg: '#EEF2FF', hover: '#4338CA', activeText: '#FFFFFF', activeBg: '#4F46E5' },
@@ -451,7 +451,7 @@ jQuery(document).ready(function ($) {
     // Initialize custom padding / margin defaults visually after HTML append
     $(document).on('ufg_settings_rendered', function () {
         // Set active preset button
-        var activePreset = $('#ufg_custom_filter_padding_type').val() || 'medium';
+        var activePreset = $('#ufg_custom_filter_padding_type').val() || 'small';
         $('.ufg-padding-preset-btn').each(function () {
             var preset = $(this).data('preset');
             if (preset === activePreset) {

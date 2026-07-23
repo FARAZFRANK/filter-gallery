@@ -97,11 +97,12 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 == Changelog ==
 
 = 1.1.3 =
-* Defaulted button padding size to 'small' (8px 16px) on legacy gallery migrations.
+* Defaulted button padding size to 'small' (8px 16px) globally and for migrations.
 * Clamped migrated columns settings to maximum Free limits (Tablet & Mobile Landscape max 3, Mobile Portrait max 2) to prevent locked PRO status on Free version.
 * Ensured Image Title is enabled and Image Description is disabled by default for migrated galleries.
 * Improved frontend fallback to default WordPress media titles when custom image titles are empty, and prevented empty title/description boxes.
-* Set default hover text color of Level 1 (Parent) buttons to Black (#000000) globally and for migrated galleries.
+* Set default hover text color of Level 1 (Parent) buttons to '#4F46E5' (purple/indigo) globally.
+* Fixed incorrect redirect to 'filter-gallery-pro' page on multiple gallery deletions.
 
 = 1.1.2 =
 * Implemented automatic data migration and settings normalization for legacy v0.2.3 galleries.

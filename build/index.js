@@ -185,7 +185,7 @@
               headers: { "X-WP-Nonce": c.remove },
             })
           ).ok
-            ? (window.location.href = "?page=filter-gallery-pro")
+            ? (window.location.href = "?page=filter-gallery")
             : window.ufgCustomAlert("Failed to delete gallery"));
       },
       f = t.filter((e) =>
@@ -16025,7 +16025,7 @@
         : t("dashboard");
     }, []);
     const l = (e, r = null) => {
-      let n = "?page=filter-gallery-pro";
+      let n = "?page=filter-gallery";
       ("manage" === e &&
         ((n = "?page=ufg-manage-gallery"),
         r && "new" !== r && (n += `&id=${r}`)),
