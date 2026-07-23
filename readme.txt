@@ -4,7 +4,7 @@ Donate link: https://wpfrank.com/
 Tags: responsive, filter gallery, portfolio, image gallery, masonry
 Requires at least: 6.0
 Tested up to: 7.0.2
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -95,6 +95,13 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 5.  How to create a filter gallery?**
 
 == Changelog ==
+
+= 1.1.3 =
+* Defaulted button padding size to 'small' (8px 16px) on legacy gallery migrations.
+* Clamped migrated columns settings to maximum Free limits (Tablet & Mobile Landscape max 3, Mobile Portrait max 2) to prevent locked PRO status on Free version.
+* Ensured Image Title is enabled and Image Description is disabled by default for migrated galleries.
+* Improved frontend fallback to default WordPress media titles when custom image titles are empty, and prevented empty title/description boxes.
+* Set default hover text color of Level 1 (Parent) buttons to Black (#000000) globally and for migrated galleries.
 
 = 1.1.2 =
 * Implemented automatic data migration and settings normalization for legacy v0.2.3 galleries.

@@ -144,7 +144,7 @@ class UFG_Migration {
 					'image_title' => 1,
 					'image_title_font_size' => 18,
 					'image_title_color' => '#FFFFFF',
-					'image_description' => 1,
+					'image_description' => 0,
 					'image_description_font_size' => 14,
 					'image_description_color' => '#FFFFFF',
 					'image_description_text_limit' => 60,
@@ -212,6 +212,10 @@ class UFG_Migration {
 				$migrated_settings['parent_button_hover_color'] = '#000000';
 				$migrated_settings['parent_active_button_color'] = '#FFFFFF';
 				$migrated_settings['parent_active_button_bg_color'] = '#4F46E5';
+
+				// Ensure Title is enabled and Description is disabled for migrated galleries
+				$migrated_settings['image_title'] = 1;
+				$migrated_settings['image_description'] = 0;
 
 				update_option("ufg_settings_" . $id, $migrated_settings);
 

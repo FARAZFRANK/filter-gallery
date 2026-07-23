@@ -6,7 +6,7 @@ if (!defined('ABSPATH'))
  * Plugin Name:       Filter Gallery
  * Plugin URI:        https://wpfrank.com/
  * Description:       Filter Gallery is a lightweight and powerful WordPress plugin to create beautiful filterable galleries.
- * Version:           1.1.2
+ * Version:           1.1.3
  * Requires at least: 5.0
  * Requires PHP:      7.4
  * Author:            FARAZFRANK
@@ -18,7 +18,7 @@ if (!defined('ABSPATH'))
  */
 
 if (!defined('UFG_VERSION')) {
-	define('UFG_VERSION', '1.1.2');
+	define('UFG_VERSION', '1.1.3');
 }
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-ufg-migration.php';
