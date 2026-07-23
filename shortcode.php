@@ -19,6 +19,7 @@ if (!function_exists('ufg_hex2rgba')) {
 }
 
 add_shortcode('ufg', 'ufg_shortcode_callback');
+add_shortcode('filter-gallery', 'ufg_shortcode_callback');
 function ufg_shortcode_callback($atts){
 	ob_start();
 	//echo "<hr>";
