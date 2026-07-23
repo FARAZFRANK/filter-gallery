@@ -3,7 +3,7 @@ Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkh
 Donate link: https://wpfrank.com/
 Tags: responsive, filter gallery, portfolio, image gallery, masonry
 Requires at least: 6.0
-Tested up to: 7.0.2
+Tested up to: 7.0
 Stable tag: 1.1.3
 Requires PHP: 7.4
 License: GPLv2 or later
