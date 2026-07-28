@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Suodata Gallery Pro\n"
-"POT-Creation-Date: 2024-01-26 16:04+0530\n"
-"PO-Revision-Date: 2024-01-26 16:04+0530\n"
+"Project-Id-Version: Filter Gallery\n"
+"POT-Creation-Date: 2026-07-28 15:49+0530\n"
+"PO-Revision-Date: 2026-07-28 15:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: wpfrank.com\n"
 "Language: fi\n"
@@ -10,757 +10,218 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: .\n"
+"X-Generator: Poedit 3.9\n"
 
-#: admin/galleries.php:25 filter-gallery-pro.php:65
-msgid "Filter Gallery Pro"
-msgstr "Suodata Gallery Pro"
-
-#: admin/galleries.php:29
-msgid "Create New Gallery"
-msgstr "Luo uusi galleria"
-
-#: admin/galleries.php:37 admin/galleries.php:89 admin/manage-gallery.php:813
-msgid "Title"
-msgstr "Otsikko"
-
-#: admin/galleries.php:38 admin/galleries.php:90 admin/manage-gallery.php:945
-msgid "Shortcode"
-msgstr "Lyhytkoodi"
-
-#: admin/galleries.php:39 admin/galleries.php:91
-msgid "Actions"
-msgstr "Toiminnot"
-
-#: admin/galleries.php:40
-msgid "Select All Galleries"
-msgstr "Valitse Kaikki galleriat"
-
-#: admin/galleries.php:68
-msgid "Click To Copy Gallery Shortcode"
-msgstr "Kopioi gallerian lyhytkoodi napsauttamalla"
-
-#: admin/galleries.php:68
-msgid "Copy"
-msgstr "Kopioi"
-
-#: admin/galleries.php:69
-msgid "Copied"
-msgstr "Kopioitu"
-
-#: admin/galleries.php:72
-msgid "Clone Gallery"
-msgstr "Klooni galleria"
-
-#: admin/galleries.php:73
-msgid "Modify Gallery"
-msgstr "Muokkaa galleriaa"
-
-#: admin/galleries.php:74
-msgid "Delete Gallery"
-msgstr "Poista galleria"
-
-#: admin/galleries.php:77
-msgid "Select Gallery"
-msgstr "Valitse Galleria"
-
-#: admin/galleries.php:92
-msgid "Delete Selected Gallery"
-msgstr "Poista valittu galleria"
-
-#: admin/manage-gallery.php:59
-msgid "Create and Manage Filters For Gallery"
-msgstr "Luo ja hallitse gallerian suodattimia"
-
-#: admin/manage-gallery.php:68
-msgid "Gallery Name / Title"
-msgstr "Gallerian nimi/nimike"
-
-#: admin/manage-gallery.php:75 admin/manage-gallery.php:215
-#: admin/manage-gallery.php:242 admin/manage-gallery.php:245
-msgid "Filters"
-msgstr "Suodattimet"
-
-#: admin/manage-gallery.php:82
-msgid "Important Note"
-msgstr "Tärkeä huomautus"
-
-#: admin/manage-gallery.php:83
-msgid "Create only parent and child level filters."
-msgstr "Luo vain vanhempi- ja lapsitason suodattimet."
-
-#: admin/manage-gallery.php:84
-msgid "Do not use any symbol in filter name like"
-msgstr "Älä käytä mitään symbolia suodattimen nimessä, kuten"
-
-#: admin/manage-gallery.php:90
-msgid "Filter Name"
-msgstr "Suodattimen nimi"
-
-#: admin/manage-gallery.php:95
-msgid "Type Filter Name"
-msgstr "Kirjoita suodattimen nimi"
-
-#: admin/manage-gallery.php:107
-msgid "Update"
-msgstr "Päivitys"
-
-#: admin/manage-gallery.php:108
-msgid "Add"
-msgstr "Lisää"
-
-#: admin/manage-gallery.php:117 admin/manage-gallery.php:219
-#: admin/manage-gallery.php:942
-msgid "Save"
-msgstr "Tallenna"
-
-#: admin/manage-gallery.php:120 admin/manage-gallery.php:939
-msgid "Gallery"
-msgstr "Galleria"
-
-#: admin/manage-gallery.php:130
-msgid "Upload Images to Gallery And Apply Filters"
-msgstr "Lataa kuvia galleriaan ja käytä suodattimia"
-
-#: admin/manage-gallery.php:137
-msgid "Sort ASC"
-msgstr "Lajittele ASC"
-
-#: admin/manage-gallery.php:140
-msgid "Sort DESC"
-msgstr "Lajittele DESC"
-
-#: admin/manage-gallery.php:144
-msgid "Remove All"
-msgstr "Poista kaikki"
-
-#: admin/manage-gallery.php:203
-msgid "Upload Images"
-msgstr "Lataa kuvia"
-
-#: admin/manage-gallery.php:223 admin/manage-gallery.php:969
-msgid "Settings"
-msgstr "Asetukset"
-
-#: admin/manage-gallery.php:234
-msgid "Configure Settings"
-msgstr "Määritä asetukset"
-
-#: admin/manage-gallery.php:249 admin/manage-gallery.php:262
-#: admin/manage-gallery.php:276 admin/manage-gallery.php:291
-#: admin/manage-gallery.php:516 admin/manage-gallery.php:551
-#: admin/manage-gallery.php:592 admin/manage-gallery.php:634
-#: admin/manage-gallery.php:714 admin/manage-gallery.php:803
-#: admin/manage-gallery.php:817 admin/manage-gallery.php:831
-#: admin/manage-gallery.php:845
-msgid "Show"
-msgstr "Näytä"
-
-#: admin/manage-gallery.php:252 admin/manage-gallery.php:265
-#: admin/manage-gallery.php:279 admin/manage-gallery.php:294
-#: admin/manage-gallery.php:519 admin/manage-gallery.php:554
-#: admin/manage-gallery.php:595 admin/manage-gallery.php:637
-#: admin/manage-gallery.php:717 admin/manage-gallery.php:806
-#: admin/manage-gallery.php:820 admin/manage-gallery.php:834
-#: admin/manage-gallery.php:848
-msgid "Hide"
-msgstr "Piilota"
-
-#: admin/manage-gallery.php:255
-msgid "hide and show filter above gallery"
-msgstr "piilota ja näytä suodatin gallerian yläpuolella"
-
-#: admin/manage-gallery.php:258
-msgid "Filters Icon"
-msgstr "Suodattimet-kuvake"
-
-#: admin/manage-gallery.php:268
-msgid "hide and show an icon on filters button"
-msgstr "piilota ja näytä kuvake suodatinpainikkeessa"
-
-#: admin/manage-gallery.php:272
-msgid "Filters Image Count"
-msgstr "Suodattimet Kuvamäärä"
-
-#: admin/manage-gallery.php:287
-msgid "All Button"
-msgstr "Kaikki-painike"
-
-#: admin/manage-gallery.php:297
-msgid "hide and show all filter button"
-msgstr "piilota ja näytä kaikki suodatinpainike"
-
-#: admin/manage-gallery.php:301
-msgid "All Button Title"
-msgstr "Kaikki-painikkeen otsikko"
-
-#: admin/manage-gallery.php:302 setting.php:49
-msgid "All"
-msgstr "Kaikki"
-
-#: admin/manage-gallery.php:304
-msgid "type name"
-msgstr "tyypin nimi"
-
-#: admin/manage-gallery.php:306
-msgid "set all filter button title"
-msgstr "aseta kaikki suodatinpainikkeen otsikko"
-
-#: admin/manage-gallery.php:309
-msgid "All Button Icon"
-msgstr "Kaikki painikekuvake"
-
-#: admin/manage-gallery.php:314
-msgid "set all filter button icon"
-msgstr "aseta kaikki suodatinpainikkeen kuvake"
-
-#: admin/manage-gallery.php:318
-msgid "All Button Color"
-msgstr "Kaikki painikkeen värit"
-
-#: admin/manage-gallery.php:323 admin/manage-gallery.php:332
-msgid "set background color of all filter button"
-msgstr "aseta kaikkien suodatinpainikkeiden taustaväri"
-
-#: admin/manage-gallery.php:327
-msgid "All Button Background Color"
-msgstr "Kaikki painikkeen taustaväri"
-
-#: admin/manage-gallery.php:335
-msgid "Parent Filters Heading"
-msgstr "Parent Filters -otsikko"
-
-#: admin/manage-gallery.php:340
-msgid "set parent filter button heading"
-msgstr "aseta yläsuodatinpainikkeen otsikko"
-
-#: admin/manage-gallery.php:343
-msgid "Parent Filter Button Color"
-msgstr "Pääsuodattimen painikkeen väri"
-
-#: admin/manage-gallery.php:348
-msgid "set background color of parent filter button"
-msgstr "aseta yläsuodatinpainikkeen taustaväri"
-
-#: admin/manage-gallery.php:352
-msgid "Parent Filters Button Background Color"
-msgstr "Pääsuodattimet -painikkeen taustaväri"
-
-#: admin/manage-gallery.php:357
-msgid "set background color of parent filter background button."
-msgstr "asettaa pääsuodattimen taustapainikkeen taustavärin."
-
-#: admin/manage-gallery.php:360
-msgid "Level One Filters Heading"
-msgstr "Tason yksi suodattimet -otsikko"
-
-#: admin/manage-gallery.php:365
-msgid "set level one filter button heading"
-msgstr "asettaa tason yksi suodatinpainikkeen otsikko"
-
-#: admin/manage-gallery.php:368
-msgid "Level One Filters Button Color"
-msgstr "Tason yksi suodattimet -painikkeen väri"
-
-#: admin/manage-gallery.php:373
-msgid "set color of level One filters button"
-msgstr "asettaa tason Yksi suodatinpainikkeen väri"
-
-#: admin/manage-gallery.php:376
-msgid "Level One Filters Button Background Color"
-msgstr "Tason yksi suodattimet -painikkeen taustaväri"
-
-#: admin/manage-gallery.php:381 admin/manage-gallery.php:392
-msgid "set background color of level one filters button"
-msgstr "aseta tason yksi suodatinpainikkeen taustaväri"
-
-#: admin/manage-gallery.php:384
-msgid "Child Filters Effect"
-msgstr "Lapsisuodatintehoste"
-
-#: admin/manage-gallery.php:388
-msgid "Fade"
-msgstr "Häivyttää"
-
-#: admin/manage-gallery.php:389
-msgid "Show / Hide"
-msgstr "Näytä / Piilota"
-
-#: admin/manage-gallery.php:395
-msgid "Active Filter Button Color"
-msgstr "Aktiivinen suodatinpainikkeen väri"
-
-#: admin/manage-gallery.php:400
-msgid "set color of active filter button"
-msgstr "aseta aktiivisen suodatinpainikkeen väri"
-
-#: admin/manage-gallery.php:403
-msgid "Active Filter Button Background Color"
-msgstr "Aktiivinen suodatinpainikkeen taustaväri"
-
-#: admin/manage-gallery.php:408
-msgid "set background color of active filter button"
-msgstr "aseta aktiivisen suodatinpainikkeen taustaväri"
-
-#: admin/manage-gallery.php:419
-msgid "Gallery Settings"
-msgstr "Gallerian asetukset"
-
-#: admin/manage-gallery.php:423
-msgid "Columns On Desktop"
-msgstr "Sarakkeet työpöydällä"
-
-#: admin/manage-gallery.php:427 admin/manage-gallery.php:453
-#: admin/manage-gallery.php:476 admin/manage-gallery.php:496
-msgid "1"
-msgstr "Yksi"
-
-#: admin/manage-gallery.php:430 admin/manage-gallery.php:456
-#: admin/manage-gallery.php:479 admin/manage-gallery.php:499
-msgid "2"
-msgstr "Kaksi"
-
-#: admin/manage-gallery.php:433 admin/manage-gallery.php:459
-#: admin/manage-gallery.php:482 admin/manage-gallery.php:502
-msgid "3"
-msgstr "Kolme"
-
-#: admin/manage-gallery.php:436 admin/manage-gallery.php:462
-#: admin/manage-gallery.php:485 admin/manage-gallery.php:505
-msgid "4"
-msgstr "Neljä"
-
-#: admin/manage-gallery.php:439 admin/manage-gallery.php:465
-msgid "6"
-msgstr "Kuusi"
-
-#: admin/manage-gallery.php:442
-msgid "12"
-msgstr "Kaksitoista"
-
-#: admin/manage-gallery.php:445
-msgid "columns to display on desktop or pc device"
-msgstr "sarakkeet näytettäväksi pöytäkoneella tai PC-laitteella"
-
-#: admin/manage-gallery.php:449
-msgid "Columns On Tablet"
-msgstr "Sarakkeet Tabletissa"
-
-#: admin/manage-gallery.php:468
-msgid "columns to display on tablet device"
-msgstr "tablettilaitteessa näytettävät sarakkeet"
-
-#: admin/manage-gallery.php:472
-msgid "Columns On Mobile - Landscape Mode"
-msgstr "Sarakkeet matkapuhelimessa - Vaakatila"
-
-#: admin/manage-gallery.php:488
-msgid "columns to display on the mobile device with landscape mode"
-msgstr "sarakkeet, jotka näytetään mobiililaitteessa vaakatilassa"
-
-#: admin/manage-gallery.php:492
-msgid "Columns On Mobile - Portrait Mode"
-msgstr "Sarakkeet matkapuhelimessa - muotokuvatila"
-
-#: admin/manage-gallery.php:508
-msgid "columns to display on mobile device with portrait mode"
-msgstr "sarakkeet, jotka näytetään mobiililaitteessa muotokuvatilassa"
-
-#: admin/manage-gallery.php:512
-msgid "Thumbnail Image"
-msgstr "Pikkukuva"
-
-#: admin/manage-gallery.php:522
-msgid "show or hide image thumbnail into gallery"
-msgstr "näytä tai piilota pikkukuva galleriaan"
-
-#: admin/manage-gallery.php:526
-msgid "Thumbnail Image Size"
-msgstr "Pikkukuvan koko"
-
-#: admin/manage-gallery.php:530
-msgid "Small"
-msgstr "Pieni"
-
-#: admin/manage-gallery.php:531
-msgid "Medium"
-msgstr "Keskitaso"
-
-#: admin/manage-gallery.php:532
-msgid "Large"
-msgstr "Iso"
-
-#: admin/manage-gallery.php:533
-msgid "Original"
-msgstr "Alkuperäinen"
-
-#: admin/manage-gallery.php:534 admin/manage-gallery.php:535
-#: admin/manage-gallery.php:536
-msgid "Same Size"
-msgstr "Sama koko"
-
-#: admin/manage-gallery.php:539
-msgid "set thumbnail image size"
-msgstr "aseta pikkukuvan koko"
-
-#: admin/manage-gallery.php:541 admin/manage-gallery.php:705
-msgid "Note"
-msgstr "Huom"
-
-#: admin/manage-gallery.php:542
-msgid ""
-"Same size setting will only work with new images uploaded after the plugin "
-"installation."
+msgid "Loading Gallery Documentation..."
 msgstr ""
-"Sama kokoasetus toimii vain uusien kuvien kanssa, jotka on ladattu "
-"laajennuksen asennuksen jälkeen."
 
-#: admin/manage-gallery.php:543
-msgid "It will not work with previously uploaded images."
-msgstr "Se ei toimi aiemmin ladattujen kuvien kanssa."
-
-#: admin/manage-gallery.php:547
-msgid "Thumbnail Border"
-msgstr "Pikkukuvareunus"
-
-#: admin/manage-gallery.php:557
-msgid "show or hide thumbnail border"
-msgstr "näytä tai piilota pikkukuvan reuna"
-
-#: admin/manage-gallery.php:561
-msgid "Thumbnail Border Thickness"
-msgstr "Pikkukuvan reunan paksuus"
-
-#: admin/manage-gallery.php:567
-msgid "set thumbnail border thickness"
-msgstr "aseta pikkukuvan reunan paksuus"
-
-#: admin/manage-gallery.php:571
-msgid "Thumbnail Border Color"
-msgstr "Pikkukuvan reunan väri"
-
-#: admin/manage-gallery.php:576
-msgid "set thumbnail border color"
-msgstr "aseta pikkukuvan reunan väri"
-
-#: admin/manage-gallery.php:579
-msgid "Thumbnail Background Color"
-msgstr "Pikkukuvan taustaväri"
-
-#: admin/manage-gallery.php:584
-msgid "set thumbnail background color"
-msgstr "aseta pikkukuvan taustaväri"
-
-#: admin/manage-gallery.php:588 filter-gallery-pro.php:273
-#: filter-gallery-pro.php:518
-msgid "Image Title"
-msgstr "Kuvan otsikko"
-
-#: admin/manage-gallery.php:598
-msgid "hide or show image title"
-msgstr "piilota tai näytä kuvan otsikko"
-
-#: admin/manage-gallery.php:602
-msgid "Image Title Font Size"
-msgstr "Kuvan otsikon fonttikoko"
-
-#: admin/manage-gallery.php:608
-msgid "set image title font size"
-msgstr "aseta kuvan otsikon kirjasinkoko"
-
-#: admin/manage-gallery.php:612
-msgid "Image Title Color"
-msgstr "Kuvan otsikon väri"
-
-#: admin/manage-gallery.php:617
-msgid "set image title text color"
-msgstr "aseta kuvan otsikon tekstin väri"
-
-#: admin/manage-gallery.php:621
-msgid "Image Title Background Color"
-msgstr "Kuvan otsikon taustaväri"
-
-#: admin/manage-gallery.php:626
-msgid "set image title background color"
-msgstr "aseta kuvan otsikon taustaväri"
-
-#: admin/manage-gallery.php:630 filter-gallery-pro.php:279
-#: filter-gallery-pro.php:524
-msgid "Image Description"
-msgstr "Kuvan kuvaus"
-
-#: admin/manage-gallery.php:640
-msgid "hide or show image description"
-msgstr "piilota tai näytä kuvan kuvaus"
-
-#: admin/manage-gallery.php:644
-msgid "Image Description Font Size"
-msgstr "Kuvan kuvaus Fonttikoko"
-
-#: admin/manage-gallery.php:650
-msgid "set image description font size"
-msgstr "aseta kuvan kuvauksen kirjasinkoko"
-
-#: admin/manage-gallery.php:654
-msgid "Image Description Color"
-msgstr "Kuvan kuvaus Väri"
-
-#: admin/manage-gallery.php:659
-msgid "set image description text color"
-msgstr "aseta kuvan kuvaustekstin väri"
-
-#: admin/manage-gallery.php:663
-msgid "Image Description Background Color"
-msgstr "Kuvan kuvaus Taustaväri"
-
-#: admin/manage-gallery.php:668
-msgid "set image description background color"
-msgstr "aseta kuvan kuvauksen taustaväri"
-
-#: admin/manage-gallery.php:672
-msgid "Image Description Text Limit"
-msgstr "Kuvan kuvaus Text Limit"
-
-#: admin/manage-gallery.php:677
-msgid "characters"
-msgstr "merkkiä"
-
-#: admin/manage-gallery.php:678
-msgid "set image description text limit"
-msgstr "asettaa kuvan kuvaustekstin rajan"
-
-#: admin/manage-gallery.php:682
-msgid "Image Hover Effect"
-msgstr "Kuva Hover Effect"
-
-#: admin/manage-gallery.php:686 admin/manage-gallery.php:783
-msgid "None"
-msgstr "Ei mitään"
-
-#: admin/manage-gallery.php:687
-msgid "Border Overlay"
-msgstr "Reunuksen peitto"
-
-#: admin/manage-gallery.php:690 admin/manage-gallery.php:720
-msgid "hide or show read more button"
-msgstr "piilota tai näytä lue lisää -painike"
-
-#: admin/manage-gallery.php:693
-msgid "Read More Link On"
-msgstr "Lue lisää -linkki"
-
-#: admin/manage-gallery.php:697
-msgid "Button"
-msgstr "Painike"
-
-#: admin/manage-gallery.php:700
-msgid "Image"
-msgstr "Kuva"
-
-#: admin/manage-gallery.php:703
-msgid "show link on image or button"
-msgstr "näytä linkki kuvassa tai painikkeessa"
-
-#: admin/manage-gallery.php:706
-msgid ""
-"If Read More Link set on Image then lightbox functionality will not work."
-msgstr "Jos Kuvassa on Lue lisää -linkki, lightbox-toiminto ei toimi."
-
-#: admin/manage-gallery.php:710
-msgid "Read More Button"
-msgstr "Lue lisää -painike"
-
-#: admin/manage-gallery.php:724
-msgid "Read More Button Text"
-msgstr "Lue lisää -painikkeen teksti"
-
-#: admin/manage-gallery.php:725 setting.php:458
-msgid "Read More"
-msgstr "Lue lisää"
-
-#: admin/manage-gallery.php:729
-msgid "set read more button title text"
-msgstr "set lue lisää -painikkeen otsikkoteksti"
-
-#: admin/manage-gallery.php:732
-msgid "Read More Button Icon"
-msgstr "Lue lisää -painike"
-
-#: admin/manage-gallery.php:737
-msgid "set read more button icon"
-msgstr "aseta lue lisää -painikkeen kuvake"
-
-#: admin/manage-gallery.php:741
-msgid "Read More Button Color"
-msgstr "Lue lisää Painikkeen väri"
-
-#: admin/manage-gallery.php:748
-msgid "set read more button text color"
-msgstr "aseta lue lisää -painikkeen tekstin väri"
-
-#: admin/manage-gallery.php:751
-msgid "Read More Button Background Color"
-msgstr "Lue lisää -painikkeen taustaväri"
-
-#: admin/manage-gallery.php:758 admin/manage-gallery.php:893
-#: admin/manage-gallery.php:903
-msgid "set read more button background color"
-msgstr "aseta lue lisää -painikkeen taustaväri"
-
-#: admin/manage-gallery.php:761
-msgid "Read More Link Open"
-msgstr "Lue lisää Linkki auki"
-
-#: admin/manage-gallery.php:765
-msgid "In New Page"
-msgstr "Uudella sivulla"
-
-#: admin/manage-gallery.php:768
-msgid "In Same Page"
-msgstr "Samalla sivulla"
-
-#: admin/manage-gallery.php:771
-msgid "set link opening option"
-msgstr "asettaa linkin avausvaihtoehdon"
-
-#: admin/manage-gallery.php:774
-msgid "Image Sorting"
-msgstr "Kuvien lajittelu"
-
-#: admin/manage-gallery.php:778
-msgid "Image ID - Ascending"
-msgstr "Kuvatunnus - Nouseva"
-
-#: admin/manage-gallery.php:779
-msgid "Image ID - Descending"
-msgstr "Kuvatunnus - Laskeva"
-
-#: admin/manage-gallery.php:780
-msgid "Image Title - Ascending"
-msgstr "Kuvan otsikko - Nouseva"
-
-#: admin/manage-gallery.php:781
-msgid "Image Title - Descending"
-msgstr "Kuvan otsikko - Laskeva"
-
-#: admin/manage-gallery.php:782
-msgid "Shuffle / Random"
-msgstr "Satunnaistoisto / satunnainen"
-
-#: admin/manage-gallery.php:786
-msgid "set gallery image sorting"
-msgstr "set gallerian kuvien lajittelu"
-
-#: admin/manage-gallery.php:795
-msgid "Lightbox Settings"
-msgstr "Lightbox-asetukset"
-
-#: admin/manage-gallery.php:799
-msgid "Lightbox"
-msgstr "Lightbox"
-
-#: admin/manage-gallery.php:809 admin/manage-gallery.php:874
-msgid "set lightbox functionality on gallery thumbnail for larger preview"
+msgid "Please wait while instructions database initializes"
 msgstr ""
-"aseta lightbox-toiminto gallerian pikkukuvaan suuremmaksi esikatseluksi"
 
-#: admin/manage-gallery.php:823
-msgid "show image title under the lightbox"
-msgstr "näytä kuvan otsikko valolaatikon alla"
+msgid "Loading Free vs Pro Comparison..."
+msgstr ""
 
-#: admin/manage-gallery.php:827
-msgid "Description"
-msgstr "Kuvaus"
+msgid "Please wait while features comparison list loads"
+msgstr ""
 
-#: admin/manage-gallery.php:837
-msgid "show image description under the lightbox"
-msgstr "näytä kuvan kuvaus lightboxin alla"
+msgid "Loading Import / Export Dashboard..."
+msgstr ""
 
-#: admin/manage-gallery.php:841
-msgid "Numbering"
-msgstr "Numerointi"
+msgid "Please wait while settings configurations load"
+msgstr ""
 
-#: admin/manage-gallery.php:851
-msgid "show image number under the lightbox"
-msgstr "näytä kuvan numero valolaatikon alla"
+msgid "Loading Filter Gallery..."
+msgstr "Loading Filter Gallery..."
 
-#: admin/manage-gallery.php:861
-msgid "Load More Settings"
-msgstr "Lataa lisää asetuksia"
+msgid "Please wait while the page is initializing"
+msgstr ""
 
-#: admin/manage-gallery.php:864 setting.php:538
-msgid "Load More"
-msgstr "Lataa lisää"
+msgid "Filter Gallery"
+msgstr "Filter Gallery"
 
-#: admin/manage-gallery.php:868
-msgid "On"
-msgstr "Päällä"
+msgid "Manage Gallery"
+msgstr "Manage Gallery"
 
-#: admin/manage-gallery.php:871
-msgid "Off"
-msgstr "Pois"
+msgid "Import / Export"
+msgstr "Import / Export"
 
-#: admin/manage-gallery.php:877
-msgid "Load Limit"
-msgstr "Kuormitusraja"
+msgid "Docs"
+msgstr ""
 
-#: admin/manage-gallery.php:882
-msgid "Set loading element limit"
-msgstr "Aseta latauselementin raja"
+msgid "Free vs Pro"
+msgstr ""
 
-#: admin/manage-gallery.php:886
-msgid "Load More Button Color"
-msgstr "Lataa lisää -painikkeen väri"
-
-#: admin/manage-gallery.php:896
-msgid "Load More Button Text Color"
-msgstr "Lataa lisää -painikkeen tekstin väri"
-
-#: admin/manage-gallery.php:906
-msgid "Load More Button Text"
-msgstr "Lataa lisää -painikkeen tekstiä"
-
-#: admin/manage-gallery.php:911
-msgid "Change load button text"
-msgstr "Muuta latauspainikkeen tekstiä"
-
-#: admin/manage-gallery.php:920
-msgid "Custom CSS"
-msgstr "Mukautettu CSS"
-
-#: admin/manage-gallery.php:927
-msgid "apply a custom design to gallery"
-msgstr "käytä mukautettua mallia galleriaan"
-
-#: admin/manage-gallery.php:955
-msgid "Gallery Shortcode"
-msgstr "Gallerian lyhytkoodi"
-
-#: admin/manage-gallery.php:963
-msgid "Copy Shortcode"
-msgstr "Kopioi lyhytkoodi"
-
-#: admin/manage-gallery.php:964
-msgid "Shortcode Copied"
-msgstr "Lyhytkoodi kopioitu"
-
-#: admin/manage-gallery.php:1018 admin/manage-gallery.php:1054
-#: filter-gallery-pro.php:262 filter-gallery-pro.php:549
 msgid "Select Filters"
 msgstr "Valitse Suodattimet"
 
-#: filter-gallery-pro.php:276 filter-gallery-pro.php:521
-msgid "Image Alternative Text"
-msgstr "Image vaihtoehtoinen teksti"
+msgid "All"
+msgstr "Kaikki"
 
-#: filter-gallery-pro.php:282 filter-gallery-pro.php:527
-msgid "Link URL"
-msgstr "Linkin URL-osoite"
+msgid "Load More"
+msgstr "Lataa lisää"
 
-#: filter-gallery-pro.php:292 filter-gallery-pro.php:537
-msgid "Remove"
+msgid "Gallery"
+msgstr "Galleria"
+
+msgid "Galleries"
+msgstr "Galleries"
+
+msgid "Find gallery..."
+msgstr "Find gallery..."
+
+msgid "New Project"
+msgstr "New Project"
+
+msgid "Galleries selected"
+msgstr "Galleries selected"
+
+msgid "Delete Selected"
+msgstr "Poista valittu galleria"
+
+msgid "Select All"
+msgstr "Select All"
+
+msgid "No galleries found"
+msgstr "No galleries found"
+
+msgid "ID:"
+msgstr "ID:"
+
+msgid "Copied"
+msgstr "Kopioitu"
+
+msgid "Copy"
+msgstr "Kopioi"
+
+msgid "Images"
+msgstr "Images"
+
+msgid "Filters"
+msgstr "Suodattimet"
+
+msgid "Clone"
+msgstr "Clone"
+
+msgid "Delete"
 msgstr "Poista"
+
+msgid "None"
+msgstr "Ei mitään"
+
+msgid "Add New Filter"
+msgstr "Add New Filter"
+
+msgid "PRO"
+msgstr "PRO"
+
+msgid "Add Filter (Pro)"
+msgstr "Add Filter (Pro)"
+
+msgid "Filter Hierarchy"
+msgstr "Filter Hierarchy"
+
+msgid "Quick Tips"
+msgstr "Quick Tips"
+
+msgid "Be sure to click"
+msgstr "Be sure to click"
+
+msgid "when done!"
+msgstr "when done!"
+
+msgid "Your Filters"
+msgstr "Your Filters"
+
+msgid "Repair Slugs"
+msgstr "Repair Slugs"
+
+msgid "Delete All"
+msgstr "Delete All"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "Icon"
+msgstr "Kuvake"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Parent"
+msgstr "Parent"
+
+msgid "Actions"
+msgstr "Toiminnot"
+
+msgid "Select or Upload Images"
+msgstr "Lataa kuvia"
+
+msgid "Add to Gallery"
+msgstr "Add to Gallery"
+
+msgid "%d Images"
+msgstr "%d Images"
+
+msgid "Bulk Tagging"
+msgstr "Bulk Tagging"
+
+msgid "Add Media"
+msgstr "Lisää"
+
+msgid "Select images to batch tag"
+msgstr "Select images to batch tag"
+
+msgid "Select None"
+msgstr "Select None"
+
+msgid "Please select at least one image to delete."
+msgstr "Please select at least one image to delete."
+
+msgid "Delete Images"
+msgstr "Poista galleria"
+
+msgid "Are you sure you want to delete"
+msgstr "Are you sure you want to delete"
+
+msgid "selected images? This action cannot be undone."
+msgstr "selected images? This action cannot be undone."
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Drag to reorder"
+msgstr "Drag to reorder"
+
+msgid "Edit Details"
+msgstr "Edit Details"
+
+msgid "Delete Image"
+msgstr "Delete Image"
+
+msgid "New Gallery"
+msgstr "New Gallery"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Gallery Name"
+msgstr "Gallerian nimi/nimike"
+
+msgid "Click to copy"
+msgstr "Click to copy"
+
+msgid "Content"
+msgstr "Content"
+
+msgid "Settings"
+msgstr "Asetukset"
+
+msgid "Synchronizing Data..."
+msgstr "Synchronizing Data..."
+
+msgid "Confirm & Deploy Changes"
+msgstr "Confirm & Deploy Changes"
+
+msgid "GPU Optimized UI"
+msgstr "GPU Optimized UI"
+

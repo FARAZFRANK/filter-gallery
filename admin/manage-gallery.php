@@ -88,8 +88,8 @@ if (!defined('ABSPATH')) {
                     </svg>
                 </div>
             </div>
-            <h3 class="ufg-preloader-title"><?php esc_html_e('Loading Gallery Editor...', 'filter-gallery-pro'); ?></h3>
-            <p class="ufg-preloader-subtitle"><?php esc_html_e('Please wait while the interface is loading', 'filter-gallery-pro'); ?></p>
+            <h3 class="ufg-preloader-title"><?php esc_html_e('Loading Gallery Editor...', 'filter-gallery'); ?></h3>
+            <p class="ufg-preloader-subtitle"><?php esc_html_e('Please wait while the interface is loading', 'filter-gallery'); ?></p>
         </div>
     </div>
 </div>

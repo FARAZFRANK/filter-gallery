@@ -1,0 +1,227 @@
+{
+  "translation-revision-date": "2026-07-28 15:49+0530",
+  "generator": "WP Frank Generator",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "plural-forms": "nplurals=2; plural=(n != 1);",
+        "lang": "fi"
+      },
+      "Loading Gallery Documentation...": [
+        ""
+      ],
+      "Please wait while instructions database initializes": [
+        ""
+      ],
+      "Loading Free vs Pro Comparison...": [
+        ""
+      ],
+      "Please wait while features comparison list loads": [
+        ""
+      ],
+      "Loading Import / Export Dashboard...": [
+        ""
+      ],
+      "Please wait while settings configurations load": [
+        ""
+      ],
+      "Loading Filter Gallery...": [
+        "Loading Filter Gallery..."
+      ],
+      "Please wait while the page is initializing": [
+        ""
+      ],
+      "Filter Gallery": [
+        "Filter Gallery"
+      ],
+      "Manage Gallery": [
+        "Manage Gallery"
+      ],
+      "Import / Export": [
+        "Import / Export"
+      ],
+      "Docs": [
+        ""
+      ],
+      "Free vs Pro": [
+        ""
+      ],
+      "Select Filters": [
+        "Valitse Suodattimet"
+      ],
+      "All": [
+        "Kaikki"
+      ],
+      "Load More": [
+        "Lataa lisää"
+      ],
+      "Gallery": [
+        "Galleria"
+      ],
+      "Galleries": [
+        "Galleries"
+      ],
+      "Find gallery...": [
+        "Find gallery..."
+      ],
+      "New Project": [
+        "New Project"
+      ],
+      "Galleries selected": [
+        "Galleries selected"
+      ],
+      "Delete Selected": [
+        "Poista valittu galleria"
+      ],
+      "Select All": [
+        "Select All"
+      ],
+      "No galleries found": [
+        "No galleries found"
+      ],
+      "ID:": [
+        "ID:"
+      ],
+      "Copied": [
+        "Kopioitu"
+      ],
+      "Copy": [
+        "Kopioi"
+      ],
+      "Images": [
+        "Images"
+      ],
+      "Filters": [
+        "Suodattimet"
+      ],
+      "Clone": [
+        "Clone"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "None": [
+        "Ei mitään"
+      ],
+      "Add New Filter": [
+        "Add New Filter"
+      ],
+      "PRO": [
+        "PRO"
+      ],
+      "Add Filter (Pro)": [
+        "Add Filter (Pro)"
+      ],
+      "Filter Hierarchy": [
+        "Filter Hierarchy"
+      ],
+      "Quick Tips": [
+        "Quick Tips"
+      ],
+      "Be sure to click": [
+        "Be sure to click"
+      ],
+      "when done!": [
+        "when done!"
+      ],
+      "Your Filters": [
+        "Your Filters"
+      ],
+      "Repair Slugs": [
+        "Repair Slugs"
+      ],
+      "Delete All": [
+        "Delete All"
+      ],
+      "Name": [
+        "Nimi"
+      ],
+      "Icon": [
+        "Kuvake"
+      ],
+      "Slug": [
+        "Slug"
+      ],
+      "Parent": [
+        "Parent"
+      ],
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Select or Upload Images": [
+        "Lataa kuvia"
+      ],
+      "Add to Gallery": [
+        "Add to Gallery"
+      ],
+      "%d Images": [
+        "%d Images"
+      ],
+      "Bulk Tagging": [
+        "Bulk Tagging"
+      ],
+      "Add Media": [
+        "Lisää"
+      ],
+      "Select images to batch tag": [
+        "Select images to batch tag"
+      ],
+      "Select None": [
+        "Select None"
+      ],
+      "Please select at least one image to delete.": [
+        "Please select at least one image to delete."
+      ],
+      "Delete Images": [
+        "Poista galleria"
+      ],
+      "Are you sure you want to delete": [
+        "Are you sure you want to delete"
+      ],
+      "selected images? This action cannot be undone.": [
+        "selected images? This action cannot be undone."
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Drag to reorder": [
+        "Drag to reorder"
+      ],
+      "Edit Details": [
+        "Edit Details"
+      ],
+      "Delete Image": [
+        "Delete Image"
+      ],
+      "New Gallery": [
+        "New Gallery"
+      ],
+      "Back": [
+        "Back"
+      ],
+      "Gallery Name": [
+        "Gallerian nimi/nimike"
+      ],
+      "Click to copy": [
+        "Click to copy"
+      ],
+      "Content": [
+        "Content"
+      ],
+      "Settings": [
+        "Asetukset"
+      ],
+      "Synchronizing Data...": [
+        "Synchronizing Data..."
+      ],
+      "Confirm & Deploy Changes": [
+        "Confirm & Deploy Changes"
+      ],
+      "GPU Optimized UI": [
+        "GPU Optimized UI"
+      ]
+    }
+  }
+}

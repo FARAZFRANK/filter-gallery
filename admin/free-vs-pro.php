@@ -7,8 +7,6 @@ $ufg_loader_subtitle = __('Please wait while features comparison list loads', 'f
 require_once 'loader.php';
 ?>
 <div class="wrap ufg-pricing-page" style="margin: 30px 20px 0 10px;">
-    <!-- Import Outfit font for premium typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
 
 

@@ -1,0 +1,227 @@
+{
+  "translation-revision-date": "2026-07-28 15:49+0530",
+  "generator": "WP Frank Generator",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "plural-forms": "nplurals=2; plural=(n != 1);",
+        "lang": "fr_FR"
+      },
+      "Loading Gallery Documentation...": [
+        ""
+      ],
+      "Please wait while instructions database initializes": [
+        ""
+      ],
+      "Loading Free vs Pro Comparison...": [
+        ""
+      ],
+      "Please wait while features comparison list loads": [
+        ""
+      ],
+      "Loading Import / Export Dashboard...": [
+        ""
+      ],
+      "Please wait while settings configurations load": [
+        ""
+      ],
+      "Loading Filter Gallery...": [
+        "Loading Filter Gallery..."
+      ],
+      "Please wait while the page is initializing": [
+        ""
+      ],
+      "Filter Gallery": [
+        "Filter Gallery"
+      ],
+      "Manage Gallery": [
+        "Manage Gallery"
+      ],
+      "Import / Export": [
+        "Import / Export"
+      ],
+      "Docs": [
+        ""
+      ],
+      "Free vs Pro": [
+        ""
+      ],
+      "Select Filters": [
+        "Sélectionner des filtres"
+      ],
+      "All": [
+        "Tous"
+      ],
+      "Load More": [
+        "Charger plus"
+      ],
+      "Gallery": [
+        "Galerie"
+      ],
+      "Galleries": [
+        "Galleries"
+      ],
+      "Find gallery...": [
+        "Find gallery..."
+      ],
+      "New Project": [
+        "New Project"
+      ],
+      "Galleries selected": [
+        "Galleries selected"
+      ],
+      "Delete Selected": [
+        "Supprimer la galerie sélectionnée"
+      ],
+      "Select All": [
+        "Select All"
+      ],
+      "No galleries found": [
+        "No galleries found"
+      ],
+      "ID:": [
+        "ID:"
+      ],
+      "Copied": [
+        "Copié"
+      ],
+      "Copy": [
+        "Copie"
+      ],
+      "Images": [
+        "Images"
+      ],
+      "Filters": [
+        "Filtres"
+      ],
+      "Clone": [
+        "Clone"
+      ],
+      "Delete": [
+        "Supprimer"
+      ],
+      "None": [
+        "Aucun"
+      ],
+      "Add New Filter": [
+        "Add New Filter"
+      ],
+      "PRO": [
+        "PRO"
+      ],
+      "Add Filter (Pro)": [
+        "Add Filter (Pro)"
+      ],
+      "Filter Hierarchy": [
+        "Filter Hierarchy"
+      ],
+      "Quick Tips": [
+        "Quick Tips"
+      ],
+      "Be sure to click": [
+        "Be sure to click"
+      ],
+      "when done!": [
+        "when done!"
+      ],
+      "Your Filters": [
+        "Your Filters"
+      ],
+      "Repair Slugs": [
+        "Repair Slugs"
+      ],
+      "Delete All": [
+        "Delete All"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Icon": [
+        "Icône"
+      ],
+      "Slug": [
+        "Slug"
+      ],
+      "Parent": [
+        "Parent"
+      ],
+      "Actions": [
+        "Actions"
+      ],
+      "Select or Upload Images": [
+        "Télécharger des images"
+      ],
+      "Add to Gallery": [
+        "Add to Gallery"
+      ],
+      "%d Images": [
+        "%d Images"
+      ],
+      "Bulk Tagging": [
+        "Bulk Tagging"
+      ],
+      "Add Media": [
+        "Ajouter"
+      ],
+      "Select images to batch tag": [
+        "Select images to batch tag"
+      ],
+      "Select None": [
+        "Select None"
+      ],
+      "Please select at least one image to delete.": [
+        "Please select at least one image to delete."
+      ],
+      "Delete Images": [
+        "Supprimer la galerie"
+      ],
+      "Are you sure you want to delete": [
+        "Are you sure you want to delete"
+      ],
+      "selected images? This action cannot be undone.": [
+        "selected images? This action cannot be undone."
+      ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Drag to reorder": [
+        "Drag to reorder"
+      ],
+      "Edit Details": [
+        "Edit Details"
+      ],
+      "Delete Image": [
+        "Delete Image"
+      ],
+      "New Gallery": [
+        "New Gallery"
+      ],
+      "Back": [
+        "Back"
+      ],
+      "Gallery Name": [
+        "Nom/titre de la galerie"
+      ],
+      "Click to copy": [
+        "Click to copy"
+      ],
+      "Content": [
+        "Content"
+      ],
+      "Settings": [
+        "Paramètres"
+      ],
+      "Synchronizing Data...": [
+        "Synchronizing Data..."
+      ],
+      "Confirm & Deploy Changes": [
+        "Confirm & Deploy Changes"
+      ],
+      "GPU Optimized UI": [
+        "GPU Optimized UI"
+      ]
+    }
+  }
+}

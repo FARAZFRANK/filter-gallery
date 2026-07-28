@@ -79,6 +79,9 @@ if (!function_exists('ufg_gallery')) {
 					if (function_exists('ufg_normalize_filters_recursive')) {
 						ufg_normalize_filters_recursive($ufg_filters);
 					}
+					if (function_exists('ufg_remove_blank_filters_recursive')) {
+						ufg_remove_blank_filters_recursive($ufg_filters);
+					}
 					ufg_expand_filter_images_hierarchy($ufg_filters, $filter_image);
 				}
 			}

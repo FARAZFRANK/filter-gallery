@@ -10811,14 +10811,19 @@
         let result = [];
         if (Array.isArray(list)) {
           list.forEach((item) => {
-            result.push({
-              value: item.filterkey,
-              filterkey: item.filterkey,
-              title: item.title,
-              color: item.color,
-              children: item.children,
-              depth: depth
-            });
+            const hasTitle = (item.title && String(item.title).trim() !== "") || (item.text && String(item.text).trim() !== "");
+            const hasIcon = item.icon && String(item.icon).trim() !== "";
+            if (hasTitle || hasIcon) {
+              result.push({
+                value: item.filterkey,
+                filterkey: item.filterkey,
+                title: item.title,
+                color: item.color,
+                icon: item.icon,
+                children: item.children,
+                depth: depth
+              });
+            }
             if (item.children && item.children.length > 0) {
               result = result.concat(getFlatFilters(item.children, depth + 1));
             }
@@ -11136,7 +11141,12 @@
                             t.depth === 0
                               ? "bg-white px-4 py-2 rounded-xl text-xs font-bold text-orange-700 border border-orange-200 hover:bg-orange-600 hover:text-white hover:border-orange-600 transition-all shadow-sm active:scale-95"
                               : "bg-orange-50 px-3 py-1.5 rounded-lg text-xs font-semibold text-orange-600 border border-dashed border-orange-300 hover:bg-orange-600 hover:text-white hover:border-orange-600 hover:border-solid transition-all shadow-sm active:scale-95",
-                          children: ["+ ", "—".repeat(t.depth) + (t.depth > 0 ? " " : "") + t.title],
+                          children: [
+                            "+ ",
+                            "—".repeat(t.depth) + (t.depth > 0 ? " " : ""),
+                            t.icon && (0, a.jsx)("i", { className: t.icon, style: { marginRight: "4px" } }),
+                            t.title
+                          ],
                         },
                         t.filterkey,
                       ),
@@ -11375,7 +11385,12 @@
   }) => {
     const renderFiltersCheckboxTree = (list, depth = 0) => {
       if (!list || list.length === 0) return null;
-      return list.map((item) => {
+      const activeList = list.filter((item) => {
+        const hasTitle = (item.title && String(item.title).trim() !== "") || (item.text && String(item.text).trim() !== "");
+        const hasIcon = item.icon && String(item.icon).trim() !== "";
+        return hasTitle || hasIcon;
+      });
+      return activeList.map((item) => {
         const filters = Array.isArray(e.filters)
           ? e.filters
           : e.filters
@@ -11398,13 +11413,16 @@
                     checked: isChecked,
                     onChange: () => l(item.filterkey),
                   }),
-                  (0, a.jsx)("span", {
+                  (0, a.jsxs)("span", {
                     className:
-                      "ml-3 text-xs font-bold transition-colors " +
+                      "ml-3 text-xs font-bold transition-colors flex items-center " +
                       (isChecked
                         ? "text-blue-700"
                         : "text-gray-500 group-hover:text-gray-700"),
-                    children: item.title,
+                    children: [
+                      item.icon && (0, a.jsx)("i", { className: item.icon, style: { marginRight: "6px" } }),
+                      item.title
+                    ]
                   }),
                 ],
               }),
@@ -14391,6 +14409,20 @@
         children:
           "\n    body.wp-admin #ufg-admin-root input[type=range].ufg-range-input {\n        -webkit-appearance: none !important;\n        appearance: none !important;\n        width: 100% !important;\n        height: 24px !important;\n        margin: 0 !important;\n        padding: 0 !important;\n        border: none !important;\n        box-shadow: none !important;\n        background: transparent !important;\n        display: block !important;\n        box-sizing: border-box !important;\n        cursor: pointer !important;\n        overflow: visible !important;\n        min-height: 0 !important;\n    }\n    body.wp-admin #ufg-admin-root input[type=range].ufg-range-input:focus {\n        outline: none !important;\n        box-shadow: none !important;\n    }\n    /* WebKit (Chrome, Safari, Edge) */\n    body.wp-admin #ufg-admin-root input[type=range].ufg-range-input::-webkit-slider-runnable-track {\n        width: 100% !important;\n        height: 6px !important;\n        background: #e5e7eb !important;\n        border-radius: 9999px !important;\n        border: none !important;\n        margin: 0 !important;\n        padding: 0 !important;\n    }\n    body.wp-admin #ufg-admin-root input[type=range].ufg-range-input::-webkit-slider-thumb {\n        -webkit-appearance: none !important;\n        appearance: none !important;\n        height: 18px !important;\n        width: 18px !important;\n        border-radius: 9999px !important;\n        background: #3b82f6 !important;\n        border: 2px solid #fff !important;\n        box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;\n        margin-top: -6px !important;\n        cursor: pointer !important;\n        position: relative !important;\n    }\n    /* Firefox */\n    body.wp-admin #ufg-admin-root input[type=range].ufg-range-input::-moz-range-track {\n        width: 100% !important;\n        height: 6px !important;\n        background: #e5e7eb !important;\n        border-radius: 9999px !important;\n        border: none !important;\n    }\n    body.wp-admin #ufg-admin-root input[type=range].ufg-range-input::-moz-range-thumb {\n        height: 18px !important;\n        width: 18px !important;\n        border-radius: 9999px !important;\n        background: #3b82f6 !important;\n        border: 2px solid #fff !important;\n        box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;\n        cursor: pointer !important;\n    }\n",
       }),
+    formatDefaultValue = (val) => {
+      if (val === undefined || val === null) return "";
+      const s = String(val).trim();
+      if (s === "1" || s === "true") return "ON";
+      if (s === "0" || s === "false") return "OFF";
+      if (s.toLowerCase() === "full") return "Original";
+      if (s.includes("_")) {
+        return s.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+      }
+      if (/^[a-z]+$/.test(s)) {
+        return s.charAt(0).toUpperCase() + s.slice(1);
+      }
+      return s;
+    },
     ql = ({
       label: e,
       id: t,
@@ -14456,7 +14488,7 @@
                             className: (o ? "ufg-setting-tooltip-default" : ""),
                             children: [
                               (0, a.jsx)("span", { children: "Default: " }),
-                              String(window.ufgAdminData.defaultSettings[t])
+                              formatDefaultValue(window.ufgAdminData.defaultSettings[t])
                             ]
                           })
                         ]
@@ -14575,7 +14607,7 @@
                         className: (n ? "ufg-setting-tooltip-default" : ""),
                         children: [
                           (0, a.jsx)("span", { children: "Default: " }),
-                          String(window.ufgAdminData.defaultSettings[t])
+                          formatDefaultValue(window.ufgAdminData.defaultSettings[t])
                         ]
                       })
                     ]
@@ -14649,7 +14681,7 @@
                             className: (r ? "ufg-setting-tooltip-default" : ""),
                             children: [
                               (0, a.jsx)("span", { children: "Default: " }),
-                              String(window.ufgAdminData.defaultSettings[t])
+                              formatDefaultValue(window.ufgAdminData.defaultSettings[t])
                             ]
                           })
                         ]
@@ -15583,7 +15615,14 @@
     });
   }
   function Kl({ galleryId: e, onNavigate: t }) {
-    const [r, i] = (0, n.useState)("filters"),
+    const [r, i] = (0, n.useState)(() => {
+      try {
+        const s = localStorage.getItem("ufg_active_tab_" + e);
+        return s && ["filters", "gallery", "settings"].includes(s) ? s : "filters";
+      } catch (t) {
+        return "filters";
+      }
+    }),
       [l, s] = (0, n.useState)(!1),
       [c, d] = (0, n.useState)("new" !== e ? e : ""),
       [u, p] = (0, n.useState)(!1),
@@ -15605,6 +15644,11 @@
           y(t.settings || {}));
       }
     }, [e]);
+    (0, n.useEffect)(() => {
+      try {
+        localStorage.setItem("ufg_active_tab_" + e, r);
+      } catch (t) {}
+    }, [r, e]);
     const w = (e) => {
         const t = document.createElement("textarea");
         ((t.value = e),

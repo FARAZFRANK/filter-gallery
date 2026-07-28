@@ -1,0 +1,227 @@
+{
+  "translation-revision-date": "2026-07-28 15:49+0530",
+  "generator": "WP Frank Generator",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "plural-forms": "nplurals=2; plural=(n==0 || n==1);",
+        "lang": "hi_IN"
+      },
+      "Loading Gallery Documentation...": [
+        "गैलरी डॉक्यूमेंटेशन लोड हो रहा है..."
+      ],
+      "Please wait while instructions database initializes": [
+        "कृपया प्रतीक्षा करें जब तक कि निर्देश डेटाबेस इनिशियलाइज़ हो रहा है।"
+      ],
+      "Loading Free vs Pro Comparison...": [
+        "फ़्री बनाम प्रो तुलना लोड हो रही है..."
+      ],
+      "Please wait while features comparison list loads": [
+        "कृपया प्रतीक्षा करें जब तक कि सुविधाओं की तुलना सूची लोड हो रही है।"
+      ],
+      "Loading Import / Export Dashboard...": [
+        "इंपोर्ट / एक्सपोर्ट डैशबोर्ड लोड हो रहा है..."
+      ],
+      "Please wait while settings configurations load": [
+        "कृपया प्रतीक्षा करें जब तक सेटिंग्स कॉन्फ़िगरेशन लोड हो रहे हैं।"
+      ],
+      "Loading Filter Gallery...": [
+        "फ़िल्टर गैलरी लोड हो रही है..."
+      ],
+      "Please wait while the page is initializing": [
+        "कृपया प्रतीक्षा करें, पेज शुरू हो रहा है।"
+      ],
+      "Filter Gallery": [
+        "फ़िल्टर गैलरी"
+      ],
+      "Manage Gallery": [
+        "गैलरी मैनेज करें"
+      ],
+      "Import / Export": [
+        "आयात / निर्यात"
+      ],
+      "Docs": [
+        "डॉक्स"
+      ],
+      "Free vs Pro": [
+        "फ़्री बनाम प्रो"
+      ],
+      "Select Filters": [
+        "फ़िल्टर चयन"
+      ],
+      "All": [
+        "सभी"
+      ],
+      "Load More": [
+        "अधिक लोड करें"
+      ],
+      "Gallery": [
+        "गैलरी"
+      ],
+      "Galleries": [
+        "गैलरियाँ"
+      ],
+      "Find gallery...": [
+        "गैलरी खोजें..."
+      ],
+      "New Project": [
+        "नया प्रोजेक्ट"
+      ],
+      "Galleries selected": [
+        "चयनित गैलरियां"
+      ],
+      "Delete Selected": [
+        "चयनित हटाएं"
+      ],
+      "Select All": [
+        "सभी चुनें"
+      ],
+      "No galleries found": [
+        "कोई गैलरी नहीं मिली"
+      ],
+      "ID:": [
+        "आईडी:"
+      ],
+      "Copied": [
+        "कॉपी किया गया"
+      ],
+      "Copy": [
+        "कॉपी"
+      ],
+      "Images": [
+        "छवियां"
+      ],
+      "Filters": [
+        "फ़िल्टर"
+      ],
+      "Clone": [
+        "क्लोन"
+      ],
+      "Delete": [
+        "हटाएं"
+      ],
+      "None": [
+        "कोई नहीं"
+      ],
+      "Add New Filter": [
+        "नया फ़िल्टर जोड़ें"
+      ],
+      "PRO": [
+        "प्रो"
+      ],
+      "Add Filter (Pro)": [
+        "फ़िल्टर जोड़ें (प्रो)"
+      ],
+      "Filter Hierarchy": [
+        "फ़िल्टर पदानुक्रम"
+      ],
+      "Quick Tips": [
+        "त्वरित सुझाव"
+      ],
+      "Be sure to click": [
+        "क्लिक करना सुनिश्चित करें"
+      ],
+      "when done!": [
+        "पूरा होने पर!"
+      ],
+      "Your Filters": [
+        "आपके फ़िल्टर"
+      ],
+      "Repair Slugs": [
+        "स्लग ठीक करें"
+      ],
+      "Delete All": [
+        "सभी हटाएं"
+      ],
+      "Name": [
+        "नाम"
+      ],
+      "Icon": [
+        "आइकॉन"
+      ],
+      "Slug": [
+        "स्लग"
+      ],
+      "Parent": [
+        "पेरेंट"
+      ],
+      "Actions": [
+        "क्रियाएं"
+      ],
+      "Select or Upload Images": [
+        "छवियां चुनें या अपलोड करें"
+      ],
+      "Add to Gallery": [
+        "गैलरी में जोड़ें"
+      ],
+      "%d Images": [
+        "%d छवियां"
+      ],
+      "Bulk Tagging": [
+        "थोक टैगिंग"
+      ],
+      "Add Media": [
+        "मीडिया जोड़ें"
+      ],
+      "Select images to batch tag": [
+        "थोक टैग के लिए छवियां चुनें"
+      ],
+      "Select None": [
+        "कोई नहीं चुनें"
+      ],
+      "Please select at least one image to delete.": [
+        "कृपया हटाने के लिए कम से कम एक छवि चुनें।"
+      ],
+      "Delete Images": [
+        "छवियां हटाएं"
+      ],
+      "Are you sure you want to delete": [
+        "क्या आप निश्चित रूप से हटाना चाहते हैं"
+      ],
+      "selected images? This action cannot be undone.": [
+        "चयनित छवियां? इस क्रिया को पूर्ववत नहीं किया जा सकता।"
+      ],
+      "Cancel": [
+        "रद्द करें"
+      ],
+      "Drag to reorder": [
+        "पुनः व्यवस्थित करने के लिए खींचें"
+      ],
+      "Edit Details": [
+        "विवरण संपादित करें"
+      ],
+      "Delete Image": [
+        "छवि हटाएं"
+      ],
+      "New Gallery": [
+        "नई गैलरी"
+      ],
+      "Back": [
+        "पीछे"
+      ],
+      "Gallery Name": [
+        "गैलरी का नाम"
+      ],
+      "Click to copy": [
+        "कॉपी करने के लिए क्लिक करें"
+      ],
+      "Content": [
+        "सामग्री"
+      ],
+      "Settings": [
+        "सेटिंग्स"
+      ],
+      "Synchronizing Data...": [
+        "डेटा सिंक्रनाइज़ किया जा रहा है..."
+      ],
+      "Confirm & Deploy Changes": [
+        "पुष्टि करें और बदलाव लागू करें"
+      ],
+      "GPU Optimized UI": [
+        "जीपीयू अनुकूलित यूआई"
+      ]
+    }
+  }
+}

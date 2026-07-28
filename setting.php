@@ -51,7 +51,7 @@ if (isset($atts['all_button_text'])) {
 	if (isset($ufg_setting['all_button_text'])) {
 		$ufg_all_button_text = $ufg_setting['all_button_text']; //saved
 	} else {
-		$ufg_all_button_text = __('All', 'filter-gallery-pro'); // default
+		$ufg_all_button_text = __('All', 'filter-gallery'); // default
 	}
 }
 if (isset($atts['all_button_icon'])) {
@@ -477,7 +477,7 @@ if (isset($atts['load_more_button_text'])) {
 	if (isset($ufg_setting['load_more_button_text'])) {
 		$ufg_load_more_button_text = $ufg_setting['load_more_button_text']; //saved
 	} else {
-		$ufg_load_more_button_text = __('Load More', 'filter-gallery-pro'); // default
+		$ufg_load_more_button_text = __('Load More', 'filter-gallery'); // default
 	}
 }
 

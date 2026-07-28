@@ -1,743 +1,227 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Filter Gallery Pro\n"
-"POT-Creation-Date: 2024-01-26 16:54+0530\n"
-"PO-Revision-Date: 2024-02-05 17:15+0530\n"
+"Project-Id-Version: Filter Gallery\n"
+"POT-Creation-Date: 2026-07-28 15:49+0530\n"
+"PO-Revision-Date: 2026-07-28 15:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: wpfrank.com\n"
-"Language: ru\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
 
-#: admin/galleries.php:25 filter-gallery-pro.php:65
-msgid "Filter Gallery Pro"
-msgstr "Галерея фильтров Pro"
+msgid "Loading Gallery Documentation..."
+msgstr ""
 
-#: admin/galleries.php:29
-msgid "Create New Gallery"
-msgstr "Создать новую галерею"
+msgid "Please wait while instructions database initializes"
+msgstr ""
 
-#: admin/galleries.php:37 admin/galleries.php:89 admin/manage-gallery.php:813
-msgid "Title"
-msgstr "Название"
+msgid "Loading Free vs Pro Comparison..."
+msgstr ""
 
-#: admin/galleries.php:38 admin/galleries.php:90 admin/manage-gallery.php:945
-msgid "Shortcode"
-msgstr "Короткий код"
+msgid "Please wait while features comparison list loads"
+msgstr ""
 
-#: admin/galleries.php:39 admin/galleries.php:91
-msgid "Actions"
-msgstr "Действия"
+msgid "Loading Import / Export Dashboard..."
+msgstr ""
 
-#: admin/galleries.php:40
-msgid "Select All Galleries"
-msgstr "Выбрать все галереи"
+msgid "Please wait while settings configurations load"
+msgstr ""
 
-#: admin/galleries.php:68
-msgid "Click To Copy Gallery Shortcode"
-msgstr "Нажмите, чтобы скопировать шорткод галереи"
+msgid "Loading Filter Gallery..."
+msgstr "Loading Filter Gallery..."
 
-#: admin/galleries.php:68
-msgid "Copy"
-msgstr "Копировать"
+msgid "Please wait while the page is initializing"
+msgstr ""
 
-#: admin/galleries.php:69
-msgid "Copied"
-msgstr "Скопировано"
+msgid "Filter Gallery"
+msgstr "Filter Gallery"
 
-#: admin/galleries.php:72
-msgid "Clone Gallery"
-msgstr "Галерея клонов"
+msgid "Manage Gallery"
+msgstr "Manage Gallery"
 
-#: admin/galleries.php:73
-msgid "Modify Gallery"
-msgstr "Изменить галерею"
+msgid "Import / Export"
+msgstr "Import / Export"
 
-#: admin/galleries.php:74
-msgid "Delete Gallery"
-msgstr "Удалить галерею"
+msgid "Docs"
+msgstr ""
 
-#: admin/galleries.php:77
-msgid "Select Gallery"
-msgstr "Выбрать галерею"
+msgid "Free vs Pro"
+msgstr ""
 
-#: admin/galleries.php:92
-msgid "Delete Selected Gallery"
-msgstr "Удалить выбранную галерею"
-
-#: admin/manage-gallery.php:59
-msgid "Create and Manage Filters For Gallery"
-msgstr "Создание фильтров для галереи и управление ими"
-
-#: admin/manage-gallery.php:68
-msgid "Gallery Name / Title"
-msgstr "Название/заголовок галереи"
-
-#: admin/manage-gallery.php:75 admin/manage-gallery.php:215 admin/manage-gallery.php:242 admin/manage-gallery.php:245
-msgid "Filters"
-msgstr "Фильтры"
-
-#: admin/manage-gallery.php:82
-msgid "Important Note"
-msgstr "Важное примечание"
-
-#: admin/manage-gallery.php:83
-msgid "Create only parent and child level filters."
-msgstr "Создать только фильтры родительского и дочернего уровня."
-
-#: admin/manage-gallery.php:84
-msgid "Do not use any symbol in filter name like"
-msgstr "Не используйте в имени фильтра какие-либо символы, например"
-
-#: admin/manage-gallery.php:90
-msgid "Filter Name"
-msgstr "Имя фильтра"
-
-#: admin/manage-gallery.php:95
-msgid "Type Filter Name"
-msgstr "Введите имя фильтра"
-
-#: admin/manage-gallery.php:107
-msgid "Update"
-msgstr "Обновить"
-
-#: admin/manage-gallery.php:108
-msgid "Add"
-msgstr "Добавить"
-
-#: admin/manage-gallery.php:117 admin/manage-gallery.php:219 admin/manage-gallery.php:942
-msgid "Save"
-msgstr "Сохранить"
-
-#: admin/manage-gallery.php:120 admin/manage-gallery.php:939
-msgid "Gallery"
-msgstr "Галерея"
-
-#: admin/manage-gallery.php:130
-msgid "Upload Images to Gallery And Apply Filters"
-msgstr "Загрузить изображения в галерею и применить фильтры"
-
-#: admin/manage-gallery.php:137
-msgid "Sort ASC"
-msgstr "Сортировать ASC"
-
-#: admin/manage-gallery.php:140
-msgid "Sort DESC"
-msgstr "Сортировать по убыванию"
-
-#: admin/manage-gallery.php:144
-msgid "Remove All"
-msgstr "Удалить все"
-
-#: admin/manage-gallery.php:203
-msgid "Upload Images"
-msgstr "Загрузить изображения"
-
-#: admin/manage-gallery.php:223 admin/manage-gallery.php:969
-msgid "Settings"
-msgstr "Настройки"
-
-#: admin/manage-gallery.php:234
-msgid "Configure Settings"
-msgstr "Настроить параметры"
-
-#: admin/manage-gallery.php:249 admin/manage-gallery.php:262 admin/manage-gallery.php:276 admin/manage-gallery.php:291
-#: admin/manage-gallery.php:516 admin/manage-gallery.php:551 admin/manage-gallery.php:592 admin/manage-gallery.php:634
-#: admin/manage-gallery.php:714 admin/manage-gallery.php:803 admin/manage-gallery.php:817 admin/manage-gallery.php:831
-#: admin/manage-gallery.php:845
-msgid "Show"
-msgstr "Показать"
-
-#: admin/manage-gallery.php:252 admin/manage-gallery.php:265 admin/manage-gallery.php:279 admin/manage-gallery.php:294
-#: admin/manage-gallery.php:519 admin/manage-gallery.php:554 admin/manage-gallery.php:595 admin/manage-gallery.php:637
-#: admin/manage-gallery.php:717 admin/manage-gallery.php:806 admin/manage-gallery.php:820 admin/manage-gallery.php:834
-#: admin/manage-gallery.php:848
-msgid "Hide"
-msgstr "Скрыть"
-
-#: admin/manage-gallery.php:255
-msgid "hide and show filter above gallery"
-msgstr "скрыть и показать фильтр над галереей"
-
-#: admin/manage-gallery.php:258
-msgid "Filters Icon"
-msgstr "Значок фильтров"
-
-#: admin/manage-gallery.php:268
-msgid "hide and show an icon on filters button"
-msgstr "скрыть и показать значок на кнопке фильтров"
-
-#: admin/manage-gallery.php:272
-msgid "Filters Image Count"
-msgstr "Количество изображений фильтров"
-
-#: admin/manage-gallery.php:287
-msgid "All Button"
-msgstr "Кнопка «Все»"
-
-#: admin/manage-gallery.php:297
-msgid "hide and show all filter button"
-msgstr "скрыть и показать все кнопки фильтра"
-
-#: admin/manage-gallery.php:301
-msgid "All Button Title"
-msgstr "Название всех кнопок"
-
-#: admin/manage-gallery.php:302 setting.php:49
-msgid "All"
-msgstr "Все"
-
-#: admin/manage-gallery.php:304
-msgid "type name"
-msgstr "введите имя"
-
-#: admin/manage-gallery.php:306
-msgid "set all filter button title"
-msgstr "установить все названия кнопок фильтров"
-
-#: admin/manage-gallery.php:309
-msgid "All Button Icon"
-msgstr "Значок всех кнопок"
-
-#: admin/manage-gallery.php:314
-msgid "set all filter button icon"
-msgstr "установить все значки кнопок фильтров"
-
-#: admin/manage-gallery.php:318
-msgid "All Button Color"
-msgstr "Все цвета кнопок"
-
-#: admin/manage-gallery.php:323 admin/manage-gallery.php:332
-msgid "set background color of all filter button"
-msgstr "установить цвет фона для всех кнопок фильтра"
-
-#: admin/manage-gallery.php:327
-msgid "All Button Background Color"
-msgstr "Цвет фона всех кнопок"
-
-#: admin/manage-gallery.php:335
-msgid "Parent Filters Heading"
-msgstr "Заголовок родительских фильтров"
-
-#: admin/manage-gallery.php:340
-msgid "set parent filter button heading"
-msgstr "установить заголовок кнопки родительского фильтра"
-
-#: admin/manage-gallery.php:343
-msgid "Parent Filter Button Color"
-msgstr "Цвет кнопки родительского фильтра"
-
-#: admin/manage-gallery.php:348
-msgid "set background color of parent filter button"
-msgstr "установить цвет фона кнопки родительского фильтра"
-
-#: admin/manage-gallery.php:352
-msgid "Parent Filters Button Background Color"
-msgstr "Цвет фона кнопки родительских фильтров"
-
-#: admin/manage-gallery.php:357
-msgid "set background color of parent filter background button."
-msgstr "установить цвет фона кнопки фона родительского фильтра."
-
-#: admin/manage-gallery.php:360
-msgid "Level One Filters Heading"
-msgstr "Заголовок фильтров первого уровня"
-
-#: admin/manage-gallery.php:365
-msgid "set level one filter button heading"
-msgstr "установить заголовок кнопки фильтра первого уровня"
-
-#: admin/manage-gallery.php:368
-msgid "Level One Filters Button Color"
-msgstr "Цвет кнопки фильтров первого уровня"
-
-#: admin/manage-gallery.php:373
-msgid "set color of level One filters button"
-msgstr "установить цвет кнопки фильтров первого уровня"
-
-#: admin/manage-gallery.php:376
-msgid "Level One Filters Button Background Color"
-msgstr "Цвет фона кнопки фильтров первого уровня"
-
-#: admin/manage-gallery.php:381 admin/manage-gallery.php:392
-msgid "set background color of level one filters button"
-msgstr "установить цвет фона кнопки фильтров первого уровня"
-
-#: admin/manage-gallery.php:384
-msgid "Child Filters Effect"
-msgstr "Эффект дочерних фильтров"
-
-#: admin/manage-gallery.php:388
-msgid "Fade"
-msgstr "Затухание"
-
-#: admin/manage-gallery.php:389
-msgid "Show / Hide"
-msgstr "Показать/Скрыть"
-
-#: admin/manage-gallery.php:395
-msgid "Active Filter Button Color"
-msgstr "Цвет кнопки активного фильтра"
-
-#: admin/manage-gallery.php:400
-msgid "set color of active filter button"
-msgstr "установить цвет кнопки активного фильтра"
-
-#: admin/manage-gallery.php:403
-msgid "Active Filter Button Background Color"
-msgstr "Цвет фона кнопки активного фильтра"
-
-#: admin/manage-gallery.php:408
-msgid "set background color of active filter button"
-msgstr "установить цвет фона кнопки активного фильтра"
-
-#: admin/manage-gallery.php:419
-msgid "Gallery Settings"
-msgstr "Настройки галереи"
-
-#: admin/manage-gallery.php:423
-msgid "Columns On Desktop"
-msgstr "Столбцы на рабочем столе"
-
-#: admin/manage-gallery.php:427 admin/manage-gallery.php:453 admin/manage-gallery.php:476 admin/manage-gallery.php:496
-msgid "1"
-msgstr "1"
-
-#: admin/manage-gallery.php:430 admin/manage-gallery.php:456 admin/manage-gallery.php:479 admin/manage-gallery.php:499
-msgid "2"
-msgstr "2"
-
-#: admin/manage-gallery.php:433 admin/manage-gallery.php:459 admin/manage-gallery.php:482 admin/manage-gallery.php:502
-msgid "3"
-msgstr "3"
-
-#: admin/manage-gallery.php:436 admin/manage-gallery.php:462 admin/manage-gallery.php:485 admin/manage-gallery.php:505
-msgid "4"
-msgstr "4"
-
-#: admin/manage-gallery.php:439 admin/manage-gallery.php:465
-msgid "6"
-msgstr "6"
-
-#: admin/manage-gallery.php:442
-msgid "12"
-msgstr "12"
-
-#: admin/manage-gallery.php:445
-msgid "columns to display on desktop or pc device"
-msgstr "столбцы для отображения на рабочем столе или ПК"
-
-#: admin/manage-gallery.php:449
-msgid "Columns On Tablet"
-msgstr "Колонки на планшете"
-
-#: admin/manage-gallery.php:468
-msgid "columns to display on tablet device"
-msgstr "столбцы для отображения на планшетном устройстве"
-
-#: admin/manage-gallery.php:472
-msgid "Columns On Mobile - Landscape Mode"
-msgstr "Колонки на мобильном телефоне — альбомный режим"
-
-#: admin/manage-gallery.php:488
-msgid "columns to display on the mobile device with landscape mode"
-msgstr "столбцы для отображения на мобильном устройстве в ландшафтном режиме"
-
-#: admin/manage-gallery.php:492
-msgid "Columns On Mobile - Portrait Mode"
-msgstr "Колонки на мобильном телефоне — портретный режим"
-
-#: admin/manage-gallery.php:508
-msgid "columns to display on mobile device with portrait mode"
-msgstr "столбцы для отображения на мобильном устройстве в портретном режиме"
-
-#: admin/manage-gallery.php:512
-msgid "Thumbnail Image"
-msgstr "Миниатюрное изображение"
-
-#: admin/manage-gallery.php:522
-msgid "show or hide image thumbnail into gallery"
-msgstr "показать или скрыть миниатюру изображения в галерее"
-
-#: admin/manage-gallery.php:526
-msgid "Thumbnail Image Size"
-msgstr "Размер миниатюрного изображения"
-
-#: admin/manage-gallery.php:530
-msgid "Small"
-msgstr "Маленький"
-
-#: admin/manage-gallery.php:531
-msgid "Medium"
-msgstr "Средний"
-
-#: admin/manage-gallery.php:532
-msgid "Large"
-msgstr "Большой"
-
-#: admin/manage-gallery.php:533
-msgid "Original"
-msgstr "Оригинал"
-
-#: admin/manage-gallery.php:534 admin/manage-gallery.php:535 admin/manage-gallery.php:536
-msgid "Same Size"
-msgstr "Тот же Размер"
-
-#: admin/manage-gallery.php:539
-msgid "set thumbnail image size"
-msgstr "установить размер миниатюры изображения"
-
-#: admin/manage-gallery.php:541 admin/manage-gallery.php:705
-msgid "Note"
-msgstr "Примечание"
-
-#: admin/manage-gallery.php:542
-msgid "Same size setting will only work with new images uploaded after the plugin installation."
-msgstr "Настройка одинакового размера будет работать только с новыми изображениями, загруженными после установки плагина."
-
-#: admin/manage-gallery.php:543
-msgid "It will not work with previously uploaded images."
-msgstr "Не будет работать с ранее загруженными изображениями."
-
-#: admin/manage-gallery.php:547
-msgid "Thumbnail Border"
-msgstr "Граница миниатюр"
-
-#: admin/manage-gallery.php:557
-msgid "show or hide thumbnail border"
-msgstr "показать или скрыть рамку миниатюры"
-
-#: admin/manage-gallery.php:561
-msgid "Thumbnail Border Thickness"
-msgstr "Толщина границы миниатюры"
-
-#: admin/manage-gallery.php:567
-msgid "set thumbnail border thickness"
-msgstr "установить толщину границы миниатюры"
-
-#: admin/manage-gallery.php:571
-msgid "Thumbnail Border Color"
-msgstr "Цвет рамки миниатюры"
-
-#: admin/manage-gallery.php:576
-msgid "set thumbnail border color"
-msgstr "установить цвет рамки миниатюры"
-
-#: admin/manage-gallery.php:579
-msgid "Thumbnail Background Color"
-msgstr "Цвет фона миниатюр"
-
-#: admin/manage-gallery.php:584
-msgid "set thumbnail background color"
-msgstr "установить цвет фона миниатюры"
-
-#: admin/manage-gallery.php:588 filter-gallery-pro.php:273 filter-gallery-pro.php:518
-msgid "Image Title"
-msgstr "Название изображения"
-
-#: admin/manage-gallery.php:598
-msgid "hide or show image title"
-msgstr "скрыть или показать заголовок изображения"
-
-#: admin/manage-gallery.php:602
-msgid "Image Title Font Size"
-msgstr "Размер шрифта названия изображения"
-
-#: admin/manage-gallery.php:608
-msgid "set image title font size"
-msgstr "установить размер шрифта заголовка изображения"
-
-#: admin/manage-gallery.php:612
-msgid "Image Title Color"
-msgstr "Цвет названия изображения"
-
-#: admin/manage-gallery.php:617
-msgid "set image title text color"
-msgstr "установить цвет текста заголовка изображения"
-
-#: admin/manage-gallery.php:621
-msgid "Image Title Background Color"
-msgstr "Цвет фона заголовка изображения"
-
-#: admin/manage-gallery.php:626
-msgid "set image title background color"
-msgstr "установить цвет фона заголовка изображения"
-
-#: admin/manage-gallery.php:630 filter-gallery-pro.php:279 filter-gallery-pro.php:524
-msgid "Image Description"
-msgstr "Описание изображения"
-
-#: admin/manage-gallery.php:640
-msgid "hide or show image description"
-msgstr "скрыть или показать описание изображения"
-
-#: admin/manage-gallery.php:644
-msgid "Image Description Font Size"
-msgstr "Описание изображения Размер шрифта"
-
-#: admin/manage-gallery.php:650
-msgid "set image description font size"
-msgstr "установить размер шрифта описания изображения"
-
-#: admin/manage-gallery.php:654
-msgid "Image Description Color"
-msgstr "Описание изображения Цвет"
-
-#: admin/manage-gallery.php:659
-msgid "set image description text color"
-msgstr "установить цвет текста описания изображения"
-
-#: admin/manage-gallery.php:663
-msgid "Image Description Background Color"
-msgstr "Описание изображения Цвет фона"
-
-#: admin/manage-gallery.php:668
-msgid "set image description background color"
-msgstr "установить цвет фона описания изображения"
-
-#: admin/manage-gallery.php:672
-msgid "Image Description Text Limit"
-msgstr "Ограничение текста описания изображения"
-
-#: admin/manage-gallery.php:677
-msgid "characters"
-msgstr "символы"
-
-#: admin/manage-gallery.php:678
-msgid "set image description text limit"
-msgstr "установить ограничение текста описания изображения"
-
-#: admin/manage-gallery.php:682
-msgid "Image Hover Effect"
-msgstr "Эффект наведения изображения"
-
-#: admin/manage-gallery.php:686 admin/manage-gallery.php:783
-msgid "None"
-msgstr "Нет"
-
-#: admin/manage-gallery.php:687
-msgid "Border Overlay"
-msgstr "Наложение границы"
-
-#: admin/manage-gallery.php:690 admin/manage-gallery.php:720
-msgid "hide or show read more button"
-msgstr "скрыть или показать кнопку «Читать дальше»"
-
-#: admin/manage-gallery.php:693
-msgid "Read More Link On"
-msgstr "Подробнее по ссылке"
-
-#: admin/manage-gallery.php:697
-msgid "Button"
-msgstr "Кнопка"
-
-#: admin/manage-gallery.php:700
-msgid "Image"
-msgstr "Изображение"
-
-#: admin/manage-gallery.php:703
-msgid "show link on image or button"
-msgstr "показать ссылку на изображении или кнопке"
-
-#: admin/manage-gallery.php:706
-msgid "If Read More Link set on Image then lightbox functionality will not work."
-msgstr "Если для параметра «Изображение» установлена ​​ссылка «Читать далее», функция лайтбокса не будет работать."
-
-#: admin/manage-gallery.php:710
-msgid "Read More Button"
-msgstr "Кнопка «Подробнее»"
-
-#: admin/manage-gallery.php:724
-msgid "Read More Button Text"
-msgstr "Текст кнопки «Читать дальше»"
-
-#: admin/manage-gallery.php:725 setting.php:458
-msgid "Read More"
-msgstr "Подробнее"
-
-#: admin/manage-gallery.php:729
-msgid "set read more button title text"
-msgstr "установить текст заголовка кнопки «Подробнее»"
-
-#: admin/manage-gallery.php:732
-msgid "Read More Button Icon"
-msgstr "Значок кнопки «Подробнее»"
-
-#: admin/manage-gallery.php:737
-msgid "set read more button icon"
-msgstr "установить значок кнопки «Читать дальше»"
-
-#: admin/manage-gallery.php:741
-msgid "Read More Button Color"
-msgstr "Цвет кнопки «Подробнее»"
-
-#: admin/manage-gallery.php:748
-msgid "set read more button text color"
-msgstr "установить цвет текста кнопки «Подробнее»"
-
-#: admin/manage-gallery.php:751
-msgid "Read More Button Background Color"
-msgstr "Цвет фона кнопки «Подробнее»"
-
-#: admin/manage-gallery.php:758 admin/manage-gallery.php:893 admin/manage-gallery.php:903
-msgid "set read more button background color"
-msgstr "установить цвет фона кнопки «Подробнее»"
-
-#: admin/manage-gallery.php:761
-msgid "Read More Link Open"
-msgstr "Читать далее Ссылка открыта"
-
-#: admin/manage-gallery.php:765
-msgid "In New Page"
-msgstr "На новой странице"
-
-#: admin/manage-gallery.php:768
-msgid "In Same Page"
-msgstr "На той же странице"
-
-#: admin/manage-gallery.php:771
-msgid "set link opening option"
-msgstr "установить опцию открытия ссылки"
-
-#: admin/manage-gallery.php:774
-msgid "Image Sorting"
-msgstr "Сортировка изображений"
-
-#: admin/manage-gallery.php:778
-msgid "Image ID - Ascending"
-msgstr "Идентификатор изображения — по возрастанию"
-
-#: admin/manage-gallery.php:779
-msgid "Image ID - Descending"
-msgstr "Идентификатор изображения — по убыванию"
-
-#: admin/manage-gallery.php:780
-msgid "Image Title - Ascending"
-msgstr "Заголовок изображения — по возрастанию"
-
-#: admin/manage-gallery.php:781
-msgid "Image Title - Descending"
-msgstr "Заголовок изображения — По убыванию"
-
-#: admin/manage-gallery.php:782
-msgid "Shuffle / Random"
-msgstr "Перемешать/Случайно"
-
-#: admin/manage-gallery.php:786
-msgid "set gallery image sorting"
-msgstr "установить сортировку изображений в галерее"
-
-#: admin/manage-gallery.php:795
-msgid "Lightbox Settings"
-msgstr "Настройки лайтбокса"
-
-#: admin/manage-gallery.php:799
-msgid "Lightbox"
-msgstr "Лайтбокс"
-
-#: admin/manage-gallery.php:809 admin/manage-gallery.php:874
-msgid "set lightbox functionality on gallery thumbnail for larger preview"
-msgstr "установить функцию лайтбокса на миниатюре галереи для более крупного предварительного просмотра"
-
-#: admin/manage-gallery.php:823
-msgid "show image title under the lightbox"
-msgstr "показать название изображения под лайтбоксом"
-
-#: admin/manage-gallery.php:827
-msgid "Description"
-msgstr "Описание"
-
-#: admin/manage-gallery.php:837
-msgid "show image description under the lightbox"
-msgstr "показать описание изображения под лайтбоксом"
-
-#: admin/manage-gallery.php:841
-msgid "Numbering"
-msgstr "Нумерация"
-
-#: admin/manage-gallery.php:851
-msgid "show image number under the lightbox"
-msgstr "показывать номер изображения под лайтбоксом"
-
-#: admin/manage-gallery.php:861
-msgid "Load More Settings"
-msgstr "Загрузить дополнительные настройки"
-
-#: admin/manage-gallery.php:864 setting.php:538
-msgid "Load More"
-msgstr "Загрузить больше"
-
-#: admin/manage-gallery.php:868
-msgid "On"
-msgstr "Вкл"
-
-#: admin/manage-gallery.php:871
-msgid "Off"
-msgstr "Выкл"
-
-#: admin/manage-gallery.php:877
-msgid "Load Limit"
-msgstr "Предел нагрузки"
-
-#: admin/manage-gallery.php:882
-msgid "Set loading element limit"
-msgstr "Установить предел элемента загрузки"
-
-#: admin/manage-gallery.php:886
-msgid "Load More Button Color"
-msgstr "Загрузить больше цвета кнопки"
-
-#: admin/manage-gallery.php:896
-msgid "Load More Button Text Color"
-msgstr "Цвет текста кнопки «Загрузить больше»"
-
-#: admin/manage-gallery.php:906
-msgid "Load More Button Text"
-msgstr "Загрузить больше текста кнопки"
-
-#: admin/manage-gallery.php:911
-msgid "Change load button text"
-msgstr "Изменить текст кнопки загрузки"
-
-#: admin/manage-gallery.php:920
-msgid "Custom CSS"
-msgstr "Пользовательский CSS"
-
-#: admin/manage-gallery.php:927
-msgid "apply a custom design to gallery"
-msgstr "применить индивидуальный дизайн к галерее"
-
-#: admin/manage-gallery.php:955
-msgid "Gallery Shortcode"
-msgstr "Короткий код галереи"
-
-#: admin/manage-gallery.php:963
-msgid "Copy Shortcode"
-msgstr "Копировать короткий код"
-
-#: admin/manage-gallery.php:964
-msgid "Shortcode Copied"
-msgstr "Шорткод скопирован"
-
-#: admin/manage-gallery.php:1018 admin/manage-gallery.php:1054 filter-gallery-pro.php:262 filter-gallery-pro.php:549
 msgid "Select Filters"
 msgstr "Выбрать фильтры"
 
-#: filter-gallery-pro.php:276 filter-gallery-pro.php:521
-msgid "Image Alternative Text"
-msgstr "Альтернативный текст изображения"
+msgid "All"
+msgstr "Все"
 
-#: filter-gallery-pro.php:282 filter-gallery-pro.php:527
-msgid "Link URL"
-msgstr "URL-адрес ссылки"
+msgid "Load More"
+msgstr "Загрузить больше"
 
-#: filter-gallery-pro.php:292 filter-gallery-pro.php:537
-msgid "Remove"
+msgid "Gallery"
+msgstr "Галерея"
+
+msgid "Galleries"
+msgstr "Galleries"
+
+msgid "Find gallery..."
+msgstr "Find gallery..."
+
+msgid "New Project"
+msgstr "New Project"
+
+msgid "Galleries selected"
+msgstr "Galleries selected"
+
+msgid "Delete Selected"
+msgstr "Удалить выбранную галерею"
+
+msgid "Select All"
+msgstr "Select All"
+
+msgid "No galleries found"
+msgstr "No galleries found"
+
+msgid "ID:"
+msgstr "ID:"
+
+msgid "Copied"
+msgstr "Скопировано"
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Images"
+msgstr "Images"
+
+msgid "Filters"
+msgstr "Фильтры"
+
+msgid "Clone"
+msgstr "Clone"
+
+msgid "Delete"
 msgstr "Удалить"
+
+msgid "None"
+msgstr "Нет"
+
+msgid "Add New Filter"
+msgstr "Add New Filter"
+
+msgid "PRO"
+msgstr "PRO"
+
+msgid "Add Filter (Pro)"
+msgstr "Add Filter (Pro)"
+
+msgid "Filter Hierarchy"
+msgstr "Filter Hierarchy"
+
+msgid "Quick Tips"
+msgstr "Quick Tips"
+
+msgid "Be sure to click"
+msgstr "Be sure to click"
+
+msgid "when done!"
+msgstr "when done!"
+
+msgid "Your Filters"
+msgstr "Your Filters"
+
+msgid "Repair Slugs"
+msgstr "Repair Slugs"
+
+msgid "Delete All"
+msgstr "Delete All"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Icon"
+msgstr "Иконка"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Parent"
+msgstr "Parent"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Select or Upload Images"
+msgstr "Загрузить изображения"
+
+msgid "Add to Gallery"
+msgstr "Add to Gallery"
+
+msgid "%d Images"
+msgstr "%d Images"
+
+msgid "Bulk Tagging"
+msgstr "Bulk Tagging"
+
+msgid "Add Media"
+msgstr "Добавить"
+
+msgid "Select images to batch tag"
+msgstr "Select images to batch tag"
+
+msgid "Select None"
+msgstr "Select None"
+
+msgid "Please select at least one image to delete."
+msgstr "Please select at least one image to delete."
+
+msgid "Delete Images"
+msgstr "Удалить галерею"
+
+msgid "Are you sure you want to delete"
+msgstr "Are you sure you want to delete"
+
+msgid "selected images? This action cannot be undone."
+msgstr "selected images? This action cannot be undone."
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Drag to reorder"
+msgstr "Drag to reorder"
+
+msgid "Edit Details"
+msgstr "Edit Details"
+
+msgid "Delete Image"
+msgstr "Delete Image"
+
+msgid "New Gallery"
+msgstr "New Gallery"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Gallery Name"
+msgstr "Название/заголовок галереи"
+
+msgid "Click to copy"
+msgstr "Click to copy"
+
+msgid "Content"
+msgstr "Content"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Synchronizing Data..."
+msgstr "Synchronizing Data..."
+
+msgid "Confirm & Deploy Changes"
+msgstr "Confirm & Deploy Changes"
+
+msgid "GPU Optimized UI"
+msgstr "GPU Optimized UI"
+

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: फ़िल्टर गैलरी प्रो\n"
-"POT-Creation-Date: 2024-01-26 15:28+0530\n"
-"PO-Revision-Date: 2024-01-26 15:28+0530\n"
+"Project-Id-Version: Filter Gallery\n"
+"POT-Creation-Date: 2026-07-28 15:49+0530\n"
+"PO-Revision-Date: 2026-07-28 15:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: wpfrank.com\n"
 "Language: hi_IN\n"
@@ -10,752 +10,218 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: .\n"
+"X-Generator: Poedit 3.9\n"
 
-#: admin/galleries.php:25 filter-gallery-pro.php:65
-msgid "Filter Gallery Pro"
-msgstr "फ़िल्टर गैलरी प्रो"
+msgid "Loading Gallery Documentation..."
+msgstr "गैलरी डॉक्यूमेंटेशन लोड हो रहा है..."
 
-#: admin/galleries.php:29
-msgid "Create New Gallery"
-msgstr "नई गैलरी बनाएं"
+msgid "Please wait while instructions database initializes"
+msgstr "कृपया प्रतीक्षा करें जब तक कि निर्देश डेटाबेस इनिशियलाइज़ हो रहा है।"
 
-#: admin/galleries.php:37 admin/galleries.php:89 admin/manage-gallery.php:813
-msgid "Title"
-msgstr "शीर्षक"
+msgid "Loading Free vs Pro Comparison..."
+msgstr "फ़्री बनाम प्रो तुलना लोड हो रही है..."
 
-#: admin/galleries.php:38 admin/galleries.php:90 admin/manage-gallery.php:945
-msgid "Shortcode"
-msgstr "शॉर्टकोड"
+msgid "Please wait while features comparison list loads"
+msgstr "कृपया प्रतीक्षा करें जब तक कि सुविधाओं की तुलना सूची लोड हो रही है।"
 
-#: admin/galleries.php:39 admin/galleries.php:91
-msgid "Actions"
-msgstr "कार्य"
+msgid "Loading Import / Export Dashboard..."
+msgstr "इंपोर्ट / एक्सपोर्ट डैशबोर्ड लोड हो रहा है..."
 
-#: admin/galleries.php:40
-msgid "Select All Galleries"
-msgstr "सभी गैलरी चुनें"
+msgid "Please wait while settings configurations load"
+msgstr "कृपया प्रतीक्षा करें जब तक सेटिंग्स कॉन्फ़िगरेशन लोड हो रहे हैं।"
 
-#: admin/galleries.php:68
-msgid "Click To Copy Gallery Shortcode"
-msgstr "गैलरी शॉर्टकोड कॉपी करने के लिए क्लिक करें"
+msgid "Loading Filter Gallery..."
+msgstr "फ़िल्टर गैलरी लोड हो रही है..."
 
-#: admin/galleries.php:68
-msgid "Copy"
-msgstr "कॉपी"
+msgid "Please wait while the page is initializing"
+msgstr "कृपया प्रतीक्षा करें, पेज शुरू हो रहा है।"
 
-#: admin/galleries.php:69
-msgid "Copied"
-msgstr "कॉपी की गई"
+msgid "Filter Gallery"
+msgstr "फ़िल्टर गैलरी"
 
-#: admin/galleries.php:72
-msgid "Clone Gallery"
-msgstr "क्लोन गैलरी"
+msgid "Manage Gallery"
+msgstr "गैलरी मैनेज करें"
 
-#: admin/galleries.php:73
-msgid "Modify Gallery"
-msgstr "गैलरी संशोधित करें"
+msgid "Import / Export"
+msgstr "आयात / निर्यात"
 
-#: admin/galleries.php:74
-msgid "Delete Gallery"
-msgstr "गैलरी हटाएं"
+msgid "Docs"
+msgstr "डॉक्स"
 
-#: admin/galleries.php:77
-msgid "Select Gallery"
-msgstr "गैलरी का चयन करें"
+msgid "Free vs Pro"
+msgstr "फ़्री बनाम प्रो"
 
-#: admin/galleries.php:92
-msgid "Delete Selected Gallery"
-msgstr "चयनित गैलरी हटाएँ"
-
-#: admin/manage-gallery.php:59
-msgid "Create and Manage Filters For Gallery"
-msgstr "गैलरी के लिए फ़िल्टर बनाएं और प्रबंधित करें"
-
-#: admin/manage-gallery.php:68
-msgid "Gallery Name / Title"
-msgstr "गैलरी का नाम/शीर्षक"
-
-#: admin/manage-gallery.php:75 admin/manage-gallery.php:215
-#: admin/manage-gallery.php:242 admin/manage-gallery.php:245
-msgid "Filters"
-msgstr "फ़िल्टर"
-
-#: admin/manage-gallery.php:82
-msgid "Important Note"
-msgstr "महत्वपूर्ण नोट"
-
-#: admin/manage-gallery.php:83
-msgid "Create only parent and child level filters."
-msgstr "केवल पेरेन्ट और चाइल्ड स्तर के फ़िल्टर बनाएं।"
-
-#: admin/manage-gallery.php:84
-msgid "Do not use any symbol in filter name like"
-msgstr "फ़िल्टर नाम में किसी भी प्रतीक का उपयोग न करें जैसे"
-
-#: admin/manage-gallery.php:90
-msgid "Filter Name"
-msgstr "फ़िल्टर नाम"
-
-#: admin/manage-gallery.php:95
-msgid "Type Filter Name"
-msgstr "फ़िल्टर नाम टाइप करें"
-
-#: admin/manage-gallery.php:107
-msgid "Update"
-msgstr "अद्यतन"
-
-#: admin/manage-gallery.php:108
-msgid "Add"
-msgstr "जोड़ें"
-
-#: admin/manage-gallery.php:117 admin/manage-gallery.php:219
-#: admin/manage-gallery.php:942
-msgid "Save"
-msgstr "सेव करें"
-
-#: admin/manage-gallery.php:120 admin/manage-gallery.php:939
-msgid "Gallery"
-msgstr "गैलरी"
-
-#: admin/manage-gallery.php:130
-msgid "Upload Images to Gallery And Apply Filters"
-msgstr "गैलरी में छवियाँ अपलोड करें और फ़िल्टर लागू करें"
-
-#: admin/manage-gallery.php:137
-msgid "Sort ASC"
-msgstr "एएससी क्रमबद्ध करें"
-
-#: admin/manage-gallery.php:140
-msgid "Sort DESC"
-msgstr "सॉर्ट डीईएससी"
-
-#: admin/manage-gallery.php:144
-msgid "Remove All"
-msgstr "सभी हटाएँ"
-
-#: admin/manage-gallery.php:203
-msgid "Upload Images"
-msgstr "छवियाँ अपलोड करें"
-
-#: admin/manage-gallery.php:223 admin/manage-gallery.php:969
-msgid "Settings"
-msgstr "सेटिंग्स"
-
-#: admin/manage-gallery.php:234
-msgid "Configure Settings"
-msgstr "सेटिंग्स कॉन्फ़िगर करें"
-
-#: admin/manage-gallery.php:249 admin/manage-gallery.php:262
-#: admin/manage-gallery.php:276 admin/manage-gallery.php:291
-#: admin/manage-gallery.php:516 admin/manage-gallery.php:551
-#: admin/manage-gallery.php:592 admin/manage-gallery.php:634
-#: admin/manage-gallery.php:714 admin/manage-gallery.php:803
-#: admin/manage-gallery.php:817 admin/manage-gallery.php:831
-#: admin/manage-gallery.php:845
-msgid "Show"
-msgstr "प्रदर्शन"
-
-#: admin/manage-gallery.php:252 admin/manage-gallery.php:265
-#: admin/manage-gallery.php:279 admin/manage-gallery.php:294
-#: admin/manage-gallery.php:519 admin/manage-gallery.php:554
-#: admin/manage-gallery.php:595 admin/manage-gallery.php:637
-#: admin/manage-gallery.php:717 admin/manage-gallery.php:806
-#: admin/manage-gallery.php:820 admin/manage-gallery.php:834
-#: admin/manage-gallery.php:848
-msgid "Hide"
-msgstr "छिपाना"
-
-#: admin/manage-gallery.php:255
-msgid "hide and show filter above gallery"
-msgstr "गैलरी के ऊपर फ़िल्टर छिपाएँ और दिखाएँ"
-
-#: admin/manage-gallery.php:258
-msgid "Filters Icon"
-msgstr "फ़िल्टर चिह्न"
-
-#: admin/manage-gallery.php:268
-msgid "hide and show an icon on filters button"
-msgstr "फ़िल्टर बटन पर एक आइकन छुपाएं और दिखाएं"
-
-#: admin/manage-gallery.php:272
-msgid "Filters Image Count"
-msgstr "फ़िल्टर छवि गणना"
-
-#: admin/manage-gallery.php:287
-msgid "All Button"
-msgstr "सभी बटन"
-
-#: admin/manage-gallery.php:297
-msgid "hide and show all filter button"
-msgstr "सभी फ़िल्टर बटन छुपाएँ और दिखाएँ"
-
-#: admin/manage-gallery.php:301
-msgid "All Button Title"
-msgstr "सभी बटन शीर्षक"
-
-#: admin/manage-gallery.php:302 setting.php:49
-msgid "All"
-msgstr "सभी"
-
-#: admin/manage-gallery.php:304
-msgid "type name"
-msgstr "नाम टाइप करें"
-
-#: admin/manage-gallery.php:306
-msgid "set all filter button title"
-msgstr "सभी फ़िल्टर बटन शीर्षक सेट करें"
-
-#: admin/manage-gallery.php:309
-msgid "All Button Icon"
-msgstr "सभी बटन चिह्न"
-
-#: admin/manage-gallery.php:314
-msgid "set all filter button icon"
-msgstr "सभी फ़िल्टर बटन आइकन सेट करें"
-
-#: admin/manage-gallery.php:318
-msgid "All Button Color"
-msgstr "सभी बटन रंग"
-
-#: admin/manage-gallery.php:323 admin/manage-gallery.php:332
-msgid "set background color of all filter button"
-msgstr "सभी फ़िल्टर बटन का पृष्ठभूमि रंग सेट करें"
-
-#: admin/manage-gallery.php:327
-msgid "All Button Background Color"
-msgstr "सभी बटन पृष्ठभूमि रंग"
-
-#: admin/manage-gallery.php:335
-msgid "Parent Filters Heading"
-msgstr "पैरेंट फ़िल्टर शीर्षक"
-
-#: admin/manage-gallery.php:340
-msgid "set parent filter button heading"
-msgstr "पैरेंट फ़िल्टर बटन शीर्षक सेट करें"
-
-#: admin/manage-gallery.php:343
-msgid "Parent Filter Button Color"
-msgstr "पैरेंट फ़िल्टर बटन रंग"
-
-#: admin/manage-gallery.php:348
-msgid "set background color of parent filter button"
-msgstr "पैरेंट फ़िल्टर बटन का पृष्ठभूमि रंग सेट करें"
-
-#: admin/manage-gallery.php:352
-msgid "Parent Filters Button Background Color"
-msgstr "पैरेंट फ़िल्टर बटन पृष्ठभूमि रंग"
-
-#: admin/manage-gallery.php:357
-msgid "set background color of parent filter background button."
-msgstr "पैरेंट फ़िल्टर पृष्ठभूमि बटन का पृष्ठभूमि रंग सेट करें।"
-
-#: admin/manage-gallery.php:360
-msgid "Level One Filters Heading"
-msgstr "लेवल वन फ़िल्टर शीर्षक"
-
-#: admin/manage-gallery.php:365
-msgid "set level one filter button heading"
-msgstr "स्तर एक फ़िल्टर बटन शीर्षक सेट करें"
-
-#: admin/manage-gallery.php:368
-msgid "Level One Filters Button Color"
-msgstr "लेवल वन फ़िल्टर बटन का रंग"
-
-#: admin/manage-gallery.php:373
-msgid "set color of level One filters button"
-msgstr "लेवल वन फ़िल्टर बटन का रंग सेट करें"
-
-#: admin/manage-gallery.php:376
-msgid "Level One Filters Button Background Color"
-msgstr "लेवल वन फ़िल्टर बटन पृष्ठभूमि रंग"
-
-#: admin/manage-gallery.php:381 admin/manage-gallery.php:392
-msgid "set background color of level one filters button"
-msgstr "लेवल वन फ़िल्टर बटन का पृष्ठभूमि रंग सेट करें"
-
-#: admin/manage-gallery.php:384
-msgid "Child Filters Effect"
-msgstr "बाल फ़िल्टर प्रभाव"
-
-#: admin/manage-gallery.php:388
-msgid "Fade"
-msgstr "फीका"
-
-#: admin/manage-gallery.php:389
-msgid "Show / Hide"
-msgstr "दिखाएँ/छिपाएँ"
-
-#: admin/manage-gallery.php:395
-msgid "Active Filter Button Color"
-msgstr "सक्रिय फ़िल्टर बटन रंग"
-
-#: admin/manage-gallery.php:400
-msgid "set color of active filter button"
-msgstr "सक्रिय फ़िल्टर बटन का रंग सेट करें"
-
-#: admin/manage-gallery.php:403
-msgid "Active Filter Button Background Color"
-msgstr "सक्रिय फ़िल्टर बटन पृष्ठभूमि रंग"
-
-#: admin/manage-gallery.php:408
-msgid "set background color of active filter button"
-msgstr "सक्रिय फ़िल्टर बटन का पृष्ठभूमि रंग सेट करें"
-
-#: admin/manage-gallery.php:419
-msgid "Gallery Settings"
-msgstr "गैलरी सेटिंग्स"
-
-#: admin/manage-gallery.php:423
-msgid "Columns On Desktop"
-msgstr "डेस्कटॉप पर कॉलम"
-
-#: admin/manage-gallery.php:427 admin/manage-gallery.php:453
-#: admin/manage-gallery.php:476 admin/manage-gallery.php:496
-msgid "1"
-msgstr "एक"
-
-#: admin/manage-gallery.php:430 admin/manage-gallery.php:456
-#: admin/manage-gallery.php:479 admin/manage-gallery.php:499
-msgid "2"
-msgstr "दो"
-
-#: admin/manage-gallery.php:433 admin/manage-gallery.php:459
-#: admin/manage-gallery.php:482 admin/manage-gallery.php:502
-msgid "3"
-msgstr "तीन"
-
-#: admin/manage-gallery.php:436 admin/manage-gallery.php:462
-#: admin/manage-gallery.php:485 admin/manage-gallery.php:505
-msgid "4"
-msgstr "चार"
-
-#: admin/manage-gallery.php:439 admin/manage-gallery.php:465
-msgid "6"
-msgstr "छह"
-
-#: admin/manage-gallery.php:442
-msgid "12"
-msgstr "बारह"
-
-#: admin/manage-gallery.php:445
-msgid "columns to display on desktop or pc device"
-msgstr "डेस्कटॉप या पीसी डिवाइस पर प्रदर्शित करने के लिए कॉलम"
-
-#: admin/manage-gallery.php:449
-msgid "Columns On Tablet"
-msgstr "टेबलेट पर कॉलम"
-
-#: admin/manage-gallery.php:468
-msgid "columns to display on tablet device"
-msgstr "टेबलेट डिवाइस पर प्रदर्शित करने के लिए कॉलम"
-
-#: admin/manage-gallery.php:472
-msgid "Columns On Mobile - Landscape Mode"
-msgstr "मोबाइल पर कॉलम - लैंडस्केप मोड"
-
-#: admin/manage-gallery.php:488
-msgid "columns to display on the mobile device with landscape mode"
-msgstr "लैंडस्केप मोड के साथ मोबाइल डिवाइस पर प्रदर्शित करने के लिए कॉलम"
-
-#: admin/manage-gallery.php:492
-msgid "Columns On Mobile - Portrait Mode"
-msgstr "मोबाइल पर कॉलम - पोर्ट्रेट मोड"
-
-#: admin/manage-gallery.php:508
-msgid "columns to display on mobile device with portrait mode"
-msgstr "पोर्ट्रेट मोड के साथ मोबाइल डिवाइस पर प्रदर्शित होने वाले कॉलम"
-
-#: admin/manage-gallery.php:512
-msgid "Thumbnail Image"
-msgstr "थंबनेल छवि"
-
-#: admin/manage-gallery.php:522
-msgid "show or hide image thumbnail into gallery"
-msgstr "छवि थंबनेल को गैलरी में दिखाएं या छुपाएं"
-
-#: admin/manage-gallery.php:526
-msgid "Thumbnail Image Size"
-msgstr "थंबनेल छवि का आकार"
-
-#: admin/manage-gallery.php:530
-msgid "Small"
-msgstr "छोटा"
-
-#: admin/manage-gallery.php:531
-msgid "Medium"
-msgstr "मध्यम"
-
-#: admin/manage-gallery.php:532
-msgid "Large"
-msgstr "बड़ा"
-
-#: admin/manage-gallery.php:533
-msgid "Original"
-msgstr "मूल"
-
-#: admin/manage-gallery.php:534 admin/manage-gallery.php:535
-#: admin/manage-gallery.php:536
-msgid "Same Size"
-msgstr "समान आकार"
-
-#: admin/manage-gallery.php:539
-msgid "set thumbnail image size"
-msgstr "थंबनेल छवि आकार सेट करें"
-
-#: admin/manage-gallery.php:541 admin/manage-gallery.php:705
-msgid "Note"
-msgstr "ध्यान दें"
-
-#: admin/manage-gallery.php:542
-msgid ""
-"Same size setting will only work with new images uploaded after the plugin "
-"installation."
-msgstr ""
-"समान आकार की सेटिंग केवल प्लगइन इंस्टालेशन के बाद अपलोड की गई नई छवियों के साथ काम करेगी।"
-
-#: admin/manage-gallery.php:543
-msgid "It will not work with previously uploaded images."
-msgstr "यह पहले अपलोड की गई छवियों के साथ काम नहीं करेगा।"
-
-#: admin/manage-gallery.php:547
-msgid "Thumbnail Border"
-msgstr "थंबनेल बॉर्डर"
-
-#: admin/manage-gallery.php:557
-msgid "show or hide thumbnail border"
-msgstr "थंबनेल बॉर्डर दिखाएँ या छिपाएँ"
-
-#: admin/manage-gallery.php:561
-msgid "Thumbnail Border Thickness"
-msgstr "थंबनेल बॉर्डर मोटाई"
-
-#: admin/manage-gallery.php:567
-msgid "set thumbnail border thickness"
-msgstr "थंबनेल बॉर्डर मोटाई सेट करें"
-
-#: admin/manage-gallery.php:571
-msgid "Thumbnail Border Color"
-msgstr "थंबनेल बॉर्डर रंग"
-
-#: admin/manage-gallery.php:576
-msgid "set thumbnail border color"
-msgstr "थंबनेल बॉर्डर रंग सेट करें"
-
-#: admin/manage-gallery.php:579
-msgid "Thumbnail Background Color"
-msgstr "थंबनेल पृष्ठभूमि रंग"
-
-#: admin/manage-gallery.php:584
-msgid "set thumbnail background color"
-msgstr "थंबनेल पृष्ठभूमि रंग सेट करें"
-
-#: admin/manage-gallery.php:588 filter-gallery-pro.php:273 filter-gallery-pro.php:518
-msgid "Image Title"
-msgstr "छवि शीर्षक"
-
-#: admin/manage-gallery.php:598
-msgid "hide or show image title"
-msgstr "छवि शीर्षक छिपाएँ या दिखाएँ"
-
-#: admin/manage-gallery.php:602
-msgid "Image Title Font Size"
-msgstr "छवि शीर्षक फ़ॉन्ट आकार"
-
-#: admin/manage-gallery.php:608
-msgid "set image title font size"
-msgstr "छवि शीर्षक फ़ॉन्ट आकार सेट करें"
-
-#: admin/manage-gallery.php:612
-msgid "Image Title Color"
-msgstr "छवि शीर्षक रंग"
-
-#: admin/manage-gallery.php:617
-msgid "set image title text color"
-msgstr "छवि शीर्षक टेक्स्ट रंग सेट करें"
-
-#: admin/manage-gallery.php:621
-msgid "Image Title Background Color"
-msgstr "छवि शीर्षक पृष्ठभूमि रंग"
-
-#: admin/manage-gallery.php:626
-msgid "set image title background color"
-msgstr "छवि शीर्षक पृष्ठभूमि रंग सेट करें"
-
-#: admin/manage-gallery.php:630 filter-gallery-pro.php:279 filter-gallery-pro.php:524
-msgid "Image Description"
-msgstr "छवि विवरण"
-
-#: admin/manage-gallery.php:640
-msgid "hide or show image description"
-msgstr "छवि विवरण छिपाएँ या दिखाएँ"
-
-#: admin/manage-gallery.php:644
-msgid "Image Description Font Size"
-msgstr "छवि विवरण फ़ॉन्ट आकार"
-
-#: admin/manage-gallery.php:650
-msgid "set image description font size"
-msgstr "छवि विवरण फ़ॉन्ट आकार सेट करें"
-
-#: admin/manage-gallery.php:654
-msgid "Image Description Color"
-msgstr "छवि विवरण रंग"
-
-#: admin/manage-gallery.php:659
-msgid "set image description text color"
-msgstr "छवि विवरण टेक्स्ट का रंग सेट करें"
-
-#: admin/manage-gallery.php:663
-msgid "Image Description Background Color"
-msgstr "छवि विवरण पृष्ठभूमि रंग"
-
-#: admin/manage-gallery.php:668
-msgid "set image description background color"
-msgstr "छवि विवरण पृष्ठभूमि रंग सेट करें"
-
-#: admin/manage-gallery.php:672
-msgid "Image Description Text Limit"
-msgstr "छवि विवरण पाठ सीमा"
-
-#: admin/manage-gallery.php:677
-msgid "characters"
-msgstr "अक्षर"
-
-#: admin/manage-gallery.php:678
-msgid "set image description text limit"
-msgstr "छवि विवरण पाठ सीमा निर्धारित करें"
-
-#: admin/manage-gallery.php:682
-msgid "Image Hover Effect"
-msgstr "छवि होवर प्रभाव"
-
-#: admin/manage-gallery.php:686 admin/manage-gallery.php:783
-msgid "None"
-msgstr "कोई नहीं"
-
-#: admin/manage-gallery.php:687
-msgid "Border Overlay"
-msgstr "बॉर्डर ओवरले"
-
-#: admin/manage-gallery.php:690 admin/manage-gallery.php:720
-msgid "hide or show read more button"
-msgstr "अधिक पढ़ें बटन छुपाएं या दिखाएं"
-
-#: admin/manage-gallery.php:693
-msgid "Read More Link On"
-msgstr "अधिक पढ़ें लिंक पर"
-
-#: admin/manage-gallery.php:697
-msgid "Button"
-msgstr "बटन"
-
-#: admin/manage-gallery.php:700
-msgid "Image"
-msgstr "छवि"
-
-#: admin/manage-gallery.php:703
-msgid "show link on image or button"
-msgstr "छवि या बटन पर लिंक दिखाएं"
-
-#: admin/manage-gallery.php:706
-msgid "If Read More Link set on Image then lightbox functionality will not work."
-msgstr "यदि छवि पर अधिक पढ़ें लिंक सेट है तो लाइटबॉक्स कार्यक्षमता काम नहीं करेगी।"
-
-#: admin/manage-gallery.php:710
-msgid "Read More Button"
-msgstr "अधिक पढ़ें बटन"
-
-#: admin/manage-gallery.php:724
-msgid "Read More Button Text"
-msgstr "अधिक बटन पाठ पढ़ें"
-
-#: admin/manage-gallery.php:725 setting.php:458
-msgid "Read More"
-msgstr "और पढ़ें"
-
-#: admin/manage-gallery.php:729
-msgid "set read more button title text"
-msgstr "अधिक पढ़ें बटन शीर्षक पाठ सेट करें"
-
-#: admin/manage-gallery.php:732
-msgid "Read More Button Icon"
-msgstr "अधिक पढ़ें बटन चिह्न"
-
-#: admin/manage-gallery.php:737
-msgid "set read more button icon"
-msgstr "अधिक पढ़ें बटन आइकन सेट करें"
-
-#: admin/manage-gallery.php:741
-msgid "Read More Button Color"
-msgstr "अधिक पढ़ें बटन का रंग"
-
-#: admin/manage-gallery.php:748
-msgid "set read more button text color"
-msgstr "अधिक पढ़ें बटन टेक्स्ट का रंग सेट करें"
-
-#: admin/manage-gallery.php:751
-msgid "Read More Button Background Color"
-msgstr "अधिक पढ़ें बटन पृष्ठभूमि रंग"
-
-#: admin/manage-gallery.php:758 admin/manage-gallery.php:893
-#: admin/manage-gallery.php:903
-msgid "set read more button background color"
-msgstr "अधिक पढ़ें बटन पृष्ठभूमि रंग सेट करें"
-
-#: admin/manage-gallery.php:761
-msgid "Read More Link Open"
-msgstr "अधिक पढ़ें लिंक खोलें"
-
-#: admin/manage-gallery.php:765
-msgid "In New Page"
-msgstr "नये पृष्ठ में"
-
-#: admin/manage-gallery.php:768
-msgid "In Same Page"
-msgstr "एक ही पृष्ठ में"
-
-#: admin/manage-gallery.php:771
-msgid "set link opening option"
-msgstr "लिंक खोलने का विकल्प सेट करें"
-
-#: admin/manage-gallery.php:774
-msgid "Image Sorting"
-msgstr "छवि छँटाई"
-
-#: admin/manage-gallery.php:778
-msgid "Image ID - Ascending"
-msgstr "छवि आईडी - आरोही"
-
-#: admin/manage-gallery.php:779
-msgid "Image ID - Descending"
-msgstr "छवि आईडी - अवरोही"
-
-#: admin/manage-gallery.php:780
-msgid "Image Title - Ascending"
-msgstr "छवि शीर्षक - आरोही"
-
-#: admin/manage-gallery.php:781
-msgid "Image Title - Descending"
-msgstr "छवि शीर्षक - अवरोही"
-
-#: admin/manage-gallery.php:782
-msgid "Shuffle / Random"
-msgstr "फेरबदल/यादृच्छिक"
-
-#: admin/manage-gallery.php:786
-msgid "set gallery image sorting"
-msgstr "गैलरी छवि सॉर्टिंग सेट करें"
-
-#: admin/manage-gallery.php:795
-msgid "Lightbox Settings"
-msgstr "लाइटबॉक्स सेटिंग्स"
-
-#: admin/manage-gallery.php:799
-msgid "Lightbox"
-msgstr "लाइटबॉक्स"
-
-#: admin/manage-gallery.php:809 admin/manage-gallery.php:874
-msgid "set lightbox functionality on gallery thumbnail for larger preview"
-msgstr "बड़े पूर्वावलोकन के लिए गैलरी थंबनेल पर लाइटबॉक्स कार्यक्षमता सेट करें"
-
-#: admin/manage-gallery.php:823
-msgid "show image title under the lightbox"
-msgstr "लाइटबॉक्स के नीचे छवि शीर्षक दिखाएं"
-
-#: admin/manage-gallery.php:827
-msgid "Description"
-msgstr "विवरण"
-
-#: admin/manage-gallery.php:837
-msgid "show image description under the lightbox"
-msgstr "लाइटबॉक्स के नीचे छवि विवरण दिखाएं"
-
-#: admin/manage-gallery.php:841
-msgid "Numbering"
-msgstr "क्रमांकन"
-
-#: admin/manage-gallery.php:851
-msgid "show image number under the lightbox"
-msgstr "लाइटबॉक्स के नीचे छवि संख्या दिखाएं"
-
-#: admin/manage-gallery.php:861
-msgid "Load More Settings"
-msgstr "लोड मोर सेटिंग्स"
-
-#: admin/manage-gallery.php:864 setting.php:538
-msgid "Load More"
-msgstr "अधिक लोड करें"
-
-#: admin/manage-gallery.php:868
-msgid "On"
-msgstr "चालू"
-
-#: admin/manage-gallery.php:871
-msgid "Off"
-msgstr "बंद"
-
-#: admin/manage-gallery.php:877
-msgid "Load Limit"
-msgstr "लोड सीमा"
-
-#: admin/manage-gallery.php:882
-msgid "Set loading element limit"
-msgstr "लोडिंग तत्व सीमा निर्धारित करें"
-
-#: admin/manage-gallery.php:886
-msgid "Load More Button Color"
-msgstr "अधिक बटन रंग लोड करें"
-
-#: admin/manage-gallery.php:896
-msgid "Load More Button Text Color"
-msgstr "अधिक बटन टेक्स्ट रंग लोड करें"
-
-#: admin/manage-gallery.php:906
-msgid "Load More Button Text"
-msgstr "अधिक बटन टेक्स्ट लोड करें"
-
-#: admin/manage-gallery.php:911
-msgid "Change load button text"
-msgstr "लोड बटन टेक्स्ट बदलें"
-
-#: admin/manage-gallery.php:920
-msgid "Custom CSS"
-msgstr "कस्टम सीएसएस"
-
-#: admin/manage-gallery.php:927
-msgid "apply a custom design to gallery"
-msgstr "गैलरी में एक कस्टम डिज़ाइन लागू करें"
-
-#: admin/manage-gallery.php:955
-msgid "Gallery Shortcode"
-msgstr "गैलरी शोर्टकोड"
-
-#: admin/manage-gallery.php:963
-msgid "Copy Shortcode"
-msgstr "शॉर्टकोड कॉपी करें"
-
-#: admin/manage-gallery.php:964
-msgid "Shortcode Copied"
-msgstr "शॉर्टकोड कॉपी किया गया"
-
-#: admin/manage-gallery.php:1018 admin/manage-gallery.php:1054
-#: filter-gallery-pro.php:262 filter-gallery-pro.php:549
 msgid "Select Filters"
 msgstr "फ़िल्टर चयन"
 
-#: filter-gallery-pro.php:276 filter-gallery-pro.php:521
-msgid "Image Alternative Text"
-msgstr "छवि वैकल्पिक पाठ"
+msgid "All"
+msgstr "सभी"
 
-#: filter-gallery-pro.php:282 filter-gallery-pro.php:527
-msgid "Link URL"
-msgstr "लिंक यूआरएल"
+msgid "Load More"
+msgstr "अधिक लोड करें"
 
-#: filter-gallery-pro.php:292 filter-gallery-pro.php:537
-msgid "Remove"
-msgstr "निकालें"
+msgid "Gallery"
+msgstr "गैलरी"
+
+msgid "Galleries"
+msgstr "गैलरियाँ"
+
+msgid "Find gallery..."
+msgstr "गैलरी खोजें..."
+
+msgid "New Project"
+msgstr "नया प्रोजेक्ट"
+
+msgid "Galleries selected"
+msgstr "चयनित गैलरियां"
+
+msgid "Delete Selected"
+msgstr "चयनित हटाएं"
+
+msgid "Select All"
+msgstr "सभी चुनें"
+
+msgid "No galleries found"
+msgstr "कोई गैलरी नहीं मिली"
+
+msgid "ID:"
+msgstr "आईडी:"
+
+msgid "Copied"
+msgstr "कॉपी किया गया"
+
+msgid "Copy"
+msgstr "कॉपी"
+
+msgid "Images"
+msgstr "छवियां"
+
+msgid "Filters"
+msgstr "फ़िल्टर"
+
+msgid "Clone"
+msgstr "क्लोन"
+
+msgid "Delete"
+msgstr "हटाएं"
+
+msgid "None"
+msgstr "कोई नहीं"
+
+msgid "Add New Filter"
+msgstr "नया फ़िल्टर जोड़ें"
+
+msgid "PRO"
+msgstr "प्रो"
+
+msgid "Add Filter (Pro)"
+msgstr "फ़िल्टर जोड़ें (प्रो)"
+
+msgid "Filter Hierarchy"
+msgstr "फ़िल्टर पदानुक्रम"
+
+msgid "Quick Tips"
+msgstr "त्वरित सुझाव"
+
+msgid "Be sure to click"
+msgstr "क्लिक करना सुनिश्चित करें"
+
+msgid "when done!"
+msgstr "पूरा होने पर!"
+
+msgid "Your Filters"
+msgstr "आपके फ़िल्टर"
+
+msgid "Repair Slugs"
+msgstr "स्लग ठीक करें"
+
+msgid "Delete All"
+msgstr "सभी हटाएं"
+
+msgid "Name"
+msgstr "नाम"
+
+msgid "Icon"
+msgstr "आइकॉन"
+
+msgid "Slug"
+msgstr "स्लग"
+
+msgid "Parent"
+msgstr "पेरेंट"
+
+msgid "Actions"
+msgstr "क्रियाएं"
+
+msgid "Select or Upload Images"
+msgstr "छवियां चुनें या अपलोड करें"
+
+msgid "Add to Gallery"
+msgstr "गैलरी में जोड़ें"
+
+msgid "%d Images"
+msgstr "%d छवियां"
+
+msgid "Bulk Tagging"
+msgstr "थोक टैगिंग"
+
+msgid "Add Media"
+msgstr "मीडिया जोड़ें"
+
+msgid "Select images to batch tag"
+msgstr "थोक टैग के लिए छवियां चुनें"
+
+msgid "Select None"
+msgstr "कोई नहीं चुनें"
+
+msgid "Please select at least one image to delete."
+msgstr "कृपया हटाने के लिए कम से कम एक छवि चुनें।"
+
+msgid "Delete Images"
+msgstr "छवियां हटाएं"
+
+msgid "Are you sure you want to delete"
+msgstr "क्या आप निश्चित रूप से हटाना चाहते हैं"
+
+msgid "selected images? This action cannot be undone."
+msgstr "चयनित छवियां? इस क्रिया को पूर्ववत नहीं किया जा सकता।"
+
+msgid "Cancel"
+msgstr "रद्द करें"
+
+msgid "Drag to reorder"
+msgstr "पुनः व्यवस्थित करने के लिए खींचें"
+
+msgid "Edit Details"
+msgstr "विवरण संपादित करें"
+
+msgid "Delete Image"
+msgstr "छवि हटाएं"
+
+msgid "New Gallery"
+msgstr "नई गैलरी"
+
+msgid "Back"
+msgstr "पीछे"
+
+msgid "Gallery Name"
+msgstr "गैलरी का नाम"
+
+msgid "Click to copy"
+msgstr "कॉपी करने के लिए क्लिक करें"
+
+msgid "Content"
+msgstr "सामग्री"
+
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+msgid "Synchronizing Data..."
+msgstr "डेटा सिंक्रनाइज़ किया जा रहा है..."
+
+msgid "Confirm & Deploy Changes"
+msgstr "पुष्टि करें और बदलाव लागू करें"
+
+msgid "GPU Optimized UI"
+msgstr "जीपीयू अनुकूलित यूआई"
+

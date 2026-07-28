@@ -6,10 +6,14 @@ if (!defined('ABSPATH'))
 if (!function_exists('ufg_filters')) {
 	function ufg_filters($ufg_gallery_id, $ufg_filters, $ufg_gallery, $atts = array())
 	{
-		if (is_array($ufg_filters) && $filters_count = count($ufg_filters)) {
+		if (is_array($ufg_filters) && count($ufg_filters)) {
 			if (function_exists('ufg_normalize_filters_recursive')) {
 				ufg_normalize_filters_recursive($ufg_filters);
 			}
+			if (function_exists('ufg_remove_blank_filters_recursive')) {
+				ufg_remove_blank_filters_recursive($ufg_filters);
+			}
+			$filters_count = count($ufg_filters);
 
 			//echo $filters_count; 
 			//load settings

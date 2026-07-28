@@ -4,7 +4,7 @@ Donate link: https://wpfrank.com/
 Tags: responsive, filter gallery, portfolio, image gallery, masonry
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -95,6 +95,14 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 5.  How to create a filter gallery?**
 
 == Changelog ==
+
+= 1.1.4 =
+* Handled empty/blank filters dynamically to exclude them from the frontend output gallery, edit image popup, and batch tagging selector.
+* Added filter icons to the batch tagging buttons and edit image checkbox list to make unlabeled filters identifiable.
+* Implemented state persistence for the admin dashboard's active edit tab across page refreshes.
+* Enqueued Google Font stylesheets via WordPress standard `wp_enqueue_style` rather than hardcoding HTML `<link>` tags.
+* Wrapped untranslated menu titles in localization functions and corrected incorrect text domains (`filter-gallery-pro` -> `filter-gallery`).
+* Generated JED translation files for all 15 supported languages (including Hindi, French, German, Spanish, Arabic, Japanese, Chinese, Russian, Italian, etc.) to make the JavaScript/React dashboard fully translatable.
 
 = 1.1.3 =
 * Defaulted button padding size to 'small' (8px 16px) globally and for migrations.

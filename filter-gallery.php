@@ -6,7 +6,7 @@ if (!defined('ABSPATH'))
  * Plugin Name:       Filter Gallery
  * Plugin URI:        https://wpfrank.com/
  * Description:       Filter Gallery is a lightweight and powerful WordPress plugin to create beautiful filterable galleries.
- * Version:           1.1.3
+ * Version:           1.1.4
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            FARAZFRANK
@@ -18,7 +18,7 @@ if (!defined('ABSPATH'))
  */
 
 if (!defined('UFG_VERSION')) {
-	define('UFG_VERSION', '1.1.3');
+	define('UFG_VERSION', '1.1.4');
 }
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-ufg-migration.php';
@@ -72,6 +72,35 @@ if (!function_exists('ufg_normalize_filters_recursive')) {
 	}
 }
 
+if (!function_exists('ufg_remove_blank_filters_recursive')) {
+	function ufg_remove_blank_filters_recursive(&$filters) {
+		if (!is_array($filters)) return;
+		$new_filters = array();
+		foreach ($filters as $item) {
+			$is_obj = is_object($item);
+			$item_arr = $is_obj ? (array)$item : $item;
+			if (is_array($item_arr)) {
+				$title = isset($item_arr['title']) ? trim($item_arr['title']) : '';
+				$text = isset($item_arr['text']) ? trim($item_arr['text']) : '';
+				$icon = isset($item_arr['icon']) ? trim($item_arr['icon']) : '';
+
+				$has_title = ($title !== '') || ($text !== '');
+				$has_icon = ($icon !== '');
+
+				if (!$has_title && !$has_icon) {
+					continue;
+				}
+
+				if (isset($item_arr['children']) && is_array($item_arr['children'])) {
+					ufg_remove_blank_filters_recursive($item_arr['children']);
+				}
+				$new_filters[] = $is_obj ? (object)$item_arr : $item_arr;
+			}
+		}
+		$filters = $new_filters;
+	}
+}
+
 // custom image size
 add_image_size('ufg_200_200', 200, 200, true);
 add_image_size('ufg_300_300', 300, 300, true);
@@ -116,11 +145,7 @@ register_uninstall_hook(__FILE__, 'ufg_uninstall');
 // load translation
 function ufg_load_translation()
 {
-	if (did_action('plugins_loaded')) {
-		// load_plugin_textdomain is discouraged since WP 4.6. 
-		// WordPress automatically loads translations from the languages directory.
-		// load_plugin_textdomain('filter-gallery', false, dirname(plugin_basename(__FILE__)) . '/languages');
-	}
+	load_plugin_textdomain('filter-gallery', false, dirname(plugin_basename(__FILE__)) . '/languages');
 }
 add_action('init', 'ufg_load_translation');
 
@@ -130,7 +155,7 @@ function ufg_menu_page()
 	// add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
 	add_menu_page(
 		__('Filter Gallery', 'filter-gallery'),
-		'Filter Gallery',
+		__('Filter Gallery', 'filter-gallery'),
 		'manage_options',
 		'filter-gallery',
 		'ufg_main',
@@ -139,7 +164,7 @@ function ufg_menu_page()
 	);
 
 	//add_submenu_page( string $parent_slug, string $page_title, string $menu_title, string $capability, string $menu_slug, callable $function = '', int $position )
-	add_submenu_page('filter-gallery', 'Manage Gallery', 'Manage Gallery', 'manage_options', 'ufg-manage-gallery', 'ufg_manage_gallery');
+	add_submenu_page('filter-gallery', __('Manage Gallery', 'filter-gallery'), __('Manage Gallery', 'filter-gallery'), 'manage_options', 'ufg-manage-gallery', 'ufg_manage_gallery');
 	add_submenu_page('filter-gallery', __('Import / Export', 'filter-gallery'), __('Import / Export', 'filter-gallery'), 'manage_options', 'ufg-import-export', 'ufg_import_export_page');
 	add_submenu_page('filter-gallery', __('Docs', 'filter-gallery'), __('Docs', 'filter-gallery'), 'manage_options', 'ufg-docs', 'ufg_docs_page');
 	add_submenu_page('filter-gallery', __('Free vs Pro', 'filter-gallery'), __('Free vs Pro', 'filter-gallery'), 'manage_options', 'ufg-free-vs-pro', 'ufg_free_vs_pro_page');
@@ -163,6 +188,12 @@ function ufg_docs_page()
 // Free vs Pro page body
 function ufg_free_vs_pro_page()
 {
+	wp_enqueue_style(
+		'ufg-google-font-outfit',
+		'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap',
+		array(),
+		null
+	);
 	wp_enqueue_style(
 		'ufg-fontawesome-admin',
 		plugins_url('admin/assets/fontawesome-free-6.5.2-web/css/all.min.css', __FILE__),
@@ -194,6 +225,11 @@ function ufg_enqueue_react_app()
 		array('jquery', 'wp-element', 'wp-components', 'wp-api-fetch', 'wp-media-utils'),
 		'5.3.1',
 		true
+	);
+	wp_set_script_translations(
+		'ufg-react-app',
+		'filter-gallery',
+		plugin_dir_path(__FILE__) . 'languages'
 	);
 	wp_enqueue_style(
 		'ufg-react-app-style',
@@ -633,7 +669,7 @@ function ufg_li_generate_ajax_callback()
 					jQuery('.ufg-image-filters').multiselect({
 						buttonWidth: '100%',
 						enableFiltering: true,
-						nonSelectedText: "<?php echo esc_js(__('Select Filters', 'filter-gallery-pro')); ?>"
+						nonSelectedText: "<?php echo esc_js(__('Select Filters', 'filter-gallery')); ?>"
 					});
 				});
 			});
@@ -650,17 +686,17 @@ function ufg_li_generate_ajax_callback()
 			<div class="ufg-admin-form-group">
 				<input type="text" class="ufg-admin-form-control ufg-title"
 					name="ufg-title[<?php echo intval($ufg_attachment_id); ?>]" value="<?php echo esc_attr($ufg_title); ?>"
-					placeholder="<?php esc_attr_e('Image Title', 'filter-gallery-pro'); ?>">
+					placeholder="<?php esc_attr_e('Image Title', 'filter-gallery'); ?>">
 			</div>
 			<div class="ufg-admin-form-group">
 				<input type="text" class="ufg-admin-form-control ufg-alt"
 					name="ufg-alt[<?php echo intval($ufg_attachment_id); ?>]" value="<?php echo esc_attr($ufg_alt); ?>"
-					placeholder="<?php esc_attr_e('Image Alternative Text', 'filter-gallery-pro'); ?>">
+					placeholder="<?php esc_attr_e('Image Alternative Text', 'filter-gallery'); ?>">
 			</div>
 			<div class="ufg-admin-form-group">
 				<textarea class="ufg-admin-form-control ufg-description"
 					name="ufg-description[<?php echo intval($ufg_attachment_id); ?>]"
-					placeholder="<?php esc_attr_e('Image Description', 'filter-gallery-pro'); ?>"><?php echo esc_textarea($ufg_description); ?></textarea>
+					placeholder="<?php esc_attr_e('Image Description', 'filter-gallery'); ?>"><?php echo esc_textarea($ufg_description); ?></textarea>
 			</div>
 			<div class="ufg-admin-form-group">
 				<input type="url" disabled readonly class="ufg-admin-form-control ufg-url"
@@ -678,7 +714,7 @@ function ufg_li_generate_ajax_callback()
 			<div class="ufg-admin-form-group ufg-admin-text-center">
 				<button type="button" id="ufg-remove-image"
 					onclick="return removeImage('<?php echo intval($ufg_attachment_id); ?>');"
-					class="ufg-admin-btn ufg-admin-btn-remove"><?php esc_html_e('Remove', 'filter-gallery-pro'); ?></button>
+					class="ufg-admin-btn ufg-admin-btn-remove"><?php esc_html_e('Remove', 'filter-gallery'); ?></button>
 			</div>
 		</li>
 		<?php
@@ -905,17 +941,17 @@ function ufg_load_gallery_callback($ufg_gallery_id)
 					<div class="ufg-admin-form-group">
 						<input type="text" class="ufg-admin-form-control ufg-title"
 							name="ufg-title[<?php echo intval($ufg_attachment_id); ?>]" value="<?php echo esc_attr($ufg_title); ?>"
-							placeholder="<?php esc_attr_e('Image Title', 'filter-gallery-pro'); ?>">
+							placeholder="<?php esc_attr_e('Image Title', 'filter-gallery'); ?>">
 					</div>
 					<div class="ufg-admin-form-group">
 						<input type="text" class="ufg-admin-form-control ufg-alt"
 							name="ufg-alt[<?php echo intval($ufg_attachment_id); ?>]" value="<?php echo esc_attr($ufg_alt); ?>"
-							placeholder="<?php esc_attr_e('Image Alternative Text', 'filter-gallery-pro'); ?>">
+							placeholder="<?php esc_attr_e('Image Alternative Text', 'filter-gallery'); ?>">
 					</div>
 					<div class="ufg-admin-form-group">
 						<textarea class="ufg-admin-form-control ufg-description"
 							name="ufg-description[<?php echo intval($ufg_attachment_id); ?>]"
-							placeholder="<?php esc_attr_e('Image Description', 'filter-gallery-pro'); ?>"><?php echo esc_textarea($ufg_description); ?></textarea>
+							placeholder="<?php esc_attr_e('Image Description', 'filter-gallery'); ?>"><?php echo esc_textarea($ufg_description); ?></textarea>
 					</div>
 					<div class="ufg-admin-form-group">
 						<input type="url" disabled readonly class="ufg-admin-form-control ufg-url"
@@ -932,7 +968,7 @@ function ufg_load_gallery_callback($ufg_gallery_id)
 					<div class="ufg-admin-form-group ufg-admin-text-center">
 						<button type="button" id="ufg-remove-image"
 							onclick="return removeImage('<?php echo intval($ufg_attachment_id); ?>');"
-							class="ufg-admin-btn ufg-admin-btn-remove"><?php esc_html_e('Remove', 'filter-gallery-pro'); ?></button>
+							class="ufg-admin-btn ufg-admin-btn-remove"><?php esc_html_e('Remove', 'filter-gallery'); ?></button>
 					</div>
 				</li>
 				<?php
@@ -944,7 +980,7 @@ function ufg_load_gallery_callback($ufg_gallery_id)
 						jQuery('.ufg-image-filters').multiselect({
 							buttonWidth: '100%',
 							enableFiltering: true,
-							nonSelectedText: "<?php echo esc_js(__('Select Filters', 'filter-gallery-pro')); ?>",
+							nonSelectedText: "<?php echo esc_js(__('Select Filters', 'filter-gallery')); ?>",
 						});
 					});
 				});

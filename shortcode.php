@@ -59,6 +59,9 @@ function ufg_shortcode_callback($atts){
 		if (function_exists('ufg_normalize_filters_recursive')) {
 			ufg_normalize_filters_recursive($ufg_filters);
 		}
+		if (function_exists('ufg_remove_blank_filters_recursive')) {
+			ufg_remove_blank_filters_recursive($ufg_filters);
+		}
 
 		// Merge settings with default settings to prevent undefined key notices
 		$default_settings = array(

@@ -2,7 +2,7 @@
 
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org/plugins/filter-gallery/)
 [![License](https://img.shields.io/badge/License-GPLv2-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![Version](https://img.shields.io/badge/Version-1.1.3-orange.svg)](https://github.com/FARAZFRANK/filter-gallery/releases)
+[![Version](https://img.shields.io/badge/Version-1.1.4-orange.svg)](https://github.com/FARAZFRANK/filter-gallery/releases)
 
 **Filter Gallery** is a lightweight, high-performance WordPress plugin designed to create stunning, filterable image galleries and portfolios. Built with a modern React-based admin interface and optimized Isotope filtering, it offers a premium experience for both developers and site owners.
 
@@ -66,6 +66,13 @@ This project is licensed under the GPL v2 or later.
 
 ## 📝 Changelog
 
+### 1.1.4 (2026-07-28)
+- **Feature**: Excluded empty/blank filters dynamically from the frontend output gallery, edit image popup, and batch tagging selector.
+- **Feature**: Added filter icons to the batch tagging buttons and edit image checkbox list to make unlabeled filters identifiable.
+- **Feature**: Implemented state persistence for the admin dashboard's active edit tab across page refreshes.
+- **Fix**: Enqueued Google Font stylesheets via WordPress standard `wp_enqueue_style` rather than hardcoding HTML `<link>` tags.
+- **Fix**: Wrapped untranslated menu titles in localization functions and corrected incorrect text domains (`filter-gallery-pro` -> `filter-gallery`).
+- **Translation**: Generated JED translation files for all 15 supported languages (including Hindi, French, German, Spanish, Arabic, Japanese, Chinese, Russian, Italian, etc.) to make the JavaScript/React dashboard fully translatable.
 ### 1.1.3 (2026-07-23)
 - **Feature**: Defaulted button padding size to 'small' (8px 16px) globally and for legacy migrations.
 - **Feature**: Clamped migrated columns settings to maximum Free limits (Tablet & Mobile Landscape max 3, Mobile Portrait max 2) to prevent locked PRO status on Free version.
