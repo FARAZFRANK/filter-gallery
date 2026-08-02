@@ -1,10 +1,10 @@
 === Filter Gallery ===
-Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
+Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK, alkesh7
 Donate link: https://wpfrank.com/
 Tags: responsive, filter gallery, portfolio, image gallery, masonry
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -96,6 +96,12 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 
 == Changelog ==
 
+= 1.1.5 =
+* Fixed a nonce-verification bypass in several admin AJAX handlers (save/load/remove/clone gallery, save filters, save settings) that allowed the security check to be skipped by omitting the nonce field.
+* Added missing capability checks to those same AJAX handlers so only users with `manage_options` can save, delete, or clone galleries and change settings.
+* Constrained the save-gallery AJAX handler to only update genuine attachment posts, preventing arbitrary post content from being overwritten.
+* Brought the codebase into full WordPress Coding Standards compliance and removed leftover debug/dead code.
+
 = 1.1.4 =
 * Handled empty/blank filters dynamically to exclude them from the frontend output gallery, edit image popup, and batch tagging selector.
 * Added filter icons to the batch tagging buttons and edit image checkbox list to make unlabeled filters identifiable.
@@ -171,6 +177,9 @@ You can visit our website at [wpfrank.com](https://wpfrank.com/) to purchase the
 * Fixed: Lightbox functionality issues
 
 == Upgrade Notice ==
+
+= 1.1.5 =
+* Security update: fixes a nonce-verification bypass and missing permission checks in admin AJAX actions. Updating is recommended for all sites.
 
 = 1.0.0 =
 * This major update modernizes the admin interface and improves security. Your existing gallery data is preserved.

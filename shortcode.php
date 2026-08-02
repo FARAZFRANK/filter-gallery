@@ -1,331 +1,371 @@
 <?php
-if (!defined('ABSPATH'))
-	exit; // Exit if accessed directly
+/**
+ * Registers and renders the [filter-gallery] / [ufg] shortcode.
+ *
+ * @package Filter_Gallery
+ */
 
-if (!function_exists('ufg_hex2rgba')) {
-	function ufg_hex2rgba($hex, $opacity = 0.4) {
-		$hex = str_replace("#", "", $hex);
-		if(strlen($hex) == 3) {
-			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
-			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
-			$b = hexdec(substr($hex,2,1).substr($hex,2,1));
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+if ( ! function_exists( 'ufg_hex2rgba' ) ) {
+	/**
+	 * Converts a hex color to an rgba() CSS value.
+	 *
+	 * @param string $hex     The hex color, with or without a leading '#'.
+	 * @param float  $opacity The alpha value (0-1).
+	 * @return string The rgba() CSS value.
+	 */
+	function ufg_hex2rgba( $hex, $opacity = 0.4 ) {
+		$hex = str_replace( '#', '', $hex );
+
+		if ( 3 === strlen( $hex ) ) {
+			$r = hexdec( substr( $hex, 0, 1 ) . substr( $hex, 0, 1 ) );
+			$g = hexdec( substr( $hex, 1, 1 ) . substr( $hex, 1, 1 ) );
+			$b = hexdec( substr( $hex, 2, 1 ) . substr( $hex, 2, 1 ) );
 		} else {
-			$r = hexdec(substr($hex,0,2));
-			$g = hexdec(substr($hex,2,2));
-			$b = hexdec(substr($hex,4,2));
+			$r = hexdec( substr( $hex, 0, 2 ) );
+			$g = hexdec( substr( $hex, 2, 2 ) );
+			$b = hexdec( substr( $hex, 4, 2 ) );
 		}
 		return "rgba($r, $g, $b, $opacity)";
 	}
 }
 
-add_shortcode('ufg', 'ufg_shortcode_callback');
-add_shortcode('filter-gallery', 'ufg_shortcode_callback');
-function ufg_shortcode_callback($atts){
+add_shortcode( 'ufg', 'ufg_shortcode_callback' );
+add_shortcode( 'filter-gallery', 'ufg_shortcode_callback' );
+/**
+ * Renders the [filter-gallery] / [ufg] shortcode output.
+ *
+ * @param array $atts Shortcode attributes.
+ * @return string The gallery HTML markup.
+ */
+function ufg_shortcode_callback( $atts ) {
 	ob_start();
-	//echo "<hr>";
-	//defaults
+	// defaults.
 	$ufg_filters = array();
 	$ufg_gallery = array();
-	
-	// Get plugin version
-	$ufg_last_version = get_option('ufg_current_version');
-	//get gallery id
-	if (is_array($atts) && isset($atts['id'])) {
-		$ufg_gallery_id = $atts['id'];
-		$ufg_selected_filter_btn_id = "";
-		
-		//get dynamic select filter button id via shortcode parameter
-		if (is_array($atts) && array_key_exists('selected-filter', $atts)) {
-			$ufg_selected_filter_btn_id = sanitize_text_field($atts['selected-filter']);
+
+	// Get plugin version.
+	$ufg_last_version = get_option( 'ufg_current_version' );
+
+	// get gallery id.
+	if ( is_array( $atts ) && isset( $atts['id'] ) ) {
+		$ufg_gallery_id             = $atts['id'];
+		$ufg_selected_filter_btn_id = '';
+
+		// get dynamic select filter button id via shortcode parameter.
+		if ( is_array( $atts ) && array_key_exists( 'selected-filter', $atts ) ) {
+			$ufg_selected_filter_btn_id = sanitize_text_field( $atts['selected-filter'] );
 		}
-		//get dynamic select filter button id via URL parameter
+
+		// get dynamic select filter button id via URL parameter.
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		if (isset($_GET['selected-filter'])) {
+		if ( isset( $_GET['selected-filter'] ) ) {
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$ufg_selected_filter_btn_id = sanitize_text_field(wp_unslash($_GET['selected-filter']));
-		}
-		
-		$ufg_details = get_option("ufg_details_".$ufg_gallery_id);
-		$ufg_filters = get_option("ufg_filters_".$ufg_gallery_id);
-		$ufg_gallery = get_option("ufg_gallery_".$ufg_gallery_id);
-		$ufg_setting = get_option("ufg_settings_".$ufg_gallery_id);
-
-		if (!is_array($ufg_details)) $ufg_details = array();
-		if (!is_array($ufg_filters)) $ufg_filters = array();
-		if (!is_array($ufg_gallery)) $ufg_gallery = array();
-		if (!is_array($ufg_setting)) $ufg_setting = array();
-
-		// Normalize filters
-		if (function_exists('ufg_normalize_filters_recursive')) {
-			ufg_normalize_filters_recursive($ufg_filters);
-		}
-		if (function_exists('ufg_remove_blank_filters_recursive')) {
-			ufg_remove_blank_filters_recursive($ufg_filters);
+			$ufg_selected_filter_btn_id = sanitize_text_field( wp_unslash( $_GET['selected-filter'] ) );
 		}
 
-		// Merge settings with default settings to prevent undefined key notices
+		$ufg_details = get_option( 'ufg_details_' . $ufg_gallery_id );
+		$ufg_filters = get_option( 'ufg_filters_' . $ufg_gallery_id );
+		$ufg_gallery = get_option( 'ufg_gallery_' . $ufg_gallery_id );
+		$ufg_setting = get_option( 'ufg_settings_' . $ufg_gallery_id );
+
+		if ( ! is_array( $ufg_details ) ) {
+			$ufg_details = array();
+		}
+
+		if ( ! is_array( $ufg_filters ) ) {
+			$ufg_filters = array();
+		}
+
+		if ( ! is_array( $ufg_gallery ) ) {
+			$ufg_gallery = array();
+		}
+
+		if ( ! is_array( $ufg_setting ) ) {
+			$ufg_setting = array();
+		}
+
+		// Normalize filters.
+		if ( function_exists( 'ufg_normalize_filters_recursive' ) ) {
+			ufg_normalize_filters_recursive( $ufg_filters );
+		}
+
+		if ( function_exists( 'ufg_remove_blank_filters_recursive' ) ) {
+			ufg_remove_blank_filters_recursive( $ufg_filters );
+		}
+
+		// Merge settings with default settings to prevent undefined key notices.
 		$default_settings = array(
-			'show_filters' => 1,
-			'show_filters_icon' => 1,
-			'enable_deep_linking' => 0,
-			'show_filters_count' => 1,
-			'show_search_box' => 0,
-			'search_box_placeholder' => 'Type here to search images',
-			'show_all_button' => 1,
-			'all_button_text' => 'All',
-			'all_button_icon' => 'fas fa-filter',
-			'all_button_color' => '#ffffff',
-			'all_button_bg_color' => '#0A85ED',
-			'parent_button_color' => '#4F46E5',
-			'parent_button_bg_color' => '#EEF2FF',
-			'parent_button_hover_color' => '#000000',
-			'parent_active_button_color' => '#FFFFFF',
+			'show_filters'                  => 1,
+			'show_filters_icon'             => 1,
+			'enable_deep_linking'           => 0,
+			'show_filters_count'            => 1,
+			'show_search_box'               => 0,
+			'search_box_placeholder'        => __( 'Type here to search images', 'filter-gallery' ),
+			'show_all_button'               => 1,
+			'all_button_text'               => __( 'All', 'filter-gallery' ),
+			'all_button_icon'               => 'fas fa-filter',
+			'all_button_color'              => '#ffffff',
+			'all_button_bg_color'           => '#0A85ED',
+			'parent_button_color'           => '#4F46E5',
+			'parent_button_bg_color'        => '#EEF2FF',
+			'parent_button_hover_color'     => '#000000',
+			'parent_active_button_color'    => '#FFFFFF',
 			'parent_active_button_bg_color' => '#4F46E5',
-			'parent_filters_heading' => '',
-			'l1_filters_heading' => '',
-			'l1_button_color' => '#4F46E5',
-			'l1_button_bg_color' => '#EEF2FF',
-			'child_filter_effect' => 'show_hide',
-			'active_button_color' => '#FFFFFF',
-			'active_button_bg_color' => '#4F46E5',
-			'l2_button_color' => '#4F46E5',
-			'l2_button_bg_color' => '#EEF2FF',
-			'l3_button_color' => '#4F46E5',
-			'l3_button_bg_color' => '#EEF2FF',
-			'l4_button_color' => '#4F46E5',
-			'l4_button_bg_color' => '#EEF2FF',
-			'columns_desktop' => 4,
-			'columns_tab' => 3,
-			'columns_mobile_landscape' => 3,
-			'columns_mobile_portrait' => 2,
-			'thumbnail_image' => 1,
-			'thumbnail_image_size' => 'full',
-			'thumbnail_border' => 1,
-			'thumbnail_border_thickness' => 1,
-			'thumbnail_border_color' => '#ffffff',
-			'thumbnail_bg_color' => '#222a33',
-			'image_title' => 1,
-			'image_title_font_size' => 18,
-			'image_title_color' => '#FFFFFF',
-			'image_description' => 1,
-			'image_description_font_size' => 14,
-			'image_description_color' => '#FFFFFF',
-			'image_description_text_limit' => 60,
-			'image_hover_effect' => 'border_overlay',
-			'read_more_link_sh' => 0,
-			'read_more_link' => 1,
-			'read_more_button_text' => 'Read More Link',
-			'read_more_button_icon' => 'fas fa-link',
-			'read_more_button_color' => '#ffffff',
-			'read_more_button_bg_color' => '#0080ff',
-			'read_more_button_target' => '_self',
-			'image_sorting' => 5,
-			'image_search' => 1,
-			'lightbox' => 1,
-			'lightbox_title' => 1,
-			'lightbox_description' => 0,
-			'lightbox_numbering' => 0,
-			'custom_css' => '',
-			'load_more' => 'off',
-			'load_limit' => 10,
-			'load_color' => '#0080ff',
-			'load_txt_color' => '#FFFFFF',
-			'load_btn_txt' => 'Load More',
-			'filter_style' => 'buttons',
-			'combine_filter_search' => '0',
-			'filter_padding' => '8px 16px',
-			'filter_margin' => '5px',
-			'filter_padding_type' => 'small',
-			'filter_padding_v' => '8',
-			'filter_padding_h' => '16',
-			'filter_margin_val' => '5',
-			'l1_button_hover_color' => '#059669',
-			'l1_active_button_color' => '#FFFFFF',
-			'l1_active_button_bg_color' => '#059669',
-			'l2_button_hover_color' => '#4F46E5',
-			'l2_active_button_color' => '#FFFFFF',
-			'l2_active_button_bg_color' => '#4F46E5',
-			'l3_button_hover_color' => '#D97706',
-			'l3_active_button_color' => '#FFFFFF',
-			'l3_active_button_bg_color' => '#D97706',
-			'l4_button_hover_color' => '#E11D48',
-			'l4_active_button_color' => '#FFFFFF',
-			'l4_active_button_bg_color' => '#E11D48'
+			'parent_filters_heading'        => '',
+			'l1_filters_heading'            => '',
+			'l1_button_color'               => '#4F46E5',
+			'l1_button_bg_color'            => '#EEF2FF',
+			'child_filter_effect'           => 'show_hide',
+			'active_button_color'           => '#FFFFFF',
+			'active_button_bg_color'        => '#4F46E5',
+			'l2_button_color'               => '#4F46E5',
+			'l2_button_bg_color'            => '#EEF2FF',
+			'l3_button_color'               => '#4F46E5',
+			'l3_button_bg_color'            => '#EEF2FF',
+			'l4_button_color'               => '#4F46E5',
+			'l4_button_bg_color'            => '#EEF2FF',
+			'columns_desktop'               => 4,
+			'columns_tab'                   => 3,
+			'columns_mobile_landscape'      => 3,
+			'columns_mobile_portrait'       => 2,
+			'thumbnail_image'               => 1,
+			'thumbnail_image_size'          => 'full',
+			'thumbnail_border'              => 1,
+			'thumbnail_border_thickness'    => 1,
+			'thumbnail_border_color'        => '#ffffff',
+			'thumbnail_bg_color'            => '#222a33',
+			'image_title'                   => 1,
+			'image_title_font_size'         => 18,
+			'image_title_color'             => '#FFFFFF',
+			'image_description'             => 1,
+			'image_description_font_size'   => 14,
+			'image_description_color'       => '#FFFFFF',
+			'image_description_text_limit'  => 60,
+			'image_hover_effect'            => 'border_overlay',
+			'read_more_link_sh'             => 0,
+			'read_more_link'                => 1,
+			'read_more_button_text'         => __( 'Read More Link', 'filter-gallery' ),
+			'read_more_button_icon'         => 'fas fa-link',
+			'read_more_button_color'        => '#ffffff',
+			'read_more_button_bg_color'     => '#0080ff',
+			'read_more_button_target'       => '_self',
+			'image_sorting'                 => 5,
+			'image_search'                  => 1,
+			'lightbox'                      => 1,
+			'lightbox_title'                => 1,
+			'lightbox_description'          => 0,
+			'lightbox_numbering'            => 0,
+			'custom_css'                    => '',
+			'load_more'                     => 'off',
+			'load_limit'                    => 10,
+			'load_color'                    => '#0080ff',
+			'load_txt_color'                => '#FFFFFF',
+			'load_btn_txt'                  => __( 'Load More', 'filter-gallery' ),
+			'filter_style'                  => 'buttons',
+			'combine_filter_search'         => '0',
+			'filter_padding'                => '8px 16px',
+			'filter_margin'                 => '5px',
+			'filter_padding_type'           => 'small',
+			'filter_padding_v'              => '8',
+			'filter_padding_h'              => '16',
+			'filter_margin_val'             => '5',
+			'l1_button_hover_color'         => '#059669',
+			'l1_active_button_color'        => '#FFFFFF',
+			'l1_active_button_bg_color'     => '#059669',
+			'l2_button_hover_color'         => '#4F46E5',
+			'l2_active_button_color'        => '#FFFFFF',
+			'l2_active_button_bg_color'     => '#4F46E5',
+			'l3_button_hover_color'         => '#D97706',
+			'l3_active_button_color'        => '#FFFFFF',
+			'l3_active_button_bg_color'     => '#D97706',
+			'l4_button_hover_color'         => '#E11D48',
+			'l4_active_button_color'        => '#FFFFFF',
+			'l4_active_button_bg_color'     => '#E11D48',
 		);
-		$ufg_setting = array_merge($default_settings, $ufg_setting);
-		if(empty($ufg_selected_filter_btn_id)) {
-			if(isset($ufg_setting['default_filter']) && $ufg_setting['default_filter'] != '') {
-				if($ufg_setting['default_filter'] == 'none') {
-					$ufg_selected_filter_btn_id = 'none'; 
-				} elseif($ufg_setting['default_filter'] == 'all') {
+		$ufg_setting      = array_merge( $default_settings, $ufg_setting );
+
+		if ( empty( $ufg_selected_filter_btn_id ) ) {
+			if ( isset( $ufg_setting['default_filter'] ) && '' !== $ufg_setting['default_filter'] ) {
+				if ( 'none' === $ufg_setting['default_filter'] ) {
+					$ufg_selected_filter_btn_id = 'none';
+				} elseif ( 'all' === $ufg_setting['default_filter'] ) {
 					$ufg_selected_filter_btn_id = '1evel1-all';
 				} else {
 					$target_class = $ufg_setting['default_filter'];
-					if (!function_exists('ufg_find_filter_level_id')) {
-						function ufg_find_filter_level_id($filters, $target, $level = 1) {
-							if(is_array($filters) || is_object($filters)) {
-								foreach($filters as $f) {
-									if(!isset($f->filterkey)) continue;
-									$f_class = str_replace(" ", "-", strtolower($f->filterkey));
-									if ($f_class === $target) {
-										$prefix = $level == 1 ? "1evel1-" : "level" . $level . "-";
+					if ( ! function_exists( 'ufg_find_filter_level_id' ) ) {
+						/**
+						 * Finds the level-prefixed DOM ID for a filter key within the filter tree.
+						 *
+						 * @param array|object $filters The filter tree (or subtree) to search.
+						 * @param string       $target  The filter class/key to find.
+						 * @param int          $level   Current nesting level (used to build the ID prefix).
+						 * @return string The level-prefixed filter ID, or an empty string if not found.
+						 */
+						function ufg_find_filter_level_id( $filters, $target, $level = 1 ) {
+							if ( is_array( $filters ) || is_object( $filters ) ) {
+								foreach ( $filters as $f ) {
+									if ( ! isset( $f->filterkey ) ) {
+										continue;
+									}
+									$f_class = str_replace( ' ', '-', strtolower( $f->filterkey ) );
+									if ( $f_class === $target ) {
+										$prefix = 1 === $level ? '1evel1-' : 'level' . $level . '-';
 										return $prefix . $f_class;
 									}
-									if (!empty($f->children)) {
-										$res = ufg_find_filter_level_id($f->children, $target, $level + 1);
-										if ($res) return $res;
+									if ( ! empty( $f->children ) ) {
+										$res = ufg_find_filter_level_id( $f->children, $target, $level + 1 );
+										if ( $res ) {
+											return $res;
+										}
 									}
 								}
 							}
-							return "";
+							return '';
 						}
 					}
-					$found_id = ufg_find_filter_level_id($ufg_filters, $target_class);
-					if($found_id) {
+					$found_id = ufg_find_filter_level_id( $ufg_filters, $target_class );
+					if ( $found_id ) {
 						$ufg_selected_filter_btn_id = $found_id;
 					} else {
 						$ufg_selected_filter_btn_id = '1evel1-all';
 					}
 				}
 			} else {
-				$ufg_selected_filter_btn_id = '1evel1-all'; // Default to all if not set
+				$ufg_selected_filter_btn_id = '1evel1-all'; // Default to all if not set.
 			}
 		}
-		//if(isset($ufg_gallery['ufg-filter-image'])) $filter_image = $ufg_gallery['ufg-filter-image']; else  $filter_image = array();
-		if(isset($ufg_gallery['ufg-attachment-id'])) $ufg_total_images = count($ufg_gallery['ufg-attachment-id']); else  $ufg_total_images = '';
-		//$ufg_total_images = count($ufg_gallery['ufg-attachment-id']);
-		 // loading saved settings and shortcode supported settings
-		include_once('setting.php');
-
-		// modifiing fiters array for load more
-		$ufg_modified_array = array();
-
-		//$ufg_selected_array = $ufg_gallery['ufg-image-filters'];
-		$ufg_selected_array = array();
-		foreach($ufg_selected_array as $key1 => $value1){
-			if(is_array($value1) == true){
-				foreach($value1 as $key2 => $value2) {
-					$value2;
-					if(array_key_exists($value2, $ufg_modified_array)){
-						// do nothing
-					} else {
-						$ufg_modified_array[$value2] = array();
-					}
-				}
-			}
+		if ( isset( $ufg_gallery['ufg-attachment-id'] ) ) {
+			$ufg_total_images = count( $ufg_gallery['ufg-attachment-id'] );
+		} else {
+			$ufg_total_images = '';
 		}
+		// loading saved settings and shortcode supported settings.
+		include_once 'setting.php';
 
-		foreach($ufg_selected_array as $key1 => $value1){
-			if(is_array($value1) == true){
-				foreach($value1 as $key2 => $value2) {
-					$value2;
-					//check filter key exist in modified array
-					if(array_key_exists($value2, $ufg_modified_array)){
-						array_push( $ufg_modified_array[$value2], $key1 );
-					} else {
-						// do nothing
-					}
-				}
-			}
-		}
-		$filter_image = $ufg_modified_array;
-		
-	
-		// print filters
-		include_once('filters.php');
-		
-		$ufg_setting_f = get_option("ufg_settings_".$ufg_gallery_id); // separate load for filters scope
-		
-		$j = 0;
-		$new_array = array();
+		// Default filter/image map for load more; overwritten below when the gallery has image filters.
+		$filter_image = array();
+
+		// print filters.
+		include_once 'filters.php';
+
+		$ufg_setting_f = get_option( 'ufg_settings_' . $ufg_gallery_id ); // separate load for filters scope.
+
+		$j               = 0;
+		$new_array       = array();
 		$new_array_final = array();
-		if (is_array($ufg_gallery) && array_key_exists('ufg-image-filters', $ufg_gallery)) {
-			foreach($ufg_gallery['ufg-image-filters'] as $key => $array) {
-				if (is_array($array)) {
-					foreach($array as $key2  => $val) {
-						//array_push($new_array[], $val);
-						$new_array[$val][$j] = $key;
+
+		if ( is_array( $ufg_gallery ) && array_key_exists( 'ufg-image-filters', $ufg_gallery ) ) {
+			foreach ( $ufg_gallery['ufg-image-filters'] as $key => $array ) {
+				if ( is_array( $array ) ) {
+					foreach ( $array as $key2  => $val ) {
+						$new_array[ $val ][ $j ] = $key;
 					}
 				}
-				$j++;
+				++$j;
 			}
-			foreach($new_array as $new_key => $new_val) {
-				$new_re_in = array_values($new_val);
-				$new_array_final[$new_key] = $new_re_in;
+			foreach ( $new_array as $new_key => $new_val ) {
+				$new_re_in                   = array_values( $new_val );
+				$new_array_final[ $new_key ] = $new_re_in;
 			}
 			$filter_image = $new_array_final;
-			
-			if (!function_exists('ufg_expand_filter_images_hierarchy')) {
-				function ufg_expand_filter_images_hierarchy($filters, &$filter_images) {
+
+			if ( ! function_exists( 'ufg_expand_filter_images_hierarchy' ) ) {
+				/**
+				 * Recursively rolls up each parent filter's image list to include its children's images.
+				 *
+				 * @param array $filters       The filter tree (or subtree) to process.
+				 * @param array $filter_images Filter key => image IDs, populated by reference.
+				 * @return array Unique image IDs assigned within this subtree.
+				 */
+				function ufg_expand_filter_images_hierarchy( $filters, &$filter_images ) {
 					$all_images = array();
-					if (is_array($filters)) {
-						foreach ($filters as $f) {
-							if (!isset($f->filterkey)) continue;
-							$key = str_replace(" ", "-", strtolower(trim($f->filterkey)));
-							
-							$my_images = isset($filter_images[$key]) ? $filter_images[$key] : array();
-							
-							if (isset($f->children) && is_array($f->children)) {
-								ufg_expand_filter_images_hierarchy($f->children, $filter_images);
+
+					if ( is_array( $filters ) ) {
+						foreach ( $filters as $f ) {
+							if ( ! isset( $f->filterkey ) ) {
+								continue;
 							}
-							
-							$my_images = array_values(array_unique($my_images));
-							if (!empty($my_images)) {
-								$filter_images[$key] = $my_images;
+							$key = str_replace( ' ', '-', strtolower( trim( $f->filterkey ) ) );
+
+							$my_images = isset( $filter_images[ $key ] ) ? $filter_images[ $key ] : array();
+
+							if ( isset( $f->children ) && is_array( $f->children ) ) {
+								ufg_expand_filter_images_hierarchy( $f->children, $filter_images );
 							}
-							$all_images = array_merge($all_images, $my_images);
+
+							$my_images = array_values( array_unique( $my_images ) );
+							if ( ! empty( $my_images ) ) {
+								$filter_images[ $key ] = $my_images;
+							}
+							$all_images = array_merge( $all_images, $my_images );
 						}
 					}
-					return array_unique($all_images);
+					return array_unique( $all_images );
 				}
 			}
-			if (!empty($ufg_filters)) {
-				ufg_expand_filter_images_hierarchy($ufg_filters, $filter_image);
+			if ( ! empty( $ufg_filters ) ) {
+				ufg_expand_filter_images_hierarchy( $ufg_filters, $filter_image );
 			}
-		}		
+		}
 
-		include_once('gallery.php');
-		if($ufg_lightbox_numbering) $ufg_lightbox_numbering = "true"; else $ufg_lightbox_numbering = "false";
-		
+		include_once 'gallery.php';
+
+		if ( $ufg_lightbox_numbering ) {
+			$ufg_lightbox_numbering = 'true';
+		} else {
+			$ufg_lightbox_numbering = 'false';
+		}
+
 		// load required resource
-		//CSS and JS
+		// CSS and JS.
 		wp_enqueue_script( 'imagesloaded' );
-		wp_enqueue_script( 'ufg-isotope-js', plugins_url( '/admin/assets/js/isotope.pkgd.min.js' , __FILE__ ), array( 'jquery', 'imagesloaded' ), '1.0', true );
-		wp_enqueue_style( 'ufg-frontend-css', plugins_url( '/admin/assets/css/ufg-frontend.css' , __FILE__ ), array(), UFG_VERSION );
-		wp_enqueue_style( 'ufg-lightbox-css', plugins_url( '/admin/assets/lightbox/lokesh/css/lightbox.css' , __FILE__ ), array(), '1.0' );
-		
-		wp_enqueue_style( 'ufg-fontawesome-css', plugins_url( '/admin/assets/fontawesome-free-6.5.2-web/css/all.min.css' , __FILE__ ), array(), '6.5.2' );
-		wp_enqueue_script( 'ufg-custom-js', plugins_url( '/admin/assets/js/ufg-custom.js' , __FILE__ ), array( 'jquery', 'imagesloaded', 'ufg-isotope-js' ), UFG_VERSION, true );
-		wp_enqueue_script( 'ufg-lightbox-js', plugins_url( '/admin/assets/lightbox/lokesh/js/lightbox.js' , __FILE__ ), array( 'jquery' ), '1.0', true );
-		wp_add_inline_script( 'ufg-custom-js', 'const UFGJS = ' . wp_json_encode( array(
-		    'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-		    'LoadMoreNonce' => wp_create_nonce( 'ufg_load_more_nonce' ),
-		    'GalleryId' => $ufg_gallery_id,
-		    'FiterImage' => $filter_image,
-		    'TotalImages' => $ufg_total_images,
-		    'LoadBtnText' => $load_btn_txt,
-		    'LoadMore' => 'off',
-		    'LoadLimit' => $load_limit,
-		    'ChildFilterEffect' => $ufg_child_filter_effect,
-		    'Lightbox' => ($ufg_lightbox === 'on' || $ufg_lightbox == 1 || $ufg_lightbox === '1' || $ufg_lightbox === true),
-		    'LightboxNumbering' => false,
-		    'LightboxTitle' => ($ufg_lightbox_title === "on" || $ufg_lightbox_title === "1" || $ufg_lightbox_title == 1 || $ufg_lightbox_title === true),
-		    'LightboxDescription' => false,
-		    'SelectedFltrBtnId' => $ufg_selected_filter_btn_id,
-		    'EnableDeepLinking' => false,
-		)), 'before' );
+		wp_enqueue_script( 'ufg-isotope-js', plugins_url( '/admin/assets/js/isotope.pkgd.min.js', __FILE__ ), array( 'jquery', 'imagesloaded' ), '1.0', true );
+		wp_enqueue_style( 'ufg-frontend-css', plugins_url( '/admin/assets/css/ufg-frontend.css', __FILE__ ), array(), UFG_VERSION );
+		wp_enqueue_style( 'ufg-lightbox-css', plugins_url( '/admin/assets/lightbox/lokesh/css/lightbox.css', __FILE__ ), array(), '1.0' );
+
+		wp_enqueue_style( 'ufg-fontawesome-css', plugins_url( '/admin/assets/fontawesome-free-6.5.2-web/css/all.min.css', __FILE__ ), array(), '6.5.2' );
+		wp_enqueue_script( 'ufg-custom-js', plugins_url( '/admin/assets/js/ufg-custom.js', __FILE__ ), array( 'jquery', 'imagesloaded', 'ufg-isotope-js' ), UFG_VERSION, true );
+		wp_enqueue_script( 'ufg-lightbox-js', plugins_url( '/admin/assets/lightbox/lokesh/js/lightbox.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+		wp_add_inline_script(
+			'ufg-custom-js',
+			'const UFGJS = ' . wp_json_encode(
+				array(
+					'ajaxUrl'             => admin_url( 'admin-ajax.php' ),
+					'LoadMoreNonce'       => wp_create_nonce( 'ufg_load_more_nonce' ),
+					'GalleryId'           => $ufg_gallery_id,
+					'FiterImage'          => $filter_image,
+					'TotalImages'         => $ufg_total_images,
+					'LoadBtnText'         => $load_btn_txt,
+					'LoadMore'            => 'off',
+					'LoadLimit'           => $load_limit,
+					'ChildFilterEffect'   => $ufg_child_filter_effect,
+					'Lightbox'            => ( 'on' === $ufg_lightbox || 1 === $ufg_lightbox || '1' === $ufg_lightbox || true === $ufg_lightbox ),
+					'LightboxNumbering'   => false,
+					'LightboxTitle'       => ( 'on' === $ufg_lightbox_title || '1' === $ufg_lightbox_title || 1 === $ufg_lightbox_title || true === $ufg_lightbox_title ),
+					'LightboxDescription' => false,
+					'SelectedFltrBtnId'   => $ufg_selected_filter_btn_id,
+					'EnableDeepLinking'   => false,
+				)
+			),
+			'before'
+		);
 		?>
 		<!-- printing filters start-->
-			<div class="fg-content-wrapper" version="<?php echo esc_attr($ufg_last_version); ?>">
+			<div class="fg-content-wrapper" version="<?php echo esc_attr( $ufg_last_version ); ?>">
 			<?php
-			$ufg_has_images = !empty($ufg_gallery['ufg-attachment-id']);
-			$ufg_has_filters = !empty($ufg_filters);
+			$ufg_has_images          = ! empty( $ufg_gallery['ufg-attachment-id'] );
+			$ufg_has_filters         = ! empty( $ufg_filters );
 			$ufg_images_have_filters = false;
-			if ($ufg_has_images && !empty($ufg_gallery['ufg-image-filters']) && is_array($ufg_gallery['ufg-image-filters'])) {
-				foreach ($ufg_gallery['ufg-image-filters'] as $img_id => $img_fltrs) {
-					if (!empty($img_fltrs) && is_array($img_fltrs)) {
-						foreach ($img_fltrs as $f_val) {
-							if (trim($f_val) !== '') {
+
+			if ( $ufg_has_images && ! empty( $ufg_gallery['ufg-image-filters'] ) && is_array( $ufg_gallery['ufg-image-filters'] ) ) {
+				foreach ( $ufg_gallery['ufg-image-filters'] as $img_id => $img_fltrs ) {
+					if ( ! empty( $img_fltrs ) && is_array( $img_fltrs ) ) {
+						foreach ( $img_fltrs as $f_val ) {
+							if ( trim( $f_val ) !== '' ) {
 								$ufg_images_have_filters = true;
 								break 2;
 							}
@@ -334,19 +374,19 @@ function ufg_shortcode_callback($atts){
 				}
 			}
 
-			if (current_user_can('manage_options')) {
-				if (!$ufg_has_images || !$ufg_has_filters) {
-					$ufg_manage_link = admin_url('admin.php?page=ufg-manage-gallery&id=' . $ufg_gallery_id);
+			if ( current_user_can( 'manage_options' ) ) {
+				if ( ! $ufg_has_images || ! $ufg_has_filters ) {
+					$ufg_manage_link = admin_url( 'admin.php?page=ufg-manage-gallery&id=' . $ufg_gallery_id );
 					?>
 					<div class="ufg-admin-notice-box">
 						<div class="ufg-notice-flex">
 							<i class="fas fa-exclamation-triangle ufg-notice-icon"></i>
 							<div class="ufg-notice-content">
-								<strong class="ufg-notice-title"><?php esc_html_e('Filter Gallery Configuration Notice', 'filter-gallery'); ?></strong>
-								<span class="ufg-notice-text"><?php esc_html_e('please add images to gallery and assign filter on it for proper working.', 'filter-gallery'); ?></span>
+								<strong class="ufg-notice-title"><?php esc_html_e( 'Filter Gallery Configuration Notice', 'filter-gallery' ); ?></strong>
+								<span class="ufg-notice-text"><?php esc_html_e( 'please add images to gallery and assign filter on it for proper working.', 'filter-gallery' ); ?></span>
 								<div class="ufg-notice-actions">
-									<a href="<?php echo esc_url($ufg_manage_link); ?>" class="ufg-notice-btn">
-										<?php esc_html_e('Go to Admin Dashboard to Redetect / Configure', 'filter-gallery'); ?>
+									<a href="<?php echo esc_url( $ufg_manage_link ); ?>" class="ufg-notice-btn">
+										<?php esc_html_e( 'Go to Admin Dashboard to Redetect / Configure', 'filter-gallery' ); ?>
 									</a>
 								</div>
 							</div>
@@ -354,32 +394,31 @@ function ufg_shortcode_callback($atts){
 					</div>
 					<?php
 				}
-			} else {
-				if (!$ufg_has_images) {
-					?>
+			} elseif ( ! $ufg_has_images ) {
+				?>
 					<div class="ufg-visitor-notice-box">
 						<i class="far fa-images ufg-visitor-icon"></i>
-						<span class="ufg-visitor-text"><?php esc_html_e('No images added into gallery.', 'filter-gallery'); ?></span>
+						<span class="ufg-visitor-text"><?php esc_html_e( 'No images added into gallery.', 'filter-gallery' ); ?></span>
 					</div>
 					<?php
-				}
+
 			}
 			?>
-			<?php 
-			$show_search_box = (isset($ufg_setting['show_search_box']) && $ufg_setting['show_search_box'] == '1');
+			<?php
+			$show_search_box           = ( isset( $ufg_setting['show_search_box'] ) && '1' === $ufg_setting['show_search_box'] );
 			$ufg_combine_filter_search = '0';
 			?>
-			<?php if($show_search_box) { ?>
+			<?php if ( $show_search_box ) { ?>
 			<div class="ufg-row">
 				<div class="ufg-search-container ufg-uncombined-search">
-					<input type="text" class="ufg-search-input" placeholder="<?php echo esc_attr(isset($ufg_setting['search_box_placeholder']) ? $ufg_setting['search_box_placeholder'] : 'Type here to search images'); ?>" data-gallery-id="<?php echo esc_attr($ufg_gallery_id); ?>">
+					<input type="text" class="ufg-search-input" placeholder="<?php echo esc_attr( isset( $ufg_setting['search_box_placeholder'] ) ? $ufg_setting['search_box_placeholder'] : __( 'Type here to search images', 'filter-gallery' ) ); ?>" data-gallery-id="<?php echo esc_attr( $ufg_gallery_id ); ?>">
 				</div>
 			</div>
 			<?php } ?>
-			<?php if($ufg_show_filters) { ?>
+			<?php if ( $ufg_show_filters ) { ?>
 			<div class="ufg-row">
-				<div class="ufg-filter-container ufg-uncombined-filter ufg-filters-<?php echo esc_attr($ufg_gallery_id); ?> ufg-filter-style-<?php echo esc_attr($ufg_filter_style); ?>">
-					<?php ufg_filters($ufg_gallery_id, $ufg_filters, $ufg_gallery, $atts); ?>
+				<div class="ufg-filter-container ufg-uncombined-filter ufg-filters-<?php echo esc_attr( $ufg_gallery_id ); ?> ufg-filter-style-<?php echo esc_attr( $ufg_filter_style ); ?>">
+					<?php ufg_filters( $ufg_gallery_id, $ufg_filters, $ufg_gallery, $atts ); ?>
 				</div>
 			</div>
 			<?php } ?>
@@ -392,7 +431,7 @@ function ufg_shortcode_callback($atts){
 			<input id="ufg_last_clicked_filter_parent_id" name="ufg_last_clicked_filter_parent_id" value="" class="ufg-hidden" placeholder="Last Parent Filter">
 			
 			<!-- printing gallery start-->
-			<div class="ufg-row ufg-gallery-container ufg-gallery-<?php echo esc_attr($ufg_gallery_id); ?>">
+			<div class="ufg-row ufg-gallery-container ufg-gallery-<?php echo esc_attr( $ufg_gallery_id ); ?>">
 				<div class="ufg-gallery-loader">
 					<div class="ufg-loader-card">
 						<div class="ufg-loader-spinner-box">
@@ -405,11 +444,11 @@ function ufg_shortcode_callback($atts){
 								</svg>
 							</div>
 						</div>
-						<h3 class="ufg-loader-title"><?php esc_html_e('Loading Filter Gallery...', 'filter-gallery'); ?></h3>
-						<p class="ufg-loader-subtitle"><?php esc_html_e('Please wait while the gallery is initializing', 'filter-gallery'); ?></p>
+						<h3 class="ufg-loader-title"><?php esc_html_e( 'Loading Filter Gallery...', 'filter-gallery' ); ?></h3>
+						<p class="ufg-loader-subtitle"><?php esc_html_e( 'Please wait while the gallery is initializing', 'filter-gallery' ); ?></p>
 					</div>
 				</div>
-				<?php ufg_gallery($ufg_gallery_id, $ufg_gallery, $ufg_images_per_page, $atts); ?>
+				<?php ufg_gallery( $ufg_gallery_id, $ufg_gallery, $ufg_images_per_page, $atts ); ?>
 			</div>
 			<!-- printing gallery end-->
 		</div>
@@ -417,9 +456,9 @@ function ufg_shortcode_callback($atts){
 		<style>
 			/* Load more color overrides */
 			.fg-load-more button {
-				color: <?php echo esc_html($load_txt_color); ?> !important;
-				background-color: <?php echo esc_html($load_color); ?> !important;
-				border-color: <?php echo esc_html($load_color); ?> !important;
+				color: <?php echo esc_html( $load_txt_color ); ?> !important;
+				background-color: <?php echo esc_html( $load_color ); ?> !important;
+				border-color: <?php echo esc_html( $load_color ); ?> !important;
 			}
 			
 			/* Combined Row CSS */
@@ -453,9 +492,9 @@ function ufg_shortcode_callback($atts){
 				width: 100% !important;
 				max-width: 100% !important;
 				box-sizing: border-box !important;
-				padding: <?php echo esc_html($ufg_filter_padding); ?> !important;
-				margin-top: <?php echo esc_html($ufg_filter_margin); ?> !important;
-				margin-bottom: <?php echo esc_html($ufg_filter_margin); ?> !important;
+				padding: <?php echo esc_html( $ufg_filter_padding ); ?> !important;
+				margin-top: <?php echo esc_html( $ufg_filter_margin ); ?> !important;
+				margin-bottom: <?php echo esc_html( $ufg_filter_margin ); ?> !important;
 				margin-left: 0 !important;
 				margin-right: 0 !important;
 				line-height: 1.5 !important;
@@ -474,9 +513,9 @@ function ufg_shortcode_callback($atts){
 				width: 100% !important;
 				max-width: 100% !important;
 				box-sizing: border-box !important;
-				padding: <?php echo esc_html($ufg_filter_padding); ?> !important;
-				margin-top: <?php echo esc_html($ufg_filter_margin); ?> !important;
-				margin-bottom: <?php echo esc_html($ufg_filter_margin); ?> !important;
+				padding: <?php echo esc_html( $ufg_filter_padding ); ?> !important;
+				margin-top: <?php echo esc_html( $ufg_filter_margin ); ?> !important;
+				margin-bottom: <?php echo esc_html( $ufg_filter_margin ); ?> !important;
 				line-height: 1.5 !important;
 				font-size: inherit !important;
 				height: auto !important;
@@ -500,10 +539,10 @@ function ufg_shortcode_callback($atts){
 				box-sizing: border-box !important;
 			}
 			.fg-content-wrapper select.ufg-filter-dropdown {
-				padding: <?php echo esc_html($ufg_filter_padding); ?> !important;
+				padding: <?php echo esc_html( $ufg_filter_padding ); ?> !important;
 				padding-right: 40px !important;
-				margin-top: <?php echo esc_html($ufg_filter_margin); ?> !important;
-				margin-bottom: <?php echo esc_html($ufg_filter_margin); ?> !important;
+				margin-top: <?php echo esc_html( $ufg_filter_margin ); ?> !important;
+				margin-bottom: <?php echo esc_html( $ufg_filter_margin ); ?> !important;
 				margin-left: 0 !important;
 				margin-right: 0 !important;
 				line-height: 1.5 !important;
@@ -532,56 +571,56 @@ function ufg_shortcode_callback($atts){
 
 			/* Level-by-Level Custom Colors for Dropdown Options */
 			.fg-content-wrapper select.ufg-filter-dropdown option.ufg-opt-all {
-				color: <?php echo esc_html($ufg_all_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_all_button_bg_color); ?> !important;
+				color: <?php echo esc_html( $ufg_all_button_color ); ?> !important;
+				background-color: <?php echo esc_html( $ufg_all_button_bg_color ); ?> !important;
 			}
 			.fg-content-wrapper select.ufg-filter-dropdown option.ufg-opt-parent {
-				color: <?php echo esc_html($ufg_parent_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_parent_button_bg_color); ?> !important;
+				color: <?php echo esc_html( $ufg_parent_button_color ); ?> !important;
+				background-color: <?php echo esc_html( $ufg_parent_button_bg_color ); ?> !important;
 			}
 
 			/* filters CSS and Custom Spacings */
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> button.filters {
-				<?php if(!empty($ufg_filter_padding)) { ?>
-				padding: <?php echo esc_html($ufg_filter_padding); ?> !important;
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> button.filters {
+				<?php if ( ! empty( $ufg_filter_padding ) ) { ?>
+				padding: <?php echo esc_html( $ufg_filter_padding ); ?> !important;
 				<?php } ?>
-				<?php if(!empty($ufg_filter_margin)) { ?>
-				margin: <?php echo esc_html($ufg_filter_margin); ?> !important;
+				<?php if ( ! empty( $ufg_filter_margin ) ) { ?>
+				margin: <?php echo esc_html( $ufg_filter_margin ); ?> !important;
 				<?php } ?>
 			}
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-filter-group-inner > button:first-of-type {
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-filter-group-inner > button:first-of-type {
 				margin-left: 0 !important;
 			}
 			/* All Button Style */
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-all-filter-button {
-				color: <?php echo esc_html($ufg_parent_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_parent_button_bg_color); ?> !important;
-				border-color: <?php echo esc_html($ufg_parent_button_bg_color); ?> !important;
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-all-filter-button {
+				color: <?php echo esc_html( $ufg_parent_button_color ); ?> !important;
+				background-color: <?php echo esc_html( $ufg_parent_button_bg_color ); ?> !important;
+				border-color: <?php echo esc_html( $ufg_parent_button_bg_color ); ?> !important;
 			}
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-all-filter-button:hover {
-				color: <?php echo esc_html($parent_button_hover_color); ?> !important;
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-all-filter-button:hover {
+				color: <?php echo esc_html( $parent_button_hover_color ); ?> !important;
 			}
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-all-filter-button.active-filter,
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-all-filter-button.active {
-				color: <?php echo esc_html(!empty($parent_active_button_color) ? $parent_active_button_color : $ufg_all_button_color); ?> !important;
-				background-color: <?php echo esc_html(!empty($parent_active_button_bg_color) ? $parent_active_button_bg_color : $ufg_all_button_bg_color); ?> !important;
-				border-color: <?php echo esc_html(!empty($parent_active_button_bg_color) ? $parent_active_button_bg_color : $ufg_all_button_bg_color); ?> !important;
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-all-filter-button.active-filter,
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-all-filter-button.active {
+				color: <?php echo esc_html( ! empty( $parent_active_button_color ) ? $parent_active_button_color : $ufg_all_button_color ); ?> !important;
+				background-color: <?php echo esc_html( ! empty( $parent_active_button_bg_color ) ? $parent_active_button_bg_color : $ufg_all_button_bg_color ); ?> !important;
+				border-color: <?php echo esc_html( ! empty( $parent_active_button_bg_color ) ? $parent_active_button_bg_color : $ufg_all_button_bg_color ); ?> !important;
 			}
 			
 			/* Level 1 (Parent) */
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-parent-filter-button {
-				color: <?php echo esc_html($ufg_parent_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_parent_button_bg_color); ?> !important;
-				border-color: <?php echo esc_html($ufg_parent_button_bg_color); ?> !important;
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-parent-filter-button {
+				color: <?php echo esc_html( $ufg_parent_button_color ); ?> !important;
+				background-color: <?php echo esc_html( $ufg_parent_button_bg_color ); ?> !important;
+				border-color: <?php echo esc_html( $ufg_parent_button_bg_color ); ?> !important;
 			}
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-parent-filter-button:hover {
-				color: <?php echo esc_html($parent_button_hover_color); ?> !important;
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-parent-filter-button:hover {
+				color: <?php echo esc_html( $parent_button_hover_color ); ?> !important;
 			}
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-parent-filter-button.active-filter,
-			.ufg-filters-<?php echo esc_html($ufg_gallery_id); ?> .ufg-parent-filter-button.active {
-				color: <?php echo esc_html($parent_active_button_color); ?> !important;
-				background-color: <?php echo esc_html($parent_active_button_bg_color); ?> !important;
-				border-color: <?php echo esc_html($parent_active_button_bg_color); ?> !important;
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-parent-filter-button.active-filter,
+			.ufg-filters-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-parent-filter-button.active {
+				color: <?php echo esc_html( $parent_active_button_color ); ?> !important;
+				background-color: <?php echo esc_html( $parent_active_button_bg_color ); ?> !important;
+				border-color: <?php echo esc_html( $parent_active_button_bg_color ); ?> !important;
 			}
 
 			/* Dropdown Select Style */
@@ -642,7 +681,7 @@ function ufg_shortcode_callback($atts){
 			}
 			
 			.ufg-grid-sizer, .ufg-thumbnail {
-				width: calc( (100% / (12/<?php echo intval($ufg_columns_mobile_portrait); ?>)) - 1px ) !important;
+				width: calc( (100% / (12/<?php echo intval( $ufg_columns_mobile_portrait ); ?>)) - 1px ) !important;
 				max-width: none !important;
 				box-sizing: border-box !important;
 				margin: 0 !important;
@@ -650,17 +689,17 @@ function ufg_shortcode_callback($atts){
 			}
 
 			@media (min-width: 576px) {
-				.ufg-grid-sizer, .ufg-thumbnail { width: calc( (100% / (12/<?php echo intval($ufg_columns_mobile_landscape); ?>)) - 1px ) !important; }
+				.ufg-grid-sizer, .ufg-thumbnail { width: calc( (100% / (12/<?php echo intval( $ufg_columns_mobile_landscape ); ?>)) - 1px ) !important; }
 			}
 			@media (min-width: 768px) {
-				.ufg-grid-sizer, .ufg-thumbnail { width: calc( (100% / (12/<?php echo intval($ufg_columns_tab); ?>)) - 1px ) !important; }
+				.ufg-grid-sizer, .ufg-thumbnail { width: calc( (100% / (12/<?php echo intval( $ufg_columns_tab ); ?>)) - 1px ) !important; }
 			}
 			@media (min-width: 992px) {
-				.ufg-grid-sizer, .ufg-thumbnail { width: calc( (100% / (12/<?php echo intval($ufg_columns_desktop); ?>)) - 1px ) !important; }
+				.ufg-grid-sizer, .ufg-thumbnail { width: calc( (100% / (12/<?php echo intval( $ufg_columns_desktop ); ?>)) - 1px ) !important; }
 			}
 
 			/* gallery-specific overrides */
-			<?php if($ufg_image_hover_effect == 'border_overlay') {  ?>
+			<?php if ( 'border_overlay' === $ufg_image_hover_effect ) { ?>
 			.ufg-thumbnail .border-expand-one, .ufg-thumbnail .border-expand-two {
 				position: absolute;
 				top: 30px;
@@ -719,7 +758,7 @@ function ufg_shortcode_callback($atts){
 			}
 			<?php } ?>
 
-			<?php if($ufg_image_hover_effect == 'border_overlay') {  ?>
+			<?php if ( 'border_overlay' === $ufg_image_hover_effect ) { ?>
 			/* The Transformation */
 			.ufg-thumbnail:hover img {
 				transform: scale(1.1);
@@ -727,29 +766,29 @@ function ufg_shortcode_callback($atts){
 			}
 			<?php } ?>
 
-			.ufg-gallery-<?php echo esc_html($ufg_gallery_id); ?> .ufg-thumbnail-border {
-				background-color: <?php echo esc_html($ufg_thumbnail_bg_color); ?> !important;
-				<?php if($ufg_thumbnail_border) { ?>
-				border: <?php echo intval($ufg_thumbnail_border_thickness); ?>px solid <?php echo esc_html($ufg_thumbnail_border_color); ?> !important;
+			.ufg-gallery-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-thumbnail-border {
+				background-color: <?php echo esc_html( $ufg_thumbnail_bg_color ); ?> !important;
+				<?php if ( $ufg_thumbnail_border ) { ?>
+				border: <?php echo intval( $ufg_thumbnail_border_thickness ); ?>px solid <?php echo esc_html( $ufg_thumbnail_border_color ); ?> !important;
 				<?php } ?>
 				border-radius: 0.25rem !important;
 			}
-			.ufg-gallery-<?php echo esc_html($ufg_gallery_id); ?> .ufg-image-title {
-				font-size: <?php echo intval($ufg_image_title_font_size); ?>px !important;
+			.ufg-gallery-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-image-title {
+				font-size: <?php echo intval( $ufg_image_title_font_size ); ?>px !important;
 				font-weight: bold !important;
-				color: <?php echo esc_html($ufg_image_title_color); ?> !important;
+				color: <?php echo esc_html( $ufg_image_title_color ); ?> !important;
 			}
-			.ufg-gallery-<?php echo esc_html($ufg_gallery_id); ?> .ufg-image-description {
-				font-size: <?php echo intval($ufg_image_description_font_size); ?>px !important;
-				color: <?php echo esc_html($ufg_image_description_color); ?> !important;
+			.ufg-gallery-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-image-description {
+				font-size: <?php echo intval( $ufg_image_description_font_size ); ?>px !important;
+				color: <?php echo esc_html( $ufg_image_description_color ); ?> !important;
 			}
-			.ufg-gallery-<?php echo esc_html($ufg_gallery_id); ?> .ufg-read-more-button {
-				color: <?php echo esc_html($ufg_read_more_button_color); ?> !important;
-				background-color: <?php echo esc_html($ufg_read_more_button_bg_color); ?> !important;
+			.ufg-gallery-<?php echo esc_html( $ufg_gallery_id ); ?> .ufg-read-more-button {
+				color: <?php echo esc_html( $ufg_read_more_button_color ); ?> !important;
+				background-color: <?php echo esc_html( $ufg_read_more_button_bg_color ); ?> !important;
 			}
 			/* =======================================================
-			   Gallery Loading Overlay & Spinner styles
-			   ======================================================= */
+				Gallery Loading Overlay & Spinner styles
+				======================================================= */
 			.fg-content-wrapper .ufg-gallery-container {
 				position: relative !important;
 				min-height: 280px !important;
@@ -836,9 +875,8 @@ function ufg_shortcode_callback($atts){
 			}
 		</style>
 		<?php
-		//require('filter-ajax.php');
 	} else {
-		echo "<h4>Error! invalid shortcode.</h4>";
+		echo '<h4>Error! invalid shortcode.</h4>';
 	}
 	return ob_get_clean();
 }
