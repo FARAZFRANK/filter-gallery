@@ -1,9 +1,15 @@
 <?php
-if (!defined('ABSPATH')) {
+/**
+ * Import/Export galleries admin page.
+ *
+ * @package Filter_Gallery
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-$ufg_loader_title = __('Loading Import / Export Dashboard...', 'filter-gallery');
-$ufg_loader_subtitle = __('Please wait while settings configurations load', 'filter-gallery');
+$ufg_loader_title    = __( 'Loading Import / Export Dashboard...', 'filter-gallery' );
+$ufg_loader_subtitle = __( 'Please wait while settings configurations load', 'filter-gallery' );
 require_once 'loader.php';
 ?>
 <div class="wrap ufg-docs-page" style="margin: 32px 20px 0 10px;">
@@ -148,13 +154,13 @@ require_once 'loader.php';
 					<span class="dashicons dashicons-update" style="font-size: 32px; width: 32px; height: 32px; transform: rotate(90deg);"></span>
 				</div>
 				<div>
-					<h1 class="font-black text-gray-900 tracking-tight" style="font-size: 42px; margin: 0; line-height: 1;">Import / Export <span style="font-size: 14px; background: #2563eb; color: white; padding: 4px 8px; border-radius: 6px; vertical-align: middle; margin-left: 10px;">v<?php echo esc_html(UFG_VERSION); ?></span></h1>
+					<h1 class="font-black text-gray-900 tracking-tight" style="font-size: 42px; margin: 0; line-height: 1;">Import / Export <span style="font-size: 14px; background: #2563eb; color: white; padding: 4px 8px; border-radius: 6px; vertical-align: middle; margin-left: 10px;">v<?php echo esc_html( UFG_VERSION ); ?></span></h1>
 					<p class="text-gray-600 font-medium" style="margin-top: 8px; font-size: 16px;">Transfer your filterable galleries seamlessly between WordPress sites.</p>
 				</div>
 			</div>
 			
 			<div class="flex items-center gap-4 flex-wrap">
-				<a href="<?php echo esc_url(admin_url('admin.php?page=filter-gallery-pro')); ?>" class="no-underline ufg-btn-primary" style="background: #1a202c; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+				<a href="<?php echo esc_url( admin_url( 'admin.php?page=filter-gallery-pro' ) ); ?>" class="no-underline ufg-btn-primary" style="background: #1a202c; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
 					Back to Dashboard
 				</a>
 			</div>
@@ -169,25 +175,25 @@ require_once 'loader.php';
 				<div class="ufg-ie-gallery-list" id="ufg-export-gallery-list">
 					<?php
 					global $wpdb;
-					$ufg_gallery_key = "ufg_gallery_";
+					$ufg_gallery_key = 'ufg_gallery_';
 					// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- direct query is required here to scan for option patterns for gallery export
 					$ufg_all_galleries = $wpdb->get_results(
 						$wpdb->prepare(
 							"SELECT option_name FROM `{$wpdb->prefix}options` WHERE `option_name` LIKE %s ORDER BY option_id ASC",
-							'%' . $wpdb->esc_like($ufg_gallery_key) . '%'
+							'%' . $wpdb->esc_like( $ufg_gallery_key ) . '%'
 						)
 					);
-					if (!empty($ufg_all_galleries)) {
+					if ( ! empty( $ufg_all_galleries ) ) {
 						echo '<label class="ufg-ie-select-all"><input type="checkbox" id="ufg-export-select-all"> Select All</label>';
-						foreach ($ufg_all_galleries as $gallery) {
-							$option_name = $gallery->option_name;
-							$underscore_pos = strrpos($option_name, '_');
-							$gallery_id = substr($option_name, ($underscore_pos + 1));
-							$details = get_option("ufg_details_" . $gallery_id);
-							$gallery_name = isset($details['gallery_name']) ? $details['gallery_name'] : 'Gallery #' . $gallery_id;
+						foreach ( $ufg_all_galleries as $gallery ) {
+							$option_name    = $gallery->option_name;
+							$underscore_pos = strrpos( $option_name, '_' );
+							$gallery_id     = substr( $option_name, ( $underscore_pos + 1 ) );
+							$details        = get_option( 'ufg_details_' . $gallery_id );
+							$gallery_name   = isset( $details['gallery_name'] ) ? $details['gallery_name'] : 'Gallery #' . $gallery_id;
 							echo '<label class="ufg-ie-gallery-item">';
-							echo '<input type="checkbox" name="ufg_export_ids[]" value="' . intval($gallery_id) . '"> ';
-							echo '<span>' . esc_html($gallery_name) . ' <code>[ufg id="' . intval($gallery_id) . '"]</code></span>';
+							echo '<input type="checkbox" name="ufg_export_ids[]" value="' . intval( $gallery_id ) . '"> ';
+							echo '<span>' . esc_html( $gallery_name ) . ' <code>[ufg id="' . intval( $gallery_id ) . '"]</code></span>';
 							echo '</label>';
 						}
 					} else {
@@ -195,7 +201,7 @@ require_once 'loader.php';
 					}
 					?>
 				</div>
-				<button type="button" id="ufg-export-btn" class="ufg-btn-primary" <?php echo empty($ufg_all_galleries) ? 'disabled' : ''; ?>>
+				<button type="button" id="ufg-export-btn" class="ufg-btn-primary" <?php echo empty( $ufg_all_galleries ) ? 'disabled' : ''; ?>>
 					<span class="dashicons dashicons-download" style="margin-right:8px; line-height: 1.3;"></span> Export Selected
 				</button>
 			</div>
@@ -268,7 +274,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {
 				action: 'ufg_export_galleries',
-				nonce: '<?php echo esc_js(wp_create_nonce("ufg-import-export")); ?>',
+				nonce: '<?php echo esc_js( wp_create_nonce( 'ufg-import-export' ) ); ?>',
 				gallery_ids: ids
 			},
 			success: function(response) {
@@ -394,7 +400,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {
 				action: 'ufg_import_gallery',
-				nonce: '<?php echo esc_js(wp_create_nonce("ufg-import-export")); ?>',
+				nonce: '<?php echo esc_js( wp_create_nonce( 'ufg-import-export' ) ); ?>',
 				gallery_data: JSON.stringify(g),
 				skip_images: skipImages
 			},

@@ -7,6 +7,17 @@
 jQuery(document).ready(function ($) {
     if (typeof window.ufgAdminData === 'undefined') return;
 
+    // Initialize the filter multiselect widget on any image-filters elements present on the page
+    function initImageFiltersMultiselect() {
+        if (typeof $.fn.multiselect !== 'function') return;
+        $('.ufg-image-filters').multiselect({
+            buttonWidth: '100%',
+            enableFiltering: true,
+            nonSelectedText: window.ufgAdminData.selectFiltersText || 'Select Filters',
+        });
+    }
+    initImageFiltersMultiselect();
+
     // Check and inject the settings panel
     function checkAndInjectSettings() {
         var $navTitle = $('h3:contains("Filter Navigation")');
