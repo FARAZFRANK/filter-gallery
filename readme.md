@@ -2,7 +2,7 @@
 
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org/plugins/filter-gallery/)
 [![License](https://img.shields.io/badge/License-GPLv2-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![Version](https://img.shields.io/badge/Version-1.1.4-orange.svg)](https://github.com/FARAZFRANK/filter-gallery/releases)
+[![Version](https://img.shields.io/badge/Version-1.1.5-orange.svg)](https://github.com/FARAZFRANK/filter-gallery/releases)
 
 **Filter Gallery** is a lightweight, high-performance WordPress plugin designed to create stunning, filterable image galleries and portfolios. Built with a modern React-based admin interface and optimized Isotope filtering, it offers a premium experience for both developers and site owners.
 
@@ -65,6 +65,10 @@ Upgrade to **Filter Gallery Pro** for even more powerful features:
 This project is licensed under the GPL v2 or later.
 
 ## 📝 Changelog
+
+### 1.1.5 (2026-09-14)
+- **Security**: Enforced fail-closed nonce validation and strict user capability checks (`manage_options`) across all administrative AJAX endpoints (`ufg_save_gallery`, `ufg_gallery_filters`, `ufg_save_setting`, `ufg_remove_gallery`, `ufg_clone_gallery`, `ufg_load_gallery`, and `ufg_image_id`).
+- **Security**: Restricted `ufg_save_gallery` post updates strictly to attachments (`attachment` post type verification) with per-object `edit_post` capability check to prevent arbitrary content or post overwriting.
 
 ### 1.1.4 (2026-07-28)
 - **Feature**: Excluded empty/blank filters dynamically from the frontend output gallery, edit image popup, and batch tagging selector.
