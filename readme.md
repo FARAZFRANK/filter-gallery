@@ -67,8 +67,10 @@ This project is licensed under the GPL v2 or later.
 ## 📝 Changelog
 
 ### 1.1.5 (2026-09-14)
-- **Security**: Enforced fail-closed nonce validation and strict user capability checks (`manage_options`) across all administrative AJAX endpoints (`ufg_save_gallery`, `ufg_gallery_filters`, `ufg_save_setting`, `ufg_remove_gallery`, `ufg_clone_gallery`, `ufg_load_gallery`, and `ufg_image_id`).
+- **Security**: Enforced fail-closed nonce validation and strict user capability checks (`manage_options`) across all administrative AJAX endpoints (`ufg_save_gallery`, `ufg_remove_gallery`, `ufg_gallery_filters`, `ufg_save_setting`, `ufg_clone_gallery`, `ufg_load_gallery`, and `ufg_image_id`).
 - **Security**: Restricted `ufg_save_gallery` post updates strictly to attachments (`attachment` post type verification) with per-object `edit_post` capability check to prevent arbitrary content or post overwriting.
+- **Security**: Added strict positive integer validation (`absint`) on gallery identifiers across all management actions to prevent option key manipulation.
+- **Credit**: Reported by Seongwon Lee (coordinated via WPScan & Jetpack) and Justin Willhite.
 
 ### 1.1.4 (2026-07-28)
 - **Feature**: Excluded empty/blank filters dynamically from the frontend output gallery, edit image popup, and batch tagging selector.

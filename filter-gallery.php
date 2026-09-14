@@ -578,7 +578,10 @@ function ufg_gallery_filters_callback()
 	}
 
 	// save filters
-	$ufg_gallery_id = isset($_POST['id']) ? sanitize_text_field(wp_unslash($_POST['id'])) : '';
+	$ufg_gallery_id = isset($_POST['id']) ? absint(sanitize_text_field(wp_unslash($_POST['id']))) : 0;
+	if ($ufg_gallery_id <= 0) {
+		wp_send_json_error(__('Invalid gallery ID', 'filter-gallery'));
+	}
 	$ufg_gallery_name = isset($_POST['gallery_name']) ? sanitize_text_field(wp_unslash($_POST['gallery_name'])) : '';
 
 	// gerate random unique key string start
@@ -859,7 +862,10 @@ function ufg_save_gallery_callback()
 		wp_send_json_error(__('Insufficient permissions', 'filter-gallery'));
 	}
 
-	$ufg_gallery_id = isset($_POST['id']) ? sanitize_text_field(wp_unslash($_POST['id'])) : '';
+	$ufg_gallery_id = isset($_POST['id']) ? absint(sanitize_text_field(wp_unslash($_POST['id']))) : 0;
+	if ($ufg_gallery_id <= 0) {
+		wp_send_json_error(__('Invalid gallery ID', 'filter-gallery'));
+	}
 
 	// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- data is sanitized after parse_str below
 	$image_id_raw = isset($_POST['image_id']) ? wp_unslash($_POST['image_id']) : '';
@@ -937,7 +943,10 @@ function ufg_load_gallery_callback($ufg_gallery_id)
 
 	//get / create next gallery id
 	if (isset($_POST['id'])) {
-		$ufg_gallery_id = sanitize_text_field(wp_unslash($_POST['id']));
+		$ufg_gallery_id = absint(sanitize_text_field(wp_unslash($_POST['id'])));
+		if ($ufg_gallery_id <= 0) {
+			wp_die(__('Invalid gallery ID', 'filter-gallery'), '', array('response' => 400));
+		}
 
 		// load filters and gallery options
 		$ufg_filters = get_option("ufg_filters_" . $ufg_gallery_id);
@@ -1032,7 +1041,10 @@ function ufg_save_setting_callback()
 		wp_send_json_error(__('Insufficient permissions', 'filter-gallery'));
 	}
 
-	$ufg_gallery_id = isset($_POST['ufg_gallery_id']) ? sanitize_text_field(wp_unslash($_POST['ufg_gallery_id'])) : 0;
+	$ufg_gallery_id = isset($_POST['ufg_gallery_id']) ? absint(sanitize_text_field(wp_unslash($_POST['ufg_gallery_id']))) : 0;
+	if ($ufg_gallery_id <= 0) {
+		wp_send_json_error(__('Invalid gallery ID', 'filter-gallery'));
+	}
 	$settings = array(
 		//gallery details
 		'ufg_gallery_id' => $ufg_gallery_id,
@@ -1139,26 +1151,29 @@ function ufg_remove_gallery_callback()
 
 	// verified action
 	if (isset($_POST['ufg_gallery_id']) && isset($_POST['do_action'])) {
-
-		$raw_id = is_array($_POST['ufg_gallery_id']) ? array_map('sanitize_text_field', wp_unslash($_POST['ufg_gallery_id'])) : sanitize_text_field(wp_unslash($_POST['ufg_gallery_id']));
-		$ufg_gallery_id = $raw_id;
 		$ufg_do_action = sanitize_text_field(wp_unslash($_POST['do_action']));
 
 		//single gallery delete
 		if ($ufg_do_action == 'single') {
-			delete_option("ufg_filters_" . $ufg_gallery_id);
-			delete_option("ufg_gallery_" . $ufg_gallery_id);
-			delete_option("ufg_settings_" . $ufg_gallery_id);
-			delete_option("ufg_details_" . $ufg_gallery_id);
+			$single_id = !is_array($_POST['ufg_gallery_id']) ? absint(wp_unslash($_POST['ufg_gallery_id'])) : 0;
+			if ($single_id > 0) {
+				delete_option("ufg_filters_" . $single_id);
+				delete_option("ufg_gallery_" . $single_id);
+				delete_option("ufg_settings_" . $single_id);
+				delete_option("ufg_details_" . $single_id);
+			}
 		}
 
 		//multiple gallery delete
-		if ($ufg_do_action == 'multiple' && is_array($ufg_gallery_id)) {
-			foreach ($ufg_gallery_id as $ufg_single_id) {
-				delete_option("ufg_filters_" . $ufg_single_id);
-				delete_option("ufg_gallery_" . $ufg_single_id);
-				delete_option("ufg_settings_" . $ufg_single_id);
-				delete_option("ufg_details_" . $ufg_single_id);
+		if ($ufg_do_action == 'multiple' && is_array($_POST['ufg_gallery_id'])) {
+			$raw_ids = array_map('absint', wp_unslash($_POST['ufg_gallery_id']));
+			foreach ($raw_ids as $single_id) {
+				if ($single_id > 0) {
+					delete_option("ufg_filters_" . $single_id);
+					delete_option("ufg_gallery_" . $single_id);
+					delete_option("ufg_settings_" . $single_id);
+					delete_option("ufg_details_" . $single_id);
+				}
 			}
 		}
 	}
@@ -1180,8 +1195,11 @@ function ufg_clone_gallery_callback()
 
 	// verified action
 	if (isset($_POST['ufg_gallery_id']) && isset($_POST['ufg_gallery_counter'])) {
-		$ufg_gallery_id = sanitize_text_field(wp_unslash($_POST['ufg_gallery_id']));
-		$ufg_gallery_counter = sanitize_text_field(wp_unslash($_POST['ufg_gallery_counter']));
+		$ufg_gallery_id = absint(sanitize_text_field(wp_unslash($_POST['ufg_gallery_id'])));
+		$ufg_gallery_counter = absint(sanitize_text_field(wp_unslash($_POST['ufg_gallery_counter'])));
+		if ($ufg_gallery_id <= 0) {
+			wp_die(__('Invalid gallery ID', 'filter-gallery'), '', array('response' => 400));
+		}
 
 		//get cloning gallery data
 		$ufg_cloning_filters = get_option("ufg_filters_" . $ufg_gallery_id);
